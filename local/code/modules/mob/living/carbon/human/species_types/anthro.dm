@@ -75,3 +75,13 @@
 	)
 
 	return to_add
+
+/datum/species/anthro/on_species_gain(mob/living/carbon/carbon_being, datum/species/old_species, pref_load)
+	if(ishuman(carbon_being))
+		var/mob/living/carbon/human/target_human = carbon_being
+		if(target_human.dna.features["ears"] == "None")
+			mutantears = /obj/item/organ/internal/ears
+		else
+			var/obj/item/organ/internal/ears/cat/ears = new(FALSE, target_human.dna.features["ears"])
+			ears.Insert(target_human, movement_flags = DELETE_IF_REPLACED)
+	return ..()

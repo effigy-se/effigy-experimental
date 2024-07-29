@@ -5,9 +5,10 @@
 	examine_limb_id = SPECIES_HUMAN
 	mutantbrain = /obj/item/organ/internal/brain/felinid
 	mutanttongue = /obj/item/organ/internal/tongue/cat
-	mutantears = /obj/item/organ/internal/ears/cat
+	//mutantears = /obj/item/organ/internal/ears/cat
 	mutant_organs = list(
 		/obj/item/organ/external/tail/cat = "Cat",
+		/obj/item/organ/internal/ears/cat = "Cat",
 	)
 	inherent_traits = list(
 		TRAIT_CATLIKE_GRACE,
