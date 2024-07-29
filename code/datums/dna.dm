@@ -21,9 +21,29 @@ GLOBAL_LIST_INIT(identity_block_lengths, list(
  * The same rules of the above also apply here, with the exception that this is for the unique_features string variable
  * (commonly abbreviated with uf) and its blocks. Both ui and uf have a standard block length of 3 ASCII characters.
  */
+/* EffigyEdit Change - DNA Extensions - Original:
 GLOBAL_LIST_INIT(features_block_lengths, list(
 		"[DNA_MUTANT_COLOR_BLOCK]" = DNA_BLOCK_SIZE_COLOR,
 		"[DNA_ETHEREAL_COLOR_BLOCK]" = DNA_BLOCK_SIZE_COLOR,
+	))
+*/
+/**
+ * Effigy extension DNA blocks are 18 characters long (DNA_BLOCK_SIZE_DNACOLOR) storing a hex color in each.
+ * A mutant part can have up to 3 colors.
+ */
+GLOBAL_LIST_INIT(features_block_lengths, list(
+		"[DNA_MUTANT_COLOR_BLOCK]" = DNA_BLOCK_SIZE_COLOR,
+		"[DNA_ETHEREAL_COLOR_BLOCK]" = DNA_BLOCK_SIZE_COLOR,
+		"[DNA_MUTANT_DNACOLOR_BLOCK]" = DNA_BLOCK_SIZE_DNACOLOR,
+		"[DNA_SKIN_COLOR_BLOCK]" = DNA_BLOCK_SIZE_COLOR,
+		"[DNA_EARS_DNACOLOR_BLOCK]" = DNA_BLOCK_SIZE_DNACOLOR,
+		"[DNA_TAIL_DNACOLOR_BLOCK]" = DNA_BLOCK_SIZE_DNACOLOR,
+		"[DNA_SNOUT_DNACOLOR_BLOCK]" = DNA_BLOCK_SIZE_DNACOLOR,
+		"[DNA_HORNS_DNACOLOR_BLOCK]" = DNA_BLOCK_SIZE_DNACOLOR,
+		"[DNA_FRILLS_DNACOLOR_BLOCK]" = DNA_BLOCK_SIZE_DNACOLOR,
+		"[DNA_SPINES_DNACOLOR_BLOCK]" = DNA_BLOCK_SIZE_DNACOLOR,
+		"[DNA_MOTH_WINGS_DNACOLOR_BLOCK]" = DNA_BLOCK_SIZE_DNACOLOR,
+		"[DNA_MOTH_ANTENNAE_DNACOLOR_BLOCK]" = DNA_BLOCK_SIZE_DNACOLOR,
 	))
 
 /**

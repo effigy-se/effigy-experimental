@@ -68,7 +68,9 @@
 // (Which means having a DNA block for a feature tied to a mob without DNA is entirely pointless.)
 
 /// Total amount of DNA blocks, must be equal to the highest DNA block number
+/* EffigyEdit Change - DNA Extensions - Original:
 #define DNA_FEATURE_BLOCKS 15
+*/
 
 #define DNA_SEQUENCE_LENGTH 4
 #define DNA_MUTATION_BLOCKS 8

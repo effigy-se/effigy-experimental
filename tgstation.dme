@@ -264,7 +264,9 @@
 #include "code\__DEFINES\xenobiology.dm"
 #include "code\__DEFINES\zoom.dm"
 #include "code\__DEFINES\_effigy\chat.dm"
+#include "code\__DEFINES\_effigy\mobs.dm"
 #include "code\__DEFINES\_effigy\span.dm"
+#include "code\__DEFINES\_effigy\DNA.dm"
 #include "code\__DEFINES\ai\ai.dm"
 #include "code\__DEFINES\ai\ai_blackboard.dm"
 #include "code\__DEFINES\ai\bot_keys.dm"
@@ -6356,4 +6358,7 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
+#include "local\code\controllers\subsystem\sprite_accessories.dm"
+#include "local\code\datums\sprite_accessories.dm"
+#include "local\code\modules\client\preferences\species_features\mutants.dm"
 // END_INCLUDE
