@@ -7,6 +7,7 @@
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutant_organs = list(
 		/obj/item/organ/external/tail/cat = "Cat",
+		/obj/item/organ/internal/ears/cat = "Cat",
 	)
 	mutanttongue = /obj/item/organ/internal/tongue/anthro
 	payday_modifier = 1.0
