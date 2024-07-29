@@ -6,14 +6,12 @@
 /datum/preference/choiced/ears/icon_for(value)
 	return generate_icon_with_ears_accessory(SSaccessories.ears_list[value])
 
-/*
 /datum/preference/choiced/ears/compile_constant_data()
 	var/list/data = ..()
 
 	data[SUPPLEMENTAL_FEATURE_KEY] = "dna_ear_color"
 
 	return data
-*/
 
 /proc/generate_icon_with_ears_accessory(datum/sprite_accessory/sprite_accessory, y_offset = 0)
 	var/static/icon/head_icon
