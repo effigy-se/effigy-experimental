@@ -1,4 +1,3 @@
-/*
 /datum/preference/choiced/ears
 	category = PREFERENCE_CATEGORY_FEATURES
 	main_feature_name = "Ears"
@@ -6,7 +5,7 @@
 
 /datum/preference/choiced/ears/icon_for(value)
 	return generate_icon_with_ears_accessory(SSaccessories.ears_list[value])
-*/
+
 /*
 /datum/preference/choiced/ears/compile_constant_data()
 	var/list/data = ..()

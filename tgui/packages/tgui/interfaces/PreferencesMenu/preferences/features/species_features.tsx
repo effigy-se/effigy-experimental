@@ -3,6 +3,7 @@ import {
   FeatureChoiced,
   FeatureChoicedServerData,
   FeatureColorInput,
+  FeatureDNAColorInput,
   FeatureValueProps,
 } from './base';
 import { FeatureDropdownInput } from './dropdowns';
@@ -122,4 +123,9 @@ export const feature_vampire_status: Feature<string> = {
 export const heterochromatic: Feature<string> = {
   name: 'Heterochromatic (Right Eye) color',
   component: FeatureColorInput,
+};
+
+export const dna_ear_color: Feature<string> = {
+  name: 'Ear color',
+  component: FeatureDNAColorInput,
 };
