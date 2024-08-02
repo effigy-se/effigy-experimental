@@ -1,4 +1,11 @@
-import { Feature, FeatureDNAColorInput } from '../../base';
+import {
+  Feature,
+  FeatureChoiced,
+  FeatureChoicedServerData,
+  FeatureDNAColorInput,
+  FeatureValueProps,
+} from '../../base';
+import { FeatureDropdownInput } from '../../dropdowns';
 
 export const dna_ears_color: Feature<string[]> = {
   name: 'Ear color',
@@ -38,4 +45,13 @@ export const dna_wings_color: Feature<string[]> = {
 export const dna_fluff_color: Feature<string[]> = {
   name: 'Fluff color',
   component: FeatureDNAColorInput,
+};
+
+export const feature_anthro_tail: FeatureChoiced = {
+  name: 'Tail',
+  component: (
+    props: FeatureValueProps<string, string, FeatureChoicedServerData>,
+  ) => {
+    return <FeatureDropdownInput buttons {...props} />;
+  },
 };

@@ -6,9 +6,9 @@ import { Button, Stack } from '../../components';
 import { Window } from '../../layouts';
 import { AntagsPage } from './AntagsPage';
 import { PreferencesMenuData } from './data';
+import { MainPage } from './effigy/MainPage';
 import { JobsPage } from './JobsPage';
 import { LoadoutPage } from './loadout/index';
-import { MainPage } from './MainPage';
 import { PageButton } from './PageButton';
 import { QuirksPage } from './QuirksPage';
 import { SpeciesPage } from './SpeciesPage';
@@ -87,7 +87,7 @@ export const CharacterPreferenceWindow = (props) => {
   }
 
   return (
-    <Window title="Character Preferences" width={980} height={770}>
+    <Window title="Character Preferences" width={1100} height={815}>
       <Window.Content scrollable>
         <Stack vertical fill>
           <Stack.Item>

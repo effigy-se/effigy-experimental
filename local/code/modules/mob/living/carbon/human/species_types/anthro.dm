@@ -8,11 +8,11 @@
 	mutant_organs = list(
 		///obj/item/organ/external/tail/cat = "Cat",
 		/obj/item/organ/internal/ears/cat = "Cat",
-		/obj/item/organ/external/horns = "None",
+		///obj/item/organ/external/horns = "None",
 		/obj/item/organ/external/frills = "None",
 		/obj/item/organ/external/snout = "Round",
-		/obj/item/organ/external/spines = "None",
-		/obj/item/organ/external/tail/lizard = "Smooth",
+		///obj/item/organ/external/spines = "None",
+		/obj/item/organ/external/tail/anthro = "Fennec",
 	)
 	mutanttongue = /obj/item/organ/internal/tongue/anthro
 	payday_modifier = 1.0

@@ -4,7 +4,7 @@
 #define DNA_SKIN_COLOR_BLOCK 17
 //#define DNA_EARS_BLOCK
 #define DNA_EARS_DNACOLOR_BLOCK 18
-#define DNA_SPINELESS_TAIL_BLOCK 19
+#define DNA_ANTHRO_TAIL_BLOCK 19
 //#define DNA_TAIL_BLOCK
 #define DNA_TAIL_DNACOLOR_BLOCK 20
 //#define DNA_SNOUT_BLOCK
@@ -22,6 +22,3 @@
 
 /// This number needs to equal the total number of DNA feature blocks
 #define DNA_FEATURE_BLOCKS 26
-
-/// Color of the sprite accessory will match the owner's DNA color, which is granted by certain species
-#define DNA_COLOR "dna_color"

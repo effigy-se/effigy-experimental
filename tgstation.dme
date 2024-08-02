@@ -6365,8 +6365,12 @@
 #include "local\code\modules\client\preferences\species_features\ears.dm"
 #include "local\code\modules\client\preferences\species_features\frills.dm"
 #include "local\code\modules\client\preferences\species_features\horns.dm"
+#include "local\code\modules\client\preferences\species_features\snout.dm"
+#include "local\code\modules\client\preferences\species_features\tails.dm"
 #include "local\code\modules\mob\living\carbon\human\species_types\anthro.dm"
 #include "local\code\modules\splash\splash_ng.dm"
 #include "local\code\modules\surgery\bodyparts\mutant.dm"
+#include "local\code\modules\surgery\organs\external\_visual_organs.dm"
+#include "local\code\modules\surgery\organs\external\tails.dm"
 #include "local\code\modules\surgery\organs\internal\tongue\_tongue.dm"
 // END_INCLUDE

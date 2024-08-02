@@ -5,4 +5,21 @@
 /datum/sprite_accessory/tails/anthro
 	icon = 'local/icons/mob/mutant/sprite_accessories/tails.dmi'
 	dna_color = "dna_tail_color"
-	color_src = DNA_COLOR
+
+/datum/sprite_accessory/tails/anthro/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/tails/anthro/fennec
+	name = "Fennec"
+	icon_state = "fennec"
+
+/datum/sprite_accessory/tails/anthro/kitsune
+	name = "Kitsune"
+	icon_state = "kitsune"
+
+/datum/sprite_accessory/frills
+	dna_color = "dna_frills_color"
+
+/datum/sprite_accessory/snouts
+	dna_color = "dna_snout_color"
