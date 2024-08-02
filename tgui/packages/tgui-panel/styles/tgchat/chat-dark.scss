@@ -1131,3 +1131,13 @@ $border-width-px: $border-width * 1px;
     background-color: darken(map.get($alert-stripe-colors, $color-name), 5);
   }
 }
+
+// EFFIGY DOWN HERE
+
+.debugcyan {
+  color: #00ced1;
+}
+
+.debugyellow {
+  color: #ffff00;
+}
