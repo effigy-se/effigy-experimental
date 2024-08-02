@@ -9,7 +9,7 @@
 /datum/preference/choiced/ears/compile_constant_data()
 	var/list/data = ..()
 
-	data[SUPPLEMENTAL_FEATURE_KEY] = "dna_ear_color"
+	data[SUPPLEMENTAL_FEATURE_KEY] = "dna_ears_color"
 
 	return data
 

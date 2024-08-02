@@ -31,12 +31,12 @@
 	target.dna.features[dna_identifier] = value
 
 /datum/preference/dna_color/ears
-	savefile_key = "dna_ear_color"
-	dna_identifier = "dna_ear_color"
+	savefile_key = "dna_ears_color"
+	dna_identifier = "dna_ears_color"
 
 /datum/preference/dna_color/frills
-	savefile_key = "dna_frill_color"
-	dna_identifier = "dna_frill_color"
+	savefile_key = "dna_frills_color"
+	dna_identifier = "dna_frills_color"
 
 /datum/preference/dna_color/tail
 	savefile_key = "dna_tail_color"
