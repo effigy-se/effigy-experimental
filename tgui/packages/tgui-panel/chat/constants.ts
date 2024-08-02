@@ -150,7 +150,7 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_EFFIGY_DEBUG,
     name: 'Effigy Debug',
     description: 'DEBUG: nya.',
-    selector: '.debugyellow, .debugcyan',
+    selector: '.debugyellow, .debugcyan, .debugwhite, .debugpink',
     admin: true,
   },
 ];
