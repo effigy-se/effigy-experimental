@@ -6360,6 +6360,7 @@
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
 #include "local\code\controllers\subsystem\sprite_accessories.dm"
+#include "local\code\datums\bodypart_overlay.dm"
 #include "local\code\datums\sprite_accessories.dm"
 #include "local\code\modules\client\preferences\species_features\_mutants.dm"
 #include "local\code\modules\client\preferences\species_features\ears.dm"

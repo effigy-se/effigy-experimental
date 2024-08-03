@@ -9,15 +9,18 @@
 	else
 		dna_color = dna_feature
 	if(!dna_color)
-		debug_effigy("bodypart overlay [src] has no DNA color, using fallback.", PREF)
+		debug_effigy("bodypart overlay [src] has no DNA color for [component_layer], using fallback.", PREF)
 		dna_color = "#66CCFF"
 		return dna_color
 
-	debug_effigy("bodypart overlay [src] using DNA color [dna_color]", PREF)
+	debug_effigy("bodypart overlay [src] found [component_layer] DNA color [dna_color]", PREF)
 	return dna_color
 
 /datum/bodypart_overlay/mutant/frills
 	color_source = ORGAN_COLOR_OVERRIDE
 
 /datum/bodypart_overlay/mutant/snout
+	color_source = ORGAN_COLOR_OVERRIDE
+
+/datum/bodypart_overlay/mutant/cat_ears
 	color_source = ORGAN_COLOR_OVERRIDE
