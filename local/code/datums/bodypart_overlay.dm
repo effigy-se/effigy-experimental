@@ -4,7 +4,6 @@
 /datum/bodypart_overlay/get_overlay(layer, obj/item/bodypart/limb)
 	. = ..()
 	component_layer = bitflag_to_layertext(layer)
-	debug_effigy("bodypart overlay [src] generating [component_layer].", PREF)
 
 /**This exists so sprite accessories can still be per-layer without having to include that layer's
 *  number in their sprite name, which causes issues when those numbers change.
