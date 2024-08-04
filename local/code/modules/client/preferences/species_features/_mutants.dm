@@ -18,7 +18,6 @@
 	return list(sanitize_hexcolor(serialized_data[1]), sanitize_hexcolor(serialized_data[2]), sanitize_hexcolor(serialized_data[3]))
 
 /datum/preference/dna_color/apply_to_human(mob/living/carbon/human/target, value)
-	debug_effigy("Applying DNA feature [dna_identifier] on [target] containing [value]", PREF)
 	target.dna.features[dna_identifier] = value
 
 /datum/preference/dna_color/create_default_value()

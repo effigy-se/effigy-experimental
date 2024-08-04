@@ -73,9 +73,10 @@
 	icon_state_builder += sprite_datum.gender_specific ? gender : "m" //Male is default because sprite accessories are so ancient they predate the concept of not hardcoding gender
 	icon_state_builder += feature_key
 	icon_state_builder += get_base_icon_state()
-	icon_state_builder += mutant_bodyparts_layertext(image_layer)
+	icon_state_builder += bitflag_to_layertext(component_layer) // EffigyEdit Change - DNA Extensions - Original: icon_state_builder += mutant_bodyparts_layertext(image_layer)
 
 	var/finished_icon_state = icon_state_builder.Join("_")
+	debug_effigy("bodypart overlay created icon state [finished_icon_state]", PREF)
 
 	var/mutable_appearance/appearance = mutable_appearance(sprite_datum.icon, finished_icon_state, layer = image_layer)
 
@@ -123,7 +124,7 @@
 
 	switch(color_source)
 		if(ORGAN_COLOR_OVERRIDE)
-			draw_color = override_color(bodypart_owner) // EffigyEdit Change - DNA Extensions - Original: bodypart_owner.draw_color
+			draw_color = override_color(bodypart_owner.draw_color)
 		if(ORGAN_COLOR_INHERIT)
 			draw_color = bodypart_owner.draw_color
 		if(ORGAN_COLOR_HAIR)

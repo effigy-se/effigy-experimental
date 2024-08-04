@@ -9,3 +9,4 @@
 /datum/bodypart_overlay/mutant/tail/anthro
 	feature_key = "tail_anthro"
 	color_source = ORGAN_COLOR_OVERRIDE
+	layers = EXTERNAL_FRONT | EXTERNAL_FRONT_SECONDARY | EXTERNAL_BEHIND | EXTERNAL_BEHIND_SECONDARY
