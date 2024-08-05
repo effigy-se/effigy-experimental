@@ -33,8 +33,8 @@ import { RandomizationButton } from '../RandomizationButton';
 import { ServerPreferencesFetcher } from '../ServerPreferencesFetcher';
 import { useRandomToggleState } from '../useRandomToggleState';
 
-const CLOTHING_CELL_SIZE = 100;
-const CLOTHING_SIDEBAR_ROWS = 6;
+const CLOTHING_CELL_SIZE = 125;
+const CLOTHING_SIDEBAR_ROWS = 5;
 
 const CLOTHING_SELECTION_CELL_SIZE = 72;
 const CLOTHING_SELECTION_WIDTH = 5.6;
@@ -340,8 +340,10 @@ const MainFeature = (props: {
         position="relative"
         tooltip={catalog.name}
         tooltipPosition="right"
+        textColor="#a5aab6"
       >
         <Box
+          mt={3}
           className={classes([
             'preferences32x32',
             catalog.icons![currentValue],
@@ -349,11 +351,10 @@ const MainFeature = (props: {
           ])}
           style={{
             transform: randomization
-              ? 'translateX(-70%) translateY(-70%) scale(2.5)'
-              : 'translateX(-50%) translateY(-50%) scale(2.5)',
+              ? 'translateX(-70%) translateY(-70%) scale(2.25)'
+              : 'translateX(-50%) translateY(-50%) scale(2.25)',
           }}
         />
-
         {randomization && (
           <RandomizationButton
             dropdownProps={{
@@ -374,10 +375,12 @@ const MainFeature = (props: {
             setValue={setRandomization}
           />
         )}
+        {catalog.name}
+        <br />
+        {currentValue}
       </Button>
       <Box
-        mt={-0.5}
-        mb={1.1}
+        mb={0}
         style={{
           // Text below feature buttons
           height: `14px`,
@@ -386,9 +389,7 @@ const MainFeature = (props: {
         }}
         textAlign="center"
         textColor="#e6e7eb"
-      >
-        {catalog.name}
-      </Box>
+      />
     </Popper>
   );
 };
