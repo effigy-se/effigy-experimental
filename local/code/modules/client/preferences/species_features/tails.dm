@@ -23,7 +23,7 @@
 /datum/preference/choiced/tail_anthro/init_possible_values()
 	return assoc_to_keys_features(SSaccessories.tails_list_anthro)
 
-/datum/preference/choiced/tail_anthro/apply_to_human(mob/living/carbon/human/target, value)
+/datum/preference/choiced/tail_spineless/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["tail_anthro"] = value
 
 /proc/generate_icon_with_tails_accessory(datum/sprite_accessory/sprite_accessory, y_offset = 0)

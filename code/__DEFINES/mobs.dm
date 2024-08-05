@@ -795,7 +795,6 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 	// WOUND_LAYER (full body)
 ))
 
-/* EffigyEdit Change - Moved to code/__DEFINES/_effigy/mobs.dm
 //Bitflags for the layers a bodypart overlay can draw on (can be drawn on multiple layers)
 /// Draws overlay on the BODY_FRONT_LAYER
 #define EXTERNAL_FRONT (1 << 0)
@@ -805,7 +804,6 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define EXTERNAL_BEHIND (1 << 2)
 /// Draws organ on all EXTERNAL layers
 #define ALL_EXTERNAL_OVERLAYS EXTERNAL_FRONT | EXTERNAL_ADJACENT | EXTERNAL_BEHIND
-*/
 
 // Bitflags for external organs restylability
 /// This organ allows restyle through plant restyling (like secateurs)
