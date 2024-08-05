@@ -1,8 +1,4 @@
 /datum/bodypart_overlay/mutant/override_color(obj/item/bodypart/bodypart_owner)
-	if(isnull(component_layer))
-		return
-	if(!istype(bodypart_owner))
-		return
 	if(!ishuman(bodypart_owner.owner))
 		return
 	var/mob/living/carbon/human/human_owner = bodypart_owner.owner
