@@ -268,6 +268,7 @@
 #include "code\__DEFINES\_effigy\mobs.dm"
 #include "code\__DEFINES\_effigy\span.dm"
 #include "code\__DEFINES\_effigy\splash.dm"
+#include "code\__DEFINES\_effigy\sprite_accessories.dm"
 #include "code\__DEFINES\ai\ai.dm"
 #include "code\__DEFINES\ai\ai_blackboard.dm"
 #include "code\__DEFINES\ai\bot_keys.dm"
