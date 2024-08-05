@@ -2,27 +2,14 @@
 	if(!ishuman(bodypart_owner.owner))
 		return
 	var/mob/living/carbon/human/human_owner = bodypart_owner.owner
-	var/dna_color
-	var/dna_feature = human_owner.dna.features[sprite_datum.dna_color]
-	if(islist(dna_feature))
-		//switch(component_layer)
-		//	if(EXTERNAL_ADJACENT)
-		dna_color = dna_feature[1]
-		//	if(EXTERNAL_FRONT)
-		//		dna_color = dna_feature[2]
-		//	if(EXTERNAL_BEHIND)
-		//		dna_color = dna_feature[3]
-		//	else
-		//		dna_color = dna_feature[1]
-	else
-		dna_color = dna_feature
+	var/dna_color = human_owner.dna.features[sprite_datum.dna_color]
 
-	if(!dna_color)
+	if(!dna_color || !islist(dna_color))
 		debug_effigy("bodypart overlay [src] has no DNA color, using fallback.", PREF)
 		dna_color = "#66CCFF"
 		return dna_color
 
-	debug_effigy("bodypart overlay [src] found DNA color [dna_color]", PREF)
+	debug_effigy("bodypart overlay [src] found DNA colors [dna_color[1]] [dna_color[2]] [dna_color[3]]", PREF)
 	return dna_color
 
 /// Colors the given overlays list. bodypart_owner can be null.

@@ -33,8 +33,8 @@ import { RandomizationButton } from '../RandomizationButton';
 import { ServerPreferencesFetcher } from '../ServerPreferencesFetcher';
 import { useRandomToggleState } from '../useRandomToggleState';
 
-const CLOTHING_CELL_SIZE = 72;
-const CLOTHING_SIDEBAR_ROWS = 8;
+const CLOTHING_CELL_SIZE = 100;
+const CLOTHING_SIDEBAR_ROWS = 6;
 
 const CLOTHING_SELECTION_CELL_SIZE = 72;
 const CLOTHING_SELECTION_WIDTH = 5.6;
@@ -186,8 +186,22 @@ const ChoicedSelection = (props: {
                             image,
                             'centered-image',
                           ])}
+                          style={{
+                            transform:
+                              'translateX(-50%) translateY(-50%) scale(2)',
+                          }}
                         />
                       </Button>
+                      <Box
+                        style={{
+                          fontSize: '14px',
+                          textAlign: 'center',
+                          width: '86%',
+                          color: '#e6e7eb',
+                        }}
+                      >
+                        {name}
+                      </Box>
                     </Flex.Item>
                   );
                 },
@@ -335,8 +349,8 @@ const MainFeature = (props: {
           ])}
           style={{
             transform: randomization
-              ? 'translateX(-70%) translateY(-70%) scale(1.1)'
-              : 'translateX(-50%) translateY(-50%) scale(1.3)',
+              ? 'translateX(-70%) translateY(-70%) scale(2.5)'
+              : 'translateX(-50%) translateY(-50%) scale(2.5)',
           }}
         />
 
@@ -361,6 +375,20 @@ const MainFeature = (props: {
           />
         )}
       </Button>
+      <Box
+        mt={-0.5}
+        mb={1.1}
+        style={{
+          // Text below feature buttons
+          height: `14px`,
+          width: `${CLOTHING_CELL_SIZE}px`,
+          overflowWrap: 'anywhere',
+        }}
+        textAlign="center"
+        textColor="#e6e7eb"
+      >
+        {catalog.name}
+      </Box>
     </Popper>
   );
 };
