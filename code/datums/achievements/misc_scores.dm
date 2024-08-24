@@ -21,3 +21,17 @@
 	name = "Style Score"
 	desc = "You might not be a robot, but you were damn close."
 	database_id = STYLE_SCORE
+
+/datum/award/score/list/fish
+	name = "Fish Species Caught"
+	desc = "How many different species of fish you've caught in your whole spessman life. Gotta fish 'em all."
+	database_id = FISH_SCORE
+
+/datum/award/score/list/fish/validate_entries(text)
+	var/list/entries = ..()
+	var/list/converted_entries = list()
+	for(var/text_type in entries)
+		var/fish_path = text2path(text_type)
+		if(ispath(fish_path, /obj/item/fish))
+			converted_entries += fish_path
+	return converted_entries

@@ -15,6 +15,13 @@ INSERT INTO `SS13_schema_revision` (`major`, `minor`) VALUES (5, 27);
 
 In any query remember to add a prefix to the table names if you use one.
 -----------------------------------------------------
+Version 5.28, TODO 2024, by Ghommie.
+Adds an entries column to achievements for the score/list subtype that derivates their value from it.
+
+```sql
+ALTER TABLE `achievements` ADD COLUMN `entries` TEXT(8192) UNSIGNED NULL AFTER `value`;
+```
+-----------------------------------------------------
 Version 5.27, 26 April 2024, by zephyrtfa
 Add the ip intel whitelist table
 ```sql

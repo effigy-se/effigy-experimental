@@ -66,15 +66,9 @@
 
 	if(!SSachievements.achievements_enabled)
 		return
-	var/datum/award/A = SSachievements.awards[achievement_type]
+	var/datum/award/award = SSachievements.awards[achievement_type]
 	get_data(achievement_type) //Get the current status first if necessary
-	if(istype(A, /datum/award/achievement))
-		if(data[achievement_type]) //You already unlocked it so don't bother running the unlock proc
-			return
-		data[achievement_type] = TRUE
-		A.on_unlock(user) //Only on default achievement, as scores keep going up.
-	else if(istype(A, /datum/award/score))
-		data[achievement_type] += value
+	award.unlock(user, src, value)
 	update_static_data(user)
 
 ///Getter for the status/score of an achievement
@@ -116,7 +110,7 @@
 			"icon_class" = assets.icon_class_name("achievement-[award.icon_state]"),
 			"value" = data[achievement_type],
 			)
-		award_data += award.get_ui_data(user.ckey)
+		award_data += award.get_ui_data(award_data, src)
 		.["achievements"] += list(award_data)
 
 	for(var/score in SSachievements.scores)
