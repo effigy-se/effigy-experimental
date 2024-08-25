@@ -57,7 +57,7 @@
 	var/max_zeros = round(log(10, catchable_len))
 	for(var/obj/item/fish/fish as anything in SSfishing.catchable_fish)
 		var/catched = (fish in catched_fish)
-		var/entry_name = "◦[prefix_zeros_to_number(index, max_zeros)]◦ [catched ? full_capitalize(initial(fish.name)) : "❔❔❔❔❔❔" ]"
+		var/entry_name = "◦[prefix_zeros_to_number(index, max_zeros)]◦ [catched ? full_capitalize(initial(fish.name)) : "??????" ]"
 		var/list/icon_dimensions = get_icon_dimensions(initial(fish.icon))
 		data["entries"][entry_name] = list(
 			"icon" = catched ? SSfishing.cached_fish_icons[fish] : SSfishing.cached_unknown_fish_icons[fish],

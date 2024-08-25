@@ -143,7 +143,7 @@ const ProgressTable = (props) => {
           }}
           value={progress.percent}
         >
-          <Box fontSize="16px" bold>
+          <Box fontSize="15px" bold>
             {progress.percent >= 0.98 && (
               <Icon name="crown" color="yellow" mr={2} />
             )}
@@ -156,7 +156,7 @@ const ProgressTable = (props) => {
         <Table>
           {entries.map((entry, i) => (
             <Table.Row key={entry.ename} className="candystripe">
-              <Table.Cell>
+              <Table.Cell width="128px">
                 <Image
                   src={`data:image/jpeg;base64,${entry.icon}`}
                   height={`${entry.height}px`}
@@ -164,7 +164,7 @@ const ProgressTable = (props) => {
                 />
               </Table.Cell>
               <Table.Cell>
-                <Box fontSize="16px">
+                <Box fontSize="16px" bold>
                   {entry.ename}
                 </Box>
               </Table.Cell>
