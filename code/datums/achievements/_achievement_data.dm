@@ -9,10 +9,15 @@
 	///Have we done our set-up yet?
 	var/initialized = FALSE
 
+	var/list/trying_to_figure_out_whats_wrong
+
 /datum/achievement_data/New(ckey)
 	owner_ckey = ckey
 	if(SSachievements.initialized && !initialized)
 		InitializeData()
+
+/datum/achievement_data/proc/ohio()
+	trying_to_figure_out_whats_wrong = ui_static_data(usr)
 
 /datum/achievement_data/proc/InitializeData()
 	initialized = TRUE
@@ -53,12 +58,11 @@
 
 ///Updates local cache with db data for the given achievement type if it wasn't loaded yet.
 /datum/achievement_data/proc/get_data(achievement_type)
-	var/datum/award/A = SSachievements.awards[achievement_type]
-	if(!A.name)
+	var/datum/award/award = SSachievements.awards[achievement_type]
+	if(!award.name)
 		return FALSE
 	if(!data[achievement_type])
-		data[achievement_type] = A.load(owner_ckey)
-		original_cached_data[achievement_type] = data[achievement_type]
+		award.load(src)
 
 ///Unlocks an achievement of a specific type. achievement type is a typepath to the award, user is the mob getting the award, and value is an optional value to be used for defining a score to add to the leaderboard
 /datum/achievement_data/proc/unlock(achievement_type, mob/user, value = 1)
@@ -94,7 +98,8 @@
 	.["categories"] = GLOB.achievement_categories
 	.["achievements"] = list()
 	.["highscore"] = list()
-	.["user_key"] = user.ckey
+	.["progresses"] = list()
+	.["user_key"] = owner_ckey
 
 	var/datum/asset/spritesheet/simple/assets = get_asset_datum(/datum/asset/spritesheet/simple/achievements)
 	for(var/achievement_type in SSachievements.awards)
@@ -113,11 +118,18 @@
 		award_data += award.get_ui_data(award_data, src)
 		.["achievements"] += list(award_data)
 
-	for(var/score in SSachievements.scores)
-		var/datum/award/score/S = SSachievements.scores[score]
-		if(!S.name || !S.track_high_scores || !S.high_scores.len)
+	for(var/score_type in SSachievements.scores)
+		var/datum/award/score/score = SSachievements.scores[score_type]
+		if(!score.name)
 			continue
-		.["highscore"] += list(list("name" = S.name,"scores" = S.high_scores))
+		if(istype(score, /datum/award/score/progress))
+			var/datum/award/score/progress/prog = score
+			var/list/prog_data = prog.get_progress(src)
+			if(length(prog_data))
+				.["progresses"] += list(prog_data)
+		if(!score.track_high_scores || !length(score.high_scores))
+			continue
+		.["highscore"] += list(list("name" = score.name, "scores" = score.high_scores))
 
 /client/verb/checkachievements()
 	set category = "OOC"

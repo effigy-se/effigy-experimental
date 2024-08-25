@@ -1,5 +1,14 @@
 import { useState } from 'react';
-import { Box, Flex, Icon, Table, Tabs, Tooltip } from 'tgui-core/components';
+import {
+  Box,
+  Flex,
+  Icon,
+  Image,
+  ProgressBar,
+  Table,
+  Tabs,
+  Tooltip,
+} from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -30,10 +39,17 @@ export const Achievements = (props) => {
           >
             High Scores
           </Tabs.Tab>
+          <Tabs.Tab
+            selected={selectedCategory === 'Progress'}
+            onClick={() => setSelectedCategory('Progress')}
+          >
+            Progress
+          </Tabs.Tab>
         </Tabs>
-        {(selectedCategory === 'High Scores' && <HighScoreTable />) || (
-          <AchievementTable achievements={achievements} />
-        )}
+        {(selectedCategory === 'High Scores' && <HighScoreTable />) ||
+          (selectedCategory === 'Progress' && <ProgressTable />) || (
+            <AchievementTable achievements={achievements} />
+          )}
       </Window.Content>
     </Window>
   );
@@ -90,11 +106,81 @@ const Achievement = (props) => {
   );
 };
 
+const ProgressTable = (props) => {
+  const { data } = useBackend();
+  const { progresses } = data;
+  const [progressIndex, setProgressIndex] = useState(0);
+  const progress = progresses ? progresses[progressIndex] : null;
+  if (!progress) {
+    return null;
+  }
+  const entries = Object.keys(progress.entries).map((key) => ({
+    ename: key,
+    icon: progress.entries[key].icon,
+    height: progress.entries[key].height,
+    width: progress.entries[key].width,
+  }));
+  return (
+    <Flex>
+      <Flex.Item>
+        <Tabs vertical>
+          {progresses.map((progress, i) => (
+            <Tabs.Tab
+              key={progress.name}
+              selected={progressIndex === i}
+              onClick={() => setProgressIndex(i)}
+            >
+              {progress.name}
+            </Tabs.Tab>
+          ))}
+        </Tabs>
+      </Flex.Item>
+      <Flex.Item grow={1} basis={0}>
+        <ProgressBar
+          ranges={{
+            gold: [0.98, Infinity],
+            good: [-Infinity, 0.98],
+          }}
+          value={progress.percent}
+        >
+          <Box fontSize="16px" bold>
+            {progress.percent >= 0.98 && (
+              <Icon name="crown" color="yellow" mr={2} />
+            )}
+            {progress.value_text}
+            {progress.percent >= 0.98 && (
+              <Icon name="crown" color="yellow" mr={2} />
+            )}
+          </Box>
+        </ProgressBar>
+        <Table>
+          {entries.map((entry, i) => (
+            <Table.Row key={entry.ename} className="candystripe">
+              <Table.Cell>
+                <Image
+                  src={`data:image/jpeg;base64,${entry.icon}`}
+                  height={`${entry.height}px`}
+                  width={`${entry.width}px`}
+                />
+              </Table.Cell>
+              <Table.Cell>
+                <Box fontSize="16px">
+                  {entry.ename}
+                </Box>
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table>
+      </Flex.Item>
+    </Flex>
+  );
+};
+
 const HighScoreTable = (props) => {
   const { data } = useBackend();
   const { highscore: highscores, user_ckey } = data;
   const [highScoreIndex, setHighScoreIndex] = useState(0);
-  const highscore = highscores[highScoreIndex];
+  const highscore = highscores ? highscores[highScoreIndex] : null;
   if (!highscore) {
     return null;
   }

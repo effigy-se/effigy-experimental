@@ -241,3 +241,11 @@
 /// Useful for providing an additive modifier to a value that is used as a divisor, such as `/obj/projectile/var/speed`
 /proc/reciprocal_add(x, y)
 	return 1/((1/x)+y)
+
+/// Returns a text string containing N prefixed with a series of zeros with length equal than max_zeros minux log(10, N), rounded down.
+/proc/prefix_zeros_to_number(number, max_zeros)
+	var/zeros = ""
+	var/how_many_zeros = max_zeros - round(log(10, number))
+	for(var/zero in 1 to how_many_zeros)
+		zeros += "0"
+	return "[zeros][number]"
