@@ -9,15 +9,10 @@
 	///Have we done our set-up yet?
 	var/initialized = FALSE
 
-	var/list/trying_to_figure_out_whats_wrong
-
 /datum/achievement_data/New(ckey)
 	owner_ckey = ckey
 	if(SSachievements.initialized && !initialized)
 		InitializeData()
-
-/datum/achievement_data/proc/ohio()
-	trying_to_figure_out_whats_wrong = ui_static_data(usr)
 
 /datum/achievement_data/proc/InitializeData()
 	initialized = TRUE

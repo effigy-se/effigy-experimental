@@ -3,7 +3,6 @@ PROCESSING_SUBSYSTEM_DEF(fishing)
 	name = "Fishing"
 	wait = 0.05 SECONDS // If you raise it to 0.1 SECONDS, you better also modify [datum/fish_movement/move_fish()]
 	flags = SS_BACKGROUND|SS_POST_FIRE_TIMING
-	init_order = INIT_ORDER_STATION
 	///A list of cached fish icons
 	var/list/cached_fish_icons
 	///A list of cached fish icons turns into outlines with a queston mark in the middle, denoting fish you haven't caught yet.
