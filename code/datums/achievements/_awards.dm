@@ -176,7 +176,7 @@
 		while(Q.NextRow())
 			var/key = Q.item[1]
 			var/score = text2num(Q.item[2])
-			high_scores[key] = score
+			high_scores += list(list("ckey" = key, "value" = score))
 		qdel(Q)
 
 /datum/award/score/parse_value(raw_value)
@@ -215,7 +215,7 @@
 		while(get_unlocked_highscore.NextRow())
 			var/key = get_unlocked_highscore.item[1]
 			var/score = text2num(get_unlocked_highscore.item[2])
-			high_scores[key] = score
+			high_scores += list(list("ckey" = key, "value" = score))
 		qdel(get_unlocked_highscore)
 
 /datum/award/score/achievements_score/on_achievement_data_init(datum/achievement_data/holder, database_value)
@@ -311,4 +311,4 @@
 
 ////Returns a list of data that we can use to make an index of contents that progress this award/score.
 /datum/award/score/progress/proc/get_progress(datum/achievement_data/holder)
-	return
+	CRASH("get_progress() undefined for [type]")

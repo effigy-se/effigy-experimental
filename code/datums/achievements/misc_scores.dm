@@ -24,7 +24,7 @@
 
 /datum/award/score/progress/fish
 	name = "Fish Species Caught"
-	desc = "How many different species of fish you've caught in your whole spessman life. Gotta fish 'em all."
+	desc = "How many different species of fish you've caught so far. Gotta fish 'em all."
 	database_id = FISH_SCORE
 
 /datum/award/score/progress/fish/validate_entries(list/entries, list/safety)
@@ -38,10 +38,9 @@
 		else
 			. = FALSE
 
-
 /datum/award/score/progress/fish/get_progress(datum/achievement_data/holder)
 	var/list/data = list(
-		"name" = "Fish Caught",
+		"name" = "Fishdex",
 		"percent" = 0,
 		"value_text" = "Subsystems still initializing...",
 		"entries" = list(),
@@ -59,10 +58,11 @@
 		var/catched = (fish in catched_fish)
 		var/entry_name = "◦[prefix_zeros_to_number(index, max_zeros)]◦ [catched ? full_capitalize(initial(fish.name)) : "??????" ]"
 		var/list/icon_dimensions = get_icon_dimensions(initial(fish.icon))
-		data["entries"][entry_name] = list(
+		data["entries"] += list(list(
+			"name" = entry_name,
 			"icon" = catched ? SSfishing.cached_fish_icons[fish] : SSfishing.cached_unknown_fish_icons[fish],
 			"height" = icon_dimensions["height"] * 2,
 			"width" = icon_dimensions["width"] * 2,
-		)
+		))
 		index++
 	return data

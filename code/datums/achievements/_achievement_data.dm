@@ -124,7 +124,7 @@
 				.["progresses"] += list(prog_data)
 		if(!score.track_high_scores || !length(score.high_scores))
 			continue
-		.["highscore"] += list(list("name" = score.name, "scores" = score.high_scores))
+		.["highscores"] += list(list("name" = score.name, "scores" = score.high_scores))
 
 /client/verb/checkachievements()
 	set category = "OOC"
