@@ -22,24 +22,51 @@ PROCESSING_SUBSYSTEM_DEF(fishing)
 
 	var/icon/questionmark = icon('icons/effects/random_spawners.dmi', "questionmark")
 	var/list/mark_dimension = get_icon_dimensions(questionmark)
-	for(var/obj/item/fish/prototype as anything in subtypesof(/obj/item/fish))
-		var/list/fish_dimensions = get_icon_dimensions(prototype::icon)
-		var/icon/fish_icon = icon(prototype::icon, prototype::icon_state, frame = 1, moving = FALSE)
-		cached_fish_icons[prototype] = icon2base64(fish_icon)
+	for(var/obj/item/fish/fish_type as anything in subtypesof(/obj/item/fish))
+		var/list/fish_dimensions = get_icon_dimensions(fish_type::icon)
+		var/icon/fish_icon = icon(fish_type::icon, fish_type::icon_state, frame = 1, moving = FALSE)
+		cached_fish_icons[fish_type] = icon2base64(fish_icon)
 		var/icon/unknown_icon = icon(fish_icon)
 		unknown_icon.Blend("#FFFFFF", ICON_SUBTRACT)
 		unknown_icon.Blend("#070707", ICON_ADD)
 		var/width = 1 + (fish_dimensions["width"] - mark_dimension["width"]) * 0.5
 		var/height = 1 + (fish_dimensions["height"] - mark_dimension["height"]) * 0.5
 		unknown_icon.Blend(questionmark, ICON_OVERLAY, x = width, y = height)
-		cached_unknown_fish_icons[prototype] = icon2base64(unknown_icon)
+		cached_unknown_fish_icons[fish_type] = icon2base64(unknown_icon)
 
-		var/obj/item/fish/fish = new prototype(null, FALSE)
+		var/obj/item/fish/fish = new fish_type(null, FALSE)
 		var/list/properties = list()
-		fish_properties[prototype] = properties
+		fish_properties[fish_type] = properties
 		properties[FISH_PROPERTIES_FAV_BAIT] = fish.favorite_bait.Copy()
 		properties[FISH_PROPERTIES_BAD_BAIT] = fish.disliked_bait.Copy()
 		properties[FISH_PROPERTIES_TRAITS] = fish.fish_traits.Copy()
+
+		var/list/evo_types = fish.evolution_types?.Copy()
+		properties[FISH_PROPERTIES_EVOLUTIONS] = evo_types
+		for(var/type in evo_types)
+			LAZYADD(GLOB.fishes_by_fish_evolution[type], fish_type)
+
+		var/beauty_score = "???"
+		switch(fish.beauty)
+			if(-INFINITY to FISH_BEAUTY_DISGUSTING)
+				beauty_score = "OH HELL NAW!"
+			if(FISH_BEAUTY_DISGUSTING to FISH_BEAUTY_UGLY)
+				beauty_score = "☆☆☆☆☆"
+			if(FISH_BEAUTY_UGLY to FISH_BEAUTY_BAD)
+				beauty_score = "★☆☆☆☆"
+			if(FISH_BEAUTY_BAD to FISH_BEAUTY_NULL)
+				beauty_score = "★★☆☆☆"
+			if(FISH_BEAUTY_NULL to FISH_BEAUTY_GENERIC)
+				beauty_score = "★★★☆☆"
+			if(FISH_BEAUTY_GENERIC to FISH_BEAUTY_GOOD)
+				beauty_score = "★★★★☆"
+			if(FISH_BEAUTY_GOOD to FISH_BEAUTY_GREAT)
+				beauty_score = "★★★★★"
+			if(FISH_BEAUTY_GREAT to INFINITY)
+				beauty_score = "★★★★★★"
+
+		properties[FISH_PROPERTIES_BEAUTY_SCORE] = beauty_score
+
 		qdel(fish)
 
 	catchable_fish = list()
