@@ -84,7 +84,9 @@
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
 	desc = "A working man's cap."
-	icon_state = "beret_flat"
+	icon = 'icons/map_icons/clothing.dmi'
+	icon_state = "/obj/item/clothing/head/flatcap"
+	post_init_icon_state = "beret_flat"
 	icon_preview = 'icons/obj/clothing/head/beret.dmi'
 	icon_state_preview = "beret_flat"
 	greyscale_config = /datum/greyscale_config/beret
@@ -186,7 +188,9 @@
 /obj/item/clothing/head/costume/santa/gags
 	name = "santa hat"
 	desc = "On the first day of christmas my employer gave to me!"
-	icon_state = "santa_hat"
+	icon = 'icons/map_icons/clothing.dmi'
+	icon_state = "/obj/item/clothing/head/costume/santa/gags"
+	post_init_icon_state = "santa_hat"
 	greyscale_colors = "#cc0000#f8f8f8"
 	greyscale_config = /datum/greyscale_config/santa_hat
 	greyscale_config_worn = /datum/greyscale_config/santa_hat/worn
@@ -195,7 +199,9 @@
 /obj/item/clothing/head/costume/jester
 	name = "jester hat"
 	desc = "A hat with bells, to add some merriness to the suit."
-	icon_state = "jester_map"
+	icon = 'icons/map_icons/clothing.dmi'
+	icon_state = "/obj/item/clothing/head/costume/jester"
+	post_init_icon_state = "jester_map"
 	greyscale_colors = "#00ff00#ff0000"
 	greyscale_config = /datum/greyscale_config/jester_hat
 	greyscale_config_worn = /datum/greyscale_config/jester_hat/worn
