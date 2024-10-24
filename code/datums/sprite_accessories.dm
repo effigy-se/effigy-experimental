@@ -1777,10 +1777,12 @@
 	icon = 'icons/mob/human/species/lizard/lizard_tails.dmi'
 	spine_key = SPINE_KEY_LIZARD
 
+/* EffigyEdit Remove - DNA Customization - Moved to code/__DEFINES/_effigy/sprite_accessories.dm
 /datum/sprite_accessory/tails/lizard/none
 	name = SPRITE_ACCESSORY_NONE
 	icon_state = "none"
 	natural_spawn = FALSE
+*/// EffigyEdit Remove Finish
 
 /datum/sprite_accessory/tails/lizard/smooth
 	name = "Smooth"

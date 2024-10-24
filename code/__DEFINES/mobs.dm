@@ -687,12 +687,16 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define MUTATIONS_LAYER 35
 /// Mutantrace features (tail when looking south) that must appear behind the body parts
 #define BODY_BEHIND_LAYER 34
+#define BODY_BEHIND_LAYER_SECONDARY 33.9 // EffigyEdit Add - DNA Customization
+#define BODY_BEHIND_LAYER_TERTIARY 33.8 // EffigyEdit Add - DNA Customization
 /// Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
 #define BODYPARTS_LOW_LAYER 33
 /// Layer for most bodyparts, appears above BODYPARTS_LOW_LAYER and below BODYPARTS_HIGH_LAYER
 #define BODYPARTS_LAYER 32
 /// Mutantrace features (snout, body markings) that must appear above the body parts
 #define BODY_ADJ_LAYER 31
+#define BODY_ADJ_LAYER_SECONDARY 30.9 // EffigyEdit Add - DNA Customization
+#define BODY_ADJ_LAYER_TERTIARY 30.8 // EffigyEdit Add - DNA Customization
 /// Underwear, undershirts, socks, eyes, lips(makeup)
 #define BODY_LAYER 30
 /// Mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
@@ -743,6 +747,8 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define HANDS_LAYER 7
 /// Body front layer. Usually used for mutant bodyparts that need to be in front of stuff (e.g. cat ears)
 #define BODY_FRONT_LAYER 6
+#define BODY_FRONT_LAYER_SECONDARY 5.9 // EffigyEdit Add - DNA Customization
+#define BODY_FRONT_LAYER_TERTIARY 5.8 // EffigyEdit Add - DNA Customization
 /// Special body layer that actually require to be above the hair (e.g. lifted welding goggles)
 #define ABOVE_BODY_FRONT_GLASSES_LAYER 5
 /// Special body layer for the rare cases where something on the head needs to be above everything else (e.g. flowers)
@@ -802,12 +808,28 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 ))
 
 //Bitflags for the layers a bodypart overlay can draw on (can be drawn on multiple layers)
+/* EffigyEdit Change - DNA Customization - Original
 /// Draws overlay on the BODY_FRONT_LAYER
 #define EXTERNAL_FRONT (1 << 0)
 /// Draws overlay on the BODY_ADJ_LAYER
 #define EXTERNAL_ADJACENT (1 << 1)
 /// Draws overlay on the BODY_BEHIND_LAYER
 #define EXTERNAL_BEHIND (1 << 2)
+*/
+// Front layers
+#define EXTERNAL_FRONT (1 << 0)
+#define EXTERNAL_FRONT_SECONDARY (1 << 1)
+#define EXTERNAL_FRONT_TERTIARY (1 << 2)
+// Adjacent layers
+#define EXTERNAL_ADJACENT (1 << 3)
+#define EXTERNAL_ADJACENT_SECONDARY (1 << 4)
+#define EXTERNAL_ADJACENT_TERTIARY (1 << 5)
+// Behind layers
+#define EXTERNAL_BEHIND (1 << 6)
+#define EXTERNAL_BEHIND_SECONDARY (1 << 7)
+#define EXTERNAL_BEHIND_TERTIARY (1 << 8)
+// EffigyEdit Change Finish
+
 /// Draws organ on all EXTERNAL layers
 #define ALL_EXTERNAL_OVERLAYS EXTERNAL_FRONT | EXTERNAL_ADJACENT | EXTERNAL_BEHIND
 

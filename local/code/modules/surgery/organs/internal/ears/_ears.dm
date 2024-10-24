@@ -1,0 +1,11 @@
+/datum/species/regenerate_organs(mob/living/carbon/target, datum/species/old_species, replace_current = TRUE, list/excluded_zones, visual_only = FALSE)
+	. = ..()
+	if(target.dna.features["ears"])
+		if(target.dna.features["ears"] != /datum/sprite_accessory/ears/none::name && target.dna.features["ears"] != /datum/sprite_accessory/blank::name)
+			var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/internal/ears)
+			replacement.Insert(target, special = TRUE, movement_flags = DELETE_IF_REPLACED)
+			return .
+	var/obj/item/organ/internal/ears/old_part = target.get_organ_slot(ORGAN_SLOT_EARS)
+	if(istype(old_part))
+		old_part.Remove(target, special = TRUE, movement_flags = DELETE_IF_REPLACED)
+		old_part.moveToNullspace()

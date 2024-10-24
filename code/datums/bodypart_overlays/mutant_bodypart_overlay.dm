@@ -71,11 +71,19 @@
 	var/gender = (limb?.limb_gender == FEMALE) ? "f" : "m"
 	var/list/icon_state_builder = list()
 	icon_state_builder += sprite_datum.gender_specific ? gender : "m" //Male is default because sprite accessories are so ancient they predate the concept of not hardcoding gender
-	icon_state_builder += feature_key
+	// EffigyEdit Change - DNA Customization - Try to use the sprite accessory key first, fallback to feature key
+	// icon_state_builder += feature_key
+	icon_state_builder += sprite_accessory_key || feature_key
+	// EffigyEdit Change Finish
 	icon_state_builder += get_base_icon_state()
 	icon_state_builder += mutant_bodyparts_layertext(image_layer)
 
 	var/finished_icon_state = icon_state_builder.Join("_")
+
+	/* EffigyEdit Add TODO - DNA Customization Debugging
+	if(icon_exists(sprite_datum.icon, finished_icon_state))
+		debug_effigy("Bodypart layer [span_green("found")] finished icon state [finished_icon_state]!", ICON)
+	*/// EffigyEdit Add Finish
 
 	var/mutable_appearance/appearance = mutable_appearance(sprite_datum.icon, finished_icon_state, layer = image_layer)
 

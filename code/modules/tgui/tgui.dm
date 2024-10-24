@@ -242,6 +242,11 @@
  * return list
  */
 /datum/tgui/proc/get_payload(custom_data, with_data, with_static_data)
+	// EffigyEdit Add TODO - TGUI Debug
+	if(isnull(user.client))
+		return
+	// EffigyEdit Add Finish
+
 	var/list/json_data = list()
 	json_data["config"] = list(
 		"title" = title,

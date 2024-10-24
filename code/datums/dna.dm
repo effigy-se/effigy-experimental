@@ -222,9 +222,12 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		L[DNA_ETHEREAL_COLOR_BLOCK] = sanitize_hexcolor(features["ethcolor"], include_crunch = FALSE)
 	if(features["lizard_markings"])
 		L[DNA_LIZARD_MARKINGS_BLOCK] = construct_block(SSaccessories.lizard_markings_list.Find(features["lizard_markings"]), length(SSaccessories.lizard_markings_list))
-	if(features["tail_cat"])
+	// EffigyEdit Change - DNA Extensions
+	if(features["tail_anthro"])
+		L[DNA_TAIL_BLOCK] = construct_block(SSaccessories.tails_list_anthro.Find(features["tail_anthro"]), length(SSaccessories.tails_list_anthro))
+	else if(features["tail_cat"])
 		L[DNA_TAIL_BLOCK] = construct_block(SSaccessories.tails_list_felinid.Find(features["tail_cat"]), length(SSaccessories.tails_list_felinid))
-	if(features["tail_lizard"])
+	// EffigyEdit Change Finish
 		L[DNA_LIZARD_TAIL_BLOCK] = construct_block(SSaccessories.tails_list_lizard.Find(features["tail_lizard"]), length(SSaccessories.tails_list_lizard))
 	if(features["snout"])
 		L[DNA_SNOUT_BLOCK] = construct_block(SSaccessories.snouts_list.Find(features["snout"]), length(SSaccessories.snouts_list))
@@ -232,6 +235,10 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		L[DNA_HORNS_BLOCK] = construct_block(SSaccessories.horns_list.Find(features["horns"]), length(SSaccessories.horns_list))
 	if(features["frills"])
 		L[DNA_FRILLS_BLOCK] = construct_block(SSaccessories.frills_list.Find(features["frills"]), length(SSaccessories.frills_list))
+	// EffigyEdit Add - DNA Extensions
+	else if(features["neck_fluff"])
+		L[DNA_FRILLS_BLOCK] = construct_block(SSaccessories.neck_fluff_list.Find(features["neck_fluff"]), length(SSaccessories.neck_fluff_list))
+	// EffigyEdit Add Finish
 	if(features["spines"])
 		L[DNA_SPINES_BLOCK] = construct_block(SSaccessories.spines_list.Find(features["spines"]), length(SSaccessories.spines_list))
 	if(features["ears"])
@@ -679,6 +686,10 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		dna.features["tail_cat"] = SSaccessories.tails_list_felinid[deconstruct_block(get_uni_feature_block(features, DNA_TAIL_BLOCK), length(SSaccessories.tails_list_felinid))]
 	if(dna.features["tail_lizard"])
 		dna.features["tail_lizard"] = SSaccessories.tails_list_lizard[deconstruct_block(get_uni_feature_block(features, DNA_LIZARD_TAIL_BLOCK), length(SSaccessories.tails_list_lizard))]
+	// EffigyEdit Add - DNA Extensions
+	if(dna.features["tail_anthro"])
+		dna.features["tail_anthro"] = SSaccessories.tails_list_anthro[deconstruct_block(get_uni_feature_block(features, DNA_TAIL_BLOCK), length(SSaccessories.tails_list_anthro))]
+	// EffigyEdit Add Finish
 	if(dna.features["ears"])
 		dna.features["ears"] = SSaccessories.ears_list[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list))]
 	if(dna.features["moth_wings"])
