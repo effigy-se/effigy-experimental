@@ -1,26 +1,68 @@
-/datum/preference/toggle/tail_anthro
-	savefile_key = "tail_anthro_enabled"
+/datum/preference/choiced/tail_variation
+	savefile_key = "tail_type"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_DEFAULT
 
-/datum/preference/toggle/tail_anthro/apply_to_human(mob/living/carbon/human/target, value)
-	if(value == FALSE)
-		target.dna.features["tail_anthro"] = /datum/sprite_accessory/tails/anthro/none::name
+/datum/preference/choiced/tail_variation/create_default_value()
+	return NO_TAIL
 
-/datum/preference/toggle/tail_anthro/create_default_value()
-	return FALSE
+/datum/preference/choiced/tail_variation/init_possible_values()
+	return list(NO_TAIL, LIZARD_TAIL, ANTHRO_TAIL)
+
+/datum/preference/choiced/tail_variation/is_accessible(datum/preferences/preferences)
+	. = ..()
+	return TRUE
+
+/datum/preference/choiced/tail_variation/apply_to_human(mob/living/carbon/human/target, chosen_variation)
+// Read by the regenerate_organs() proc to know what organ subtype to grant
+	target.dna.tail_type = chosen_variation
+// Make a beautiful switch list to support the choices
+// Luckily for all of us, this list wont get any bigger
+	switch(chosen_variation)
+		if(NO_TAIL)
+			target.dna.features["tail_cat"] = /datum/sprite_accessory/tails/felinid/cat/none::name
+			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
+			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
+			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
+			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
+		if(CAT_TAIL)
+			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
+			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
+			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
+			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
+		if(FISH_TAIL)
+			target.dna.features["tail_cat"] = /datum/sprite_accessory/tails/felinid/cat/none::name
+			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
+			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
+			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
+		if(LIZARD_TAIL)
+			target.dna.features["tail_cat"] = /datum/sprite_accessory/tails/felinid/cat/none::name
+			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
+			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
+			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
+		if(MONKEY_TAIL)
+			target.dna.features["tail_cat"] = /datum/sprite_accessory/tails/felinid/cat/none::name
+			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
+			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
+			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
+		else
+			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
+			target.dna.features["tail_cat"] = /datum/sprite_accessory/tails/felinid/cat/none::name
+			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
+			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
 
 /datum/preference/choiced/tail_anthro
 	savefile_key = "feature_tail_anthro"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_FEATURES
-	relevant_external_organ = /obj/item/organ/external/tail/anthro
+	category = PREFERENCE_CATEGORY_CLOTHING
+	relevant_external_organ = null
 	should_generate_icons = TRUE
 	main_feature_name = "Tail"
 
 /datum/preference/choiced/tail_anthro/apply_to_human(mob/living/carbon/human/target, value)
-	target.dna.features["tail_anthro"] = value
+	if(target.dna.tail_type == ANTHRO_TAIL)
+		target.dna.features["tail_other"] = value
 
 /datum/preference/choiced/tail_anthro/compile_constant_data()
 	var/list/data = ..()
@@ -40,8 +82,8 @@
 
 /datum/preference/choiced/tail_anthro/is_accessible(datum/preferences/preferences)
 	. = ..()
-	var/tail_anthro_enabled = preferences.read_preference(/datum/preference/toggle/tail_anthro)
-	if(tail_anthro_enabled)
+	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
+	if(chosen_variation == ANTHRO_TAIL)
 		return TRUE
 	return FALSE
 

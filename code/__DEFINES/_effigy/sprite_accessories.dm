@@ -33,6 +33,16 @@
 	name = SPRITE_ACCESSORY_NO_TAIL
 	icon_state = /datum/sprite_accessory/tails/none::icon_state
 
+/datum/sprite_accessory/tails/felinid/cat/none
+	icon = /datum/sprite_accessory/tails/none::icon
+	name = SPRITE_ACCESSORY_NO_TAIL
+	icon_state = /datum/sprite_accessory/tails/none::icon_state
+
+/datum/sprite_accessory/tails/fish/none
+	icon = /datum/sprite_accessory/tails/none::icon
+	name = SPRITE_ACCESSORY_NO_TAIL
+	icon_state = /datum/sprite_accessory/tails/none::icon_state
+
 /*
  *	Effigy DNA Extensions
  *
@@ -45,9 +55,9 @@
 	icon_state = "none"
 
 /datum/sprite_accessory/tails/anthro/none
-	icon = SPRITE_ACCESSORY_FALLBACK_ICON
-	name = SPRITE_ACCESSORY_NONE
-	icon_state = "none"
+	icon = /datum/sprite_accessory/tails/none::icon
+	name = SPRITE_ACCESSORY_NO_TAIL
+	icon_state = /datum/sprite_accessory/tails/none::icon_state
 
 /datum/sprite_accessory/horns/none
 	icon = SPRITE_ACCESSORY_FALLBACK_ICON

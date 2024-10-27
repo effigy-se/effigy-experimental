@@ -11,12 +11,18 @@
 /datum/preference/toggle/frills/create_default_value()
 	return FALSE
 
+/datum/preference/choiced/lizard_frills
+	category = PREFERENCE_CATEGORY_CLOTHING
+
 /datum/preference/choiced/lizard_frills/compile_constant_data()
 	var/list/data = ..()
 
 	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/frills::savefile_key
 
 	return data
+
+/datum/preference/choiced/lizard_frills/create_default_value()
+	return /datum/sprite_accessory/frills/none::name
 
 /datum/preference/choiced/lizard_frills/is_accessible(datum/preferences/preferences)
 	. = ..()

@@ -123,10 +123,13 @@ export const spines_tri: Feature<string[]> = {
   component: FeatureTriColorInput,
 };
 
-export const tail_anthro_enabled: FeatureToggle = {
-  name: '+ Anthro Tail',
+export const tail_type: FeatureChoiced = {
+  name: '+ Tail',
   category: 'GAMEPLAY',
-  component: CheckboxInput,
+  description: `
+    Choose which tail to add to your character, if any.
+  `,
+  component: FeatureDropdownInput,
 };
 
 export const feature_tail_anthro: FeatureChoiced = {

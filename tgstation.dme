@@ -6458,6 +6458,7 @@
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
 #include "local\code\controllers\subsystem\sprite_accessories.dm"
+#include "local\code\datums\dna.dm"
 #include "local\code\datums\bodypart_overlays\bodypart_overlay.dm"
 #include "local\code\datums\sprite_accessories\cosmetic_wings.dm"
 #include "local\code\datums\sprite_accessories\ears.dm"

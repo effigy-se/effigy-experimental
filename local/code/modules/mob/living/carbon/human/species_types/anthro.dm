@@ -8,7 +8,7 @@
 	//mutantears = /obj/item/organ/internal/ears/cat
 	mutant_organs = list(
 		/obj/item/organ/external/tail/anthro = "Eevee",
-		/obj/item/organ/internal/ears/cat = "Cat",
+		///obj/item/organ/internal/ears/cat = "Cat",
 		/obj/item/organ/external/horns = "None",
 		/obj/item/organ/external/frills = "None",
 		/obj/item/organ/external/snout = "Round",
