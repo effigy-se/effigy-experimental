@@ -52,6 +52,7 @@
 			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
 			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
 
+// Anthro
 /datum/preference/choiced/tail_anthro
 	savefile_key = "feature_tail_anthro"
 	savefile_identifier = PREFERENCE_CHARACTER
@@ -87,6 +88,30 @@
 		return TRUE
 	return FALSE
 
+// Lizard
+/datum/preference/choiced/lizard_tail
+	category = PREFERENCE_CATEGORY_CLOTHING
+	relevant_external_organ = null
+	should_generate_icons = TRUE
+	main_feature_name = "Tail"
+
+/datum/preference/choiced/lizard_tail/apply_to_human(mob/living/carbon/human/target, value)
+	target.dna.features["tail_lizard"] = value
+
+/datum/preference/choiced/lizard_tail/create_default_value()
+	return /datum/sprite_accessory/tails/lizard/none::name
+
+/datum/preference/choiced/lizard_tail/icon_for(value)
+	return generate_icon_with_tails_accessory(SSaccessories.tails_list_lizard[value])
+
+/datum/preference/choiced/lizard_tail/is_accessible(datum/preferences/preferences)
+	. = ..()
+	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
+	if(chosen_variation == LIZARD_TAIL)
+		return TRUE
+	return FALSE
+
+// Tail colors
 /datum/preference/tri_color/tail
 	priority = PREFERENCE_PRIORITY_BODY_TYPE
 	savefile_key = "tail_tri"
