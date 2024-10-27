@@ -18,6 +18,9 @@
 
 	return data
 
+/datum/preference/choiced/lizard_horns
+	category = PREFERENCE_CATEGORY_CLOTHING
+
 /datum/preference/choiced/lizard_horns/create_default_value()
 	return /datum/sprite_accessory/horns/none::name
 

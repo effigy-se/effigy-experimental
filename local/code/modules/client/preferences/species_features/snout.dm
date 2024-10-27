@@ -11,6 +11,9 @@
 /datum/preference/toggle/snout/create_default_value()
 	return FALSE
 
+/datum/preference/choiced/lizard_snout
+	category = PREFERENCE_CATEGORY_CLOTHING
+
 /datum/preference/choiced/lizard_snout/compile_constant_data()
 	var/list/data = ..()
 
