@@ -9,14 +9,14 @@
 	mutant_organs = list(
 		/obj/item/organ/external/tail/anthro = "Eevee",
 		///obj/item/organ/internal/ears/cat = "Cat",
-		/obj/item/organ/external/horns = "None",
-		/obj/item/organ/external/frills = "None",
-		/obj/item/organ/external/snout = "Round",
-		/obj/item/organ/external/spines = "None",
-		/obj/item/organ/external/neck_fluff = "None",
-		/obj/item/organ/external/wings/cosmetic = "None",
+		/obj/item/organ/horns = "None",
+		/obj/item/organ/frills = "None",
+		/obj/item/organ/snout = "Round",
+		/obj/item/organ/spines = "None",
+		/obj/item/organ/neck_fluff = "None",
+		/obj/item/organ/wings/cosmetic = "None",
 	)
-	mutanttongue = /obj/item/organ/internal/tongue/anthro
+	mutanttongue = /obj/item/organ/tongue/anthro
 	payday_modifier = 1.0
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	skinned_type = /obj/item/stack/sheet/animalhide/human
@@ -87,8 +87,8 @@
 	if(ishuman(carbon_being))
 		var/mob/living/carbon/human/target_human = carbon_being
 		if(target_human.dna.features["ears"] == "None")
-			mutantears = /obj/item/organ/internal/ears
+			mutantears = /obj/item/organ/ears
 		else
-			var/obj/item/organ/internal/ears/cat/ears = new(FALSE, target_human.dna.features["ears"])
+			var/obj/item/organ/ears/cat/ears = new(FALSE, target_human.dna.features["ears"])
 			ears.Insert(target_human, movement_flags = DELETE_IF_REPLACED)
 	return ..()

@@ -15,7 +15,7 @@
 	savefile_key = "feature_neck_fluff"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
-	relevant_external_organ = /obj/item/organ/external/neck_fluff
+	relevant_external_organ = /obj/item/organ/neck_fluff
 
 /datum/preference/choiced/neck_fluff/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["neck_fluff"] = value

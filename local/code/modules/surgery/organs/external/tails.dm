@@ -48,22 +48,22 @@
 		return
 
 	if(organ_holder.dna.features["tail_lizard"] != /datum/sprite_accessory/tails/lizard/none::name && organ_holder.dna.features["tail_lizard"] != /datum/sprite_accessory/blank::name)
-		var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/external/tail/lizard)
+		var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/tail/lizard)
 		replacement.Insert(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 		return .
 
 	else if(organ_holder.dna.features["tail_cat"] != /datum/sprite_accessory/tails/felinid/cat/none::name && organ_holder.dna.features["tail_cat"] != /datum/sprite_accessory/blank::name)
-		var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/external/tail/cat)
+		var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/tail/cat)
 		replacement.Insert(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 		return .
 
 	else if(organ_holder.dna.features["fish_tail"] != /datum/sprite_accessory/tails/fish/none::name && organ_holder.dna.features["fish_tail"] != /datum/sprite_accessory/blank::name)
-		var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/external/tail/fish)
+		var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/tail/fish)
 		replacement.Insert(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 		return .
 
 	else if(organ_holder.dna.features["tail_monkey"] != /datum/sprite_accessory/tails/monkey/none::name && organ_holder.dna.features["tail_monkey"] != /datum/sprite_accessory/blank::name)
-		var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/external/tail/monkey)
+		var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/tail/monkey)
 		replacement.Insert(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 		return .
 

@@ -15,7 +15,7 @@
 	savefile_key = "feature_moth_wings"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SUPPLEMENTAL_FEATURES
-	relevant_external_organ = /obj/item/organ/external/wings/moth
+	relevant_external_organ = /obj/item/organ/wings/moth
 	main_feature_name = "Wings"
 
 /datum/preference/choiced/moth_wings/apply_to_human(mob/living/carbon/human/target, value)

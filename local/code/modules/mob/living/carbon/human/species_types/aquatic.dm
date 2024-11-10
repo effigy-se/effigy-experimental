@@ -8,14 +8,14 @@
 	mutant_organs = list(
 		/obj/item/organ/external/tail/anthro = "Eevee",
 		///obj/item/organ/internal/ears/cat = "Cat",
-		/obj/item/organ/external/horns = "None",
-		/obj/item/organ/external/frills = "None",
-		/obj/item/organ/external/snout = "Round",
-		/obj/item/organ/external/spines = "None",
-		/obj/item/organ/external/neck_fluff = "None",
-		/obj/item/organ/external/wings/cosmetic = "None",
+		/obj/item/organ/horns = "None",
+		/obj/item/organ/frills = "None",
+		/obj/item/organ/snout = "Round",
+		/obj/item/organ/spines = "None",
+		/obj/item/organ/neck_fluff = "None",
+		/obj/item/organ/wings/cosmetic = "None",
 	)
-	mutanttongue = /obj/item/organ/internal/tongue/anthro
+	mutanttongue = /obj/item/organ/tongue/anthro
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	bodypart_overrides = list(

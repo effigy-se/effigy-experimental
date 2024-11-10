@@ -1,4 +1,4 @@
-/obj/item/organ/external/wings/cosmetic
+/obj/item/organ/wings/cosmetic
 	preference = "feature_cosmetic_wings"
 	bodypart_overlay = /datum/bodypart_overlay/mutant/wings/cosmetic
 
@@ -48,16 +48,16 @@
 
 	if(organ_holder.dna.features["moth_wings"])
 		if((organ_holder.dna.features["moth_wings"] != /datum/sprite_accessory/moth_wings/none::name && organ_holder.dna.features["moth_wings"] != /datum/sprite_accessory/blank::name))
-			var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/external/wings/moth)
+			var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/wings/moth)
 			replacement.Insert(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 			return .
 	if(organ_holder.dna.features["wings"])
 		if(organ_holder.dna.features["wings"] != /datum/sprite_accessory/cosmetic_wings/none::name && organ_holder.dna.features["wings"] != /datum/sprite_accessory/blank::name)
-			var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/external/wings/cosmetic)
+			var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/wings/cosmetic)
 			replacement.Insert(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 			return .
 
-	var/obj/item/organ/external/wings/old_part = organ_holder.get_organ_slot(ORGAN_SLOT_EXTERNAL_WINGS)
+	var/obj/item/organ/wings/old_part = organ_holder.get_organ_slot(ORGAN_SLOT_EXTERNAL_WINGS)
 	if(istype(old_part))
 		old_part.Remove(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 		old_part.moveToNullspace()
