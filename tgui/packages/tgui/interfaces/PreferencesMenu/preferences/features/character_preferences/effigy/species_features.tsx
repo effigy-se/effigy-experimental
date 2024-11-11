@@ -24,6 +24,17 @@ export const feature_cosmetic_wings: FeatureChoiced = {
   },
 };
 
+export const markings_enabled: FeatureToggle = {
+  name: '+ Markings',
+  category: 'GAMEPLAY',
+  component: CheckboxInput,
+};
+
+export const markings_tri: Feature<string[]> = {
+  name: 'Body Markings Color',
+  component: FeatureTriColorInput,
+};
+
 export const fluff_enabled: FeatureToggle = {
   name: '+ Fluff',
   category: 'GAMEPLAY',

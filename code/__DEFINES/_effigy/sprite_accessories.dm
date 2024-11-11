@@ -43,6 +43,11 @@
 	name = SPRITE_ACCESSORY_NO_TAIL
 	icon_state = /datum/sprite_accessory/tails/none::icon_state
 
+/datum/sprite_accessory/lizard_markings/none
+	icon = SPRITE_ACCESSORY_FALLBACK_ICON
+	name = "No Markings"
+	icon_state = "none"
+
 /*
  *	Effigy DNA Extensions
  *
