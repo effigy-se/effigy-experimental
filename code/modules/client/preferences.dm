@@ -393,10 +393,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /// Updates the currently displayed body
 /atom/movable/screen/map_view/char_preview/proc/update_body()
+	/* EffigyEdit Change - Character Previews
 	if (isnull(body))
 		create_body()
 	else
 		body.wipe_state()
+	*/
+	create_body()
+	// EffigyEdit Change End
 
 	appearance = preferences.render_new_preview_appearance(body, show_job_clothes)
 
