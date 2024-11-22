@@ -24,6 +24,12 @@ export const feature_cosmetic_wings: FeatureChoiced = {
   },
 };
 
+export const ear_type: FeatureChoiced = {
+  name: '+ Ears',
+  category: 'GAMEPLAY',
+  component: FeatureDropdownInput,
+};
+
 export const markings_enabled: FeatureToggle = {
   name: '+ Markings',
   category: 'GAMEPLAY',

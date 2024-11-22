@@ -83,6 +83,7 @@
 
 	return to_add
 
+/*
 /datum/species/anthro/on_species_gain(mob/living/carbon/carbon_being, datum/species/old_species, pref_load)
 	if(ishuman(carbon_being))
 		var/mob/living/carbon/human/target_human = carbon_being
@@ -92,3 +93,4 @@
 			var/obj/item/organ/ears/cat/ears = new(FALSE, target_human.dna.features["ears"])
 			ears.Insert(target_human, movement_flags = DELETE_IF_REPLACED)
 	return ..()
+*/

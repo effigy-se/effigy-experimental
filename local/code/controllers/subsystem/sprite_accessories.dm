@@ -1,6 +1,9 @@
 #define DEFAULT_SPRITE_LIST "default_sprites"
 
 /datum/controller/subsystem/accessories
+	var/list/ears_list_lizard
+	var/list/ears_list_anthro
+	var/list/ears_list_synthetic
 	var/list/tails_list_anthro
 	var/list/neck_fluff_list
 	var/list/cosmetic_wings_list
@@ -33,6 +36,8 @@
 
 /datum/controller/subsystem/accessories/setup_lists()
 	. = ..()
+	ears_list_lizard = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears/lizard)["default_sprites"] // FLAKY DEFINE: this should be using DEFAULT_SPRITE_LIST
+	ears_list_anthro = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears/anthro)["default_sprites"]
 	tails_list_anthro = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/anthro)[DEFAULT_SPRITE_LIST]
 	neck_fluff_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/neck_fluff)[DEFAULT_SPRITE_LIST]
 	cosmetic_wings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/cosmetic_wings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]

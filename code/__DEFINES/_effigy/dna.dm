@@ -9,3 +9,13 @@
 #define FISH_TAIL "fish"
 #define LIZARD_TAIL "lizard"
 #define MONKEY_TAIL "monkey"
+
+#define NO_EARS "none"
+#define ANTHRO_EARS "anthro"
+#define LIZARD_EARS "lizard"
+
+///	This list gets read by the dropdown pref when a player chooses what type of sprite accessory to access
+GLOBAL_LIST_INIT(mutant_ears_variations, list(
+	ANTHRO_EARS,
+	LIZARD_EARS,
+))

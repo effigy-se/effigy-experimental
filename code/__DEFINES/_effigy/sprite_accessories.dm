@@ -59,6 +59,11 @@
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = "none"
 
+/datum/sprite_accessory/ears/anthro/none
+	icon = 'local/icons/mob/mutant/sprite_accessories/ears.dmi'
+	name = SPRITE_ACCESSORY_NO_EARS
+	icon_state = "none"
+
 /datum/sprite_accessory/tails/anthro/none
 	icon = /datum/sprite_accessory/tails/none::icon
 	name = SPRITE_ACCESSORY_NO_TAIL
