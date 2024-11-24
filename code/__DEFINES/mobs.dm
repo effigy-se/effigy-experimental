@@ -716,6 +716,8 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define ID_CARD_LAYER 25
 /// Layer for bodyparts that should appear above every other bodypart - Currently only used for hands
 #define BODYPARTS_HIGH_LAYER 24
+/// EffigyEdit Addition - Hand Markings
+#define BODY_HAND_MARKINGS_LAYER 23.9
 /// Gloves layer
 #define GLOVES_LAYER 23
 /// Shoes layer
@@ -833,6 +835,8 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define EXTERNAL_BEHIND (1 << 6)
 #define EXTERNAL_BEHIND_SECONDARY (1 << 7)
 #define EXTERNAL_BEHIND_TERTIARY (1 << 8)
+// Misc layers
+#define EXTERNAL_HANDS (1 << 9)
 // EffigyEdit Change Finish
 
 /// Draws organ on all EXTERNAL layers

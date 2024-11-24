@@ -7,6 +7,7 @@
 	var/list/tails_list_anthro
 	var/list/neck_fluff_list
 	var/list/cosmetic_wings_list
+	var/list/body_markings
 	/*
 	var/list/bodypart_markings = list()
 	var/list/bodypart_markings_per_limb
@@ -41,5 +42,6 @@
 	tails_list_anthro = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/anthro)[DEFAULT_SPRITE_LIST]
 	neck_fluff_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/neck_fluff)[DEFAULT_SPRITE_LIST]
 	cosmetic_wings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/cosmetic_wings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
+	body_markings = init_sprite_accessory_subtypes(/datum/sprite_accessory/body_marking)[DEFAULT_SPRITE_LIST]
 
 #undef DEFAULT_SPRITE_LIST

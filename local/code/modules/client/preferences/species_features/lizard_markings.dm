@@ -1,36 +1,3 @@
-/datum/preference/toggle/markings
-	savefile_key = "markings_enabled"
-	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
-	priority = PREFERENCE_PRIORITY_DEFAULT
-
-/datum/preference/toggle/markings/apply_to_human(mob/living/carbon/human/target, value)
-	if(value == FALSE)
-		target.dna.features["lizard_markings"] = /datum/sprite_accessory/lizard_markings/none::name
-
-/datum/preference/toggle/markings/create_default_value()
-	return FALSE
-
-/datum/preference/choiced/lizard_body_markings
-	category = PREFERENCE_CATEGORY_CLOTHING
-
-/datum/preference/choiced/lizard_body_markings/create_default_value()
-	return /datum/sprite_accessory/lizard_markings/none::name
-
-/datum/preference/choiced/lizard_body_markings/compile_constant_data()
-	var/list/data = ..()
-
-	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/body_markings::savefile_key
-
-	return data
-
-/datum/preference/choiced/lizard_body_markings/is_accessible(datum/preferences/preferences)
-	. = ..()
-	var/has_markings = preferences.read_preference(/datum/preference/toggle/markings)
-	if(has_markings == TRUE)
-		return TRUE
-	return FALSE
-
 /// Standard marking colors!
 /datum/preference/tri_color/body_markings
 	priority = PREFERENCE_PRIORITY_BODY_TYPE
