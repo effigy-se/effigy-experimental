@@ -38,14 +38,14 @@
 	target.dna.features["markings_list"][marking_key] = value
 	target.dna.features["markings_list_zones"][marking_key] = body_zone
 
-/datum/preference/color/markings
+/datum/preference/color/zonal_markings
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_MARKINGS
 	relevant_head_flag = null
-	abstract_type = /datum/preference/color/markings
+	abstract_type = /datum/preference/color/zonal_markings
 	var/marking_key
 
-/datum/preference/color/markings/apply_to_human(mob/living/carbon/human/target, value)
+/datum/preference/color/zonal_markings/apply_to_human(mob/living/carbon/human/target, value)
 	if(!target.dna.features["markings_list_colors"])
 		var/list/markings_list = list()
 		LAZYSETLEN(markings_list, MARKING_LIST_LEN)
@@ -65,7 +65,7 @@
 	body_zone = HEAD
 	marking_key = MARKING_HEAD
 
-/datum/preference/color/markings/markings_head
+/datum/preference/color/zonal_markings/markings_head
 	savefile_key = "markings_head_color"
 	marking_key = MARKING_HEAD
 
@@ -80,11 +80,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/head) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_head2
+/datum/preference/color/zonal_markings/markings_head2
 	savefile_key = "markings_head_color2"
 	marking_key = MARKING_HEAD2
 
-/datum/preference/color/markings/markings_head2/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_head2/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/head) != SPRITE_ACCESSORY_NONE
@@ -100,11 +100,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/head2) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_head3
+/datum/preference/color/zonal_markings/markings_head3
 	savefile_key = "markings_head_color3"
 	marking_key = MARKING_HEAD3
 
-/datum/preference/color/markings/markings_head3/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_head3/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/head2) != SPRITE_ACCESSORY_NONE
@@ -117,7 +117,7 @@
 	body_zone = CHEST
 	marking_key = MARKING_CHEST
 
-/datum/preference/color/markings/markings_chest
+/datum/preference/color/zonal_markings/markings_chest
 	savefile_key = "markings_chest_color"
 	marking_key = MARKING_CHEST
 
@@ -132,11 +132,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/chest) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_chest2
+/datum/preference/color/zonal_markings/markings_chest2
 	savefile_key = "markings_chest_color2"
 	marking_key = MARKING_CHEST2
 
-/datum/preference/color/markings/markings_chest2/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_chest2/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/chest) != SPRITE_ACCESSORY_NONE
@@ -152,11 +152,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/chest2) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_chest3
+/datum/preference/color/zonal_markings/markings_chest3
 	savefile_key = "markings_chest_color3"
 	marking_key = MARKING_CHEST3
 
-/datum/preference/color/markings/markings_chest3/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_chest3/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/chest2) != SPRITE_ACCESSORY_NONE
@@ -169,7 +169,7 @@
 	body_zone = ARM_RIGHT
 	marking_key = MARKING_RARM
 
-/datum/preference/color/markings/markings_r_arm
+/datum/preference/color/zonal_markings/markings_r_arm
 	savefile_key = "markings_r_arm_color"
 	marking_key = MARKING_RARM
 
@@ -184,11 +184,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_arm) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_r_arm2
+/datum/preference/color/zonal_markings/markings_r_arm2
 	savefile_key = "markings_r_arm_color2"
 	marking_key = MARKING_RARM2
 
-/datum/preference/color/markings/markings_r_arm2/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_r_arm2/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_arm) != SPRITE_ACCESSORY_NONE
@@ -204,11 +204,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_arm2) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_r_arm3
+/datum/preference/color/zonal_markings/markings_r_arm3
 	savefile_key = "markings_r_arm_color3"
 	marking_key = MARKING_RARM3
 
-/datum/preference/color/markings/markings_r_arm3/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_r_arm3/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_arm2) != SPRITE_ACCESSORY_NONE
@@ -222,7 +222,7 @@
 	body_zone = ARM_LEFT
 	marking_key = MARKING_LARM
 
-/datum/preference/color/markings/markings_l_arm
+/datum/preference/color/zonal_markings/markings_l_arm
 	savefile_key = "markings_l_arm_color"
 	marking_key = MARKING_LARM
 
@@ -237,11 +237,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_arm) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_l_arm2
+/datum/preference/color/zonal_markings/markings_l_arm2
 	savefile_key = "markings_l_arm_color2"
 	marking_key = MARKING_LARM2
 
-/datum/preference/color/markings/markings_l_arm2/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_l_arm2/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_arm) != SPRITE_ACCESSORY_NONE
@@ -258,11 +258,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_arm2) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_l_arm3
+/datum/preference/color/zonal_markings/markings_l_arm3
 	savefile_key = "markings_l_arm_color3"
 	marking_key = MARKING_LARM3
 
-/datum/preference/color/markings/markings_l_arm3/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_l_arm3/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_arm2) != SPRITE_ACCESSORY_NONE
@@ -275,7 +275,7 @@
 	body_zone = HAND_LEFT
 	marking_key = MARKING_LHAND
 
-/datum/preference/color/markings/markings_l_hand
+/datum/preference/color/zonal_markings/markings_l_hand
 	savefile_key = "markings_l_hand_color"
 	marking_key = MARKING_LHAND
 
@@ -290,11 +290,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_hand) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_l_hand2
+/datum/preference/color/zonal_markings/markings_l_hand2
 	savefile_key = "markings_l_hand_color2"
 	marking_key = MARKING_LHAND2
 
-/datum/preference/color/markings/markings_l_hand2/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_l_hand2/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_hand) != SPRITE_ACCESSORY_NONE
@@ -310,11 +310,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_hand2) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_l_hand3
+/datum/preference/color/zonal_markings/markings_l_hand3
 	savefile_key = "markings_l_hand_color3"
 	marking_key = MARKING_LHAND3
 
-/datum/preference/color/markings/markings_l_hand3/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_l_hand3/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_hand2) != SPRITE_ACCESSORY_NONE
@@ -327,7 +327,7 @@
 	body_zone = HAND_RIGHT
 	marking_key = MARKING_RHAND
 
-/datum/preference/color/markings/markings_r_hand
+/datum/preference/color/zonal_markings/markings_r_hand
 	savefile_key = "markings_r_hand_color"
 	marking_key = MARKING_RHAND
 
@@ -342,11 +342,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_hand) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_r_hand2
+/datum/preference/color/zonal_markings/markings_r_hand2
 	savefile_key = "markings_r_hand_color2"
 	marking_key = MARKING_RHAND2
 
-/datum/preference/color/markings/markings_r_hand2/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_r_hand2/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_hand) != SPRITE_ACCESSORY_NONE
@@ -362,11 +362,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_hand2) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_r_hand3
+/datum/preference/color/zonal_markings/markings_r_hand3
 	savefile_key = "markings_r_hand_color3"
 	marking_key = MARKING_RHAND3
 
-/datum/preference/color/markings/markings_r_hand3/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_r_hand3/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_hand2) != SPRITE_ACCESSORY_NONE
@@ -379,7 +379,7 @@
 	body_zone = LEG_LEFT
 	marking_key = MARKING_LLEG
 
-/datum/preference/color/markings/markings_l_leg
+/datum/preference/color/zonal_markings/markings_l_leg
 	savefile_key = "markings_l_leg_color"
 	marking_key = MARKING_LLEG
 
@@ -394,11 +394,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_leg) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_l_leg2
+/datum/preference/color/zonal_markings/markings_l_leg2
 	savefile_key = "markings_l_leg_color2"
 	marking_key = MARKING_LLEG2
 
-/datum/preference/color/markings/markings_l_leg2/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_l_leg2/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_leg) != SPRITE_ACCESSORY_NONE
@@ -416,11 +416,11 @@
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_leg2) != SPRITE_ACCESSORY_NONE
 
 
-/datum/preference/color/markings/markings_l_leg3
+/datum/preference/color/zonal_markings/markings_l_leg3
 	savefile_key = "markings_l_leg_color3"
 	marking_key = MARKING_LLEG3
 
-/datum/preference/color/markings/markings_l_leg3/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_l_leg3/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/l_leg2) != SPRITE_ACCESSORY_NONE
@@ -433,7 +433,7 @@
 	body_zone = LEG_RIGHT
 	marking_key = MARKING_RLEG
 
-/datum/preference/color/markings/markings_r_leg
+/datum/preference/color/zonal_markings/markings_r_leg
 	savefile_key = "markings_r_leg_color"
 	marking_key = MARKING_RLEG
 
@@ -448,11 +448,11 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_leg) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_r_leg2
+/datum/preference/color/zonal_markings/markings_r_leg2
 	savefile_key = "markings_r_leg_color2"
 	marking_key = MARKING_RLEG2
 
-/datum/preference/color/markings/markings_r_leg2/is_accessible(datum/preferences/preferences)
+/datum/preference/color/zonal_markings/markings_r_leg2/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_leg) != SPRITE_ACCESSORY_NONE
@@ -468,6 +468,6 @@
 		return FALSE
 	return preferences.read_preference(/datum/preference/choiced/zonal_markings/r_leg2) != SPRITE_ACCESSORY_NONE
 
-/datum/preference/color/markings/markings_r_leg3
+/datum/preference/color/zonal_markings/markings_r_leg3
 	savefile_key = "markings_r_leg_color3"
 	marking_key = MARKING_RLEG3
