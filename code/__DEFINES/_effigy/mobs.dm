@@ -53,3 +53,7 @@ GLOBAL_LIST_EMPTY(species_blacklist_no_humanoid)
 #define MARKING_RLEG 22
 #define MARKING_RLEG2 23
 #define MARKING_RLEG3 24
+
+#define UNDERWEAR_HIDE_SOCKS (1<<0)
+#define UNDERWEAR_HIDE_SHIRT (1<<1)
+#define UNDERWEAR_HIDE_UNDIES (1<<2)
