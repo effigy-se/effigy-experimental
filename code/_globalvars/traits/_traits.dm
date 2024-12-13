@@ -728,6 +728,11 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_TURF_IGNORE_SLIPPERY" = TRAIT_TURF_IGNORE_SLIPPERY,
 		"TRAIT_TURF_IGNORE_SLOWDOWN" = TRAIT_TURF_IGNORE_SLOWDOWN,
 	),
+	// EffigyEdit Add Start - Additional Traits
+	/obj/structure/closet/crate/medical = list(
+		"TRAIT_CHARGING" = TRAIT_CHARGING,
+	),
+	// EffigyEdit Add Finish
 ))
 
 /// value -> trait name, list of ALL traits that exist in the game, used for any type of accessing.

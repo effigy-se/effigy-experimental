@@ -4,7 +4,7 @@
  * Yes, that is the entire reason these exist.
  */
 
-/obj/item/bodypart/head/robot/android
+/obj/item/bodypart/head/robot/synth
 	change_exempt_flags = NONE
 
 /obj/item/bodypart/chest/robot/android

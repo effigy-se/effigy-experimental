@@ -1,6 +1,6 @@
-/datum/species/android
-	name = "Android"
-	id = SPECIES_ANDROID
+/datum/species/android/synth
+	name = "Synth"
+	id = SPECIES_SYNTH
 	examine_limb_id = SPECIES_HUMAN
 	inherent_traits = list(
 		TRAIT_GENELESS,
@@ -39,7 +39,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 
 	bodypart_overrides = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/android,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/synth,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/android,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/robot/android,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/robot/android,
