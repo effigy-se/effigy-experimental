@@ -120,6 +120,8 @@
 	if(type != /obj/item/radio)
 		return
 	AddElement(/datum/element/slapcrafting, string_list(list(/datum/crafting_recipe/improv_explosive)))
+	if(prob(check_holidays(APRIL_FOOLS) ? 50 : 0.5)) // Extremely rare chance to replace a normal radio with a toy one, because it's funny
+		make_silly()
 
 /obj/item/radio/Destroy()
 	remove_radio_all(src) //Just to be sure
@@ -526,7 +528,7 @@
 /obj/item/radio/examine(mob/user)
 	. = ..()
 	if (frequency && in_range(src, user))
-		. += span_notice("It is set to broadcast over the [frequency/10] frequency.")
+		. += span_notice("It is set to broadcast over the [span_radio("[frequency/10]")] frequency.")
 	if (unscrewed)
 		. += span_notice("It can be attached and modified.")
 	else
@@ -577,6 +579,15 @@
 	emped = FALSE
 	set_on(TRUE)
 	return TRUE
+
+/obj/item/radio/proc/make_silly()
+	name = "\improper Little-Crew: Assistant's First Radio"
+	icon_state = "walkieian"
+	desc = "A Little-Crew branded toy radio in the shape of a lovable pet. After Little-Crew HQ was hit with a Donksoft Nuke, these have become collector's items!"
+	overlay_speaker_idle = null
+	overlay_speaker_active = null
+	overlay_mic_idle = null
+	overlay_mic_active = null
 
 ///////////////////////////////
 //////////Borg Radios//////////
@@ -705,5 +716,10 @@
 	icon_state = "microphone"
 	inhand_icon_state = "microphone"
 	canhear_range = 3
+
+// In case you want to map it in/spawn it for some reason
+/obj/item/radio/toy/Initialize(mapload)
+	. = ..()
+	make_silly()
 
 #undef FREQ_LISTENING

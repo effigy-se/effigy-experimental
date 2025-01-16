@@ -1,10 +1,5 @@
 import { filter, map, sortBy } from 'common/collections';
-import { exhaustiveCheck } from 'common/exhaustive';
-import { classes } from 'common/react';
-import { createSearch } from 'common/string';
 import { ReactNode, useState } from 'react';
-
-import { sendAct, useBackend } from '../../backend';
 import {
   Autofocus,
   Box,
@@ -14,7 +9,11 @@ import {
   LabeledList,
   Popper,
   Stack,
-} from '../../components';
+} from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
+
+import { sendAct, useBackend } from '../../backend';
 import { CharacterPreview } from '../common/CharacterPreview';
 import {
   createSetPreference,
@@ -24,7 +23,6 @@ import {
 } from './data';
 import { DeleteCharacterPopup } from './DeleteCharacterPopup';
 import { MultiNameInput, NameInput } from './names';
-import { PageButton } from './PageButton';
 import features from './preferences/features';
 import {
   FeatureChoicedServerData,
@@ -489,13 +487,6 @@ export const MainPage = (props: { openSpecies: () => void }) => {
   const [multiNameInputOpen, setMultiNameInputOpen] = useState(false);
   const [randomToggleEnabled] = useRandomToggleState();
 
-  enum PrefPage {
-    Character, // The generic character options
-    Markings, // Markings
-  }
-
-  const [currentPrefPage, setCurrentPrefPage] = useState(PrefPage.Character);
-
   return (
     <ServerPreferencesFetcher
       render={(serverData) => {
@@ -535,10 +526,6 @@ export const MainPage = (props: { openSpecies: () => void }) => {
           ...data.character_preferences.non_contextual,
         };
 
-        const MarkingPreferences = {
-          ...data.character_preferences.markings,
-        };
-
         if (randomBodyEnabled) {
           nonContextualPreferences['random_species'] =
             data.character_preferences.randomization['species'];
@@ -546,40 +533,6 @@ export const MainPage = (props: { openSpecies: () => void }) => {
           // We can't use random_name/is_accessible because the
           // server doesn't know whether the random toggle is on.
           delete nonContextualPreferences['random_name'];
-        }
-
-        let prefPageContents;
-        switch (currentPrefPage) {
-          case PrefPage.Character:
-            prefPageContents = (
-              <PreferenceList
-                act={act}
-                randomizations={getRandomization(
-                  contextualPreferences,
-                  serverData,
-                  randomBodyEnabled,
-                )}
-                preferences={contextualPreferences}
-                maxHeight="auto"
-              />
-            );
-            break;
-          case PrefPage.Markings:
-            prefPageContents = (
-              <PreferenceList
-                act={act}
-                randomizations={getRandomization(
-                  MarkingPreferences,
-                  serverData,
-                  randomBodyEnabled,
-                )}
-                preferences={MarkingPreferences}
-                maxHeight="auto"
-              />
-            );
-            break;
-          default:
-            exhaustiveCheck(currentPrefPage);
         }
 
         return (
@@ -686,31 +639,17 @@ export const MainPage = (props: { openSpecies: () => void }) => {
               </Stack.Item>
 
               <Stack.Item grow basis={0}>
-                {/* EffigyEdit Change Start */}
-                <Stack>
-                  <Stack.Item grow>
-                    <PageButton
-                      currentPage={currentPrefPage}
-                      page={PrefPage.Character}
-                      setPage={setCurrentPrefPage}
-                    >
-                      Character
-                    </PageButton>
-                  </Stack.Item>
-                  <Stack.Item grow>
-                    <PageButton
-                      currentPage={currentPrefPage}
-                      page={PrefPage.Markings}
-                      setPage={setCurrentPrefPage}
-                    >
-                      Markings
-                    </PageButton>
-                  </Stack.Item>
-                </Stack>
-
                 <Stack vertical fill>
-                  <Stack.Divider />
-                  {prefPageContents}
+                  <PreferenceList
+                    act={act}
+                    randomizations={getRandomization(
+                      contextualPreferences,
+                      serverData,
+                      randomBodyEnabled,
+                    )}
+                    preferences={contextualPreferences}
+                    maxHeight="auto"
+                  />
 
                   <PreferenceList
                     act={act}
@@ -738,7 +677,6 @@ export const MainPage = (props: { openSpecies: () => void }) => {
                   </PreferenceList>
                 </Stack>
               </Stack.Item>
-              {/* EffigyEdit Change End */}
             </Stack>
           </>
         );
