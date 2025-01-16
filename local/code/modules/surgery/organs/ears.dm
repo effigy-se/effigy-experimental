@@ -1,16 +1,13 @@
-/*
-/datum/species/regenerate_organs(mob/living/carbon/organ_holder, datum/species/old_species, replace_current = TRUE, list/excluded_zones, visual_only = FALSE)
+/datum/species/regenerate_organs(mob/living/carbon/target, datum/species/old_species, replace_current = TRUE, list/excluded_zones, visual_only = FALSE)
 	. = ..()
-	if(organ_holder.dna.features["ears"])
-		if(organ_holder.dna.features["ears"] != /datum/sprite_accessory/ears/none::name && organ_holder.dna.features["ears"] != /datum/sprite_accessory/blank::name)
-			var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/ears)
-			replacement.Insert(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
+	if(target.dna.features["ears"] && !(type in GLOB.species_blacklist_no_mutant))
+		if(target.dna.ear_type == NO_EARS)
 			return .
-	var/obj/item/organ/ears/old_part = organ_holder.get_organ_slot(ORGAN_SLOT_EARS)
-	if(istype(old_part))
-		old_part.Remove(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
-		old_part.moveToNullspace()
-*/
+		else if(target.dna.features["ears"] != /datum/sprite_accessory/ears/none::name && target.dna.features["ears"] != /datum/sprite_accessory/blank::name)
+			var/obj/item/organ/organ_path = text2path("/obj/item/organ/ears/[target.dna.ear_type]")
+			var/obj/item/organ/replacement = SSwardrobe.provide_type(organ_path)
+			replacement.Insert(target, special = TRUE, movement_flags = DELETE_IF_REPLACED)
+			return .
 
 /// Bunny ears
 //

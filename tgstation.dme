@@ -6574,6 +6574,7 @@
 #include "local\code\modules\mob\living\carbon\human\species_types\_species.dm"
 #include "local\code\modules\mob\living\carbon\human\species_types\anthro.dm"
 #include "local\code\modules\mob\living\carbon\human\species_types\aquatic.dm"
+#include "local\code\modules\mob\living\carbon\human\species_types\felinid.dm"
 #include "local\code\modules\mob\living\carbon\human\species_types\synth.dm"
 #include "local\code\modules\splash\splash_ng.dm"
 #include "local\code\modules\surgery\bodyparts\anthro.dm"

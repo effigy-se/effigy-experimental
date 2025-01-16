@@ -13,7 +13,8 @@
 	return NO_EARS
 
 /datum/preference/choiced/ear_variation/init_possible_values()
-	return list(NO_EARS) + (GLOB.mutant_ears_variations)
+	//return list(NO_EARS) + (GLOB.mutant_ears_variations)
+	return list(NO_EARS, ANTHRO_EARS)
 
 /datum/preference/choiced/ear_variation/is_accessible(datum/preferences/preferences)
 	. = ..()

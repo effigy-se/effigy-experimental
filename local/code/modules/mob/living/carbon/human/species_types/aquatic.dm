@@ -6,7 +6,7 @@
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutant_organs = list(
-		/obj/item/organ/external/tail/anthro = "Eevee",
+		/obj/item/organ/tail/anthro = "Eevee",
 		///obj/item/organ/internal/ears/cat = "Cat",
 		/obj/item/organ/horns = "None",
 		/obj/item/organ/frills = "None",

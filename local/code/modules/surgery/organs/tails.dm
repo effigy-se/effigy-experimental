@@ -33,7 +33,7 @@
 /datum/bodypart_overlay/mutant/tail/anthro/get_global_feature_list()
 	return SSaccessories.tails_list_anthro
 
-/obj/item/organ/external/tail/anthro
+/obj/item/organ/tail/anthro
 	name = "anthro tail"
 	desc = "debug nya"
 	preference = "feature_anthro_tail"
@@ -68,12 +68,12 @@
 		return .
 
 	else if((organ_holder.dna.features["tail_other"] != /datum/sprite_accessory/tails/lizard/none::name && organ_holder.dna.features["tail_other"] != /datum/sprite_accessory/blank::name) && (organ_holder.dna.tail_type != NO_TAIL))
-		var/obj/item/organ/organ_path = text2path("/obj/item/organ/external/tail/[organ_holder.dna.tail_type]")
+		var/obj/item/organ/organ_path = text2path("/obj/item/organ/tail/[organ_holder.dna.tail_type]")
 		var/obj/item/organ/replacement = SSwardrobe.provide_type(organ_path)
 		replacement.Insert(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 		return .
 
-	var/obj/item/organ/external/tail/old_tail = organ_holder.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
+	var/obj/item/organ/tail/old_tail = organ_holder.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
 	if(istype(old_tail))
 		old_tail.Remove(organ_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 		old_tail.moveToNullspace()
