@@ -6576,6 +6576,7 @@
 #include "local\code\modules\mob\living\carbon\human\species_types\aquatic.dm"
 #include "local\code\modules\mob\living\carbon\human\species_types\synth.dm"
 #include "local\code\modules\splash\splash_ng.dm"
+#include "local\code\modules\surgery\bodyparts\digitigrade.dm"
 #include "local\code\modules\surgery\bodyparts\mutant.dm"
 #include "local\code\modules\surgery\bodyparts\synth.dm"
 #include "local\code\modules\surgery\organs\_tongue.dm"
