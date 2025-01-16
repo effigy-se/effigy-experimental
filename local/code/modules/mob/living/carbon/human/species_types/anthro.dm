@@ -1,5 +1,5 @@
 /datum/species/anthro
-	name = "Anthropomorph"
+	name = "Anthromorph"
 	id = SPECIES_ANTHRO
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
@@ -21,12 +21,12 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	bodypart_overrides = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/mutant,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/mutant,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/mutant,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/mutant,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/mutant,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/mutant,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/anthro,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/anthro,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/anthro,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/anthro,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/anthro,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/anthro,
 	)
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 
