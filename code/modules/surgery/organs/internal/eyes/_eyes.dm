@@ -246,8 +246,18 @@
 	if(isnull(eye_icon_state))
 		return list()
 
+	// EffigyEdit Change - Character Preferences
+	/* Original:
 	var/mutable_appearance/eye_left = mutable_appearance('icons/mob/human/human_face.dmi', "[eye_icon_state]_l", -BODY_LAYER, parent)
 	var/mutable_appearance/eye_right = mutable_appearance('icons/mob/human/human_face.dmi', "[eye_icon_state]_r", -BODY_LAYER, parent)
+	*/
+	var/obj/item/bodypart/head/my_head = parent.get_bodypart(BODY_ZONE_HEAD)
+	var/eye_icon = my_head?.eyes_icon || 'icons/mob/human/human_face.dmi'
+
+	var/mutable_appearance/eye_left = mutable_appearance(eye_icon, "[eye_icon_state]_l", -eyes_layer)
+	var/mutable_appearance/eye_right = mutable_appearance(eye_icon, "[eye_icon_state]_r", -eyes_layer)
+	// EffigyEdit Change End
+
 	var/list/overlays = list(eye_left, eye_right)
 
 	var/obscured = parent.check_obscured_slots(TRUE)
@@ -255,7 +265,7 @@
 		overlays += emissive_appearance(eye_left.icon, eye_left.icon_state, parent, -BODY_LAYER, alpha = eye_left.alpha)
 		overlays += emissive_appearance(eye_right.icon, eye_right.icon_state, parent, -BODY_LAYER, alpha = eye_right.alpha)
 
-	var/obj/item/bodypart/head/my_head = parent.get_bodypart(BODY_ZONE_HEAD)
+	// var/obj/item/bodypart/head/my_head = parent.get_bodypart(BODY_ZONE_HEAD) // EffigyEdit Remove - Character Preferences
 
 	if(!my_head)
 		return overlays

@@ -114,6 +114,23 @@ export const underwear_color: Feature<string> = {
   component: FeatureColorInput,
 };
 
+// EffigyEdit Add - Character Preferences
+export const bra_color: Feature<string> = {
+  name: 'Bra color',
+  component: FeatureColorInput,
+};
+
+export const undershirt_color: Feature<string> = {
+  name: 'Undershirt color',
+  component: FeatureColorInput,
+};
+
+export const socks_color: Feature<string> = {
+  name: 'Socks color',
+  component: FeatureColorInput,
+};
+// EffigyEdit Add End
+
 export const feature_vampire_status: Feature<string> = {
   name: 'Vampire status',
   component: FeatureDropdownInput,

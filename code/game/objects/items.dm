@@ -42,6 +42,25 @@
 	///The config type to use for greyscaled belt overlays. Both this and greyscale_colors must be assigned to work.
 	var/greyscale_config_belt
 
+	// EffigyEdit Add - Character Preferences
+	// A list to take the place of GREYSCALE_CONFIG_WORN used for alternate bodyshapes (e.g, Digitigrade)
+	// Use bodyshape IDs as the keys to a greyscale config for the alternate version.
+	// For instance, greyscale_config_worn_bodyshapes[BODYSHAPE_DIGITIGRADE] = /datum/greyscale_config/trek/worn_digi
+	// If you include multiple variants, make sure to include the default value of the worn config as BODYSHAPE_HUMANOID.
+	// This helps avoid Fuckery(tm) with dyes, changelings, chameleons, etc.
+	var/list/greyscale_config_worn_bodyshapes
+	/// Used with the above to help switch between greyscale configs cleanly and avoid Fuckery(tm).
+	var/greyscale_config_last_bodyshape
+
+	/// Used with both greyscales and eventually icon_state variants to allow MOAR BODYSHAPES
+	// this needs to contain a list of supported numerical IDs and be ordered in TOP PRIORITY to BOTTOM PRIORITY (e.g, DigiFemme > Digi > Femme > Normal)
+	var/list/supported_bodyshapes
+	/// Used to pick alternative worn_icon files
+	// See above; sort by TOP PRIORITY to BOTTOM PRIORITY with the bodyshapes as keys (DIGI | FEMME > DIGI > FEMME > HUMANOID)
+	// !!KEYS IN THIS SHOULD BE IDENTICAL TO SUPPORTED_BODYSHAPES!!
+	var/list/bodyshape_icon_files
+	// EffigyEdit Add End
+
 	/* !!!!!!!!!!!!!!! IMPORTANT !!!!!!!!!!!!!!
 
 		IF YOU ADD MORE ICON CRAP TO THIS
@@ -415,12 +434,29 @@
 	. = ..()
 	if(!greyscale_colors)
 		return
+	// EffigyEdit Change - Character Preferences
+	/* Original:
 	if(greyscale_config_worn)
 		worn_icon = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
 	if(greyscale_config_inhand_left)
 		lefthand_file = SSgreyscale.GetColoredIconByType(greyscale_config_inhand_left, greyscale_colors)
 	if(greyscale_config_inhand_right)
 		righthand_file = SSgreyscale.GetColoredIconByType(greyscale_config_inhand_right, greyscale_colors)
+	*/
+	if(greyscale_config_worn_bodyshapes && greyscale_config_last_bodyshape)
+		if(greyscale_config_worn_bodyshapes[greyscale_config_last_bodyshape])
+			greyscale_config_worn = greyscale_config_worn_bodyshapes[greyscale_config_last_bodyshape]
+			bodyshape_icon_files["[greyscale_config_last_bodyshape]"] = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
+			worn_icon = bodyshape_icon_files["[greyscale_config_last_bodyshape]"]
+		else
+			worn_icon = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
+	else if(greyscale_config_worn)
+		worn_icon = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
+	if(greyscale_config_inhand_left)
+		lefthand_file = SSgreyscale.GetColoredIconByType(greyscale_config_inhand_left, greyscale_colors)
+	if(greyscale_config_inhand_right)
+		righthand_file = SSgreyscale.GetColoredIconByType(greyscale_config_inhand_right, greyscale_colors)
+	// EffigyEdit Change End
 
 /obj/item/verb/move_to_top()
 	set name = "Move To Top"
@@ -734,6 +770,14 @@
  * polling ghosts while it's just being equipped as a visual preview for a dummy.
  */
 /obj/item/proc/visual_equipped(mob/user, slot, initial = FALSE)
+	// EffigyEdit Add - Character Preferences
+	if(ishuman(user))
+		var/mob/living/carbon/human/human_user = user
+		for(var/shape in supported_bodyshapes)
+			if(human_user.bodyshape & shape)
+				greyscale_config_last_bodyshape = "[shape]"
+		update_greyscale()
+	// EffigyEdit Add End
 	return
 
 /**

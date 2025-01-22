@@ -112,6 +112,12 @@ DEFINE_BITFIELD(no_equip_flags, list(
 #define HIDEBELT (1<<14)
 ///hides antennae
 #define HIDEANTENNAE (1<<15)
+// EffigyEdit Add - Character Preferences
+///hides tail
+#define HIDETAIL (1<<16)
+///hides horns
+#define HIDEHORNS (1<<17)
+// EffigyEdit Add End
 
 //bitflags for clothing coverage - also used for limbs
 #define HEAD (1<<0)

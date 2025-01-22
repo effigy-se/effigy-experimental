@@ -86,7 +86,7 @@
 		context[SCREENTIP_CONTEXT_LMB] = "Repair suit sensors"
 		changed = TRUE
 
-	if(can_adjust && adjusted != DIGITIGRADE_STYLE)
+	if(can_adjust) // EffigyEdit Change - Character Preferences - Original: if(can_adjust && adjusted != DIGITIGRADE_STYLE)
 		context[SCREENTIP_CONTEXT_ALT_LMB] =  "Wear [adjusted == ALT_STYLE ? "normally" : "casually"]"
 		changed = TRUE
 
@@ -135,11 +135,15 @@
 	if(adjusted == ALT_STYLE)
 		adjust_to_normal()
 
+	// EffigyEdit Remove - Character Preferences
+	/*
 	if((supports_variations_flags & CLOTHING_DIGITIGRADE_VARIATION) && ishuman(user))
 		var/mob/living/carbon/human/wearer = user
 		if(wearer.bodyshape & BODYSHAPE_DIGITIGRADE)
 			adjusted = DIGITIGRADE_STYLE
 			update_appearance()
+	*/
+	// EffigyEdit Remove End
 
 /obj/item/clothing/under/generate_digitigrade_icons(icon/base_icon, greyscale_colors)
 	var/icon/legs = icon(SSgreyscale.GetColoredIconByType(/datum/greyscale_config/digitigrade, greyscale_colors), "jumpsuit_worn")
@@ -477,9 +481,12 @@
 /// Returns the new state
 /obj/item/clothing/under/proc/toggle_jumpsuit_adjust()
 	switch(adjusted)
+		// EffigyEdit Remove - Character Preferences
+		/*
 		if(DIGITIGRADE_STYLE)
 			return
-
+		*/
+		// EffigyEdit Remove End
 		if(NORMAL_STYLE)
 			adjust_to_alt()
 

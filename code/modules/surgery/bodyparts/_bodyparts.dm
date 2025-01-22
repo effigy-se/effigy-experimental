@@ -955,6 +955,13 @@
 
 	update_draw_color()
 
+	// EffigyEdit Add - Character Preferences
+	var/datum/species/owner_species = human_owner.dna.species
+
+	if(owner_species && owner_species.specific_alpha != 255)
+		alpha = owner_species.specific_alpha
+	// EffigyEdit Add End
+
 	// Recolors mutant overlays to match new mutant colors
 	for(var/datum/bodypart_overlay/mutant/overlay in bodypart_overlays)
 		overlay.inherit_color(src, force = TRUE)
@@ -1074,9 +1081,17 @@
 			huskify_image(thing_to_husk = aux)
 		draw_color = husk_color
 	if(draw_color)
+		// EffigyEdit Change - Character Preferences
+		/* Original:
 		limb.color = "[draw_color]"
 		if(aux_zone)
 			aux.color = "[draw_color]"
+		*/
+		var/limb_color = alpha != 255 ? "[draw_color][num2hex(alpha, 2)]" : "[draw_color]"
+		limb.color = limb_color
+		if(aux_zone)
+			aux.color = limb_color
+		// EffigyEdit Change End
 
 		//EMISSIVE CODE START
 		// For some reason this was applied as an overlay on the aux image and limb image before.

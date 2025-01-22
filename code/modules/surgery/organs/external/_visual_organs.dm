@@ -122,7 +122,7 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	dyable = TRUE
 
 /datum/bodypart_overlay/mutant/horns/can_draw_on_bodypart(mob/living/carbon/human/human)
-	if((human.head?.flags_inv & HIDEHAIR) || (human.wear_mask?.flags_inv & HIDEHAIR))
+	if((human.head?.flags_inv & HIDEHORNS) || (human.wear_mask?.flags_inv & HIDEHORNS)) // EffigyEdit Change - Character Preferences - Original: if((human.head?.flags_inv & HIDEHAIR) || (human.wear_mask?.flags_inv & HIDEHAIR))
 		return FALSE
 
 	return TRUE

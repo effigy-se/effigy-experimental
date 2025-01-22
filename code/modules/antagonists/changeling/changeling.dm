@@ -544,6 +544,12 @@
 	new_profile.underwear_color = target.underwear_color
 	new_profile.undershirt = target.undershirt
 	new_profile.socks = target.socks
+	// EffigyEdit Add - Character Preferences
+	new_profile.bra = target.bra
+	new_profile.undershirt_color = target.undershirt_color
+	new_profile.socks_color = target.socks_color
+	new_profile.bra_color = target.bra_color
+	// EffigyEdit Add End
 
 	// Grab skillchips they have
 	new_profile.skillchips = target.clone_skillchip_list(TRUE)
@@ -924,6 +930,16 @@
 	var/voice
 	/// The TTS filter of the profile filter
 	var/voice_filter = ""
+	// EffigyEdit Add - Character Preferences
+	/// The bra worn by the profile source
+	var/bra
+	/// The color of the undershirt used by the profile source
+	var/undershirt_color
+	/// The color of the socks used by the profile source
+	var/socks_color
+	/// The color of the bra used by the profile source
+	var/bra_color
+	// EffigyEdit Add End
 
 /datum/changeling_profile/Destroy()
 	qdel(dna)

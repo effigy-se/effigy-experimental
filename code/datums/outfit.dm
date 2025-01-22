@@ -227,6 +227,11 @@
 	if(socks)
 		user.socks = initial(socks.name)
 
+	// EffigyEdit Add - Character Preferences
+	if(bra)
+		user.bra = initial(bra.name)
+	// EffigyEdit Add End
+
 	if(accessory)
 		var/obj/item/clothing/under/U = user.w_uniform
 		if(U)

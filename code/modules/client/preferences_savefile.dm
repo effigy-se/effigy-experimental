@@ -310,6 +310,18 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Quirks
 	all_quirks = save_data?["all_quirks"]
 
+	// EffigyEdit Add - Character Preferences
+	var/list/save_languages = SANITIZE_LIST(save_data?["languages"])
+	for(var/language in save_languages)
+		var/value = save_languages[language]
+		save_languages -= language
+
+		if(istext(language))
+			language = _text2path(language)
+		save_languages[language] = value
+	languages = save_languages
+	// EffigyEdit Add End
+
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
 	if(needs_update >= 0)
@@ -319,6 +331,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	randomise = SANITIZE_LIST(randomise)
 	job_preferences = SANITIZE_LIST(job_preferences)
 	all_quirks = SANITIZE_LIST(all_quirks)
+	languages = SANITIZE_LIST(languages) // EffigyEdit Add - Character Preferences
 
 	//Validate job prefs
 	for(var/j in job_preferences)
@@ -327,6 +340,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	all_quirks = SSquirks.filter_invalid_quirks(SANITIZE_LIST(all_quirks))
 	validate_quirks()
+	sanitize_languages() // EffigyEdit Add - Character Preferences
 
 	return TRUE
 
@@ -367,6 +381,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Quirks
 	save_data["all_quirks"] = all_quirks
+
+	save_data["languages"] = languages // EffigyEdit Add - Character Preferences
 
 	return TRUE
 

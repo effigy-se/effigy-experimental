@@ -1159,7 +1159,8 @@
 	gender = MALE
 	use_static = TRUE
 
-
+// EffigyEdit Remove - Character Preferences
+/*
 //FEMALE UNDERWEAR
 /datum/sprite_accessory/underwear/female_bikini
 	name = "Bikini"
@@ -1261,6 +1262,8 @@
 	icon_state = "female_kinky"
 	gender = FEMALE
 	use_static = TRUE
+*/
+// EffigyEdit Remove End
 
 ////////////////////////////
 // Undershirt Definitions //
@@ -1457,6 +1460,8 @@
 	icon_state = "whiteshortsleeve"
 	gender = NEUTER
 
+// EffigyEdit Remove - Character Preferences
+/*
 /datum/sprite_accessory/undershirt/sports_bra
 	name = "Sports Bra"
 	icon_state = "sports_bra"
@@ -1466,6 +1471,8 @@
 	name = "Sports Bra (Alt)"
 	icon_state = "sports_bra_alt"
 	gender = NEUTER
+*/
+// EffigyEdit Remove End
 
 /datum/sprite_accessory/undershirt/blueshirtsport
 	name = "Sports Shirt (Blue)"
@@ -1777,10 +1784,14 @@
 	icon = 'icons/mob/human/species/lizard/lizard_tails.dmi'
 	spine_key = SPINE_KEY_LIZARD
 
+// EffigyEdit Remove - Character Preferences - Moved to code/~effigy_sprite_accessories.dm
+/*
 /datum/sprite_accessory/tails/lizard/none
 	name = SPRITE_ACCESSORY_NONE
 	icon_state = "none"
 	natural_spawn = FALSE
+*/
+// EffigyEdit Remove End
 
 /datum/sprite_accessory/tails/lizard/smooth
 	name = "Smooth"
@@ -1811,10 +1822,14 @@
 
 /datum/sprite_accessory/tails/monkey
 
+// EffigyEdit Remove - Character Preferences - Moved to code/~effigy_sprite_accessories.dm
+/*
 /datum/sprite_accessory/tails/monkey/none
 	name = SPRITE_ACCESSORY_NONE
 	icon_state = "none"
 	natural_spawn = FALSE
+*/
+// EffigyEdit Remove End
 
 /datum/sprite_accessory/tails/monkey/default
 	name = "Monkey"

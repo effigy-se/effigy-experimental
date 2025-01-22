@@ -26,6 +26,10 @@
 	var/undershirt_name
 	/// String for the socks we use.
 	var/socks_name
+	// EffigyEdit Add - Character Preferences
+	/// String for the bra we use.
+	var/bra_name
+	// EffigyEdit Add End
 	/// Static list of slot flags we have clothing slots for.
 	var/static/list/slot_flags = list(
 		ITEM_SLOT_HEAD,
@@ -110,6 +114,11 @@
 	var/datum/sprite_accessory/socks/socks = SSaccessories.socks_list[socks_name]
 	if(socks)
 		. += mutable_appearance(socks.icon, socks.icon_state, -BODY_LAYER)
+	// EffigyEdit Add - Character Preferences
+	var/datum/sprite_accessory/bra/bra = SSaccessories.bra_list[bra_name]
+	if(bra)
+		. += mutable_appearance(bra.icon, bra.icon_state, -BRA_SOCKS_LAYER)
+	// EffigyEdit Add End
 	for(var/slot_flag in worn_items)
 		var/obj/item/worn_item = worn_items[slot_flag]
 		if(!worn_item)
@@ -163,7 +172,7 @@
 	. = ..()
 	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
 		return
-	var/choice = tgui_input_list(user, "Underwear, Undershirt, or Socks?", "Changing", list("Underwear","Undershirt","Socks"))
+	var/choice = tgui_input_list(user, "Underwear, Bra, Undershirt, or Socks?", "Changing", list("Underwear", "Bra", "Undershirt", "Socks")) // EffigyEdit Change - Character Preferences - Original: tgui_input_list(user, "Underwear, Undershirt, or Socks?", "Changing", list("Underwear","Undershirt","Socks"))
 	if(!Adjacent(user))
 		return
 	switch(choice)
@@ -179,6 +188,12 @@
 			var/new_socks = tgui_input_list(user, "Select the mannequin's socks", "Changing", SSaccessories.socks_list)
 			if(new_socks)
 				socks_name = new_socks
+		// EffigyEdit Add - Character Preferences
+		if("Bra")
+			var/new_bra = tgui_input_list(user, "Select the mannequin's bra", "Changing", SSaccessories.bra_list)
+			if(new_bra)
+				bra_name = new_bra
+		// EffigyEdit Add End
 	update_appearance()
 
 /obj/structure/mannequin/wood

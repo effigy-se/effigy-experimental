@@ -1,0 +1,16 @@
+#define UNDERWEAR_HIDE_SOCKS (1<<0)
+#define UNDERWEAR_HIDE_SHIRT (1<<1)
+#define UNDERWEAR_HIDE_UNDIES (1<<2)
+#define UNDERWEAR_HIDE_BRA (1<<3)
+#define UNDERWEAR_HIDE_ALL (UNDERWEAR_HIDE_SOCKS | UNDERWEAR_HIDE_SHIRT | UNDERWEAR_HIDE_UNDIES | UNDERWEAR_HIDE_BRA)
+
+#define ORGAN_SLOT_EXTERNAL_FLUFF "fluff"
+
+// Defines for processing reagents
+/// Only processes reagents with "ORGANIC" or "ORGANIC | SYNTHETIC"
+#define PROCESS_ORGANIC 1
+/// Only processes reagents with "SYNTHETIC" or "ORGANIC | SYNTHETIC"
+#define PROCESS_SYNTHETIC 2
+
+#define REAGENT_ORGANIC 1
+#define REAGENT_SYNTHETIC 2

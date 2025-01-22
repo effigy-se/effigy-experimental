@@ -41,6 +41,12 @@
 			receiver.add_mood_event("tail_regained", /datum/mood_event/tail_regained_wrong)
 
 /obj/item/organ/tail/on_bodypart_insert(obj/item/bodypart/bodypart)
+	// EffigyEdit Add - Character Preferences
+	if(bodypart == null)
+		return ..()
+	if(bodypart.owner == null)
+		return ..()
+	// EffigyEdit Add End
 	var/obj/item/organ/spines/our_spines = bodypart.owner.get_organ_slot(ORGAN_SLOT_EXTERNAL_SPINES)
 	if(our_spines)
 		try_insert_tail_spines(bodypart)

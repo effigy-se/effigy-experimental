@@ -126,6 +126,13 @@
 	bodypart.contents |= src
 	bodypart_owner = bodypart
 
+	// EffigyEdit Add - Character Preferences
+	if(external_bodytypes && istype(limb_owner))
+		limb_owner.synchronize_bodytypes()
+	if(external_bodyshapes && istype(limb_owner))
+		limb_owner.synchronize_bodyshapes()
+	// EffigyEdit Add End
+
 	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(forced_removal))
 
 	// Apply unique side-effects. Return value does not matter.

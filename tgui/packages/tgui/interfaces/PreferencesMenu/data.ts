@@ -95,6 +95,14 @@ export type QuirkInfo = {
   points_enabled: boolean;
 };
 
+// EffigyEdit Add - Character Preferences
+export type Language = {
+  description: string;
+  name: string;
+  icon: string;
+};
+// EffigyEdit Add End
+
 export enum RandomSetting {
   AntagOnly = 1,
   Disabled = 2,

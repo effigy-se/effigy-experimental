@@ -33,12 +33,25 @@
 	allowed_configs += "[config]"
 	if(isitem(target))
 		var/obj/item/item = target
+		// EffigyEdit Change - Character Preferences
+		/* Original:
 		if(initial(item.greyscale_config_worn))
 			allowed_configs += "[initial(item.greyscale_config_worn)]"
 		if(initial(item.greyscale_config_inhand_left))
 			allowed_configs += "[initial(item.greyscale_config_inhand_left)]"
 		if(initial(item.greyscale_config_inhand_right))
 			allowed_configs += "[initial(item.greyscale_config_inhand_right)]"
+		*/
+		if(initial(item.greyscale_config_worn_bodyshapes))
+			for(var/bconfig in item.greyscale_config_worn_bodyshapes)
+				allowed_configs += "[initial(item.greyscale_config_worn_bodyshapes[bconfig])]"
+		else if(initial(item.greyscale_config_worn))
+			allowed_configs += "[initial(item.greyscale_config_worn)]"
+		if(initial(item.greyscale_config_inhand_left))
+			allowed_configs += "[initial(item.greyscale_config_inhand_left)]"
+		if(initial(item.greyscale_config_inhand_right))
+			allowed_configs += "[initial(item.greyscale_config_inhand_right)]"
+		// EffigyEdit Change End
 
 	var/datum/greyscale_modify_menu/spray_paint/menu = new(
 		target, user, allowed_configs, CALLBACK(src, PROC_REF(recolor), user, can, target),

@@ -702,26 +702,49 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define MUTATIONS_LAYER 35
 /// Mutantrace features (tail when looking south) that must appear behind the body parts
 #define BODY_BEHIND_LAYER 34
+// EffigyEdit Add - Character Preferences
+#define BODY_BEHIND_LAYER_2 33.9
+#define BODY_BEHIND_LAYER_3 33.8
+// EffigyEdit Add End
 /// Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
 #define BODYPARTS_LOW_LAYER 33
 /// Layer for most bodyparts, appears above BODYPARTS_LOW_LAYER and below BODYPARTS_HIGH_LAYER
 #define BODYPARTS_LAYER 32
 /// Mutantrace features (snout, body markings) that must appear above the body parts
 #define BODY_ADJ_LAYER 31
+// EffigyEdit Add - Character Preferences
+#define BODY_ADJ_LAYER_2 30.9
+#define BODY_ADJ_LAYER_3 30.8
+// EffigyEdit Add End
 /// Underwear, undershirts, socks, eyes, lips(makeup)
 #define BODY_LAYER 30
 /// Mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
 #define FRONT_MUTATIONS_LAYER 29
 /// Damage indicators (cuts and burns)
 #define DAMAGE_LAYER 28
+// EffigyEdit Add - Character Preferences
+/// Just below clothing layer
+#define UNDER_UNIFORM_LAYER 27.5
+/// Bra and socks
+#define BRA_SOCKS_LAYER 27.2
+/// Underwear and undershirt
+#define UNDERWEAR_UNDERSHIRT 27.1
+// EffigyEdit Add End
 /// Jumpsuit clothing layer
 #define UNIFORM_LAYER 27
+// EffigyEdit Add - Character Preferences
+#define BANDAGE_LAYER 26.5
+// EffigyEdit Add End
 /// ID card layer
 #define ID_LAYER 26
 /// ID card layer (might be deprecated)
 #define ID_CARD_LAYER 25
 /// Layer for bodyparts that should appear above every other bodypart - Currently only used for hands
 #define BODYPARTS_HIGH_LAYER 24
+// EffigyEdit Add - Character Preferences
+/// Layer for hands
+#define BODY_HAND_LAYER 23.9
+// EffigyEdit Add End
 /// Gloves layer
 #define GLOVES_LAYER 23
 /// Shoes layer
@@ -758,6 +781,10 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define HANDS_LAYER 7
 /// Body front layer. Usually used for mutant bodyparts that need to be in front of stuff (e.g. cat ears)
 #define BODY_FRONT_LAYER 6
+// EffigyEdit Add - Character Preferences
+#define BODY_FRONT_LAYER_2 5.9
+#define BODY_FRONT_LAYER_3 5.8
+// EffigyEdit Add End
 /// Special body layer that actually require to be above the hair (e.g. lifted welding goggles)
 #define ABOVE_BODY_FRONT_GLASSES_LAYER 5
 /// Special body layer for the rare cases where something on the head needs to be above everything else (e.g. flowers)
@@ -817,12 +844,36 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 ))
 
 //Bitflags for the layers a bodypart overlay can draw on (can be drawn on multiple layers)
+// EffigyEdit Change - Character Preferences
+/* Original:
 /// Draws overlay on the BODY_FRONT_LAYER
 #define EXTERNAL_FRONT (1 << 0)
 /// Draws overlay on the BODY_ADJ_LAYER
 #define EXTERNAL_ADJACENT (1 << 1)
 /// Draws overlay on the BODY_BEHIND_LAYER
 #define EXTERNAL_BEHIND (1 << 2)
+*/
+/// Draws primary overlay on the BODY_FRONT_LAYER
+#define EXTERNAL_FRONT (1 << 0)
+/// Draws secondary overlay on the BODY_FRONT_LAYER
+#define EXTERNAL_FRONT_2 (1 << 1)
+/// Draws tertiary overlay on the BODY_FRONT_LAYER
+#define EXTERNAL_FRONT_3 (1 << 2)
+/// Draws primary overlay on the BODY_ADJ_LAYER
+#define EXTERNAL_ADJACENT (1 << 3)
+/// Draws secondary overlay on the BODY_ADJ_LAYER
+#define EXTERNAL_ADJACENT_2 (1 << 4)
+/// Draws tertiary overlay on the BODY_ADJ_LAYER
+#define EXTERNAL_ADJACENT_3 (1 << 5)
+/// Draws primary overlay on the BODY_BEHIND_LAYER
+#define EXTERNAL_BEHIND (1 << 6)
+/// Draws secondary overlay on the BODY_BEHIND_LAYER
+#define EXTERNAL_BEHIND_2 (1 << 7)
+/// Draws tertiary overlay on the BODY_BEHIND_LAYER
+#define EXTERNAL_BEHIND_3 (1 << 8)
+/// Draws hands overlay on the HANDS_LAYER
+#define EXTERNAL_HAND (1 << 9)
+// EffigyEdit Change End
 /// Draws organ on all EXTERNAL layers
 #define ALL_EXTERNAL_OVERLAYS EXTERNAL_FRONT | EXTERNAL_ADJACENT | EXTERNAL_BEHIND
 

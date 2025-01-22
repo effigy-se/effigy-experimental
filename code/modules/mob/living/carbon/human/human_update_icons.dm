@@ -108,11 +108,19 @@ There are several things that need to be remembered:
 		var/handled_by_bodyshape = TRUE
 		var/icon_file
 		var/woman
+
 		//BEGIN SPECIES HANDLING
+		// EffigyEdit Change - Character Preferences
+		/* Original:
 		if((bodyshape & BODYSHAPE_DIGITIGRADE) && (uniform.supports_variations_flags & CLOTHING_DIGITIGRADE_VARIATION))
 			icon_file = DIGITIGRADE_UNIFORM_FILE
+		*/
+		for(var/shape in uniform.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = uniform.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Change End
 		//Female sprites have lower priority than digitigrade sprites
-		else if(dna.species.sexes && (bodyshape & BODYSHAPE_HUMANOID) && physique == FEMALE && !(uniform.female_sprite_flags & NO_FEMALE_UNIFORM)) //Agggggggghhhhh
+		if(dna.species.sexes && (bodyshape & BODYSHAPE_HUMANOID) && physique == FEMALE && !(uniform.female_sprite_flags & NO_FEMALE_UNIFORM)) // EffigyEdit Change - Character Preferences Original: else if(dna.species.sexes && (bodyshape & BODYSHAPE_HUMANOID) && physique == FEMALE && !(uniform.female_sprite_flags & NO_FEMALE_UNIFORM))
 			woman = TRUE
 
 		if(!icon_exists(icon_file, RESOLVE_ICON_STATE(uniform)))
@@ -127,6 +135,7 @@ There are several things that need to be remembered:
 			female_uniform = woman ? uniform.female_sprite_flags : null,
 			override_state = target_overlay,
 			override_file = handled_by_bodyshape ? icon_file : null,
+			humie = src, // EffigyEdit Add - Character Preferences
 		)
 
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
@@ -154,7 +163,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/id.dmi'
 
-		id_overlay = wear_id.build_worn_icon(default_layer = ID_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in wear_id.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = wear_id.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		id_overlay = wear_id.build_worn_icon(default_layer = ID_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: id_overlay = wear_id.build_worn_icon(default_layer = ID_LAYER, default_icon_file = icon_file)
 
 		if(!id_overlay)
 			return
@@ -199,7 +214,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/hands.dmi'
 
-		var/mutable_appearance/gloves_overlay = gloves.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in gloves.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = gloves.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/gloves_overlay = gloves.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: gloves.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file)
 
 		var/feature_y_offset = 0
 		//needs to be typed, hand_bodyparts can have nulls
@@ -250,7 +271,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/eyes.dmi'
 
-		var/mutable_appearance/glasses_overlay = glasses.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in glasses.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = glasses.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/glasses_overlay = glasses.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: glasses.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_file)
 		my_head.worn_glasses_offset?.apply_offset(glasses_overlay)
 		overlays_standing[GLASSES_LAYER] = glasses_overlay
 	apply_overlay(GLASSES_LAYER)
@@ -279,7 +306,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/ears.dmi'
 
-		var/mutable_appearance/ears_overlay = ears.build_worn_icon(default_layer = EARS_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in ears.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = ears.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/ears_overlay = ears.build_worn_icon(default_layer = EARS_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: ears.build_worn_icon(default_layer = EARS_LAYER, default_icon_file = icon_file)
 		my_head.worn_ears_offset?.apply_offset(ears_overlay)
 		overlays_standing[EARS_LAYER] = ears_overlay
 	apply_overlay(EARS_LAYER)
@@ -303,7 +336,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/neck.dmi'
 
-		var/mutable_appearance/neck_overlay = worn_item.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in worn_item.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = worn_item.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/neck_overlay = worn_item.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: worn_item.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file)
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
 		my_chest?.worn_belt_offset?.apply_offset(neck_overlay)
 		overlays_standing[NECK_LAYER] = neck_overlay
@@ -332,7 +371,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = DEFAULT_SHOES_FILE
 
-		var/mutable_appearance/shoes_overlay = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in shoes.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = shoes.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/shoes_overlay = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file)
 		if(!shoes_overlay)
 			return
 
@@ -368,7 +413,15 @@ There are several things that need to be remembered:
 		if(check_obscured_slots(transparent_protection = TRUE) & ITEM_SLOT_SUITSTORE)
 			return
 
-		var/mutable_appearance/s_store_overlay = worn_item.build_worn_icon(default_layer = SUIT_STORE_LAYER, default_icon_file = 'icons/mob/clothing/belt_mirror.dmi')
+		// EffigyEdit Add - Character Preferences
+		var/icon_file = 'icons/mob/clothing/belt_mirror.dmi'
+
+		for(var/shape in worn_item.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = worn_item.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/s_store_overlay = worn_item.build_worn_icon(default_layer = SUIT_STORE_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: worn_item.build_worn_icon(default_layer = SUIT_STORE_LAYER, default_icon_file = 'icons/mob/clothing/belt_mirror.dmi')
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
 		my_chest?.worn_suit_storage_offset?.apply_offset(s_store_overlay)
 		overlays_standing[SUIT_STORE_LAYER] = s_store_overlay
@@ -392,7 +445,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/head/default.dmi'
 
-		var/mutable_appearance/head_overlay = head.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in head.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = head.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/head_overlay = head.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: head.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file)
 		var/obj/item/bodypart/head/my_head = get_bodypart(BODY_ZONE_HEAD)
 		my_head?.worn_head_offset?.apply_offset(head_overlay)
 		overlays_standing[HEAD_LAYER] = head_overlay
@@ -419,7 +478,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/belt.dmi'
 
-		var/mutable_appearance/belt_overlay = belt.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in belt.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = belt.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/belt_overlay = belt.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: belt.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file)
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
 		my_chest?.worn_belt_offset?.apply_offset(belt_overlay)
 		overlays_standing[BELT_LAYER] = belt_overlay
@@ -442,7 +507,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = DEFAULT_SUIT_FILE
 
-		var/mutable_appearance/suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in wear_suit.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = wear_suit.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file)
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
 		my_chest?.worn_suit_offset?.apply_offset(suit_overlay)
 		overlays_standing[SUIT_LAYER] = suit_overlay
@@ -494,7 +565,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/mask.dmi'
 
-		var/mutable_appearance/mask_overlay = wear_mask.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in wear_mask.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = wear_mask.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		var/mutable_appearance/mask_overlay = wear_mask.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: wear_mask.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file)
 		my_head.worn_mask_offset?.apply_offset(mask_overlay)
 		overlays_standing[FACEMASK_LAYER] = mask_overlay
 
@@ -518,7 +595,13 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/back.dmi'
 
-		back_overlay = back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file)
+		// EffigyEdit Add - Character Preferences
+		for(var/shape in worn_item.supported_bodyshapes)
+			if(bodyshape & shape)
+				icon_file = worn_item.bodyshape_icon_files["[shape]"]
+		// EffigyEdit Add End
+
+		back_overlay = back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, humie = src) // EffigyEdit Change - Character Preferences - Original: back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file)
 
 		if(!back_overlay)
 			return
@@ -789,12 +872,20 @@ generate/load female uniform sprites matching all previously decided variables
 	female_uniform = NO_FEMALE_UNIFORM,
 	override_state = null,
 	override_file = null,
+	mob/living/carbon/human/humie = null, // EffigyEdit Add - Character Preferences
 )
 
 	//Find a valid icon_state from variables+arguments
 	var/t_state = override_state || (isinhands ? inhand_icon_state : worn_icon_state) || icon_state
+	// EffigyEdit Add - Character Preferences
+	var/chosen_worn_icon = worn_icon
+	if(ishuman(humie))
+		for(var/shape in supported_bodyshapes)
+			if(humie.bodyshape & shape)
+				chosen_worn_icon = bodyshape_icon_files["[shape]"]
+	// EffigyEdit Add End
 	//Find a valid icon file from variables+arguments
-	var/file2use = override_file || (isinhands ? null : worn_icon) || default_icon_file
+	var/file2use = override_file || (isinhands ? null : chosen_worn_icon) || default_icon_file // EffigyEdit Change - Character Preferences - Original: override_file || (isinhands ? null : worn_icon) || default_icon_file
 	//Find a valid layer from variables+arguments
 	var/layer2use = alternate_worn_layer || default_layer
 
@@ -803,6 +894,8 @@ generate/load female uniform sprites matching all previously decided variables
 
 	var/mutable_appearance/standing // this is the actual resulting MA
 	var/icon/building_icon // used to construct an icon across multiple procs before converting it to MA
+	// EffigyEdit Remove - Character Preferences
+	/*
 	if(female_uniform)
 		building_icon = wear_female_version(
 			icon_state = t_state,
@@ -810,6 +903,8 @@ generate/load female uniform sprites matching all previously decided variables
 			type = female_uniform,
 			greyscale_colors = greyscale_colors,
 		)
+	*/
+	// EffigyEdit Remove End
 	if(!isinhands && is_digi && (supports_variations_flags & CLOTHING_DIGITIGRADE_MASK))
 		building_icon = wear_digi_version(
 			base_icon = building_icon || icon(file2use, t_state),
@@ -817,6 +912,16 @@ generate/load female uniform sprites matching all previously decided variables
 			key = "[t_state]-[file2use]-[female_uniform]",
 			greyscale_colors = greyscale_colors,
 		)
+	// EffigyEdit Add - Character Preferences
+	// Use building_icon to allow for auto-generated digi sprites
+	if(female_uniform)
+		building_icon = wear_female_version(
+			icon_state = t_state,
+			icon = istype(building_icon) ? building_icon : file2use,
+			type = female_uniform,
+			greyscale_colors = greyscale_colors,
+		)
+	// EffigyEdit Add End
 	if(building_icon)
 		standing = mutable_appearance(building_icon, layer = -layer2use)
 

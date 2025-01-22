@@ -32,7 +32,7 @@
 		to_chat(dressing_human, span_warning("You are not capable of wearing underwear."))
 		return
 
-	var/choice = tgui_input_list(user, "Underwear, Undershirt, or Socks?", "Changing", list("Underwear","Underwear Color","Undershirt","Socks"))
+	var/choice = tgui_input_list(user, "Underwear, Bra, Undershirt or Socks?", "Changing", list("Underwear", "Underwear Color", "Bra", "Bra Color", "Undershirt", "Undershirt Color", "Socks", "Socks Color")) // EffigyEdit Change - Character Preferences - Original: tgui_input_list(user, "Underwear, Undershirt, or Socks?", "Changing", list("Underwear","Underwear Color","Undershirt","Socks"))
 	if(isnull(choice))
 		return
 
@@ -55,6 +55,24 @@
 			var/new_socks = tgui_input_list(user, "Select your socks", "Changing", SSaccessories.socks_list)
 			if(new_socks)
 				dressing_human.socks = new_socks
+		// EffigyEdit Add - Character Preferences
+		if("Undershirt Color")
+			var/new_undershirt_color = input(dressing_human, "Choose your undershirt color", "Undershirt Color", dressing_human.undershirt_color) as color|null
+			if(new_undershirt_color)
+				dressing_human.undershirt_color = sanitize_hexcolor(new_undershirt_color)
+		if("Socks Color")
+			var/new_socks_color = input(dressing_human, "Choose your socks color", "Socks Color", dressing_human.socks_color) as color|null
+			if(new_socks_color)
+				dressing_human.socks_color = sanitize_hexcolor(new_socks_color)
+		if("Bra")
+			var/new_bra = tgui_input_list(user, "Select your Bra", "Changing", SSaccessories.bra_list)
+			if(new_bra)
+				dressing_human.bra = new_bra
+		if("Bra Color")
+			var/new_bra_color = input(dressing_human, "Choose your Bra color", "Bra Color", dressing_human.bra_color) as color|null
+			if(new_bra_color)
+				dressing_human.bra_color = sanitize_hexcolor(new_bra_color)
+		// EffigyEdit Add End
 
 	add_fingerprint(dressing_human)
 	dressing_human.update_body()
