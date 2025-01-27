@@ -1,5 +1,5 @@
 /datum/sprite_accessory/ears_anthro
-	icon = 'local/icons/mob/mutant/ears.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/ears.dmi'
 
 // Bird
 /datum/sprite_accessory/ears_anthro/bird/default
@@ -13,7 +13,7 @@
 
 // Cat
 /datum/sprite_accessory/ears/cat // Override default subtype
-	icon = 'local/icons/mob/mutant/ears.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/ears.dmi'
 
 // Cybernetic
 /datum/sprite_accessory/ears_anthro/cybernetic

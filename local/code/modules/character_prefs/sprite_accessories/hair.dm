@@ -1,7 +1,7 @@
 // Hairstyles
 
 /datum/sprite_accessory/hair/effigy
-	icon = 'local/icons/mob/mutant/hair.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/hair.dmi'
 
 // Hairstyles
 
@@ -24,7 +24,7 @@
 // Facial hair
 
 /datum/sprite_accessory/facial_hair/effigy
-	icon = 'local/icons/mob/mutant/facialhair.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/facialhair.dmi'
 
 /datum/sprite_accessory/facial_hair/effigy/sideburns
 	name = "Sideburns"

@@ -10,99 +10,99 @@
 
 /// Wings
 /datum/sprite_accessory/wings_more/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_WINGS
 	icon_state = "none"
 
 /datum/sprite_accessory/moth_wings/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_WINGS
 	icon_state = "none"
 
 /datum/sprite_accessory/moth_antennae/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = "No Antennae"
 	icon_state = "none"
 
 /datum/sprite_accessory/fluff/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = "No Fluff"
 	icon_state = "none"
 
 /// Ears
 /datum/sprite_accessory/ears/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = "none"
 
 /datum/sprite_accessory/ears_anthro/lizard/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/dog/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/fox/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/bunny/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/mouse/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/monkey/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/deer/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/fish/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/bird/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/bug/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/humanoid/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/cybernetic/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /datum/sprite_accessory/ears_anthro/alien/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
 /// Tail time
 /datum/sprite_accessory/tails/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_TAIL
 	icon_state = "none"
 
@@ -178,22 +178,22 @@
 
 /// Lizard exclusive 🦎
 /datum/sprite_accessory/snouts/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_SNOUT
 	icon_state = "none"
 
 /datum/sprite_accessory/lizard_markings/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = "No Markings"
 	icon_state = "none"
 
 /datum/sprite_accessory/frills/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = "No Frills"
 	icon_state = "none"
 
 /datum/sprite_accessory/horns/none
-	icon = 'local/icons/mob/mutant/fallback.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = "No Horns"
 	icon_state = "none"
 
