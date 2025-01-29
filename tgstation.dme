@@ -6588,6 +6588,7 @@
 #include "local\code\modules\character_prefs\sprite_accessories\ears.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\hair.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\horns.dm"
+#include "local\code\modules\character_prefs\sprite_accessories\snouts.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\socks.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\undershirts.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\underwear.dm"

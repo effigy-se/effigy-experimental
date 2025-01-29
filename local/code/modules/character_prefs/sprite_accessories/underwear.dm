@@ -5,9 +5,7 @@
 	///Whether this underwear includes a top (Because gender = FEMALE doesn't actually apply here.). Hides breasts, nothing more.
 	var/hides_breasts = FALSE
 
-/*
-	Adding has_digitigrade to TG stuff
-*/
+// TG base underwear
 /datum/sprite_accessory/underwear/male_briefs
 	has_digitigrade = TRUE
 
@@ -35,11 +33,7 @@
 /datum/sprite_accessory/underwear/male_uk
 	has_digitigrade = TRUE
 
-/*
-	Modular Underwear past here
-*/
-
-//Briefs
+// Briefs
 /datum/sprite_accessory/underwear/male_bee
 	name = "Boxers - Bee"
 	icon_state = "bee_shorts"
@@ -58,7 +52,7 @@
 	icon_state = "boyshorts_alt"
 	gender = FEMALE
 
-//Panties
+// Panties
 /datum/sprite_accessory/underwear/panties_basic
 	name = "Panties"
 	icon_state = "panties"
@@ -107,7 +101,7 @@
 	name = "Shorter Loincloth"
 	icon_state = "loincloth_alt"
 
-//Presets
+// Presets
 /datum/sprite_accessory/underwear/lizared
 	name = "LIZARED Underwear"
 	icon_state = "lizared"
@@ -116,6 +110,12 @@
 /datum/sprite_accessory/underwear/female_kinky
 	name = "Panties - Lingerie"
 	icon_state = "panties_kinky"
+	gender = FEMALE
+	use_static = TRUE
+
+/datum/sprite_accessory/underwear/chastbelt
+	name = "Chastity Belt"
+	icon_state = "chastbelt"
 	gender = FEMALE
 	use_static = TRUE
 
@@ -149,8 +149,8 @@
 	gender = FEMALE
 	use_static = TRUE
 
-//Full-Body Underwear, i.e. swimsuits (Including re-enabling 3 from TG)
-//These likely require hides_breasts = TRUE
+// Full-Body Underwear, i.e. swimsuits (Including re-enabling 3 from TG)
+// These likely require hides_breasts = TRUE
 /datum/sprite_accessory/underwear/swimsuit_onepiece //TG
 	name = "One-Piece Swimsuit"
 	icon_state = "swim_onepiece"
