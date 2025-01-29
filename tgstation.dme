@@ -6592,6 +6592,7 @@
 #include "local\code\modules\character_prefs\sprite_accessories\socks.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\undershirts.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\underwear.dm"
+#include "local\code\modules\character_prefs\sprite_accessories\wings.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\bodypart_overlays\lizard_markings.dm"
 #include "local\code\modules\datums\components\monitor_head.dm"
 #include "local\code\modules\languages\_language.dm"

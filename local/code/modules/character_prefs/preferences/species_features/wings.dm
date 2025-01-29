@@ -7,7 +7,7 @@
 
 /datum/controller/subsystem/accessories/setup_lists()
 	. = ..()
-	wings_list_more = init_sprite_accessory_subtypes(/datum/sprite_accessory/wings_more)["default_sprites"] // FLAKY DEFINE: this should be using DEFAULT_SPRITE_LIST
+	wings_list_more = init_sprite_accessory_subtypes(/datum/sprite_accessory/wings_anthro)["default_sprites"] // FLAKY DEFINE: this should be using DEFAULT_SPRITE_LIST
 
 /datum/species/regenerate_organs(mob/living/carbon/target, datum/species/old_species, replace_current = TRUE, list/excluded_zones, visual_only = FALSE)
 	. = ..()
@@ -24,7 +24,7 @@
 			replacement.Insert(target, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 			return .
 	if(target.dna.features["wings"] && !(type in GLOB.species_blacklist_no_mutant))
-		if(target.dna.features["wings"] != /datum/sprite_accessory/wings_more/none::name && target.dna.features["wings"] != /datum/sprite_accessory/blank::name)
+		if(target.dna.features["wings"] != /datum/sprite_accessory/wings_anthro/none::name && target.dna.features["wings"] != /datum/sprite_accessory/blank::name)
 			var/obj/item/organ/replacement = SSwardrobe.provide_type(/obj/item/organ/wings/more)
 			replacement.Insert(target, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 			return .
@@ -45,12 +45,12 @@
 	target.dna.wing_type = chosen_variation
 	switch(chosen_variation)
 		if(NO_VARIATION)
-			target.dna.features["wings"] = /datum/sprite_accessory/wings_more/none::name
+			target.dna.features["wings"] = /datum/sprite_accessory/wings_anthro/none::name
 			target.dna.features["moth_wings"] = /datum/sprite_accessory/moth_wings/none::name
 		if("Wings")
 			target.dna.features["moth_wings"] = /datum/sprite_accessory/moth_wings/none::name
 		if("Moth Wings")
-			target.dna.features["wings"] = /datum/sprite_accessory/wings_more/none::name
+			target.dna.features["wings"] = /datum/sprite_accessory/wings_anthro/none::name
 
 /datum/preference/choiced/wing_variation/create_default_value()
 	return NO_VARIATION
@@ -83,7 +83,7 @@
 	return data
 
 /datum/preference/choiced/wings/create_default_value()
-	return /datum/sprite_accessory/wings_more/none::name
+	return /datum/sprite_accessory/wings_anthro/none::name
 
 /datum/preference/choiced/wings/icon_for(value)
 	var/datum/sprite_accessory/wings = SSaccessories.wings_list_more[value]

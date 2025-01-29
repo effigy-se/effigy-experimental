@@ -9,7 +9,7 @@
 /// If our overrides aren't loaded in early enough default TG stuff will end up in the critical [1] slot and break things.
 
 /// Wings
-/datum/sprite_accessory/wings_more/none
+/datum/sprite_accessory/wings_anthro/none
 	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_WINGS
 	icon_state = "none"
