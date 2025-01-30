@@ -3,13 +3,14 @@ import { ReactNode, useState } from 'react';
 import {
   Autofocus,
   Box,
-  Button,
+  Button, // EffigyEdit Add - Character Preferences
   Flex,
   Input,
   LabeledList,
   Popper,
   Stack,
 } from 'tgui-core/components';
+import { exhaustiveCheck } from 'tgui-core/exhaustive';
 import { classes } from 'tgui-core/react';
 import { createSearch } from 'tgui-core/string';
 
@@ -23,6 +24,7 @@ import {
 } from './data';
 import { DeleteCharacterPopup } from './DeleteCharacterPopup';
 import { MultiNameInput, NameInput } from './names';
+import { PageButton } from './PageButton';
 import features from './preferences/features';
 import {
   FeatureChoicedServerData,
@@ -34,7 +36,7 @@ import { ServerPreferencesFetcher } from './ServerPreferencesFetcher';
 import { useRandomToggleState } from './useRandomToggleState';
 
 const CLOTHING_CELL_SIZE = 48;
-const CLOTHING_SIDEBAR_ROWS = 9;
+const CLOTHING_SIDEBAR_ROWS = 13.4; // EffigyEdit Change - Character Preferences - Original: 9
 
 const CLOTHING_SELECTION_CELL_SIZE = 48;
 const CLOTHING_SELECTION_WIDTH = 5.4;
@@ -487,6 +489,13 @@ export const MainPage = (props: { openSpecies: () => void }) => {
   const [multiNameInputOpen, setMultiNameInputOpen] = useState(false);
   const [randomToggleEnabled] = useRandomToggleState();
 
+  enum PrefPage {
+    Character, // The generic character options
+    Markings, // Markings
+  }
+
+  const [currentPrefPage, setCurrentPrefPage] = useState(PrefPage.Character);
+
   return (
     <ServerPreferencesFetcher
       render={(serverData) => {
@@ -526,6 +535,10 @@ export const MainPage = (props: { openSpecies: () => void }) => {
           ...data.character_preferences.non_contextual,
         };
 
+        const MarkingPreferences = {
+          ...data.character_preferences.markings,
+        };
+
         if (randomBodyEnabled) {
           nonContextualPreferences['random_species'] =
             data.character_preferences.randomization['species'];
@@ -533,6 +546,40 @@ export const MainPage = (props: { openSpecies: () => void }) => {
           // We can't use random_name/is_accessible because the
           // server doesn't know whether the random toggle is on.
           delete nonContextualPreferences['random_name'];
+        }
+
+        let prefPageContents;
+        switch (currentPrefPage) {
+          case PrefPage.Character:
+            prefPageContents = (
+              <PreferenceList
+                act={act}
+                randomizations={getRandomization(
+                  contextualPreferences,
+                  serverData,
+                  randomBodyEnabled,
+                )}
+                preferences={contextualPreferences}
+                maxHeight="auto"
+              />
+            );
+            break;
+          case PrefPage.Markings:
+            prefPageContents = (
+              <PreferenceList
+                act={act}
+                randomizations={getRandomization(
+                  MarkingPreferences,
+                  serverData,
+                  randomBodyEnabled,
+                )}
+                preferences={MarkingPreferences}
+                maxHeight="auto"
+              />
+            );
+            break;
+          default:
+            exhaustiveCheck(currentPrefPage);
         }
 
         return (
@@ -578,13 +625,13 @@ export const MainPage = (props: { openSpecies: () => void }) => {
                     />
                   </Stack.Item>
 
-                  <Stack.Item grow>
+                  <Stack.Item grow maxHeight="300px">
                     <CharacterPreview
                       height="100%"
                       id={data.character_preview_view}
                     />
                   </Stack.Item>
-
+                  {/* EffigyEdit TODO: Insert Preview Selection */}
                   <Stack.Item position="relative">
                     <NameInput
                       name={data.character_preferences.names[data.name_to_use]}
@@ -639,17 +686,31 @@ export const MainPage = (props: { openSpecies: () => void }) => {
               </Stack.Item>
 
               <Stack.Item grow basis={0}>
+                {/* EffigyEdit Add - Character Preferences */}
+                <Stack>
+                  <Stack.Item grow>
+                    <PageButton
+                      currentPage={currentPrefPage}
+                      page={PrefPage.Character}
+                      setPage={setCurrentPrefPage}
+                    >
+                      Character
+                    </PageButton>
+                  </Stack.Item>
+                  <Stack.Item grow>
+                    <PageButton
+                      currentPage={currentPrefPage}
+                      page={PrefPage.Markings}
+                      setPage={setCurrentPrefPage}
+                    >
+                      Markings
+                    </PageButton>
+                  </Stack.Item>
+                </Stack>
+
                 <Stack vertical fill>
-                  <PreferenceList
-                    act={act}
-                    randomizations={getRandomization(
-                      contextualPreferences,
-                      serverData,
-                      randomBodyEnabled,
-                    )}
-                    preferences={contextualPreferences}
-                    maxHeight="auto"
-                  />
+                  <Stack.Divider />
+                  {prefPageContents}
 
                   <PreferenceList
                     act={act}
@@ -677,6 +738,7 @@ export const MainPage = (props: { openSpecies: () => void }) => {
                   </PreferenceList>
                 </Stack>
               </Stack.Item>
+              {/* EffigyEdit Add End */}
             </Stack>
           </>
         );
