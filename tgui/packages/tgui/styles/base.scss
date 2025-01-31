@@ -6,10 +6,10 @@
 @use 'sass:color';
 @use 'sass:math';
 
-$color-fg: hsl(0, 0%, 100%) !default;
-$color-bg: hsl(0, 0%, 14%) !default;
-$color-bg-section: rgba(0, 0, 0, 0.33) !default;
-$color-bg-grad-spread: 2% !default;
+$color-fg: hsl(228, 11%, 91%) !default; // EffigyEdit Change - TGUI
+$color-bg: hsl(225, 11%, 15%) !default; // EffigyEdit Change - TGUI
+$color-bg-section: rgba(0, 0, 0, 0.17) !default; // EffigyEdit Change - TGUI
+$color-bg-grad-spread: 0% !default; // EffigyEdit Change - TGUI
 $color-bg-start: color.adjust(
   $color-bg,
   $lightness: $color-bg-grad-spread
@@ -18,10 +18,11 @@ $color-bg-end: color.adjust(
   $color-bg,
   $lightness: -$color-bg-grad-spread
 ) !default;
+$color-bg-alt: hsl(225, 11%, 38%) !default; // EffigyEdit Add - TGUI
 
-$unit: 12px;
+$unit: 14px; // EffigyEdit Change - TGUI
 $font-size: 1 * $unit !default;
-$border-radius: 0.16em !default;
+$border-radius: 0 !default; // EffigyEdit Change - TGUI
 
 @function em($px) {
   @return 1em * math.div($px, $unit);

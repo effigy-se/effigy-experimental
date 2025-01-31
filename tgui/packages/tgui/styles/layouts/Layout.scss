@@ -24,6 +24,7 @@ body {
   scrollbar-color: $scrollbar-face $scrollbar-base;
 }
 
+/* EffigyEdit Change - TGUI
 // Remove with 516, IE legacy code
 .Layout,
 .Layout * {
@@ -56,6 +57,38 @@ body {
     $lightness: 10% * $scrollbar-color-multiplier
   );
 }
+*/
+
+.Layout,
+.Layout * {
+  // Fancy scrollbar
+  scrollbar-base-color: color.scale(
+    base.$color-bg,
+    $lightness: -25% * $scrollbar-color-multiplier
+  );
+  scrollbar-face-color: color.scale(
+    base.$color-bg-alt,
+    $lightness: -10% * $scrollbar-color-multiplier
+  );
+  scrollbar-3dlight-color: color.scale(
+    base.$color-bg-alt,
+    $lightness: 0% * $scrollbar-color-multiplier
+  );
+  scrollbar-highlight-color: color.scale(
+    base.$color-bg-alt,
+    $lightness: 0% * $scrollbar-color-multiplier
+  );
+  scrollbar-track-color: color.scale(base.$color-bg);
+  scrollbar-arrow-color: color.scale(
+    base.$color-bg-alt,
+    $lightness: -10% * $scrollbar-color-multiplier
+  );
+  scrollbar-shadow-color: color.scale(
+    base.$color-bg-alt,
+    $lightness: -10% * $scrollbar-color-multiplier
+  );
+}
+// EffigyEdit Change End
 
 .Layout__content {
   position: absolute;

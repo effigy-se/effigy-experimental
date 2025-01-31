@@ -1,0 +1,11 @@
+@use '../base';
+
+$background-color: base.$color-bg !default;
+
+.Dialog__content {
+  background-color: $background-color;
+  font-family: 'Ubuntu Mono', Consolas, monospace;
+  font-size: base.em(14px);
+  display: flex;
+  flex-direction: column;
+}

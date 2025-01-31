@@ -26,17 +26,19 @@ img.icon {
   vertical-align: bottom;
 }
 
+/* EffigyEdit Change - TGUI */
 a {
-  color: hsl(201.7, 48.6%, 43.5%);
+  color: hsl(202, 63%, 64%);
 }
 
 a.visited {
-  color: hsl(272.3, 100%, 45.1%);
+  color: hsl(202, 63%, 64%);
 }
 
 a:visited {
-  color: hsl(272.3, 100%, 45.1%);
+  color: hsl(202, 63%, 64%);
 }
+/* EffigyEdit Change End */
 
 a.popt {
   text-decoration: none;
@@ -96,7 +98,7 @@ a.popt {
 .popup input[type='text']:hover,
 .popup input[type='text']:active,
 .popup input[type='text']:focus {
-  border-color: green;
+  border-color: #00b159; // EffigyEdit Change - TGUI
 }
 
 .popup input[type='submit'] {
@@ -143,7 +145,7 @@ a.popt {
 }
 
 .highlightPopup input.highlightColor {
-  background-color: hsl(60, 100%, 50%);
+  background-color: hsl(203, 100%, 57%); // EffigyEdit Change - TGUI
 }
 
 .highlightPopup input.highlightTermSubmit {
@@ -203,7 +205,7 @@ a.popt {
 /* MOTD */
 
 .motd {
-  color: hsl(213.6, 37.9%, 74.1%);
+  color: hsl(202, 83%, 84%); // EffigyEdit Change - TGUI
   font-family: Verdana, sans-serif;
   white-space: normal;
 }
@@ -214,7 +216,7 @@ a.popt {
 .motd h4,
 .motd h5,
 .motd h6 {
-  color: hsl(213.6, 37.9%, 74.1%);
+  color: hsl(202, 83%, 84%); // EffigyEdit Change - TGUI
   text-decoration: underline;
 }
 
@@ -223,7 +225,7 @@ a.popt {
 .motd a:visited,
 .motd a:active,
 .motd a:hover {
-  color: hsl(213.6, 37.9%, 74.1%);
+  color: hsl(202, 83%, 84%); // EffigyEdit Change - TGUI
 }
 
 /* ADD HERE FOR BOLD */
@@ -250,7 +252,7 @@ a.popt {
 /* OUTPUT COLORS */
 
 .highlight {
-  background: yellow;
+  background: hsl(258, 100%, 91%); // EffigyEdit Change - TGUI
 }
 
 h1,
@@ -259,13 +261,13 @@ h3,
 h4,
 h5,
 h6 {
-  color: hsl(213.6, 37.9%, 74.1%);
+  color: hsl(202, 83%, 84%); // EffigyEdit Change - TGUI
   font-family: Georgia, Verdana, sans-serif;
 }
 
 h1.alert,
 h2.alert {
-  color: hsl(213.6, 37.9%, 74.1%);
+  color: hsl(202, 83%, 84%); // EffigyEdit Change - TGUI
 }
 
 em {
@@ -274,27 +276,27 @@ em {
 }
 
 .ooc {
-  color: hsl(47.9, 100%, 40%);
+  color: hsl(45, 100%, 69%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .adminobserverooc {
-  color: hsl(195, 100%, 40%);
+  color: hsl(195, 100%, 49%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .adminooc {
-  color: hsl(226.6, 52.8%, 50.2%);
+  color: hsl(195, 100%, 49%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .adminsay {
-  color: hsl(16.2, 100%, 50%);
+  color: hsl(336, 100%, 60%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .admin {
-  color: hsl(227, 63.5%, 60.2%);
+  color: hsl(228, 66%, 69%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
@@ -330,71 +332,71 @@ em {
 /* IF YOU CHANGE THIS KEEP IT IN SYNC WITH TGUI CONSTANTS */
 
 .radio {
-  color: hsl(132.8, 74.4%, 45.9%);
+  color: hsl(151, 96%, 56%); // EffigyEdit Change - TGUI
 }
 
 .sciradio {
-  color: hsl(271.6, 91.7%, 76.5%);
+  color: hsl(281, 100%, 66%); // EffigyEdit Change - TGUI
 }
 
 .comradio {
-  color: hsl(53, 97.6%, 50%);
+  color: hsl(50, 100%, 68%); // EffigyEdit Change - TGUI
 }
 
 .secradio {
-  color: hsl(0, 71.2%, 53.7%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
 }
 
 .medradio {
-  color: hsl(202, 83.6%, 64.1%);
+  color: hsl(195, 100%, 59%); // EffigyEdit Change - TGUI
 }
 
 .engradio {
-  color: hsl(17, 87.8%, 61.4%);
+  color: hsl(16, 100%, 66%); // EffigyEdit Change - TGUI
 }
 
 .suppradio {
-  color: hsl(33.7, 44.9%, 49.8%);
+  color: hsl(14, 44%, 57%); // EffigyEdit Change - TGUI
 }
 
 .servradio {
-  color: hsl(88.1, 60.6%, 40.8%);
+  color: hsl(151, 96%, 40%); // EffigyEdit Change - TGUI
 }
 
 .syndradio {
-  color: hsl(359.1, 31.8%, 42.5%);
+  color: hsl(0, 75%, 62%); // EffigyEdit Change - TGUI
 }
 
 .gangradio {
-  color: hsl(305.2, 57.8%, 42.7%);
+  color: hsl(257, 67%, 68%); // EffigyEdit Change - TGUI
 }
 
 .centcomradio {
-  color: hsl(197, 62.6%, 39.8%);
+  color: hsl(183, 100%, 75%); // EffigyEdit Change - TGUI
 }
 
 .aiprivradio {
-  color: hsl(332.2, 59.6%, 60.2%);
+  color: hsl(308, 87%, 61%); // EffigyEdit Change - TGUI
 }
 
 .enteradio {
-  color: hsl(157.1, 39.6%, 62.4%);
+  color: hsl(151, 96%, 40%); // EffigyEdit Change - TGUI
 }
 
 .redteamradio {
-  color: hsl(0, 100%, 63.3%) !important;
+  color: hsl(335, 87%, 61%) !important; // EffigyEdit Change - TGUI
 }
 
 .blueteamradio {
-  color: hsl(240, 98%, 59.8%) !important;
+  color: hsl(195, 100%, 59%) !important; // EffigyEdit Change - TGUI
 }
 
 .greenteamradio {
-  color: hsl(120, 98%, 59.8%) !important;
+  color: hsl(151, 96%, 56%) !important; // EffigyEdit Change - TGUI
 }
 
 .yellowteamradio {
-  color: hsl(60, 98%, 59.8%) !important;
+  color: hsl(50, 100%, 68%) !important; // EffigyEdit Change - TGUI
 }
 
 .yell {
@@ -402,122 +404,122 @@ em {
 }
 
 .alert {
-  color: hsl(0, 74.2%, 48.6%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
 }
 
 .userdanger {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 185%;
 }
 
 .bolddanger {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .danger {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
 }
 
 .tinydanger {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-size: 85%;
 }
 
 .smalldanger {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-size: 90%;
 }
 .warning {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-style: italic;
 }
 
 .alertwarning {
-  color: hsl(0, 100%, 50%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .boldwarning {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-style: italic;
   font-weight: bold;
 }
 
 .announce {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .boldannounce {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .minorannounce {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 185%;
 }
 
 .minoralert {
-  color: hsl(213.6, 37.9%, 74.1%);
+  color: hsl(202, 83%, 84%); // EffigyEdit Change - TGUI
   font-size: 125%;
 }
 
 .priorityannounce {
-  color: hsl(213.6, 37.9%, 74.1%);
+  color: hsl(202, 83%, 84%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 225%;
 }
 
 .prioritytitle {
-  color: hsl(227, 87.7%, 68%);
+  color: hsl(214, 100%, 95%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 185%;
 }
 
 .priorityalert {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-size: 140%;
 }
 
 .greenannounce {
-  color: hsl(132.8, 93.4%, 29.6%);
+  color: hsl(151, 96%, 40%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .rose {
-  color: hsl(0, 100%, 65.7%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
 }
 
 .info {
-  color: hsl(226.9, 100%, 80.2%);
+  color: hsl(232, 100%, 68%); // EffigyEdit Change - TGUI
 }
 
 .notice {
-  color: hsl(227, 87.7%, 68%);
+  color: hsl(214, 100%, 95%); // EffigyEdit Change - TGUI
 }
 
 .tinynotice {
-  color: hsl(227, 87.7%, 68%);
+  color: hsl(214, 100%, 95%); // EffigyEdit Change - TGUI
   font-size: 85%;
 }
 
 .tinynoticeital {
-  color: hsl(227, 87.7%, 68%);
+  color: hsl(214, 100%, 95%); // EffigyEdit Change - TGUI
   font-style: italic;
   font-size: 85%;
 }
 
 .smallnotice {
-  color: hsl(227, 87.7%, 68%);
+  color: hsl(214, 100%, 95%); // EffigyEdit Change - TGUI
   font-size: 90%;
 }
 
 .smallnoticeital {
-  color: hsl(227, 87.7%, 68%);
+  color: hsl(214, 100%, 95%); // EffigyEdit Change - TGUI
   font-style: italic;
   font-size: 90%;
 }
@@ -528,56 +530,56 @@ em {
 }
 
 .boldnotice {
-  color: hsl(227, 87.7%, 68%);
+  color: hsl(214, 100%, 95%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .hear {
-  color: hsl(227, 87.7%, 68%);
+  color: hsl(214, 100%, 95%); // EffigyEdit Change - TGUI
   font-style: italic;
 }
 
 .adminnotice {
-  color: hsl(227, 87.7%, 68%);
+  color: hsl(214, 100%, 95%); // EffigyEdit Change - TGUI
 }
 
 .adminhelp {
-  color: hsl(0, 100%, 50%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .unconscious {
-  color: hsl(213.6, 37.9%, 74.1%);
+  color: hsl(202, 83%, 84%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .suicide {
-  color: hsl(0, 100%, 65.7%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-style: italic;
 }
 
 .green {
-  color: hsl(132.8, 93.4%, 29.6%);
+  color: hsl(151, 96%, 56%); // EffigyEdit Change - TGUI
 }
 
 .grey {
-  color: hsl(0, 0%, 51.4%);
+  color: hsl(226, 10%, 68%); // EffigyEdit Change - TGUI
 }
 
 .red {
-  color: hsl(0, 100%, 50%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
 }
 
 .blue {
-  color: hsl(224.1, 100%, 56.5%);
+  color: hsl(195, 100%, 59%); // EffigyEdit Change - TGUI
 }
 
 .nicegreen {
-  color: hsl(132.8, 93.4%, 29.6%);
+  color: hsl(151, 96%, 56%); // EffigyEdit Change - TGUI
 }
 
 .boldnicegreen {
-  color: hsl(132.8, 93.4%, 29.6%);
+  color: hsl(151, 96%, 56%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
@@ -586,72 +588,72 @@ em {
 }
 
 .blobannounce {
-  color: hsl(82, 39%, 30.2%);
+  color: hsl(82, 67%, 42%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 185%;
 }
 
 .cult {
-  color: hsl(2, 43.8%, 41.2%);
+  color: hsl(2, 100%, 71%); // EffigyEdit Change - TGUI
 }
 
 .cult_italic {
-  color: hsl(2, 43.8%, 41.2%);
+  color: hsl(2, 100%, 71%); // EffigyEdit Change - TGUI
   font-style: italic;
 }
 
 .cult_bold {
-  color: hsl(2, 43.8%, 41.2%);
+  color: hsl(2, 100%, 71%); // EffigyEdit Change - TGUI
   font-style: italic;
   font-weight: bold;
 }
 
 .cult_bold_italic {
-  color: hsl(2, 43.8%, 41.2%);
+  color: hsl(2, 100%, 71%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 185%;
 }
 
 .cult_large {
-  color: hsl(2, 43.8%, 41.2%);
+  color: hsl(2, 100%, 71%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 185%;
 }
 
 .narsie {
-  color: hsl(2, 43.8%, 41.2%);
+  color: hsl(2, 100%, 71%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 925%;
 }
 
 .narsiesmall {
-  color: hsl(2, 43.8%, 41.2%);
+  color: hsl(2, 100%, 71%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 370%;
 }
 
 .colossus {
-  color: hsl(358.6, 52.1%, 32.7%);
+  color: hsl(2, 100%, 71%); // EffigyEdit Change - TGUI
   font-size: 310%;
 }
 
 .hierophant {
-  color: hsl(279.9, 83.6%, 59.4%);
+  color: hsl(280, 83%, 65%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-style: italic;
 }
 
 .hierophant_warning {
-  color: hsl(280.3, 82.7%, 68.2%);
+  color: hsl(280, 84%, 83%); // EffigyEdit Change - TGUI
   font-style: italic;
 }
 
 .purple {
-  color: hsl(272.2, 58.7%, 58.2%);
+  color: hsl(281, 100%, 66%); // EffigyEdit Change - TGUI
 }
 
 .holoparasite {
-  color: hsl(257.1, 12.4%, 55.7%);
+  color: hsl(208, 66%, 54%); // EffigyEdit Change - TGUI
 }
 
 .revennotice {
@@ -670,58 +672,58 @@ em {
 }
 
 .revenminor {
-  color: hsl(273.5, 52.7%, 48%);
+  color: hsl(272.1, 55.7%, 63.3%); // EffigyEdit Change - TGUI
 }
 
 .revenwarning {
-  color: hsl(275.9, 85.1%, 39.6%);
+  color: hsl(272.1, 55.7%, 63.3%); // EffigyEdit Change - TGUI
   font-style: italic;
 }
 
 .revendanger {
-  color: hsl(275.9, 85.1%, 39.6%);
+  color: hsl(272.1, 55.7%, 63.3%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 185%;
 }
 
 .deconversion_message {
-  color: hsl(272, 100%, 63.9%);
+  color: hsl(272, 100%, 69%); // EffigyEdit Change - TGUI
   font-size: 185%;
   font-style: italic;
 }
 
 .ghostalert {
-  color: hsl(264, 100%, 50%);
+  color: hsl(257, 100%, 72%); // EffigyEdit Change - TGUI
   font-style: italic;
   font-weight: bold;
 }
 
 .alien {
-  color: hsl(300, 17.7%, 44.3%);
+  color: hsl(300, 18%, 58%); // EffigyEdit Change - TGUI
 }
 
 .noticealien {
-  color: hsl(132.8, 93.4%, 29.6%);
+  color: hsl(133, 93%, 33%); // EffigyEdit Change - TGUI
 }
 
 .alertalien {
-  color: hsl(132.8, 93.4%, 29.6%);
+  color: hsl(133, 93%, 33%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
 .changeling {
-  color: hsl(132.8, 93.4%, 29.6%);
+  color: hsl(133, 93%, 33%); // EffigyEdit Change - TGUI
   font-style: italic;
 }
 
 .alertsyndie {
-  color: hsl(0, 100%, 50%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-size: 185%;
   font-weight: bold;
 }
 
 .spiderbroodmother {
-  color: hsl(272, 100%, 50%);
+  color: hsl(272, 100%, 69%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 185%;
 }
@@ -733,13 +735,13 @@ em {
 }
 
 .spiderscout {
-  color: hsl(242.9, 68%, 35.5%);
+  color: hsl(208, 66%, 54%); // EffigyEdit Change - TGUI
   font-weight: bold;
   font-size: 120%;
 }
 
 .interface {
-  color: hsl(300, 78.6%, 25.7%);
+  color: hsl(300, 79%, 56%); // EffigyEdit Change - TGUI
 }
 
 .sans {
@@ -755,7 +757,7 @@ em {
 }
 
 .tape_recorder {
-  color: hsl(0, 100%, 50%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-family: 'Courier New', cursive, sans-serif;
 }
 
@@ -794,17 +796,17 @@ em {
 }
 
 .greentext {
-  color: hsl(132.8, 93.4%, 29.6%);
+  color: hsl(151, 96%, 56%); // EffigyEdit Change - TGUI
   font-size: 185%;
 }
 
 .redtext {
-  color: hsl(0, 73.6%, 44.5%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-size: 185%;
 }
 
 .clown {
-  color: hsl(326, 100%, 72%);
+  color: hsl(326, 100%, 77%); // EffigyEdit Change - TGUI
   font-size: 160%;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   font-weight: bold;
@@ -816,7 +818,7 @@ em {
 }
 
 .his_grace {
-  color: hsl(119.1, 84.4%, 45.3%);
+  color: hsl(151, 96%, 40%); // EffigyEdit Change - TGUI
   font-family: 'Courier New', cursive, sans-serif;
   font-style: italic;
 }
@@ -851,22 +853,22 @@ em {
 }
 
 .phobia {
-  color: hsl(0, 100%, 43.3%);
+  color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   font-weight: bold;
   animation: phobia 750ms infinite;
 }
 
 @keyframes phobia {
   0% {
-    color: hsl(0, 90.8%, 66.1%);
+    color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   }
 
   50% {
-    color: hsl(0, 100%, 43.3%);
+    color: hsl(332, 88%, 52%); // EffigyEdit Change - TGUI
   }
 
   100% {
-    color: hsl(0, 90.8%, 66.1%);
+    color: hsl(335, 87%, 61%); // EffigyEdit Change - TGUI
   }
 }
 
@@ -884,7 +886,7 @@ em {
 }
 
 .memo {
-  color: hsl(75.3, 100%, 26.1%);
+  color: hsl(151, 96%, 40%); // EffigyEdit Change - TGUI
   text-align: center;
 }
 
@@ -894,12 +896,12 @@ em {
 }
 
 .abductor {
-  color: hsl(300, 96%, 38.8%);
+  color: hsl(300, 96%, 49%); // EffigyEdit Change - TGUI
   font-style: italic;
 }
 
 .mind_control {
-  color: hsl(320, 71.7%, 55.7%);
+  color: hsl(300, 96%, 49%); // EffigyEdit Change - TGUI
   font-size: 100%;
   font-weight: bold;
   font-style: italic;
@@ -910,19 +912,19 @@ em {
 }
 
 .drone {
-  color: hsl(60, 0.8%, 51.4%);
+  color: hsl(60, 1%, 54%); // EffigyEdit Change - TGUI
 }
 
 .monkey {
-  color: hsl(17.8, 50.2%, 39.4%);
+  color: hsl(14, 20%, 57%); // EffigyEdit Change - TGUI
 }
 
 .swarmer {
-  color: hsl(219.2, 100%, 58.6%);
+  color: hsl(219, 100%, 65%); // EffigyEdit Change - TGUI
 }
 
 .resonate {
-  color: hsl(174.1, 55.4%, 36.1%);
+  color: hsl(183, 100%, 31%); // EffigyEdit Change - TGUI
 }
 
 .upside_down {
@@ -936,17 +938,17 @@ em {
 
 .connectionClosed,
 .fatalError {
-  background: red;
+  background: hsl(332, 88%, 52%); // EffigyEdit Change - TGUI
   color: white;
   padding: 5px;
 }
 
 .connectionClosed.restored {
-  background: green;
+  background: hsl(151, 96%, 56%); // EffigyEdit Change - TGUI
 }
 
 .internal.boldnshit {
-  color: hsl(226.6, 52.8%, 50.2%);
+  color: hsl(208, 89%, 54%); // EffigyEdit Change - TGUI
   font-weight: bold;
 }
 
@@ -987,7 +989,7 @@ em {
   background: #151515; // Chat background color
   border: 1px solid;
   border-color: inherit;
-  border-radius: 0.33em;
+  border-radius: 0; // EffigyEdit Change - TGUI
   z-index: 0;
 
   // "Mask" a half of the border
@@ -1014,25 +1016,27 @@ em {
   padding: 0.5em 0.75em;
   border-radius: 0.33em;
 
+  /* EffigyEdit Change - TGUI */
   &.red_box {
-    background: hsl(0, 20%, 10%);
-    border-color: hsla(0, 100%, 50%, 0.5);
+    background: hsl(325, 100%, 13%);
+    border-color: hsla(336, 100%, 66%, 1);
   }
 
   &.green_box {
-    background: hsl(140, 20%, 10%);
-    border-color: hsla(120, 100%, 50%, 0.5);
+    background: hsl(120, 100%, 14%);
+    border-color: hsla(150, 100%, 50%, 1);
   }
 
   &.blue_box {
-    background: hsl(220, 20%, 10%);
-    border-color: hsla(225, 90%, 65%, 0.5);
+    background: hsl(198, 100%, 14%);
+    border-color: hsla(192, 100%, 60%, 1);
   }
 
   &.purple_box {
-    background: hsl(260, 25%, 12.5%);
-    border-color: hsla(260, 100%, 75%, 0.5);
+    background: hsl(295, 100%, 12%);
+    border-color: hsla(281, 100%, 66%, 1);
   }
+  /* EffigyEdit Change End */
 
   hr {
     margin: 0.5em -0.75em;
@@ -1052,7 +1056,7 @@ em {
 .separator::after {
   content: '';
   flex: 1;
-  border-bottom: 1px solid hsl(213.6, 37.9%, 74.1%);
+  border-bottom: 1px solid hsl(202, 83%, 84%); // EffigyEdit Change - TGUI
 }
 
 .separator:not(:empty)::before {
@@ -1082,7 +1086,9 @@ em {
 }
 
 $alert-stripe-colors: (
-  'default': hsl(198.6, 100%, 11.4%),
+  // EffigyEdit Change - TGUI
+  'default': hsl(0, 0%, 15%),
+  // EffigyEdit Change End
   'green': hsl(120, 100%, 12%),
   'blue': hsl(198.6, 100%, 11.4%),
   'pink': hsl(326.2, 100%, 9.4%),
@@ -1090,11 +1096,13 @@ $alert-stripe-colors: (
   'orange': hsl(35.1, 100%, 17.5%),
   'red': hsl(0, 100%, 12.9%),
   'purple': hsl(295, 100%, 9.4%),
-  'grey': hsl(0, 0%, 14.5%),
+  'grey': hsl(0, 0%, 14.5%)
 );
 
 $alert-stripe-alternate-colors: (
-  'default': hsl(198.3, 100%, 13.5%),
+  // EffigyEdit Change - TGUI
+  'default': hsl(0, 0%, 16.1%),
+  // EffigyEdit Change End
   'green': hsl(120, 100%, 13.9%),
   'blue': hsl(198.3, 100%, 13.5%),
   'pink': hsl(325.3, 100%, 12.5%),
@@ -1102,11 +1110,13 @@ $alert-stripe-alternate-colors: (
   'orange': hsl(37, 100%, 21%),
   'red': hsl(0, 100%, 16.1%),
   'purple': hsl(295.1, 100%, 12%),
-  'grey': hsl(0, 0%, 16.1%),
+  'grey': hsl(0, 0%, 16.1%) // EffigyEdit Change - TGUI
 );
 
 $alert-major-header-colors: (
-  'default': hsl(192.4, 100%, 60%),
+  // EffigyEdit Change - TGUI
+  'default': hsl(336.1, 100%, 66.1%),
+  // EffigyEdit Change End
   'green': hsl(150.1, 100%, 50%),
   'blue': hsl(192.4, 100%, 60%),
   'pink': hsl(336.1, 100%, 66.1%),
@@ -1114,7 +1124,7 @@ $alert-major-header-colors: (
   'orange': hsl(20.9, 92%, 95.1%),
   'red': hsl(336.1, 100%, 66.1%),
   'purple': hsl(266.5, 84.3%, 80%),
-  'grey': hsl(336.1, 100%, 66.1%),
+  'grey': hsl(336.1, 100%, 66.1%) // EffigyEdit Change - TGUI
 );
 
 $alert-subheader-header-colors: (
@@ -1153,7 +1163,7 @@ $border-width-px: $border-width * 1px;
 }
 
 .major_announcement_text {
-  color: hsl(0, 0%, 91.8%);
+  color: hsl(228, 11%, 91%); // EffigyEdit Change - TGUI
   background-color: hsl(0, 0%, 7.5%);
   font-weight: bold;
   font-size: 100%;
@@ -1176,7 +1186,7 @@ $border-width-px: $border-width * 1px;
 
 .minor_announcement_text {
   background-color: hsl(0, 0%, 12.5%);
-  color: hsl(0, 0%, 91.8%);
+  color: hsl(228, 11%, 91%); // EffigyEdit Change - TGUI
   padding: 0.5rem 0.5rem;
   text-align: left;
   font-size: 100%;

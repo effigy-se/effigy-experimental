@@ -7,6 +7,8 @@
 @use 'sass:map';
 @use 'sass:meta';
 
+/* EffigyEdit Change - TGUI */
+/*
 // Base colors
 $black: hsl(0, 0%, 0%) !default;
 $white: hsl(0, 0%, 100%) !default;
@@ -29,6 +31,30 @@ $good: hsl(94, 63%, 41%) !default;
 $average: hsl(33, 89%, 50%) !default;
 $bad: hsl(0, 72%, 50%) !default;
 $label: hsl(210, 18%, 58%) !default;
+*/
+$black: hsl(225, 11%, 15%) !default;
+$white: hsl(228, 11%, 91%) !default;
+$red: hsl(332, 88%, 52%) !default;
+$orange: hsl(16, 100%, 66%) !default;
+$yellow: hsl(50, 100%, 68%) !default;
+$olive: hsl(151, 96%, 40%) !default;
+$green: hsl(151, 96%, 55%) !default;
+$teal: hsl(183, 100%, 75%) !default;
+$blue: hsl(195, 100%, 59%) !default;
+$darkblue: hsl(208, 66%, 38%) !default;
+$violet: hsl(257, 67%, 60%) !default;
+$purple: hsl(281, 100%, 56%) !default;
+$pink: hsl(330, 100%, 68%) !default;
+$brown: hsl(13, 20%, 48%) !default;
+$grey: hsl(224, 10%, 38%) !default;
+$light-grey: hsl(222, 10%, 68%) !default;
+
+$primary: hsl(195, 100%, 59%) !default;
+$good: hsl(195, 100%, 59%) !default;
+$average: hsl(50, 100%, 68%) !default;
+$bad: hsl(332, 88%, 52%) !default;
+$label: hsl(228, 11%, 91%) !default;
+/* EffigyEdit Change End */
 
 // Background and foreground color lightness ratios
 $bg-lightness: -15% !default;
