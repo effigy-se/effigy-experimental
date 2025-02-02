@@ -43,29 +43,17 @@
 /datum/bodypart_overlay/mutant/tail/fox/get_global_feature_list()
 	return SSaccessories.tails_list_fox
 
-/// Bird tail
-/obj/item/organ/tail/bird
-	preference = "feature_bird_tail"
+/// Flying tail
+/obj/item/organ/tail/flying
+	preference = "feature_flying_tail"
 	dna_block = null
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/bird
+	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/flying
 
-/datum/bodypart_overlay/mutant/tail/bird
+/datum/bodypart_overlay/mutant/tail/flying
 	feature_key = "tail_other"
 
-/datum/bodypart_overlay/mutant/tail/bird/get_global_feature_list()
-	return SSaccessories.tails_list_bird
-
-/// Bug tail
-/obj/item/organ/tail/bug
-	preference = "feature_bug_tail"
-	dna_block = null
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/bug
-
-/datum/bodypart_overlay/mutant/tail/bug
-	feature_key = "tail_other"
-
-/datum/bodypart_overlay/mutant/tail/bug/get_global_feature_list()
-	return SSaccessories.tails_list_bug
+/datum/bodypart_overlay/mutant/tail/flying/get_global_feature_list()
+	return SSaccessories.tails_list_flying
 
 /// Fish tail
 /obj/item/organ/tail/fish

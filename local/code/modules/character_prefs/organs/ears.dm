@@ -28,13 +28,13 @@
 /datum/bodypart_overlay/mutant/ears/dog_ears/get_global_feature_list()
 	return SSaccessories.ears_list_dog
 
-/// Bird ears
-/obj/item/organ/ears/bird
-	preference = "feature_bird_ears"
-	bodypart_overlay = /datum/bodypart_overlay/mutant/ears/bird_ears
+/// Flying ears
+/obj/item/organ/ears/flying
+	preference = "feature_flying_ears"
+	bodypart_overlay = /datum/bodypart_overlay/mutant/ears/flying_ears
 
-/datum/bodypart_overlay/mutant/ears/bird_ears/get_global_feature_list()
-	return SSaccessories.ears_list_bird
+/datum/bodypart_overlay/mutant/ears/flying_ears/get_global_feature_list()
+	return SSaccessories.ears_list_flying
 
 /// Mammal ears
 /obj/item/organ/ears/mammal
@@ -59,15 +59,6 @@
 
 /datum/bodypart_overlay/mutant/ears/fish_ears/get_global_feature_list()
 	return SSaccessories.ears_list_fish
-
-/// Bug ears
-/obj/item/organ/ears/bug
-	preference = "feature_bug_ears"
-	bodypart_overlay = /datum/bodypart_overlay/mutant/ears/bug_ears
-	organ_traits = list(TRAIT_ANTENNAE)
-
-/datum/bodypart_overlay/mutant/ears/bug_ears/get_global_feature_list()
-	return SSaccessories.ears_list_bug
 
 /// Humanoid ears
 /obj/item/organ/ears/humanoid

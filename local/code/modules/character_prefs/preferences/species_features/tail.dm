@@ -5,9 +5,8 @@
 /datum/controller/subsystem/accessories
 	var/list/tails_list_dog
 	var/list/tails_list_fox
-	var/list/tails_list_bird
+	var/list/tails_list_flying
 	var/list/tails_list_mammal
-	var/list/tails_list_bug
 	var/list/tails_list_synth
 	var/list/tails_list_humanoid
 
@@ -15,9 +14,8 @@
 	. = ..()
 	tails_list_dog = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/dog)["default_sprites"]
 	tails_list_fox = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/fox)["default_sprites"]
-	tails_list_bird = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/bird)["default_sprites"]
+	tails_list_flying = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/flying)["default_sprites"]
 	tails_list_mammal = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/mammal)["default_sprites"]
-	tails_list_bug = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/bug)["default_sprites"]
 	tails_list_synth = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/cybernetic)["default_sprites"]
 	tails_list_humanoid = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/humanoid)["default_sprites"]
 
@@ -290,41 +288,41 @@
 		return TRUE
 	return FALSE
 
-///	Bird tail type
-/datum/preference/choiced/bird_tail
-	savefile_key = "feature_bird_tail"
+///	Flying tail type
+/datum/preference/choiced/flying_tail
+	savefile_key = "feature_flying_tail"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_CLOTHING
 	relevant_external_organ = null
 	should_generate_icons = TRUE
 	main_feature_name = "Tail"
 
-/datum/preference/choiced/bird_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == BIRD)
+/datum/preference/choiced/flying_tail/apply_to_human(mob/living/carbon/human/target, value)
+	if(target.dna.tail_type == FLY)
 		target.dna.features["tail_other"] = value
 
-/datum/preference/choiced/bird_tail/compile_constant_data()
+/datum/preference/choiced/flying_tail/compile_constant_data()
 	var/list/data = ..()
 	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/tail_color::savefile_key
 	return data
 
-/datum/preference/choiced/bird_tail/create_default_value()
-	return /datum/sprite_accessory/tails/bird/none::name
+/datum/preference/choiced/flying_tail/create_default_value()
+	return /datum/sprite_accessory/tails/flying/none::name
 
-/datum/preference/choiced/bird_tail/icon_for(value)
-	var/datum/sprite_accessory/chosen_tail = SSaccessories.tails_list_bird[value]
+/datum/preference/choiced/flying_tail/icon_for(value)
+	var/datum/sprite_accessory/chosen_tail = SSaccessories.tails_list_flying[value]
 	return generate_back_icon(chosen_tail, "tail")
 
-/datum/preference/choiced/bird_tail/init_possible_values()
-	return assoc_to_keys_features(SSaccessories.tails_list_bird)
+/datum/preference/choiced/flying_tail/init_possible_values()
+	return assoc_to_keys_features(SSaccessories.tails_list_flying)
 
-/datum/preference/choiced/bird_tail/is_accessible(datum/preferences/preferences)
+/datum/preference/choiced/flying_tail/is_accessible(datum/preferences/preferences)
 	. = ..()
 	var/datum/species/species = preferences.read_preference(/datum/preference/choiced/species)
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == BIRD)
+	if(chosen_variation == FLY)
 		return TRUE
 	return FALSE
 
@@ -395,44 +393,6 @@
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
 	if(chosen_variation == AQUATIC)
-		return TRUE
-	return FALSE
-
-///	Bug tail type
-/datum/preference/choiced/bug_tail
-	savefile_key = "feature_bug_tail"
-	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_CLOTHING
-	relevant_external_organ = null
-	should_generate_icons = TRUE
-	main_feature_name = "Tail"
-
-/datum/preference/choiced/bug_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == BUG)
-		target.dna.features["tail_other"] = value
-
-/datum/preference/choiced/bug_tail/compile_constant_data()
-	var/list/data = ..()
-	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/tail_color::savefile_key
-	return data
-
-/datum/preference/choiced/bug_tail/create_default_value()
-	return /datum/sprite_accessory/tails/bug/none::name
-
-/datum/preference/choiced/bug_tail/icon_for(value)
-	var/datum/sprite_accessory/chosen_tail = SSaccessories.tails_list_bug[value]
-	return generate_back_icon(chosen_tail, "tail")
-
-/datum/preference/choiced/bug_tail/init_possible_values()
-	return assoc_to_keys_features(SSaccessories.tails_list_bug)
-
-/datum/preference/choiced/bug_tail/is_accessible(datum/preferences/preferences)
-	. = ..()
-	var/datum/species/species = preferences.read_preference(/datum/preference/choiced/species)
-	if(species.type in GLOB.species_blacklist_no_mutant)
-		return FALSE
-	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == BUG)
 		return TRUE
 	return FALSE
 

@@ -2,36 +2,36 @@
 	icon = 'local/icons/mob/mutant/sprite_accessories/ears.dmi'
 
 // Bird
-/datum/sprite_accessory/ears_anthro/bird/hawk
+/datum/sprite_accessory/ears_anthro/flying/hawk
 	name = "Hawk"
 	icon_state = "hawk"
 
 // Bug
-/datum/sprite_accessory/ears_anthro/bug/antenna_simple1
+/datum/sprite_accessory/ears_anthro/flying/antenna_simple1
 	name = "Insect antenna (coloring 2)"
 	icon_state = "antenna_simple1"
 
-/datum/sprite_accessory/ears_anthro/bug/antenna_simple1_v2
+/datum/sprite_accessory/ears_anthro/flying/antenna_simple1_v2
 	name = "Insect antenna (coloring 3)"
 	icon_state = "antenna_simple1v2"
 
-/datum/sprite_accessory/ears_anthro/bug/antenna_simple2
+/datum/sprite_accessory/ears_anthro/flying/antenna_simple2
 	name = "Insect antenna 2 (coloring 2)"
 	icon_state = "antenna_simple2"
 
-/datum/sprite_accessory/ears_anthro/bug/antenna_simple2_v2
+/datum/sprite_accessory/ears_anthro/flying/antenna_simple2_v2
 	name = "Insect antenna 2 (coloring 3)"
 	icon_state = "antenna_simple2v2"
 
-/datum/sprite_accessory/ears_anthro/bug/antenna_fuzzball
+/datum/sprite_accessory/ears_anthro/flying/antenna_fuzzball
 	name = "Fuzzball antenna (coloring 2+3)"
 	icon_state = "antenna_fuzzball"
 
-/datum/sprite_accessory/ears_anthro/bug/antenna_fuzzball_v2
+/datum/sprite_accessory/ears_anthro/flying/antenna_fuzzball_v2
 	name = "Fuzzball antenna (coloring 3+1)"
 	icon_state = "antenna_fuzzballv2"
 
-/datum/sprite_accessory/ears_anthro/bug/pede
+/datum/sprite_accessory/ears_anthro/flying/pede
 	name = "Scolipede"
 	icon_state = "pede"
 

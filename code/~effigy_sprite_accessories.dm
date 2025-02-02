@@ -60,22 +60,12 @@
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
-/datum/sprite_accessory/ears_anthro/deer/none
-	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
-	name = SPRITE_ACCESSORY_NO_EARS
-	icon_state = /datum/sprite_accessory/ears/none::icon_state
-
 /datum/sprite_accessory/ears_anthro/fish/none
 	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
-/datum/sprite_accessory/ears_anthro/bird/none
-	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
-	name = SPRITE_ACCESSORY_NO_EARS
-	icon_state = /datum/sprite_accessory/ears/none::icon_state
-
-/datum/sprite_accessory/ears_anthro/bug/none
+/datum/sprite_accessory/ears_anthro/flying/none
 	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
@@ -126,22 +116,12 @@
 	name = SPRITE_ACCESSORY_NO_TAIL
 	icon_state = /datum/sprite_accessory/tails/none::icon_state
 
-/datum/sprite_accessory/tails/bird/none
-	icon = /datum/sprite_accessory/tails/none::icon
-	name = SPRITE_ACCESSORY_NO_TAIL
-	icon_state = /datum/sprite_accessory/tails/none::icon_state
-
-/datum/sprite_accessory/tails/deer/none
+/datum/sprite_accessory/tails/flying/none
 	icon = /datum/sprite_accessory/tails/none::icon
 	name = SPRITE_ACCESSORY_NO_TAIL
 	icon_state = /datum/sprite_accessory/tails/none::icon_state
 
 /datum/sprite_accessory/tails/fish/none
-	icon = /datum/sprite_accessory/tails/none::icon
-	name = SPRITE_ACCESSORY_NO_TAIL
-	icon_state = /datum/sprite_accessory/tails/none::icon_state
-
-/datum/sprite_accessory/tails/bug/none
 	icon = /datum/sprite_accessory/tails/none::icon
 	name = SPRITE_ACCESSORY_NO_TAIL
 	icon_state = /datum/sprite_accessory/tails/none::icon_state
