@@ -1,6 +1,8 @@
 /datum/sprite_accessory/tails/fish
 	icon = 'local/icons/mob/mutant/sprite_accessories/tails/tails_fish.dmi'
+	color_src = FALSE
 
+/*
 /datum/sprite_accessory/tails/fish/data_shark
 	name = "Data Shark"
 	icon_state = "datashark"
@@ -24,3 +26,4 @@
 /datum/sprite_accessory/tails/fish/tentacle
 	name = "Tentacle"
 	icon_state = "tentacle"
+*/
