@@ -16,7 +16,6 @@
 GLOBAL_LIST_INIT(mutant_variations, list(
 	AQUATIC,
 	CAT,
-	CYBERNETIC,
 	DOG,
 	FLY,
 	FOX,
