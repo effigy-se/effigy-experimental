@@ -1,4 +1,4 @@
-#define SPECIES_ANTHRO "anthro"
+#define SPECIES_ANTHRO "anthromorph"
 #define SPECIES_AQUATIC "aquatic"
 
 #define BODYPART_ICON_ANTHRO 'local/icons/mob/species/anthro_parts.dmi'
