@@ -13,22 +13,18 @@
 	name = "Cat (Big)"
 	icon_state = "catbig"
 
+/datum/sprite_accessory/tails/cat/eevee
+	name = "Eevee"
+	icon_state = "eevee"
+
 /datum/sprite_accessory/tails/felinid/cat/leopard
 	name = "Leopard"
 	icon_state = "leopard"
 
-/datum/sprite_accessory/tails/felinid/cat/tiger1
+/datum/sprite_accessory/tails/felinid/cat/tiger
 	name = "Tiger"
 	icon_state = "tiger"
 
-/datum/sprite_accessory/tails/felinid/cat/tiger2
+/datum/sprite_accessory/tails/felinid/cat/tiger_double
 	name = "Tiger (Double)"
 	icon_state = "tiger2"
-
-/datum/sprite_accessory/tails/felinid/cat/servelyn
-	name = "Servelyn"
-	icon_state = "tiger2"
-
-/datum/sprite_accessory/tails/cat/eevee
-	name = "Eevee"
-	icon_state = "eevee"

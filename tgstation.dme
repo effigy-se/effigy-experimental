@@ -6612,7 +6612,6 @@
 #include "local\code\modules\character_prefs\sprite_accessories\wings.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\bodypart_overlays\lizard_markings.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\tails\tails_aquatic.dm"
-#include "local\code\modules\character_prefs\sprite_accessories\tails\tails_bug.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\tails\tails_cat.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\tails\tails_cybernetic.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\tails\tails_dog.dm"
