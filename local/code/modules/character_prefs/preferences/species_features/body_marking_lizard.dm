@@ -5,7 +5,7 @@
 
 /// Body markings toggle
 /datum/preference/toggle/markings
-	savefile_key = "has_markings"
+	savefile_key = "body_markings_toggle"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_DEFAULT

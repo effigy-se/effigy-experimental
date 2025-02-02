@@ -12,7 +12,7 @@
 
 /// Snout toggle
 /datum/preference/toggle/snout
-	savefile_key = "has_snout"
+	savefile_key = "snout_toggle"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_DEFAULT

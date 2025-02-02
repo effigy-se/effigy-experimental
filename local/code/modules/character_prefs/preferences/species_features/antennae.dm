@@ -1,6 +1,6 @@
 /// Moth antennae toggle
 /datum/preference/toggle/antennae
-	savefile_key = "has_antennae"
+	savefile_key = "antennae_toggle"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_DEFAULT

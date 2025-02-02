@@ -40,7 +40,7 @@
 
 /// Horns toggle
 /datum/preference/toggle/horns
-	savefile_key = "has_horns"
+	savefile_key = "horns_toggle"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_DEFAULT

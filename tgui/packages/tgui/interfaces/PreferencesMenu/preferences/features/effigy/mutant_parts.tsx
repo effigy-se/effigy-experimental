@@ -7,7 +7,7 @@ import {
 } from '../base';
 import { FeatureDropdownInput } from '../dropdowns';
 
-export const has_snout: FeatureToggle = {
+export const snout_toggle: FeatureToggle = {
   name: '+ Snout',
   category: 'GAMEPLAY',
   description: `
@@ -21,7 +21,7 @@ export const snout_color: Feature<string[]> = {
   component: FeatureTriColorInput,
 };
 
-export const has_horns: FeatureToggle = {
+export const horns_toggle: FeatureToggle = {
   name: '+ Horns',
   category: 'GAMEPLAY',
   description: `
@@ -35,7 +35,7 @@ export const horns_color: Feature<string[]> = {
   component: FeatureTriColorInput,
 };
 
-export const has_frills: FeatureToggle = {
+export const frills_toggle: FeatureToggle = {
   name: '+ Frills',
   category: 'GAMEPLAY',
   description: `
@@ -72,7 +72,7 @@ export const tail_color: Feature<string[]> = {
   component: FeatureTriColorInput,
 };
 
-export const has_ears: FeatureToggle = {
+export const ears_toggle: FeatureToggle = {
   name: '+ Snout',
   category: 'GAMEPLAY',
   description: `
@@ -86,7 +86,7 @@ export const ears_color: Feature<string[]> = {
   component: FeatureTriColorInput,
 };
 
-export const has_spines: FeatureToggle = {
+export const spines_toggle: FeatureToggle = {
   name: '+ Spines',
   category: 'GAMEPLAY',
   description: `
@@ -100,8 +100,8 @@ export const spines_color: Feature<string[]> = {
   component: FeatureTriColorInput,
 };
 
-export const has_caps: FeatureToggle = {
-  name: '+ Snout',
+export const caps_toggle: FeatureToggle = {
+  name: '+ Mushperson Cap',
   category: 'GAMEPLAY',
   description: `
     When toggled, adds mushperson caps to your character.
@@ -114,7 +114,7 @@ export const caps_color: Feature<string[]> = {
   component: FeatureTriColorInput,
 };
 
-export const has_markings: FeatureToggle = {
+export const body_markings_toggle: FeatureToggle = {
   name: '+ Markings',
   category: 'GAMEPLAY',
   description: `
@@ -128,7 +128,7 @@ export const body_markings_color: Feature<string[]> = {
   component: FeatureTriColorInput,
 };
 
-export const has_moth_markings: FeatureToggle = {
+export const moth_markings_toggle: FeatureToggle = {
   name: '+ Moth Markings',
   category: 'GAMEPLAY',
   description: `
@@ -165,7 +165,7 @@ export const has_moth_wings: FeatureToggle = {
   component: CheckboxInput,
 };
 
-export const has_antennae: FeatureToggle = {
+export const antennae_toggle: FeatureToggle = {
   name: '+ Moth Antennae',
   category: 'GAMEPLAY',
   description: `
@@ -179,7 +179,7 @@ export const antennae_color: Feature<string[]> = {
   component: FeatureTriColorInput,
 };
 
-export const has_fluff: FeatureToggle = {
+export const fluff_toggle: FeatureToggle = {
   name: '+ Fluff',
   category: 'GAMEPLAY',
   description: `

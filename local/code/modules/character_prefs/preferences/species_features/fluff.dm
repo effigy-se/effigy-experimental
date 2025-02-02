@@ -1,6 +1,6 @@
 /// Fluff toggle
 /datum/preference/toggle/fluff
-	savefile_key = "has_fluff"
+	savefile_key = "fluff_toggle"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_DEFAULT

@@ -22,7 +22,7 @@
 
 /// Frills toggle
 /datum/preference/toggle/frills
-	savefile_key = "has_frills"
+	savefile_key = "frills_toggle"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_DEFAULT
