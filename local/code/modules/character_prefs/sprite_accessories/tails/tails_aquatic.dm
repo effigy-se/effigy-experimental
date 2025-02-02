@@ -1,15 +1,26 @@
 /datum/sprite_accessory/tails/fish
-	icon = 'local/icons/mob/mutant/sprite_accessories/tails/tails_fish.dmi'
+	icon = 'local/icons/mob/mutant/sprite_accessories/tails/tails_aquatic.dmi'
 	color_src = FALSE
 
-/*
-/datum/sprite_accessory/tails/fish/data_shark
-	name = "Data Shark"
-	icon_state = "datashark"
+/datum/sprite_accessory/tails/fish/akula
+	name = "Akula"
+	icon_state = "akula"
 
-/datum/sprite_accessory/tails/fish/data_shark
-	name = "H Shark"
-	icon_state = "hshark"
+/datum/sprite_accessory/tails/fish/chonky
+	name = "Chonky"
+	icon_state = "chonky"
+	center = TRUE
+	dimension_x = 36
+
+/datum/sprite_accessory/tails/fish/crescent
+	name = "Crescent"
+	icon_state = "crescent"
+
+/datum/sprite_accessory/tails/fish/long
+	name = "Long"
+	icon_state = "long"
+	center = TRUE
+	dimension_x = 38
 
 /datum/sprite_accessory/tails/fish/orca
 	name = "Orca"
@@ -23,7 +34,14 @@
 	name = "Shark (No Fin)"
 	icon_state = "sharknofin"
 
+/datum/sprite_accessory/tails/fish/data_shark
+	name = "Data Shark"
+	icon_state = "datashark"
+
+/datum/sprite_accessory/tails/fish/simple
+	name = "Simple"
+	icon_state = "simple"
+
 /datum/sprite_accessory/tails/fish/tentacle
 	name = "Tentacle"
 	icon_state = "tentacle"
-*/

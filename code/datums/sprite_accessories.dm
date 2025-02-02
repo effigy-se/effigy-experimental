@@ -1751,6 +1751,8 @@
 	/// Describes which tail spine sprites to use, if any.
 	var/spine_key = NONE
 
+// EffigyEdit Remove - Character Preferences - Moved to local/code/modules/character_prefs/sprite_accessories/tails/tails_aquatic.dm
+/*
 ///Used for fish-infused tails, which come in different flavors.
 /datum/sprite_accessory/tails/fish
 	icon = 'icons/mob/human/fish_features.dmi'
@@ -1779,6 +1781,8 @@
 	icon_state = "chonky"
 	center = TRUE
 	dimension_x = 36
+*/
+// EffigyEdit Remove End
 
 /datum/sprite_accessory/tails/lizard
 	icon = 'icons/mob/human/species/lizard/lizard_tails.dmi'
