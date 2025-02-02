@@ -33,7 +33,11 @@
 		if(target.dna.ear_type == NO_VARIATION)
 			return .
 		else if(target.dna.features["ears"] != /datum/sprite_accessory/ears/none::name && target.dna.features["ears"] != /datum/sprite_accessory/blank::name)
-			var/obj/item/organ/organ_path = text2path("/obj/item/organ/ears/[target.dna.ear_type]")
+			var/obj/item/organ/organ_path
+			if(target.dna.ear_type == AQUATIC)
+				organ_path = text2path("/obj/item/organ/ears/fish")
+			else
+				organ_path = text2path("/obj/item/organ/ears/[target.dna.ear_type]")
 			var/obj/item/organ/replacement = SSwardrobe.provide_type(organ_path)
 			replacement.Insert(target, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 			return .
@@ -300,7 +304,7 @@
 	main_feature_name = "Ears"
 
 /datum/preference/choiced/fish_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == FISH)
+	if(target.dna.ear_type == AQUATIC)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/fish_ears/create_default_value()
@@ -319,7 +323,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == FISH)
+	if(chosen_variation == AQUATIC)
 		return TRUE
 	return FALSE
 

@@ -88,7 +88,7 @@
 			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
 			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
 			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
-		if(FISH)
+		if(AQUATIC)
 			target.dna.features["tail_cat"] = /datum/sprite_accessory/tails/felinid/none::name
 			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
 			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
@@ -370,7 +370,7 @@
 	main_feature_name = "Tail"
 
 /datum/preference/choiced/fish_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == FISH)
+	if(target.dna.tail_type == AQUATIC)
 		target.dna.features["fish_tail"] = value
 
 /datum/preference/choiced/fish_tail/compile_constant_data()
@@ -394,7 +394,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == FISH)
+	if(chosen_variation == AQUATIC)
 		return TRUE
 	return FALSE
 
