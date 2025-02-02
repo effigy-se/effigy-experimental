@@ -54,43 +54,43 @@
 // Cybernetic
 
 // Mammal
-/datum/sprite_accessory/ears_anthro/deer/bear
+/datum/sprite_accessory/ears_anthro/mammal/bear
 	name = "Bear"
 	icon_state = "bear"
 
-/datum/sprite_accessory/ears_anthro/deer/cow
+/datum/sprite_accessory/ears_anthro/mammal/cow
 	name = "Cow"
 	icon_state = "cow"
 
-/datum/sprite_accessory/ears_anthro/deer/deer
+/datum/sprite_accessory/ears_anthro/mammal/deer
 	name = "Deer"
 	icon_state = "deerear"
 
-/datum/sprite_accessory/ears_anthro/deer/deer_antler
+/datum/sprite_accessory/ears_anthro/mammal/deer_antler
 	name = "Deer (Antler)"
 	icon_state = "deer"
 
-/datum/sprite_accessory/ears_anthro/deer/deer2
+/datum/sprite_accessory/ears_anthro/mammal/deer2
 	name = "Deer 2"
 	icon_state = "deer2"
 
-/datum/sprite_accessory/ears_anthro/deer/elephant
+/datum/sprite_accessory/ears_anthro/mammal/elephant
 	name = "Elephant"
 	icon_state = "elephant"
 
-/datum/sprite_accessory/ears_anthro/deer/kangaroo
+/datum/sprite_accessory/ears_anthro/mammal/kangaroo
 	name = "Kangaroo"
 	icon_state = "kangaroo"
 
-/datum/sprite_accessory/ears_anthro/deer/curled
+/datum/sprite_accessory/ears_anthro/mammal/curled
 	name = "Ram Curled Horn"
 	icon_state = "horn1"
 
-/datum/sprite_accessory/ears_anthro/deer/skunk
+/datum/sprite_accessory/ears_anthro/mammal/skunk
 	name = "skunk"
 	icon_state = "skunk"
 
-/datum/sprite_accessory/ears_anthro/deer/squirrel
+/datum/sprite_accessory/ears_anthro/mammal/squirrel
 	name = "Squirrel"
 	icon_state = "squirrel"
 
@@ -202,31 +202,31 @@
 // Monkey
 
 // Mouse
-/datum/sprite_accessory/ears_anthro/mouse/bat
+/datum/sprite_accessory/ears_anthro/mammal/bat
 	name = "Bat"
 	icon_state = "bat"
 
-/datum/sprite_accessory/ears_anthro/mouse/default
+/datum/sprite_accessory/ears_anthro/mammal/mouse
 	name = "Mouse"
 	icon_state = "mouse"
 
-/datum/sprite_accessory/ears_anthro/mouse/mouse_two
+/datum/sprite_accessory/ears_anthro/mammal/mouse_two
 	name = "Mouse II"
 	icon_state = "mouse_two"
 
-/datum/sprite_accessory/ears_anthro/mouse/murid
+/datum/sprite_accessory/ears_anthro/mammal/murid
 	name = "Murid"
 	icon_state = "murid"
 
 // Rabbit
-/datum/sprite_accessory/ears_anthro/bunny/bunnyalt
+/datum/sprite_accessory/ears_anthro/mammal/bunnyalt
 	name = "Curved Rabbit Ears"
 	icon_state = "bunnyalt"
 
-/datum/sprite_accessory/ears_anthro/bunny/hare
+/datum/sprite_accessory/ears_anthro/mammal/hare
 	name = "Hare"
 	icon_state = "rabbitalt"
 
-/datum/sprite_accessory/ears_anthro/bunny/default
+/datum/sprite_accessory/ears_anthro/mammal/rabbit
 	name = "Rabbit"
 	icon_state = "rabbit"

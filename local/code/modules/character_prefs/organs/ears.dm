@@ -28,14 +28,6 @@
 /datum/bodypart_overlay/mutant/ears/dog_ears/get_global_feature_list()
 	return SSaccessories.ears_list_dog
 
-/// Bunny ears
-/obj/item/organ/ears/bunny
-	preference = "feature_bunny_ears"
-	bodypart_overlay = /datum/bodypart_overlay/mutant/ears/bunny_ears
-
-/datum/bodypart_overlay/mutant/ears/bunny_ears/get_global_feature_list()
-	return SSaccessories.ears_list_bunny
-
 /// Bird ears
 /obj/item/organ/ears/bird
 	preference = "feature_bird_ears"
@@ -44,13 +36,13 @@
 /datum/bodypart_overlay/mutant/ears/bird_ears/get_global_feature_list()
 	return SSaccessories.ears_list_bird
 
-/// Mouse ears
-/obj/item/organ/ears/mouse
-	preference = "feature_mouse_ears"
-	bodypart_overlay = /datum/bodypart_overlay/mutant/ears/mouse_ears
+/// Mammal ears
+/obj/item/organ/ears/mammal
+	preference = "feature_mammal_ears"
+	bodypart_overlay = /datum/bodypart_overlay/mutant/ears/mammal_ears
 
-/datum/bodypart_overlay/mutant/ears/mouse_ears/get_global_feature_list()
-	return SSaccessories.ears_list_mouse
+/datum/bodypart_overlay/mutant/ears/mammal_ears/get_global_feature_list()
+	return SSaccessories.ears_list_mammal
 
 /// Monkey ears
 /obj/item/organ/ears/monkey
@@ -59,14 +51,6 @@
 
 /datum/bodypart_overlay/mutant/ears/monkey_ears/get_global_feature_list()
 	return SSaccessories.ears_list_monkey
-
-/// Deer ears
-/obj/item/organ/ears/deer
-	preference = "feature_deer_ears"
-	bodypart_overlay = /datum/bodypart_overlay/mutant/ears/deer_ears
-
-/datum/bodypart_overlay/mutant/ears/deer_ears/get_global_feature_list()
-	return SSaccessories.ears_list_deer
 
 /// Aquatic ears
 /obj/item/organ/ears/fish

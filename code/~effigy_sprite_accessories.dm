@@ -50,12 +50,7 @@
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
-/datum/sprite_accessory/ears_anthro/bunny/none
-	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
-	name = SPRITE_ACCESSORY_NO_EARS
-	icon_state = /datum/sprite_accessory/ears/none::icon_state
-
-/datum/sprite_accessory/ears_anthro/mouse/none
+/datum/sprite_accessory/ears_anthro/mammal/none
 	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
@@ -95,11 +90,6 @@
 	name = SPRITE_ACCESSORY_NO_EARS
 	icon_state = /datum/sprite_accessory/ears/none::icon_state
 
-/datum/sprite_accessory/ears_anthro/alien/none
-	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
-	name = SPRITE_ACCESSORY_NO_EARS
-	icon_state = /datum/sprite_accessory/ears/none::icon_state
-
 /// Tail time
 /datum/sprite_accessory/tails/none
 	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
@@ -131,12 +121,7 @@
 	name = SPRITE_ACCESSORY_NO_TAIL
 	icon_state = /datum/sprite_accessory/tails/none::icon_state
 
-/datum/sprite_accessory/tails/bunny/none
-	icon = /datum/sprite_accessory/tails/none::icon
-	name = SPRITE_ACCESSORY_NO_TAIL
-	icon_state = /datum/sprite_accessory/tails/none::icon_state
-
-/datum/sprite_accessory/tails/mouse/none
+/datum/sprite_accessory/tails/mammal/none
 	icon = /datum/sprite_accessory/tails/none::icon
 	name = SPRITE_ACCESSORY_NO_TAIL
 	icon_state = /datum/sprite_accessory/tails/none::icon_state
@@ -171,12 +156,7 @@
 	name = SPRITE_ACCESSORY_NO_TAIL
 	icon_state = /datum/sprite_accessory/tails/none::icon_state
 
-/datum/sprite_accessory/tails/alien/none
-	icon = /datum/sprite_accessory/tails/none::icon
-	name = SPRITE_ACCESSORY_NO_TAIL
-	icon_state = /datum/sprite_accessory/tails/none::icon_state
-
-/// Lizard exclusive 🦎
+// TG sprite accessories
 /datum/sprite_accessory/snouts/none
 	icon = 'local/icons/mob/mutant/sprite_accessories/fallback.dmi'
 	name = SPRITE_ACCESSORY_NO_SNOUT
@@ -197,7 +177,7 @@
 	name = "No Horns"
 	icon_state = "none"
 
-/// Linter sacrifice.  We only need this in the one file I suppose.
+// Linter sacrifice.  We only need this in the one file I suppose.
 #undef SPRITE_ACCESSORY_NO_TAIL
 #undef SPRITE_ACCESSORY_NO_EARS
 #undef SPRITE_ACCESSORY_NO_SNOUT

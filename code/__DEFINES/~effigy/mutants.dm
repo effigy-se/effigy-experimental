@@ -3,51 +3,28 @@
 #define NO_VARIATION "none"
 #define BIRD "bird"
 #define BUG "bug"
-#define BUNNY "bunny"
 #define CAT "cat"
 #define CYBERNETIC "cybernetic"
-#define DEER "deer"
 #define DOG "dog"
 #define FISH "fish"
 #define FOX "fox"
-#define FROG "frog"
 #define HUMANOID "humanoid"
 #define LIZARD "lizard"
 #define MONKEY "monkey"
-#define MOUSE "mouse"
+#define MAMMAL "mammal"
 
 ///	This list gets read by the dropdown pref when a player chooses what type of sprite accessory to access
 GLOBAL_LIST_INIT(mutant_variations, list(
 	BIRD,
 	BUG,
-	BUNNY,
 	CAT,
 	CYBERNETIC,
-	DEER,
 	DOG,
 	FISH,
 	FOX,
 	HUMANOID,
 	LIZARD,
-	MONKEY,
-	MOUSE,
-))
-
-///	This list gets read by the animalistic preference for genemod and anthros
-GLOBAL_LIST_INIT(genemod_variations, list(
-	BIRD,
-	BUG,
-	BUNNY,
-	CAT,
-	DEER,
-	DOG,
-	FISH,
-	FOX,
-	FROG,
-	LIZARD,
-	MONKEY,
-	MOUSE,
-	NO_VARIATION,
+	MAMMAL,
 ))
 
 GLOBAL_LIST_INIT(species_blacklist_no_mutant, list(

@@ -24,3 +24,11 @@
 /datum/sprite_accessory/tails/felinid/cat/tiger2
 	name = "Tiger (Double)"
 	icon_state = "tiger2"
+
+/datum/sprite_accessory/tails/felinid/cat/servelyn
+	name = "Servelyn"
+	icon_state = "tiger2"
+
+/datum/sprite_accessory/tails/cat/eevee
+	name = "Eevee"
+	icon_state = "eevee"

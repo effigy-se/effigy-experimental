@@ -6,11 +6,9 @@
 	var/list/ears_list_lizard
 	var/list/ears_list_dog
 	var/list/ears_list_fox
-	var/list/ears_list_bunny
-	var/list/ears_list_mouse
 	var/list/ears_list_bird
 	var/list/ears_list_monkey
-	var/list/ears_list_deer
+	var/list/ears_list_mammal
 	var/list/ears_list_fish
 	var/list/ears_list_bug
 	var/list/ears_list_humanoid
@@ -21,11 +19,9 @@
 	ears_list_lizard = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/lizard)["default_sprites"]
 	ears_list_dog = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/dog)["default_sprites"]
 	ears_list_fox = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/fox)["default_sprites"]
-	ears_list_bunny = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/bunny)["default_sprites"]
-	ears_list_mouse = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/mouse)["default_sprites"]
 	ears_list_bird = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/bird)["default_sprites"]
 	ears_list_monkey = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/monkey)["default_sprites"]
-	ears_list_deer = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/deer)["default_sprites"]
+	ears_list_mammal = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/mammal)["default_sprites"]
 	ears_list_fish = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/fish)["default_sprites"]
 	ears_list_bug = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/bug)["default_sprites"]
 	ears_list_humanoid = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears_anthro/humanoid)["default_sprites"]
@@ -195,39 +191,6 @@
 	var/datum/sprite_accessory/chosen_ears = SSaccessories.ears_list_dog[value]
 	return generate_ears_icon(chosen_ears)
 
-///	Bunny ears type
-/datum/preference/choiced/bunny_ears
-	savefile_key = "feature_bunny_ears"
-	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_CLOTHING
-	relevant_external_organ = null
-	should_generate_icons = TRUE
-	main_feature_name = "Ears"
-
-/datum/preference/choiced/bunny_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == BUNNY)
-		target.dna.features["ears"] = value
-
-/datum/preference/choiced/bunny_ears/create_default_value()
-	return /datum/sprite_accessory/ears_anthro/bunny/none::name
-
-/datum/preference/choiced/bunny_ears/icon_for(value)
-	var/datum/sprite_accessory/chosen_ears = SSaccessories.ears_list_bunny[value]
-	return generate_ears_icon(chosen_ears)
-
-/datum/preference/choiced/bunny_ears/init_possible_values()
-	return assoc_to_keys_features(SSaccessories.ears_list_bunny)
-
-/datum/preference/choiced/bunny_ears/is_accessible(datum/preferences/preferences)
-	. = ..()
-	var/datum/species/species = preferences.read_preference(/datum/preference/choiced/species)
-	if(species.type in GLOB.species_blacklist_no_mutant)
-		return FALSE
-	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == BUNNY)
-		return TRUE
-	return FALSE
-
 ///	Bird ears type
 /datum/preference/choiced/bird_ears
 	savefile_key = "feature_bird_ears"
@@ -258,39 +221,6 @@
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
 	if(chosen_variation == BIRD)
-		return TRUE
-	return FALSE
-
-///	Mouse ears type
-/datum/preference/choiced/mouse_ears
-	savefile_key = "feature_mouse_ears"
-	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_CLOTHING
-	relevant_external_organ = null
-	should_generate_icons = TRUE
-	main_feature_name = "Ears"
-
-/datum/preference/choiced/mouse_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == MOUSE)
-		target.dna.features["ears"] = value
-
-/datum/preference/choiced/mouse_ears/create_default_value()
-	return /datum/sprite_accessory/ears_anthro/mouse/none::name
-
-/datum/preference/choiced/mouse_ears/icon_for(value)
-	var/datum/sprite_accessory/chosen_ears = SSaccessories.ears_list_mouse[value]
-	return generate_ears_icon(chosen_ears)
-
-/datum/preference/choiced/mouse_ears/init_possible_values()
-	return assoc_to_keys_features(SSaccessories.ears_list_mouse)
-
-/datum/preference/choiced/mouse_ears/is_accessible(datum/preferences/preferences)
-	. = ..()
-	var/datum/species/species = preferences.read_preference(/datum/preference/choiced/species)
-	if(species.type in GLOB.species_blacklist_no_mutant)
-		return FALSE
-	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == MOUSE)
 		return TRUE
 	return FALSE
 
@@ -327,36 +257,36 @@
 		return TRUE
 	return FALSE
 
-///	Deer ears type
-/datum/preference/choiced/deer_ears
-	savefile_key = "feature_deer_ears"
+///	Mammal ears type
+/datum/preference/choiced/mammal_ears
+	savefile_key = "feature_mammal_ears"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_CLOTHING
 	relevant_external_organ = null
 	should_generate_icons = TRUE
 	main_feature_name = "Ears"
 
-/datum/preference/choiced/deer_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == DEER)
+/datum/preference/choiced/mammal_ears/apply_to_human(mob/living/carbon/human/target, value)
+	if(target.dna.ear_type == MAMMAL)
 		target.dna.features["ears"] = value
 
-/datum/preference/choiced/deer_ears/create_default_value()
-	return /datum/sprite_accessory/ears_anthro/deer/none::name
+/datum/preference/choiced/mammal_ears/create_default_value()
+	return /datum/sprite_accessory/ears_anthro/mammal/none::name
 
-/datum/preference/choiced/deer_ears/icon_for(value)
-	var/datum/sprite_accessory/chosen_ears = SSaccessories.ears_list_deer[value]
+/datum/preference/choiced/mammal_ears/icon_for(value)
+	var/datum/sprite_accessory/chosen_ears = SSaccessories.ears_list_mammal[value]
 	return generate_ears_icon(chosen_ears)
 
-/datum/preference/choiced/deer_ears/init_possible_values()
-	return assoc_to_keys_features(SSaccessories.ears_list_deer)
+/datum/preference/choiced/mammal_ears/init_possible_values()
+	return assoc_to_keys_features(SSaccessories.ears_list_mammal)
 
-/datum/preference/choiced/deer_ears/is_accessible(datum/preferences/preferences)
+/datum/preference/choiced/mammal_ears/is_accessible(datum/preferences/preferences)
 	. = ..()
 	var/datum/species/species = preferences.read_preference(/datum/preference/choiced/species)
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == DEER)
+	if(chosen_variation == MAMMAL)
 		return TRUE
 	return FALSE
 
@@ -596,27 +526,17 @@
 	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/ears_color::savefile_key
 	return data
 
-/datum/preference/choiced/bunny_ears/compile_constant_data()
-	var/list/data = ..()
-	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/ears_color::savefile_key
-	return data
-
-/datum/preference/choiced/mouse_ears/compile_constant_data()
-	var/list/data = ..()
-	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/ears_color::savefile_key
-	return data
-
 /datum/preference/choiced/bird_ears/compile_constant_data()
 	var/list/data = ..()
 	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/ears_color::savefile_key
 	return data
 
-/datum/preference/choiced/monkey_ears/compile_constant_data()
+/datum/preference/choiced/mammal_ears/compile_constant_data()
 	var/list/data = ..()
 	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/ears_color::savefile_key
 	return data
 
-/datum/preference/choiced/deer_ears/compile_constant_data()
+/datum/preference/choiced/monkey_ears/compile_constant_data()
 	var/list/data = ..()
 	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/ears_color::savefile_key
 	return data

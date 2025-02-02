@@ -3,19 +3,19 @@
 	name = "monkey tail"
 	wag_flags = WAG_ABLE
 
-/// Mouse tail
-/obj/item/organ/tail/mouse
-	name = "mouse tail"
-	preference = "feature_mouse_tail"
+/// Mammal tail
+/obj/item/organ/tail/mammal
+	name = "mammal tail"
+	preference = "feature_mammal_tail"
 	dna_block = null
 	wag_flags = WAG_ABLE
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/mouse
+	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/mammal
 
-/datum/bodypart_overlay/mutant/tail/mouse
+/datum/bodypart_overlay/mutant/tail/mammal
 	feature_key = "tail_other"
 
-/datum/bodypart_overlay/mutant/tail/mouse/get_global_feature_list()
-	return SSaccessories.tails_list_mouse
+/datum/bodypart_overlay/mutant/tail/mammal/get_global_feature_list()
+	return SSaccessories.tails_list_mammal
 
 /// Dog tail
 /obj/item/organ/tail/dog
@@ -43,19 +43,6 @@
 /datum/bodypart_overlay/mutant/tail/fox/get_global_feature_list()
 	return SSaccessories.tails_list_fox
 
-/// Bunny tail
-/obj/item/organ/tail/bunny
-	preference = "feature_bunny_tail"
-	dna_block = null
-	wag_flags = WAG_ABLE
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/bunny
-
-/datum/bodypart_overlay/mutant/tail/bunny
-	feature_key = "tail_other"
-
-/datum/bodypart_overlay/mutant/tail/bunny/get_global_feature_list()
-	return SSaccessories.tails_list_bunny
-
 /// Bird tail
 /obj/item/organ/tail/bird
 	preference = "feature_bird_tail"
@@ -79,19 +66,6 @@
 
 /datum/bodypart_overlay/mutant/tail/bug/get_global_feature_list()
 	return SSaccessories.tails_list_bug
-
-/// Deer tail
-/obj/item/organ/tail/deer
-	preference = "feature_deer_tail"
-	dna_block = null
-	wag_flags = WAG_ABLE
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/deer
-
-/datum/bodypart_overlay/mutant/tail/deer
-	feature_key = "tail_other"
-
-/datum/bodypart_overlay/mutant/tail/deer/get_global_feature_list()
-	return SSaccessories.tails_list_deer
 
 /// Fish tail
 /obj/item/organ/tail/fish
