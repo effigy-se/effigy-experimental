@@ -71,22 +71,22 @@
 			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
 			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
 			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
-		if(LIZARD)
+		if(LIZARD_TYPE)
 			target.dna.features["tail_cat"] = /datum/sprite_accessory/tails/felinid/none::name
 			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
 			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
 			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
-		if(CAT)
+		if(CAT_TYPE)
 			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
 			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
 			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
 			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
-		if(MONKEY)
+		if(MONKEY_TYPE)
 			target.dna.features["tail_cat"] = /datum/sprite_accessory/tails/felinid/none::name
 			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
 			target.dna.features["fish_tail"] = /datum/sprite_accessory/tails/fish/none::name
 			target.dna.features["tail_other"] = /datum/sprite_accessory/tails/none::name
-		if(AQUATIC)
+		if(AQUATIC_TYPE)
 			target.dna.features["tail_cat"] = /datum/sprite_accessory/tails/felinid/none::name
 			target.dna.features["tail_lizard"] = /datum/sprite_accessory/tails/lizard/none::name
 			target.dna.features["tail_monkey"] = /datum/sprite_accessory/tails/monkey/none::name
@@ -138,7 +138,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == LIZARD)
+	if(chosen_variation == LIZARD_TYPE)
 		return TRUE
 	return FALSE
 
@@ -170,7 +170,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == CAT)
+	if(chosen_variation == CAT_TYPE)
 		return TRUE
 	return FALSE
 
@@ -184,7 +184,7 @@
 	main_feature_name = "Tail"
 
 /datum/preference/choiced/dog_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == DOG)	// we will be sharing the 'tail_other' slot with multiple tail types
+	if(target.dna.tail_type == DOG_TYPE)	// we will be sharing the 'tail_other' slot with multiple tail types
 		target.dna.features["tail_other"] = value
 
 /datum/preference/choiced/dog_tail/compile_constant_data()
@@ -208,7 +208,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == DOG)
+	if(chosen_variation == DOG_TYPE)
 		return TRUE
 	return FALSE
 
@@ -222,7 +222,7 @@
 	main_feature_name = "Tail"
 
 /datum/preference/choiced/fox_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == FOX)
+	if(target.dna.tail_type == FOX_TYPE)
 		target.dna.features["tail_other"] = value
 
 /datum/preference/choiced/fox_tail/compile_constant_data()
@@ -246,7 +246,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == FOX)
+	if(chosen_variation == FOX_TYPE)
 		return TRUE
 	return FALSE
 
@@ -260,7 +260,7 @@
 	main_feature_name = "Tail"
 
 /datum/preference/choiced/mammal_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == MAMMAL)
+	if(target.dna.tail_type == MAMMAL_TYPE)
 		target.dna.features["tail_other"] = value
 
 /datum/preference/choiced/mammal_tail/compile_constant_data()
@@ -284,7 +284,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == MAMMAL)
+	if(chosen_variation == MAMMAL_TYPE)
 		return TRUE
 	return FALSE
 
@@ -298,7 +298,7 @@
 	main_feature_name = "Tail"
 
 /datum/preference/choiced/flying_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == FLY)
+	if(target.dna.tail_type == FLYING_TYPE)
 		target.dna.features["tail_other"] = value
 
 /datum/preference/choiced/flying_tail/compile_constant_data()
@@ -322,7 +322,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == FLY)
+	if(chosen_variation == FLYING_TYPE)
 		return TRUE
 	return FALSE
 
@@ -354,7 +354,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == MONKEY)
+	if(chosen_variation == MONKEY_TYPE)
 		return TRUE
 	return FALSE
 
@@ -368,7 +368,7 @@
 	main_feature_name = "Tail"
 
 /datum/preference/choiced/fish_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == AQUATIC)
+	if(target.dna.tail_type == AQUATIC_TYPE)
 		target.dna.features["fish_tail"] = value
 
 /datum/preference/choiced/fish_tail/compile_constant_data()
@@ -392,7 +392,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == AQUATIC)
+	if(chosen_variation == AQUATIC_TYPE)
 		return TRUE
 	return FALSE
 
@@ -406,7 +406,7 @@
 	main_feature_name = "Tail"
 
 /datum/preference/choiced/synth_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == CYBERNETIC)
+	if(target.dna.tail_type == CYBERNETIC_TYPE)
 		target.dna.features["tail_other"] = value
 
 /datum/preference/choiced/synth_tail/compile_constant_data()
@@ -430,7 +430,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == CYBERNETIC)
+	if(chosen_variation == CYBERNETIC_TYPE)
 		return TRUE
 	return FALSE
 
@@ -444,7 +444,7 @@
 	main_feature_name = "Tail"
 
 /datum/preference/choiced/humanoid_tail/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.tail_type == HUMANOID)
+	if(target.dna.tail_type == HUMANOID_TYPE)
 		target.dna.features["tail_other"] = value
 
 /datum/preference/choiced/humanoid_tail/compile_constant_data()
@@ -468,7 +468,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/tail_variation)
-	if(chosen_variation == HUMANOID)
+	if(chosen_variation == HUMANOID_TYPE)
 		return TRUE
 	return FALSE
 

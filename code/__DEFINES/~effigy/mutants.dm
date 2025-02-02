@@ -1,27 +1,27 @@
 /// The defines of each animal type who have their respective organ and list of sprite accessories beholding to them
 ///	The string generally has to much the type name of the organ they represent, i.e. /obj/item/organ/tail/dog. Aquatic is an exception, it's pathed as 'fish'
 #define NO_VARIATION "none"
-#define AQUATIC "aquatic"
-#define CAT "cat"
-#define CYBERNETIC "cybernetic"
-#define DOG "dog"
-#define FLY "flying"
-#define FOX "fox"
-#define HUMANOID "humanoid"
-#define LIZARD "lizard"
-#define MONKEY "monkey"
-#define MAMMAL "mammal"
+#define AQUATIC_TYPE "aquatic"
+#define CAT_TYPE "cat"
+#define CYBERNETIC_TYPE "cybernetic"
+#define DOG_TYPE "dog"
+#define FLYING_TYPE "flying"
+#define FOX_TYPE "fox"
+#define HUMANOID_TYPE "humanoid"
+#define LIZARD_TYPE "lizard"
+#define MONKEY_TYPE "monkey"
+#define MAMMAL_TYPE "mammal"
 
 ///	This list gets read by the dropdown pref when a player chooses what type of sprite accessory to access
 GLOBAL_LIST_INIT(mutant_variations, list(
-	AQUATIC,
-	CAT,
-	DOG,
-	FLY,
-	FOX,
-	HUMANOID,
-	LIZARD,
-	MAMMAL,
+	AQUATIC_TYPE,
+	CAT_TYPE,
+	DOG_TYPE,
+	FLYING_TYPE,
+	FOX_TYPE,
+	HUMANOID_TYPE,
+	LIZARD_TYPE,
+	MAMMAL_TYPE,
 ))
 
 GLOBAL_LIST_INIT(species_blacklist_no_mutant, list(

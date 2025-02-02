@@ -32,7 +32,7 @@
 			return .
 		else if(target.dna.features["ears"] != /datum/sprite_accessory/ears/none::name && target.dna.features["ears"] != /datum/sprite_accessory/blank::name)
 			var/obj/item/organ/organ_path
-			if(target.dna.ear_type == AQUATIC)
+			if(target.dna.ear_type == AQUATIC_TYPE)
 				organ_path = text2path("/obj/item/organ/ears/fish")
 			else
 				organ_path = text2path("/obj/item/organ/ears/[target.dna.ear_type]")
@@ -74,7 +74,7 @@
 
 /datum/preference/choiced/felinid_ears/apply_to_human(mob/living/carbon/human/target, value)
 	..()
-	if(target.dna.ear_type == CAT)
+	if(target.dna.ear_type == CAT_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/felinid_ears/create_default_value()
@@ -90,7 +90,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == CAT)
+	if(chosen_variation == CAT_TYPE)
 		return TRUE
 	return FALSE
 
@@ -104,7 +104,7 @@
 	main_feature_name = "Ears"
 
 /datum/preference/choiced/lizard_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == LIZARD)
+	if(target.dna.ear_type == LIZARD_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/lizard_ears/create_default_value()
@@ -123,7 +123,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == LIZARD)
+	if(chosen_variation == LIZARD_TYPE)
 		return TRUE
 	return FALSE
 
@@ -137,7 +137,7 @@
 	main_feature_name = "Ears"
 
 /datum/preference/choiced/fox_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == FOX)
+	if(target.dna.ear_type == FOX_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/fox_ears/create_default_value()
@@ -156,7 +156,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == FOX)
+	if(chosen_variation == FOX_TYPE)
 		return TRUE
 	return FALSE
 
@@ -178,7 +178,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == DOG)
+	if(chosen_variation == DOG_TYPE)
 		return TRUE
 	return FALSE
 
@@ -186,7 +186,7 @@
 	return /datum/sprite_accessory/ears_anthro/dog/none::name
 
 /datum/preference/choiced/dog_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == DOG)
+	if(target.dna.ear_type == DOG_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/dog_ears/icon_for(value)
@@ -203,7 +203,7 @@
 	main_feature_name = "Ears"
 
 /datum/preference/choiced/flying_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == FLY)
+	if(target.dna.ear_type == FLYING_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/flying_ears/create_default_value()
@@ -222,7 +222,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == FLY)
+	if(chosen_variation == FLYING_TYPE)
 		return TRUE
 	return FALSE
 
@@ -236,7 +236,7 @@
 	main_feature_name = "Ears"
 
 /datum/preference/choiced/monkey_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == MONKEY)
+	if(target.dna.ear_type == MONKEY_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/monkey_ears/create_default_value()
@@ -255,7 +255,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == MONKEY)
+	if(chosen_variation == MONKEY_TYPE)
 		return TRUE
 	return FALSE
 
@@ -269,7 +269,7 @@
 	main_feature_name = "Ears"
 
 /datum/preference/choiced/mammal_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == MAMMAL)
+	if(target.dna.ear_type == MAMMAL_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/mammal_ears/create_default_value()
@@ -288,7 +288,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == MAMMAL)
+	if(chosen_variation == MAMMAL_TYPE)
 		return TRUE
 	return FALSE
 
@@ -302,7 +302,7 @@
 	main_feature_name = "Ears"
 
 /datum/preference/choiced/fish_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == AQUATIC)
+	if(target.dna.ear_type == AQUATIC_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/fish_ears/create_default_value()
@@ -321,7 +321,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == AQUATIC)
+	if(chosen_variation == AQUATIC_TYPE)
 		return TRUE
 	return FALSE
 
@@ -335,7 +335,7 @@
 	main_feature_name = "Ears"
 
 /datum/preference/choiced/humanoid_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == HUMANOID)
+	if(target.dna.ear_type == HUMANOID_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/humanoid_ears/create_default_value()
@@ -354,7 +354,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == HUMANOID)
+	if(chosen_variation == HUMANOID_TYPE)
 		return TRUE
 	return FALSE
 
@@ -368,7 +368,7 @@
 	main_feature_name = "Ears"
 
 /datum/preference/choiced/synthetic_ears/apply_to_human(mob/living/carbon/human/target, value)
-	if(target.dna.ear_type == CYBERNETIC)
+	if(target.dna.ear_type == CYBERNETIC_TYPE)
 		target.dna.features["ears"] = value
 
 /datum/preference/choiced/synthetic_ears/create_default_value()
@@ -387,7 +387,7 @@
 	if(species.type in GLOB.species_blacklist_no_mutant)
 		return FALSE
 	var/chosen_variation = preferences.read_preference(/datum/preference/choiced/ear_variation)
-	if(chosen_variation == CYBERNETIC)
+	if(chosen_variation == CYBERNETIC_TYPE)
 		return TRUE
 	return FALSE
 
