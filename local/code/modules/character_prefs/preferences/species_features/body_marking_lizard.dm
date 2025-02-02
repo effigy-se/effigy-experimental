@@ -1,8 +1,3 @@
-
-/// Lizard body markings
-/datum/preference/choiced/lizard_body_markings/create_default_value()
-	return /datum/sprite_accessory/lizard_markings/none::name
-
 /// Body markings toggle
 /datum/preference/toggle/markings
 	savefile_key = "body_markings_toggle"
@@ -11,8 +6,8 @@
 	priority = PREFERENCE_PRIORITY_DEFAULT
 
 /datum/preference/toggle/markings/apply_to_human(mob/living/carbon/human/target, value)
-	if(value == FALSE)
-		target.dna.features["lizard_markings"] = /datum/sprite_accessory/lizard_markings/none::name
+	//if(value == FALSE)
+	target.dna.features["lizard_markings"] = /datum/sprite_accessory/lizard_markings/none::name
 
 /datum/preference/choiced/lizard_body_markings/compile_constant_data()
 	var/list/data = ..()
@@ -26,11 +21,16 @@
 /datum/preference/choiced/lizard_body_markings
 	category = PREFERENCE_CATEGORY_CLOTHING
 
+/datum/preference/choiced/lizard_body_markings/create_default_value()
+	return /datum/sprite_accessory/lizard_markings/none::name
+
 /datum/preference/choiced/lizard_body_markings/is_accessible(datum/preferences/preferences)
 	. = ..()
+	/*
 	var/has_markings = preferences.read_preference(/datum/preference/toggle/markings)
 	if(has_markings == TRUE)
 		return TRUE
+	*/
 	return FALSE
 
 /// Add lizard body markings
