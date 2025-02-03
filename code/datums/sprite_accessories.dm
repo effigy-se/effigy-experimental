@@ -1889,6 +1889,8 @@
 	name = "Hibiscus"
 	icon_state = "hibiscus"
 
+// EffigyEdit Remove - Character Preferences - Moved to local/code/modules/character_prefs/sprite_accessories/snouts.dm
+/*
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/human/species/lizard/lizard_misc.dmi'
 	em_block = TRUE
@@ -1908,6 +1910,7 @@
 /datum/sprite_accessory/snouts/roundlight
 	name = "Round + Light"
 	icon_state = "roundlight"
+*/
 
 // EffigyEdit Remove - Character Preferences - Moved to local/code/modules/character_prefs/sprite_accessories/horns.dm
 /*
