@@ -38,6 +38,10 @@
 	name = "Crippled Bull"
 	icon_state = "crippledbull"
 
+/datum/sprite_accessory/horns/deer_small
+	name = "Deer Antlers Small"
+	icon_state = "deer"
+
 /datum/sprite_accessory/horns/dragon
 	name = "Dragon"
 	icon_state = "dragon"
@@ -90,7 +94,23 @@
 	name = "Sylveon Bow"
 	icon_state = "sylveon_bow"
 
-/datum/sprite_accessory/horns/ticketrack
+/datum/sprite_accessory/horns/synth
+	name = "Synth"
+	icon_state = "synth"
+
+/datum/sprite_accessory/horns/synth_doubled
+	name = "Synth Doubled"
+	icon_state = "synth_doubled"
+
+/datum/sprite_accessory/horns/synth_long
+	name = "Synth Long"
+	icon_state = "synth_long"
+
+/datum/sprite_accessory/horns/synth_thick
+	name = "Synth Thick"
+	icon_state = "synth_thick"
+
+/datum/sprite_accessory/horns/ticket_rack
 	name = "Ticket Rack"
 	icon_state = "ticketrack"
 
