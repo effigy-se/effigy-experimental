@@ -1797,6 +1797,8 @@
 */
 // EffigyEdit Remove End
 
+// EffigyEdit Remove - Character Preferences - Moved to local/code/modules/character_prefs/sprite_accessories/tails/tails_lizard.dm
+/*
 /datum/sprite_accessory/tails/lizard/smooth
 	name = "Smooth"
 	icon_state = "smooth"
@@ -1817,6 +1819,8 @@
 	name = "Short"
 	icon_state = "short"
 	spine_key = NONE
+*/
+// EffigyEdit Remove End
 
 /datum/sprite_accessory/tails/felinid/cat
 	name = "Cat"
