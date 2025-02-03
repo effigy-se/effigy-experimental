@@ -17,6 +17,10 @@
 	name = "Hawk"
 	icon_state = "hawk"
 
+/datum/sprite_accessory/tails/flying/peacock
+	name = "Peacock"
+	icon_state = "peacock"
+
 /datum/sprite_accessory/tails/flying/bee
 	name = "Bee"
 	icon_state = "bee"
@@ -25,14 +29,18 @@
 	name = "Queen Bee"
 	icon_state = "queenbee"
 
-/datum/sprite_accessory/tails/flying/insect
-	name = "Insect"
-	icon_state = "insect"
+/datum/sprite_accessory/tails/flying/bug
+	name = "Bug"
+	icon_state = "bug"
 
-/datum/sprite_accessory/tails/flying/queen_insect
-	name = "Queen Insect"
-	icon_state = "queeninsect"
+/datum/sprite_accessory/tails/flying/queen_bug
+	name = "Queen Bug"
+	icon_state = "queenbug"
 
 /datum/sprite_accessory/tails/flying/pede
 	name = "Scolipede"
 	icon_state = "pede"
+
+/datum/sprite_accessory/tails/flying/shrimp
+	name = "Shrimp"
+	icon_state = "segmented"
