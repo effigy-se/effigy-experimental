@@ -1,13 +1,13 @@
 /datum/sprite_accessory/tails/dog
 	icon = 'local/icons/mob/mutant/sprite_accessories/tails/tails_dog.dmi'
 
-/datum/sprite_accessory/tails/dog/husky
-	name = "Husky"
-	icon_state = "husky"
-
 /datum/sprite_accessory/tails/dog/eevee
 	name = "Eevee"
 	icon_state = "eevee"
+
+/datum/sprite_accessory/tails/dog/husky
+	name = "Husky"
+	icon_state = "husky"
 
 /datum/sprite_accessory/tails/dog/lab
 	name = "Labrador"
@@ -15,11 +15,7 @@
 
 /datum/sprite_accessory/tails/dog/otie
 	name = "Otusian"
-	icon_state = "otie"
-
-/datum/sprite_accessory/tails/dog/plug
-	name = "Plug"
-	icon_state = "plugtail"
+	icon_state = "otusian"
 
 /datum/sprite_accessory/tails/dog/shepherd
 	name = "Shepherd"
@@ -28,6 +24,14 @@
 /datum/sprite_accessory/tails/dog/australian_shepherd
 	name = "Australian Shepherd"
 	icon_state = "australianshepherd"
+
+/datum/sprite_accessory/tails/dog/shortpup
+	name = "Short"
+	icon_state = "shortpup"
+
+/datum/sprite_accessory/tails/dog/straight
+	name = "Straight"
+	icon_state = "straighttail"
 
 /datum/sprite_accessory/tails/dog/wolf
 	name = "Wolf"
