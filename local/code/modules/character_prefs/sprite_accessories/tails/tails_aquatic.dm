@@ -31,7 +31,7 @@
 	icon_state = "shark"
 
 /datum/sprite_accessory/tails/fish/shark_no_fin
-	name = "Shark (No Fin)"
+	name = "Shark No Fin"
 	icon_state = "sharknofin"
 
 /datum/sprite_accessory/tails/fish/data_shark

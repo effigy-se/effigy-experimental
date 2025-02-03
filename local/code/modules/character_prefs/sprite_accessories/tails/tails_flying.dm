@@ -6,7 +6,7 @@
 	icon_state = "avian1"
 
 /datum/sprite_accessory/tails/flying/avian_alt
-	name = "Avian (Alt)"
+	name = "Avian Alt"
 	icon_state = "avian2"
 
 /datum/sprite_accessory/tails/flying/corvid

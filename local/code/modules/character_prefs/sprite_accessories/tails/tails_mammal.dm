@@ -1,21 +1,21 @@
 /datum/sprite_accessory/tails/mammal
 	icon = 'local/icons/mob/mutant/sprite_accessories/tails/tails_mammal.dmi'
 
-/datum/sprite_accessory/tails/mammal/bat_long
-	name = "Bat (Long)"
-	icon_state = "batl"
+/datum/sprite_accessory/tails/mammal/cow_long
+	name = "Cow Long"
+	icon_state = "cowlong"
 
-/datum/sprite_accessory/tails/mammal/bat_short
-	name = "Bat (Short)"
-	icon_state = "bats"
+/datum/sprite_accessory/tails/mammal/cow_short
+	name = "Cow Short"
+	icon_state = "cowshort"
 
-/datum/sprite_accessory/tails/mammal/cow
-	name = "Cow"
-	icon_state = "cow"
+/datum/sprite_accessory/tails/mammal/deer
+	name = "Deer"
+	icon_state = "deer"
 
-/datum/sprite_accessory/tails/mammal/deer_two
-	name = "Deer II"
-	icon_state = "deer_two"
+/datum/sprite_accessory/tails/mammal/deer_bushy
+	name = "Deer Bushy"
+	icon_state = "deer2"
 
 /datum/sprite_accessory/tails/mammal/horse
 	name = "Horse"
@@ -25,41 +25,46 @@
 	name = "Kangaroo"
 	icon_state = "kangaroo"
 
-/datum/sprite_accessory/tails/mammal/murid
-	name = "Murid"
-	icon_state = "murid"
+/datum/sprite_accessory/tails/mammal/monkey
+	icon = 'local/icons/mob/mutant/sprite_accessories/tails/tails_monkey.dmi'
+	name = "Monkey"
+	icon_state = "default"
 
-/datum/sprite_accessory/tails/mammal/murid_two
-	name = "Murid II"
-	icon_state = "murid_two"
+/datum/sprite_accessory/tails/mammal/mouse
+	name = "Mouse"
+	icon_state = "mouse1"
+
+/datum/sprite_accessory/tails/mammal/mouse_alt
+	name = "Mouse"
+	icon_state = "mouse2"
 
 /datum/sprite_accessory/tails/mammal/rabbit
 	name = "Rabbit"
-	icon_state = "rabbit"
+	icon_state = "rabbit2"
 
 /datum/sprite_accessory/tails/mammal/rabbit_alt
-	name = "Rabbit (Alt)"
-	icon_state = "rabbit_alt"
+	name = "Rabbit Alt"
+	icon_state = "bunny1"
+
+/datum/sprite_accessory/tails/mammal/rabbit_classic
+	name = "Rabbit Classic"
+	icon_state = "rabbit1"
+
+/datum/sprite_accessory/tails/mammal/rabbit_curly
+	name = "Rabbit Curly"
+	icon_state = "bunny2"
+
+/datum/sprite_accessory/tails/mammal/raccoon
+	name = "Raccoon"
+	icon_state = "raccoon"
 
 /datum/sprite_accessory/tails/mammal/red_panda
 	name = "Red Panda"
-	icon_state = "wah"
-
-/datum/sprite_accessory/tails/mammal/segmented
-	name = "Segmented"
-	icon_state = "segmentedtail"
+	icon_state = "redpanda"
 
 /datum/sprite_accessory/tails/mammal/sergal
 	name = "Sergal"
 	icon_state = "sergal"
-
-/datum/sprite_accessory/tails/mammal/shade
-	name = "Shade"
-	icon_state = "shadekin_large"
-
-/datum/sprite_accessory/tails/mammal/shade_long
-	name = "Shade (Long)"
-	icon_state = "shadekinlong_large"
 
 /datum/sprite_accessory/tails/mammal/skunk
 	name = "Skunk"
@@ -69,6 +74,14 @@
 	name = "Squirrel"
 	icon_state = "squirrel"
 
+/datum/sprite_accessory/tails/mammal/tailmaw
+	name = "Tailmaw"
+	icon_state = "tailmaw"
+
+/datum/sprite_accessory/tails/mammal/tailmaw_wag
+	name = "Tailmaw Wag"
+	icon_state = "tailmawwag"
+
 /datum/sprite_accessory/tails/mammal/zorgoia
-	name = "Zorgoia tail"
+	name = "Zorgoia"
 	icon_state = "zorgoia"
