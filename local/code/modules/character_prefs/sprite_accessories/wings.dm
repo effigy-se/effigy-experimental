@@ -1,3 +1,10 @@
+/**
+ * Anthro Wings
+ *
+ * Keep these sorted alphabetically and in the SAME ORDER as in the dmi file!
+ * Variations stick with their parent object, ie. Beak, Short Beak, Large Beak are a 'group'
+ * and should be kept together and sorted as 'Beak'
+ */
 /datum/sprite_accessory/wings_anthro
 	icon = 'local/icons/mob/mutant/sprite_accessories/wings.dmi'
 	dimension_x = 46

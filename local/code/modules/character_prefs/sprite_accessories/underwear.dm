@@ -1,3 +1,10 @@
+/**
+ * Underwear
+ *
+ * Keep these sorted alphabetically and in the SAME ORDER as in the dmi file!
+ * Variations stick with their parent object, ie. Emo, Long Emo are a 'group'
+ * and should be kept together and sorted as 'Emo'
+ */
 /datum/sprite_accessory/underwear
 	icon = 'local/icons/mob/clothing/underwear.dmi'
 	///Whether the underwear uses a special sprite for digitigrade style (i.e. briefs, not panties). Adds a "_d" suffix to the icon state

@@ -1,5 +1,10 @@
-// Hairstyles
-
+/**
+ * Hair
+ *
+ * Keep these sorted alphabetically and in the SAME ORDER as in the dmi file!
+ * Variations stick with their parent object, ie. Emo, Long Emo are a 'group'
+ * and should be kept together and sorted as 'Emo'
+ */
 /datum/sprite_accessory/hair/effigy
 	icon = 'local/icons/mob/mutant/sprite_accessories/hair.dmi'
 

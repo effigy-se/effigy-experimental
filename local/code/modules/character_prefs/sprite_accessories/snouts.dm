@@ -1,3 +1,11 @@
+/**
+ * Snouts
+ *
+ * Keep these sorted alphabetically and in the SAME ORDER as in the dmi file!
+ * Variations stick with their parent object, ie. Beak, Short Beak, Large Beak are a 'group'
+ * and should be kept together and sorted as 'Beak'
+ */
+
 /datum/sprite_accessory/snouts
 	icon = 'local/icons/mob/mutant/sprite_accessories/snouts.dmi'
 	em_block = TRUE
@@ -21,6 +29,14 @@
 /datum/sprite_accessory/snouts/acrador_4
 	name = "Acrador Alt 4"
 	icon_state = "acrador_4"
+
+/datum/sprite_accessory/snouts/akula
+	name = "Akula"
+	icon_state = "hshark"
+
+/datum/sprite_accessory/snouts/akula_eyes
+	name = "Akula + Eyes"
+	icon_state = "hshark_eyes"
 
 /datum/sprite_accessory/snouts/anubus
 	name = "Anubus"
@@ -225,14 +241,6 @@
 /datum/sprite_accessory/snouts/shark_light
 	name = "Shark Light"
 	icon_state = "sharkblubber"
-
-/datum/sprite_accessory/snouts/h_shark
-	name = "Hook Shark"
-	icon_state = "hshark"
-
-/datum/sprite_accessory/snouts/h_shark_eyes
-	name = "Hook Shark + Eyes"
-	icon_state = "hshark_eyes"
 
 /datum/sprite_accessory/snouts/sharp
 	name = "Sharp"

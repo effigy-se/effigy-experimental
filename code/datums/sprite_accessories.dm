@@ -2119,6 +2119,8 @@
 	center = TRUE
 	dimension_y = 32
 
+// EffigyEdit Remove - Character Preferences - Moved to local/code/modules/character_prefs/sprite_accessories/frills.dm
+/*
 /datum/sprite_accessory/frills
 	icon = 'icons/mob/human/species/lizard/lizard_misc.dmi'
 
@@ -2133,6 +2135,8 @@
 /datum/sprite_accessory/frills/aquatic
 	name = "Aquatic"
 	icon_state = "aqua"
+*/
+// EffigyEdit Remove End
 
 /datum/sprite_accessory/spines
 	icon = 'icons/mob/human/species/lizard/lizard_spines.dmi'

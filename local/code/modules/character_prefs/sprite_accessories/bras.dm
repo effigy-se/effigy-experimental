@@ -1,4 +1,10 @@
-//Modular separation of Bras as a separate underwear option that displays below undershirts
+/**
+ * Bras
+ *
+ * Keep these sorted alphabetically and in the SAME ORDER as in the dmi file!
+ * Variations stick with their parent object, ie. Emo, Long Emo are a 'group'
+ * and should be kept together and sorted as 'Emo'
+ */
 /datum/sprite_accessory/bra
 	icon = 'local/icons/mob/clothing/underwear.dmi'
 	use_static = FALSE
