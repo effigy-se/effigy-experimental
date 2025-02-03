@@ -10,6 +10,10 @@
 	name = "Antenna"
 	icon_state = "antenna"
 
+/datum/sprite_accessory/horns/deer_small
+	name = "Antlers"
+	icon_state = "deer"
+
 /datum/sprite_accessory/horns/broadcurls
 	name = "Broad Curls"
 	icon_state = "broadcurls"
@@ -37,10 +41,6 @@
 /datum/sprite_accessory/horns/crippledbull
 	name = "Crippled Bull"
 	icon_state = "crippledbull"
-
-/datum/sprite_accessory/horns/deer_small
-	name = "Deer Antlers Small"
-	icon_state = "deer"
 
 /datum/sprite_accessory/horns/dragon
 	name = "Dragon"
