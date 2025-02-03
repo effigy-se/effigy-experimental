@@ -2,49 +2,81 @@
 	icon = 'local/icons/mob/mutant/sprite_accessories/snouts.dmi'
 	em_block = TRUE
 
+/datum/sprite_accessory/snouts/acrador
+	name = "Acrador"
+	icon_state = "acrador_short"
+
+/datum/sprite_accessory/snouts/acrador_1
+	name = "Acrador Alt 1"
+	icon_state = "acrador_1"
+
+/datum/sprite_accessory/snouts/acrador_2
+	name = "Acrador Alt 2"
+	icon_state = "acrador_2"
+
+/datum/sprite_accessory/snouts/acrador_3
+	name = "Acrador Alt 3"
+	icon_state = "acrador_3"
+
+/datum/sprite_accessory/snouts/acrador_4
+	name = "Acrador Alt 4"
+	icon_state = "acrador_4"
+
+/datum/sprite_accessory/snouts/anubus
+	name = "Anubus"
+	icon_state = "anubus"
+
 /datum/sprite_accessory/snouts/beak
 	name = "Beak"
 	icon_state = "bird"
 
 /datum/sprite_accessory/snouts/beak_corvid
-	name = "Beak Corvid"
+	name = "Corvid Beak"
 	icon_state = "corvidbeak"
 
 /datum/sprite_accessory/snouts/beak_hook
-	name = "Beak Hook"
+	name = "Hook Beak"
 	icon_state = "hookbeak"
 
 /datum/sprite_accessory/snouts/beak_hook_large
-	name = "Beak Hook Large"
+	name = "Large Hook Beak"
 	icon_state = "hookbeakbig"
 
 /datum/sprite_accessory/snouts/beak_large
-	name = "Beak Large"
+	name = "Large Beak"
 	icon_state = "bigbeak"
 
 /datum/sprite_accessory/snouts/beak_short
-	name = "Beak Short"
+	name = "Short Large Beak"
 	icon_state = "bigbeakshort"
 
 /datum/sprite_accessory/snouts/beak_slim
-	name = "Beak Slim"
+	name = "Slim Beak"
 	icon_state = "slimbeak"
 
 /datum/sprite_accessory/snouts/beak_slim_alt
-	name = "Beak Slim Alt"
+	name = "Slim Beak Alt"
 	icon_state = "slimbeakalt"
 
 /datum/sprite_accessory/snouts/beak_slim_short
-	name = "Beak Slim Short"
+	name = "Short Slim Beak"
 	icon_state = "slimbeakshort"
 
 /datum/sprite_accessory/snouts/beak_small
-	name = "Beak Small"
+	name = "Small Beak"
 	icon_state = "birdsmall"
 
 /datum/sprite_accessory/snouts/beak_toucan
-	name = "Beak Toucan"
+	name = "Toucan Beak"
 	icon_state = "toucan"
+
+/datum/sprite_accessory/snouts/boar
+	name = "Boar"
+	icon_state = "boar"
+
+/datum/sprite_accessory/snouts/bovine
+	name = "Bovine"
+	icon_state = "bovine"
 
 /datum/sprite_accessory/snouts/bug
 	name = "Bug"
@@ -54,13 +86,49 @@
 	name = "Bug No Eyes"
 	icon_state = "bug_no_eyes"
 
+/datum/sprite_accessory/snouts/canine
+	name = "Canine"
+	icon_state = "caninealt"
+
+/datum/sprite_accessory/snouts/cat
+	name = "Cat"
+	icon_state = "catsnout"
+
+/datum/sprite_accessory/snouts/cervine
+	name = "Cervine"
+	icon_state = "cervine"
+
 /datum/sprite_accessory/snouts/elephant
 	name = "Elephant"
 	icon_state = "elephant"
 
+/datum/sprite_accessory/snouts/full_face
+	name = "Full"
+	icon_state = "full"
+
+/datum/sprite_accessory/snouts/full_face_alt
+	name = "Full Alt"
+	icon_state = "fullalt"
+
+/datum/sprite_accessory/snouts/horse
+	name = "Horse"
+	icon_state = "horse"
+
 /datum/sprite_accessory/snouts/husky
 	name = "Husky"
 	icon_state = "husky"
+
+/datum/sprite_accessory/snouts/hyena
+	name = "Hyena"
+	icon_state = "hyena"
+
+/datum/sprite_accessory/snouts/jackal
+	name = "Jackal"
+	icon_state = "jackal"
+
+/datum/sprite_accessory/snouts/leporid
+	name = "Leporid"
+	icon_state = "leporid"
 
 /datum/sprite_accessory/snouts/mammal_long
 	name = "Mammal Long"
@@ -102,6 +170,10 @@
 	name = "Otusian Smile"
 	icon_state = "otusiansmile"
 
+/datum/sprite_accessory/snouts/panda
+	name = "Panda"
+	icon_state = "panda"
+
 /datum/sprite_accessory/snouts/red_panda
 	name = "Red Panda"
 	icon_state = "redpanda"
@@ -109,6 +181,14 @@
 /datum/sprite_accessory/snouts/red_panda_alt
 	name = "Red Panda Alt"
 	icon_state = "redpanda_alt"
+
+/datum/sprite_accessory/snouts/pig
+	name = "Pig"
+	icon_state = "pig"
+
+/datum/sprite_accessory/snouts/renamon
+	name = "Renamon"
+	icon_state = "renamon"
 
 /datum/sprite_accessory/snouts/rhino
 	name = "Rhino"
@@ -142,6 +222,18 @@
 	name = "Shark"
 	icon_state = "shark"
 
+/datum/sprite_accessory/snouts/shark_light
+	name = "Shark Light"
+	icon_state = "sharkblubber"
+
+/datum/sprite_accessory/snouts/h_shark
+	name = "Hook Shark"
+	icon_state = "hshark"
+
+/datum/sprite_accessory/snouts/h_shark_eyes
+	name = "Hook Shark + Eyes"
+	icon_state = "hshark_eyes"
+
 /datum/sprite_accessory/snouts/sharp
 	name = "Sharp"
 	icon_state = "sharp"
@@ -149,6 +241,22 @@
 /datum/sprite_accessory/snouts/sharplight
 	name = "Sharp + Light"
 	icon_state = "sharplight"
+
+/datum/sprite_accessory/snouts/skulldog
+	name = "Skulldog"
+	icon_state = "skulldog"
+
+/datum/sprite_accessory/snouts/skulldog_alt
+	name = "Skulldog Alt"
+	icon_state = "skulldogalt"
+
+/datum/sprite_accessory/snouts/snaggletooth
+	name = "Snaggletooth"
+	icon_state = "snaggletooth"
+
+/datum/sprite_accessory/snouts/stubby
+	name = "Stubby"
+	icon_state = "stubby"
 
 /datum/sprite_accessory/snouts/tajaran
 	name = "Tajaran"
@@ -162,52 +270,6 @@
 	name = "Wolf Alt"
 	icon_state = "wolfalt"
 
-/*
-/datum/sprite_accessory/snouts/hshark
-	name = "hShark"
-	icon_state = "hshark"
-
-/datum/sprite_accessory/snouts/hshark_eyes
-	name = "hShark and eyes"
-	icon_state = "hshark_eyes"
-
-/datum/sprite_accessory/snouts/skulldog
-	name = "Skulldog"
-	icon_state = "skulldog"
-
-/datum/sprite_accessory/snouts/hanubus
-	name = "Anubus"
-	icon_state = "hanubus"
-
-/datum/sprite_accessory/snouts/hpanda
-	name = "Panda"
-	icon_state = "hpanda"
-
-/datum/sprite_accessory/snouts/hjackal
-	name = "Jackal"
-	icon_state = "hjackal"
-
-/datum/sprite_accessory/snouts/hspots
-	name = "Hyena"
-	icon_state = "hspots"
-
-/datum/sprite_accessory/snouts/hhorse
-	name = "Horse"
-	icon_state = "hhorse"
-
-/datum/sprite_accessory/snouts/hzebra
+/datum/sprite_accessory/snouts/zebra
 	name = "Zebra"
-	icon_state = "hzebra"
-
-/datum/sprite_accessory/snouts/shark_light
-	name = "Shark Light"
-	icon_state = "sharkblubber"
-
-/datum/sprite_accessory/snouts/stubby
-	name = "Stubby"
-	icon_state = "stubby"
-
-/datum/sprite_accessory/snouts/leporid
-	name = "Leporid"
-	icon_state = "leporid"
-*/
+	icon_state = "zebra"
