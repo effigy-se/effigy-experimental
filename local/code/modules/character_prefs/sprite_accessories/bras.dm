@@ -131,7 +131,7 @@
 	use_static = TRUE
 
 /datum/sprite_accessory/bra/fishnet_sleeves/alt
-	name = "Fishnet Sleeved GS"
+	name = "Fishnet Sleeved Alt"
 	icon_state = "fishnet_sleeves_alt"
 	use_static = FALSE
 
@@ -141,7 +141,7 @@
 	use_static = TRUE
 
 /datum/sprite_accessory/bra/fishnet_base/alt
-	name = "Fishnet Sleeveless GS"
+	name = "Fishnet Sleeveless Alt"
 	icon_state = "fishnet_body_alt"
 	use_static = FALSE
 
