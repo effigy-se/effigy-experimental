@@ -99,12 +99,13 @@ export function FeatureColorInput(props: FeatureValueProps<string>) {
 
 /* EffigyEdit Add - Character Preferences */
 export const FeatureTriColorInput = (props: FeatureValueProps<string[]>) => {
+  const { act } = useBackend<PreferencesMenuData>();
   const buttonFromValue = (index) => {
     return (
       <Stack.Item>
         <Button
           onClick={() => {
-            props.act('set_tricolor_preference', {
+            act('set_tricolor_preference', {
               preference: props.featureId,
               value: index + 1,
             });
