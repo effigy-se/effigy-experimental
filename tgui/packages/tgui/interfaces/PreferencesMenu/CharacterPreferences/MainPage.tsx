@@ -96,6 +96,7 @@ type ChoicedSelectionProps = {
 function ChoicedSelection(props: ChoicedSelectionProps) {
   const { catalog, supplementalFeature, supplementalValue } = props;
   const [getSearchText, searchTextSet] = useState('');
+  const { act } = useBackend<PreferencesMenuData>(); // EffigyEdit Add - TGUI Color Picker
 
   if (!catalog.icons) {
     return <Box color="red">Provided catalog had no icons!</Box>;
@@ -119,6 +120,7 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
             {supplementalFeature && (
               <Stack.Item>
                 <FeatureValueInput
+                  act={act} // EffigyEdit Add - TGUI Color Picker
                   feature={features[supplementalFeature]}
                   featureId={supplementalFeature}
                   shrink
@@ -443,6 +445,7 @@ export function PreferenceList(props: PreferenceListProps) {
 
                   <Stack.Item grow>
                     <FeatureValueInput
+                      act={act} // EffigyEdit Add - TGUI Color Picker
                       feature={feature}
                       featureId={featureId}
                       value={value}

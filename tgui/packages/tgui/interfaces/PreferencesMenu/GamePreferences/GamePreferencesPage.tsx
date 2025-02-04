@@ -25,7 +25,7 @@ function sortByName(array: [string, PreferenceChild[]][]) {
 }
 
 export function GamePreferencesPage(props) {
-  const { data } = useBackend<PreferencesMenuData>();
+  const { act, data } = useBackend<PreferencesMenuData>(); // EffigyEdit Change - TGUI Color Picker - add act
 
   const gamePreferences: Record<string, PreferenceChild[]> = {};
 
@@ -70,6 +70,7 @@ export function GamePreferencesPage(props) {
         <Flex.Item grow={1} basis={0}>
           {feature ? (
             <FeatureValueInput
+              act={act} // EffigyEdit Add - TGUI Color Picker
               feature={feature}
               featureId={featureId}
               value={value}
