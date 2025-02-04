@@ -11,12 +11,10 @@ import {
   Popper,
   Stack,
 } from 'tgui-core/components';
-import { exhaustiveCheck } from 'tgui-core/exhaustive'; // EffigyEdit Add - Character Preferences
 import { classes } from 'tgui-core/react';
 import { createSearch } from 'tgui-core/string';
 
 import { CharacterPreview } from '../../common/CharacterPreview';
-import { PageButton } from '../components/PageButton'; // EffigyEdit Add - Character Preferences
 import { RandomizationButton } from '../components/RandomizationButton';
 import { features } from '../preferences/features';
 import {
@@ -548,51 +546,6 @@ export function MainPage(props: MainPageProps) {
     delete nonContextualPreferences['random_name'];
   }
 
-  // EffigyEdit Add - Character Preferences
-  enum PrefPage {
-    Character, // Character Preferences
-    Markings, // Markings
-  }
-
-  const [currentPrefPage, setCurrentPrefPage] = useState(PrefPage.Character);
-
-  const markingPreferences = {
-    ...data.character_preferences.markings,
-  };
-
-  let prefPageContents;
-  switch (currentPrefPage) {
-    case PrefPage.Character:
-      prefPageContents = (
-        <PreferenceList
-          randomizations={getRandomization(
-            contextualPreferences,
-            serverData,
-            randomBodyEnabled,
-          )}
-          preferences={contextualPreferences}
-          maxHeight="auto"
-        />
-      );
-      break;
-    case PrefPage.Markings:
-      prefPageContents = (
-        <PreferenceList
-          randomizations={getRandomization(
-            contextualPreferences,
-            serverData,
-            randomBodyEnabled,
-          )}
-          preferences={markingPreferences}
-          maxHeight="auto"
-        />
-      );
-      break;
-    default:
-      exhaustiveCheck(currentPrefPage);
-  }
-  // EffigyEdit Add End
-
   return (
     <>
       {multiNameInputOpen && (
@@ -695,31 +648,16 @@ export function MainPage(props: MainPageProps) {
         </Stack.Item>
 
         <Stack.Item grow basis={0}>
-          {/* EffigyEdit Change - Character Preferences */}
-          <Stack>
-            <Stack.Item grow>
-              <PageButton
-                currentPage={currentPrefPage}
-                page={PrefPage.Character}
-                setPage={setCurrentPrefPage}
-              >
-                Character
-              </PageButton>
-            </Stack.Item>
-            <Stack.Item grow>
-              <PageButton
-                currentPage={currentPrefPage}
-                page={PrefPage.Markings}
-                setPage={setCurrentPrefPage}
-              >
-                Markings
-              </PageButton>
-            </Stack.Item>
-          </Stack>
-
           <Stack vertical fill>
-            <Stack.Divider />
-            {prefPageContents}
+            <PreferenceList
+              randomizations={getRandomization(
+                contextualPreferences,
+                serverData,
+                randomBodyEnabled,
+              )}
+              preferences={contextualPreferences}
+              maxHeight="auto"
+            />
 
             <PreferenceList
               randomizations={getRandomization(
@@ -746,7 +684,6 @@ export function MainPage(props: MainPageProps) {
             </PreferenceList>
           </Stack>
         </Stack.Item>
-        {/* EffigyEdit Change End */}
       </Stack>
     </>
   );
