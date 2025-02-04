@@ -388,10 +388,10 @@
 
 // Recalculate recharge time after adding or removing cooldown mods.
 /obj/item/borg/upgrade/modkit/cooldown/proc/get_recharge_time(obj/item/gun/energy/recharge/kinetic_accelerator/KA)
-	
+
 	var/new_recharge_time = initial(KA.recharge_time)
 	for(var/obj/item/borg/upgrade/modkit/modkit_upgrade as anything in KA.modkits)
-		if(istype(modkit_upgrade, src))	
+		if(istype(modkit_upgrade, src))
 			new_recharge_time -= modifier
 
 	return new_recharge_time
@@ -686,5 +686,5 @@
 /obj/item/borg/upgrade/modkit/tracer/adjustable/proc/choose_bolt_color(mob/user)
 	set waitfor = FALSE
 
-	var/new_color = input(user,"","Choose Color",bolt_color) as color|null
+	var/new_color = tgui_color_picker(usr, "", "Choose Color", bolt_color)	// EffigyEdit Change - TGUI Color Picker
 	bolt_color = new_color || bolt_color

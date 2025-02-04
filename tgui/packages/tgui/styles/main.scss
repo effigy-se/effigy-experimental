@@ -21,37 +21,6 @@
 @include meta.load-css('./atomic/outline.scss');
 @include meta.load-css('./atomic/text.scss');
 
-/* EffigyEdit Add - TGUI
-// Effigy Components
-//@include meta.load-css('./effigy/BlockQuote.scss');
-@include meta.load-css('./effigy/Button.scss');
-//@include meta.load-css('./effigy/ColorBox.scss');
-@include meta.load-css('./effigy/Dialog.scss');
-//@include meta.load-css('./effigy/Dimmer.scss');
-//@include meta.load-css('./effigy/Divider.scss');
-@include meta.load-css('./effigy/Dropdown.scss');
-//@include meta.load-css('./effigy/Flex.scss');
-//@include meta.load-css('./effigy/Icon.scss');
-@include meta.load-css('./effigy/Input.scss');
-@include meta.load-css('./effigy/Knob.scss');
-@include meta.load-css('./effigy/LabeledList.scss');
-@include meta.load-css('./effigy/MenuBar.scss');
-@include meta.load-css('./effigy/Modal.scss');
-@include meta.load-css('./effigy/NoticeBox.scss');
-@include meta.load-css('./effigy/NumberInput.scss');
-@include meta.load-css('./effigy/ProgressBar.scss');
-@include meta.load-css('./effigy/RoundGauge.scss');
-@include meta.load-css('./effigy/SearchItem.scss');
-@include meta.load-css('./effigy/Section.scss');
-@include meta.load-css('./effigy/SideDropdown.scss');
-@include meta.load-css('./effigy/Slider.scss');
-@include meta.load-css('./effigy/Stack.scss');
-@include meta.load-css('./effigy/Table.scss');
-@include meta.load-css('./effigy/Tabs.scss');
-@include meta.load-css('./effigy/TextArea.scss');
-@include meta.load-css('./effigy/Tooltip.scss');
-// EffigyEdit Add End */
-
 // Interfaces
 @include meta.load-css('./interfaces/AlertModal.scss');
 @include meta.load-css('./interfaces/Changelog.scss');
