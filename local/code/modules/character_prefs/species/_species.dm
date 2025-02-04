@@ -23,7 +23,8 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/digitigrade,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade,
 	)
-
+	/// Is this species restricted from changing their body_size in character creation?
+	var/body_size_restricted = FALSE
 
 /// Cybernetic limbs logic here!
 //	Used for most races
@@ -48,6 +49,10 @@
 /// spec_revival logic
 /datum/species/proc/spec_revival(mob/living/carbon/human/target)
 	return
+
+/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+	. = ..()
+	dna.update_effigy_body_size()
 
 /mob/living/carbon/human/revive(full_heal_flags = NONE, excess_healing = 0, force_grab_ghost = FALSE)
 	. = ..()
