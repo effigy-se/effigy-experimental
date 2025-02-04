@@ -6,7 +6,7 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { useBackend } from 'tgui/backend';
+import { sendAct, useBackend } from 'tgui/backend'; // EffigyEdit Change - TGUI Color Picker - add sendAct
 import {
   Box,
   Button,
@@ -53,6 +53,7 @@ export type FeatureValueProps<
   TSending = TReceiving,
   TServerData = undefined,
 > = Readonly<{
+  act: typeof sendAct; // EffigyEdit Add - TGUI Color Picker
   featureId: string;
   handleSetValue: (newValue: TSending) => void;
   serverData: TServerData | undefined;
@@ -260,6 +261,7 @@ type FeatureValueInputProps = {
   featureId: string;
   shrink?: boolean;
   value: unknown;
+  act: typeof sendAct; // EffigyEdit Add - TGUI Color Picker
 };
 
 export function FeatureValueInput(props: FeatureValueInputProps) {
@@ -281,6 +283,7 @@ export function FeatureValueInput(props: FeatureValueInputProps) {
   const serverData = useServerPrefs();
 
   return createElement(feature.component, {
+    act: props.act, // EffigyEdit Add - TGUI Color Picker
     featureId: props.featureId,
     serverData: serverData?.[props.featureId] as any,
     shrink: props.shrink,
