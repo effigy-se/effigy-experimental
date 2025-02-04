@@ -480,15 +480,15 @@
 /// Generate selection preview
 /datum/preference/choiced/proc/generate_back_icon(chosen_tail, key)
 	var/datum/sprite_accessory/sprite_accessory = chosen_tail
-	var/icon/final_icon = icon('icons/mob/human/bodyparts_greyscale.dmi', "human_chest_m", NORTH)
+	var/icon/final_icon = icon('local/icons/mob/mutant/sprite_accessories/fallback.dmi')
 
 	if (sprite_accessory.icon_state != "none")
 		var/icon/markings_icon_1 = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_BEHIND", NORTH)
-		markings_icon_1.Blend(COLOR_RED, ICON_MULTIPLY)
+		markings_icon_1.Blend(COLOR_EFFIGY_SKY_BLUE, ICON_MULTIPLY)
 		var/icon/markings_icon_2 = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_BEHIND_2", NORTH)
-		markings_icon_2.Blend(COLOR_VIBRANT_LIME, ICON_MULTIPLY)
+		markings_icon_2.Blend(COLOR_EFFIGY_PLATINUM, ICON_MULTIPLY)
 		var/icon/markings_icon_3 = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_BEHIND_3", NORTH)
-		markings_icon_3.Blend(COLOR_BLUE, ICON_MULTIPLY)
+		markings_icon_3.Blend(COLOR_EFFIGY_ELECTRIC_BLUE, ICON_MULTIPLY)
 		// A couple icon files use this plus-size setup; autocrop to generate better icons where possible
 		if(markings_icon_1.Width() == WIDTH_WINGS_FILE && markings_icon_1.Height() == HEIGHT_WINGS_FILE)
 			markings_icon_1.Crop(8, 2, 39, 33)
@@ -507,11 +507,11 @@
 		final_icon.Blend(markings_icon_3, ICON_OVERLAY)
 		/// == front breaker ==
 		var/icon/markings_icon_1_f = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_FRONT", NORTH)
-		markings_icon_1_f.Blend(COLOR_RED, ICON_MULTIPLY)
+		markings_icon_1_f.Blend(COLOR_EFFIGY_SKY_BLUE, ICON_MULTIPLY)
 		var/icon/markings_icon_2_f = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_FRONT_2", NORTH)
-		markings_icon_2_f.Blend(COLOR_VIBRANT_LIME, ICON_MULTIPLY)
+		markings_icon_2_f.Blend(COLOR_EFFIGY_PLATINUM, ICON_MULTIPLY)
 		var/icon/markings_icon_3_f = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_FRONT_3", NORTH)
-		markings_icon_3_f.Blend(COLOR_BLUE, ICON_MULTIPLY)
+		markings_icon_3_f.Blend(COLOR_EFFIGY_ELECTRIC_BLUE, ICON_MULTIPLY)
 		// A couple icon files use this plus-size setup; autocrop to generate better icons where possible
 		if(markings_icon_1_f.Width() == WIDTH_WINGS_FILE && markings_icon_1_f.Height() == HEIGHT_WINGS_FILE)
 			markings_icon_1_f.Crop(8, 2, 39, 33)

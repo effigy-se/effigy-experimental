@@ -11,7 +11,7 @@
 		var/icon/head_accessory_icon = icon(sprite_accessory.icon, sprite_accessory.icon_state)
 		if(y_offset)
 			head_accessory_icon.Shift(NORTH, y_offset)
-		head_accessory_icon.Blend(COLOR_DARK_BROWN, ICON_MULTIPLY)
+		head_accessory_icon.Blend(COLOR_EFFIGY_LIGHT_YELLOW, ICON_MULTIPLY) // EffigyEdit Change - Character Preferences
 		final_icon.Blend(head_accessory_icon, ICON_OVERLAY)
 
 	final_icon.Crop(10, 19, 22, 31)
