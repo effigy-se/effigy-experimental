@@ -35,12 +35,12 @@ import { useServerPrefs } from '../useServerPrefs';
 import { DeleteCharacterPopup } from './DeleteCharacterPopup';
 import { MultiNameInput, NameInput } from './names';
 
-const CLOTHING_CELL_SIZE = 48;
-const CLOTHING_SIDEBAR_ROWS = 9;
+const CLOTHING_CELL_SIZE = 72;
+const CLOTHING_SIDEBAR_ROWS = 8.05;
 
-const CLOTHING_SELECTION_CELL_SIZE = 48;
-const CLOTHING_SELECTION_WIDTH = 5.4;
-const CLOTHING_SELECTION_MULTIPLIER = 5.2;
+const CLOTHING_SELECTION_CELL_SIZE = 72;
+const CLOTHING_SELECTION_WIDTH = 8.3;
+const CLOTHING_SELECTION_MULTIPLIER = 4.3;
 
 type CharacterControlsProps = {
   handleRotate: () => void;
@@ -58,6 +58,16 @@ function CharacterControls(props: CharacterControlsProps) {
           onClick={props.handleRotate}
           fontSize="22px"
           icon="undo"
+          tooltip="Rotate"
+          tooltipPosition="top"
+        />
+      </Stack.Item>
+
+      <Stack.Item>
+        <Button
+          onClick={props.handleRotate}
+          fontSize="22px"
+          icon="redo"
           tooltip="Rotate"
           tooltipPosition="top"
         />
@@ -98,6 +108,7 @@ type ChoicedSelectionProps = {
 function ChoicedSelection(props: ChoicedSelectionProps) {
   const { catalog, supplementalFeature, supplementalValue } = props;
   const [getSearchText, searchTextSet] = useState('');
+  const { act } = useBackend<PreferencesMenuData>();
 
   if (!catalog.icons) {
     return <Box color="red">Provided catalog had no icons!</Box>;
@@ -119,8 +130,9 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
         <Stack.Item>
           <Stack fill>
             {supplementalFeature && (
-              <Stack.Item>
+              <Stack.Item ml={0.2} mt={0.5}>
                 <FeatureValueInput
+                  act={act}
                   feature={features[supplementalFeature]}
                   featureId={supplementalFeature}
                   shrink
@@ -129,21 +141,29 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
               </Stack.Item>
             )}
 
-            <Stack.Item grow>
+            <Stack.Item grow mr={6}>
               <Box
                 style={{
-                  borderBottom: '1px solid #888',
                   fontWeight: 'bold',
-                  fontSize: '14px',
+                  fontSize: '18px',
+                  color: '#e6e7eb',
                   textAlign: 'center',
                 }}
               >
-                Select {props.name.toLowerCase()}
+                {props.name}
               </Box>
             </Stack.Item>
 
             <Stack.Item>
-              <Button color="red" onClick={props.onClose}>
+              <Button
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '14px',
+                  textAlign: 'center',
+                }}
+                color="#424651"
+                onClick={props.onClose}
+              >
                 X
               </Button>
             </Stack.Item>
@@ -153,10 +173,10 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
         <Stack.Item overflowX="hidden" overflowY="scroll">
           <Autofocus>
             <Input
-              placeholder="Search..."
+              placeholder=""
               style={{
                 margin: '0px 5px',
-                width: '95%',
+                width: '83.5%',
               }}
               onInput={(_, value) => searchTextSet(value)}
             />
@@ -189,8 +209,20 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
                             image,
                             'centered-image',
                           ])}
+                          style={{
+                            transform:
+                              'translateX(-50%) translateY(-50%) scale(2)',
+                          }}
                         />
                       </Button>
+                      <Box
+                        textAlign="center"
+                        fontSize="14"
+                        width="86%"
+                        color="#e6e7eb"
+                      >
+                        {name}
+                      </Box>
                     </Flex.Item>
                   );
                 },
@@ -445,6 +477,7 @@ export function PreferenceList(props: PreferenceListProps) {
 
                   <Stack.Item grow>
                     <FeatureValueInput
+                      act={act}
                       feature={feature}
                       featureId={featureId}
                       value={value}
