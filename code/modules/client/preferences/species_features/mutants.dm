@@ -22,7 +22,7 @@
 	if (!..(value))
 		return FALSE
 
-	if (is_color_dark(value, 15))
+	if (is_color_dark(value, 8)) // EffigyEdit Change - Character Preferences - Original: 15
 		return FALSE
 
 	return TRUE
