@@ -6602,6 +6602,7 @@
 #include "local\code\modules\character_prefs\preferences\species_features\wings.dm"
 #include "local\code\modules\character_prefs\species\_species.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\bras.dm"
+#include "local\code\modules\character_prefs\sprite_accessories\facial_hair.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\frills.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\hair.dm"
 #include "local\code\modules\character_prefs\sprite_accessories\horns.dm"
