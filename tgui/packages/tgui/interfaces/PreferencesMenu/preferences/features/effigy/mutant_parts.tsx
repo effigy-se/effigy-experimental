@@ -187,3 +187,17 @@ export const fluff_toggle: FeatureToggle = {
   `,
   component: CheckboxInput,
 };
+
+export const ext_chest_toggle: FeatureToggle = {
+  name: '+ Breasts',
+  category: 'GAMEPLAY',
+  description: `
+    When toggled, adds breasts to your character.
+  `,
+  component: CheckboxInput,
+};
+
+export const ext_chest_color: Feature<string[]> = {
+  name: 'Breasts Color',
+  component: FeatureTriColorInput,
+};

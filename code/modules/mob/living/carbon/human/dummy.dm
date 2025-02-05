@@ -121,7 +121,7 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	// EffigyEdit Add - Character Preferences
 	target.dna.features["tail_other"] = "No Tail"
 	target.dna.features["wings"] = "No Wings"
-	target.dna.features["breasts"] = "Bare"
+	target.dna.features["ext_chest"] = "Bare"
 	target.dna.features["fluff"] = "No Fluff"
 	// EffigyEdit Add End
 	target.dna.features["pod_hair"] = get_consistent_feature_entry(SSaccessories.pod_hair_list)

@@ -5,6 +5,15 @@
 #define UNDERWEAR_HIDE_ALL (UNDERWEAR_HIDE_SOCKS | UNDERWEAR_HIDE_SHIRT | UNDERWEAR_HIDE_UNDIES | UNDERWEAR_HIDE_BRA)
 
 #define ORGAN_SLOT_EXTERNAL_FLUFF "fluff"
+#define ORGAN_SLOT_EXTERNAL_CHEST "ext_chest"
+#define ORGAN_SLOT_EXTERNAL_GROIN_X "ext_groin_x"
+#define ORGAN_SLOT_EXTERNAL_GROIN_Y "ext_groin_y"
+
+// Used to make it easier
+#define ORGAN_VISIBILITY_MODE_ALWAYS_SHOW "Always Show"
+#define ORGAN_VISIBILITY_MODE_NORMAL "Normal"
+#define ORGAN_VISIBILITY_MODE_ALWAYS_HIDE "Always Hide"
+
 /// Head_flags of android heads that don't feature eyes (monitor heads (IPCs))
 #define HEAD_MONITOR_FACE (HEAD_HAIR|HEAD_LIPS|HEAD_DEBRAIN)
 

@@ -9,15 +9,14 @@
  */
 /datum/species
 	/// Adding a language type to this in the form of /datum/language will allow the language to be displayed in preferences for that species, even if it is a secret language.
-	/// Currently used for Ættmál in hearthkin.
 	var/list/language_prefs_whitelist
-	///If a species can always be picked in prefs for the purposes of customizing it for ghost roles or events
+	/// If a species can always be picked in prefs for the purposes of customizing it for ghost roles or events
 	var/always_customizable = FALSE
-	///How are we treated regarding processing reagents, by default we process them as if we're organic
+	/// How are we treated regarding processing reagents, by default we process them as if we're organic
 	var/reagent_flags = PROCESS_ORGANIC
-	///This is the outfit which will be used by the species its preview portrait
+	/// This is the outfit which will be used by the species its preview portrait
 	var/datum/outfit/preview_outfit = /datum/outfit/job/assistant/consistent
-	///Override for the alpha of bodyparts and mutant parts.
+	/// Override for the alpha of bodyparts and mutant parts.
 	var/specific_alpha = 255
 	var/list/digi_leg_overrides = list(
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/digitigrade,
