@@ -4,7 +4,7 @@
 /datum/species/get_features()
 	var/list/features = ..()
 
-	features += /datum/preference/choiced/breasts
+	features += /datum/preference/choiced/ext_chest
 
 	GLOB.features_by_species[type] = features
 
@@ -12,7 +12,7 @@
 
 /datum/controller/subsystem/accessories/setup_lists()
 	. = ..()
-	ext_chest_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/breasts)["default_sprites"] // FLAKY DEFINE: this should be using DEFAULT_SPRITE_LIST
+	ext_chest_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/ext_chest)["default_sprites"] // FLAKY DEFINE: this should be using DEFAULT_SPRITE_LIST
 
 /datum/species/regenerate_organs(mob/living/carbon/target, datum/species/old_species, replace_current = TRUE, list/excluded_zones, visual_only = FALSE)
 	. = ..()
@@ -28,21 +28,21 @@
 		old_part.moveToNullspace()
 
 //core toggle
-/datum/preference/toggle/breasts
+/datum/preference/toggle/ext_chest
 	savefile_key = "ext_chest_toggle"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_DEFAULT
 
-/datum/preference/toggle/breasts/apply_to_human(mob/living/carbon/human/target, value)
+/datum/preference/toggle/ext_chest/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == FALSE)
 		target.dna.features["ext_chest"] = "Bare"
 
-/datum/preference/toggle/breasts/create_default_value()
+/datum/preference/toggle/ext_chest/create_default_value()
 	return FALSE
 
 //sprite selection
-/datum/preference/choiced/breasts
+/datum/preference/choiced/ext_chest
 	savefile_key = "feature_ext_chest"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_CLOTHING
@@ -51,21 +51,21 @@
 	priority = PREFERENCE_PRIORITY_DEFAULT
 	can_randomize = FALSE
 
-/datum/preference/choiced/breasts/init_possible_values()
+/datum/preference/choiced/ext_chest/init_possible_values()
 	return assoc_to_keys_features(SSaccessories.ext_chest_list)
 
-/datum/preference/choiced/breasts/icon_for(value)
+/datum/preference/choiced/ext_chest/icon_for(value)
 	return generate_ext_chest_shot(SSaccessories.ext_chest_list[value], "ext_chest")
 
-/datum/preference/choiced/breasts/apply_to_human(mob/living/carbon/human/target, value)
+/datum/preference/choiced/ext_chest/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["ext_chest"] = value
 
-/datum/preference/choiced/breasts/create_default_value()
-	return /datum/sprite_accessory/breasts/bare::name
+/datum/preference/choiced/ext_chest/create_default_value()
+	return /datum/sprite_accessory/ext_chest/bare::name
 
-/datum/preference/choiced/breasts/is_accessible(datum/preferences/preferences)
+/datum/preference/choiced/ext_chest/is_accessible(datum/preferences/preferences)
 	. = ..()
-	var/has_breasts = preferences.read_preference(/datum/preference/toggle/breasts)
+	var/has_breasts = preferences.read_preference(/datum/preference/toggle/ext_chest)
 	if(has_breasts == TRUE)
 		return TRUE
 	return FALSE
@@ -90,33 +90,33 @@
 	return final_icon
 
 // colors
-/datum/preference/tri_color/breasts_color
+/datum/preference/tri_color/ext_chest_color
 	priority = PREFERENCE_PRIORITY_BODY_TYPE
 	savefile_key = "ext_chest_color"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SUPPLEMENTAL_FEATURES
 	can_randomize = FALSE
 
-/datum/preference/tri_color/breasts_color/create_default_value()
+/datum/preference/tri_color/ext_chest_color/create_default_value()
 	return list(sanitize_hexcolor("[pick("7F", "FF")][pick("7F", "FF")][pick("7F", "FF")]"),
 	sanitize_hexcolor("[pick("7F", "FF")][pick("7F", "FF")][pick("7F", "FF")]"),
 	sanitize_hexcolor("[pick("7F", "FF")][pick("7F", "FF")][pick("7F", "FF")]"))
 
-/datum/preference/tri_color/breasts_color/apply_to_human(mob/living/carbon/human/target, value)
+/datum/preference/tri_color/ext_chest_color/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["ext_chest_color_1"] = value[1]
 	target.dna.features["ext_chest_color_2"] = value[2]
 	target.dna.features["ext_chest_color_3"] = value[3]
 
-/datum/preference/tri_color/breasts_color/is_valid(value)
+/datum/preference/tri_color/ext_chest_color/is_valid(value)
 	if (!..(value))
 		return FALSE
 
 	return TRUE
 
 // Gotta add to the selector too
-/datum/preference/choiced/breasts/compile_constant_data()
+/datum/preference/choiced/ext_chest/compile_constant_data()
 	var/list/data = ..()
 
-	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/breasts_color::savefile_key
+	data[SUPPLEMENTAL_FEATURE_KEY] = /datum/preference/tri_color/ext_chest_color::savefile_key
 
 	return data
