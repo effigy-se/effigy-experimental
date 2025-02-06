@@ -76,6 +76,11 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	var/old_lighting_corner_NW = lighting_corner_NW
 	var/old_directional_opacity = directional_opacity
 	var/old_dynamic_lumcount = dynamic_lumcount
+	// EffigyEdit Add - Liquids
+	var/obj/effect/abstract/liquid_turf/old_liquids = liquids
+	if(lgroup)
+		lgroup.remove_from_group(src)
+	// EffigyEdit Add End
 	var/old_rcd_memory = rcd_memory
 	var/old_explosion_throw_details = explosion_throw_details
 	var/old_opacity = opacity
@@ -177,6 +182,31 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	else if(ispath(old_type, /turf/open/space))
 		for(var/turf/open/space/space_tile in RANGE_TURFS(1, src))
 			space_tile.enable_starlight()
+
+	// EffigyEdit Add - Liquids - TODO: Confirm moving this below turf/open/space
+	if(old_liquids)
+		if(new_turf.liquids)
+			var/liquid_cache = new_turf.liquids //Need to cache and re-set some vars due to the cleaning on Destroy(), and turf references
+			if(old_liquids.immutable)
+				old_liquids.remove_turf(src)
+			else
+				qdel(old_liquids, TRUE)
+			new_turf.liquids = liquid_cache
+			new_turf.liquids.my_turf = new_turf
+		else
+			if(flags & CHANGETURF_INHERIT_AIR)
+				new_turf.liquids = old_liquids
+				old_liquids.my_turf = new_turf
+				if(old_liquids.immutable)
+					new_turf.convert_immutable_liquids()
+				else
+					new_turf.reasses_liquids()
+			else
+				if(old_liquids.immutable)
+					old_liquids.remove_turf(src)
+				else
+					qdel(old_liquids, TRUE)
+	// EffigyEdit Add End
 
 	if(old_opacity != opacity && SSticker)
 		GLOB.cameranet.bareMajorChunkChange(src)

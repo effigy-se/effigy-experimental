@@ -341,6 +341,15 @@
 			/obj/machinery/plumbing/tank = 20,
 			/obj/machinery/plumbing/acclimator = 10,
 		),
+
+		// EffigyEdit Add - Liquids
+		//category 4 liquids
+		"Liquids" = list(
+			/obj/structure/drain = 5,
+			/obj/machinery/plumbing/floor_pump/input = 20,
+			/obj/machinery/plumbing/floor_pump/output = 20,
+		),
+		// EffigyEdit Add End
 	)
 
 /obj/item/construction/plumbing/service/Initialize(mapload)
