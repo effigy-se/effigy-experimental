@@ -65,21 +65,23 @@
 
 /datum/preference/choiced/ext_chest/is_accessible(datum/preferences/preferences)
 	. = ..()
-	var/has_breasts = preferences.read_preference(/datum/preference/toggle/ext_chest)
-	if(has_breasts == TRUE)
+	var/has_ext = preferences.read_preference(/datum/preference/toggle/ext_chest)
+	if(has_ext == TRUE)
 		return TRUE
 	return FALSE
 
 /proc/generate_ext_chest_shot(datum/sprite_accessory/sprite_accessory, key)
-	var/icon/final_icon = icon('icons/mob/human/bodyparts_greyscale.dmi', "human_chest_f", SOUTH)
+	var/static/icon/final_icon
+	final_icon = icon('local/icons/mob/mutant/sprite_accessories/fallback.dmi')
 
 	if (!isnull(sprite_accessory))
-		var/icon/accessory_icon = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_ADJ", SOUTH)
+		var/icon/accessory_icon_1 = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_ADJ", SOUTH)
+		accessory_icon_1.Blend(COLOR_EFFIGY_SKY_BLUE, ICON_MULTIPLY)
 		var/icon/accessory_icon_2 = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_ADJ_2", SOUTH)
-		accessory_icon_2.Blend(COLOR_RED, ICON_MULTIPLY)
+		accessory_icon_2.Blend(COLOR_EFFIGY_PLATINUM, ICON_MULTIPLY)
 		var/icon/accessory_icon_3 = icon(sprite_accessory.icon, "m_[key]_[sprite_accessory.icon_state]_ADJ_3", SOUTH)
-		accessory_icon_3.Blend(COLOR_VIBRANT_LIME, ICON_MULTIPLY)
-		final_icon.Blend(accessory_icon, ICON_OVERLAY)
+		accessory_icon_3.Blend(COLOR_EFFIGY_ELECTRIC_BLUE, ICON_MULTIPLY)
+		final_icon.Blend(accessory_icon_1, ICON_OVERLAY)
 		final_icon.Blend(accessory_icon_2, ICON_OVERLAY)
 		final_icon.Blend(accessory_icon_3, ICON_OVERLAY)
 
@@ -113,7 +115,6 @@
 
 	return TRUE
 
-// Gotta add to the selector too
 /datum/preference/choiced/ext_chest/compile_constant_data()
 	var/list/data = ..()
 

@@ -253,6 +253,10 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 	// EffigyEdit Add - Character Preferences
 	if(features["ext_chest"])
 		L[DNA_CHEST_BLOCK] = construct_block(SSaccessories.ext_chest_list.Find(features["ext_chest"]), length(SSaccessories.ext_chest_list))
+	if(features["ext_groin_y1"])
+		L[DNA_GROIN_Y1_BLOCK] = construct_block(SSaccessories.ext_groin_y1_list.Find(features["ext_groin_y1"]), length(SSaccessories.ext_groin_y1_list))
+	if(features["ext_groin_y2"])
+		L[DNA_GROIN_Y2_BLOCK] = construct_block(SSaccessories.ext_groin_y2_list.Find(features["ext_groin_y2"]), length(SSaccessories.ext_groin_y2_list))
 	// EffigyEdit Add End
 
 	for(var/blocknum in 1 to DNA_FEATURE_BLOCKS)
@@ -403,6 +407,10 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		// EffigyEdit Add - Character Preferences
 		if(DNA_CHEST_BLOCK)
 			set_uni_feature_block(blocknumber, construct_block(SSaccessories.ext_chest_list.Find(features["ext_chest"]), length(SSaccessories.ext_chest_list)))
+		if(DNA_GROIN_Y1_BLOCK)
+			set_uni_feature_block(blocknumber, construct_block(SSaccessories.ext_groin_y1_list.Find(features["ext_groin_y1"]), length(SSaccessories.ext_groin_y1_list)))
+		if(DNA_GROIN_Y2_BLOCK)
+			set_uni_feature_block(blocknumber, construct_block(SSaccessories.ext_groin_y2_list.Find(features["ext_groin_y2"]), length(SSaccessories.ext_groin_y2_list)))
 		// EffigyEdit Add End
 
 //Please use add_mutation or activate_mutation instead
@@ -710,6 +718,10 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 	// EffigyEdit Add - Character Preferences
 	if(dna.features["ext_chest"])
 		dna.features["ext_chest"] = SSaccessories.ext_chest_list[deconstruct_block(get_uni_feature_block(features, DNA_CHEST_BLOCK), length(SSaccessories.ext_chest_list))]
+	if(dna.features["ext_groin_y1"])
+		dna.features["ext_groin_y1"] = SSaccessories.ext_groin_y1_list[deconstruct_block(get_uni_feature_block(features, DNA_GROIN_Y1_BLOCK), length(SSaccessories.ext_groin_y1_list))]
+	if(dna.features["ext_groin_y2"])
+		dna.features["ext_groin_y2"] = SSaccessories.ext_groin_y2_list[deconstruct_block(get_uni_feature_block(features, DNA_GROIN_Y2_BLOCK), length(SSaccessories.ext_groin_y2_list))]
 	// EffigyEdit Add End
 
 	for(var/obj/item/organ/organ in organs)

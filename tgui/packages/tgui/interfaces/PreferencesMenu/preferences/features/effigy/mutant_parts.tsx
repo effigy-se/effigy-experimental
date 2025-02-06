@@ -201,3 +201,31 @@ export const ext_chest_color: Feature<string[]> = {
   name: 'Breasts Color',
   component: FeatureTriColorInput,
 };
+
+export const ext_groin_y1_toggle: FeatureToggle = {
+  name: '+ Penis',
+  category: 'GAMEPLAY',
+  description: `
+    When toggled, adds a penis to your character.
+  `,
+  component: CheckboxInput,
+};
+
+export const ext_groin_y1_color: Feature<string[]> = {
+  name: 'Penis Color',
+  component: FeatureTriColorInput,
+};
+
+export const ext_groin_y2_toggle: FeatureToggle = {
+  name: '+ Testicles',
+  category: 'GAMEPLAY',
+  description: `
+    When toggled, adds testicles to your character.
+  `,
+  component: CheckboxInput,
+};
+
+export const ext_groin_y2_color: Feature<string[]> = {
+  name: 'Testicle Color',
+  component: FeatureTriColorInput,
+};

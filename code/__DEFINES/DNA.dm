@@ -63,8 +63,8 @@
 #define DNA_FISH_TAIL_BLOCK 16
 // EffigyEdit Add - Character Preferences
 #define DNA_CHEST_BLOCK 17
-// #define DNA_GROIN_X_BLOCK 18
-// #define DNA_GROIN_Y_BLOCK 19
+#define DNA_GROIN_Y1_BLOCK 18
+#define DNA_GROIN_Y2_BLOCK 19
 // EffigyEdit Add End
 
 // Hey! Listen up if you're here because you're adding a species feature!
@@ -74,7 +74,7 @@
 // (Which means having a DNA block for a feature tied to a mob without DNA is entirely pointless.)
 
 /// Total amount of DNA blocks, must be equal to the highest DNA block number
-#define DNA_FEATURE_BLOCKS 17 // EffigyEdit Change - Character Preferences - Original: 16
+#define DNA_FEATURE_BLOCKS 19 // EffigyEdit Change - Character Preferences - Original: 16
 
 #define DNA_SEQUENCE_LENGTH 4
 #define DNA_MUTATION_BLOCKS 8

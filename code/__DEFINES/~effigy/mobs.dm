@@ -6,8 +6,8 @@
 
 #define ORGAN_SLOT_EXTERNAL_FLUFF "fluff"
 #define ORGAN_SLOT_EXTERNAL_CHEST "ext_chest"
-#define ORGAN_SLOT_EXTERNAL_GROIN_X "ext_groin_x"
-#define ORGAN_SLOT_EXTERNAL_GROIN_Y "ext_groin_y"
+#define ORGAN_SLOT_EXTERNAL_GROIN_Y1 "ext_groin_y1"
+#define ORGAN_SLOT_EXTERNAL_GROIN_Y2 "ext_groin_y2"
 
 // Used to make it easier
 #define ORGAN_VISIBILITY_MODE_ALWAYS_SHOW "Always Show"
