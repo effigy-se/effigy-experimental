@@ -6561,6 +6561,7 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
+#include "local\code\modules\asset_cache\assets\tgui.dm"
 #include "local\code\modules\character_prefs\_overrides.dm"
 #include "local\code\modules\character_prefs\bodyparts\_bodyparts.dm"
 #include "local\code\modules\character_prefs\bodyparts\lizard.dm"

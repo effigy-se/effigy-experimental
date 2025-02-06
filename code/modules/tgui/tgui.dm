@@ -98,8 +98,10 @@
 		window.initialize(
 			strict_mode = TRUE,
 			fancy = user.client.prefs.read_preference(/datum/preference/toggle/tgui_fancy),
+			inline_css = file("local/interface/effigy_tgui.css"), // EffigyEdit Add - TGUI
 			assets = list(
 				get_asset_datum(/datum/asset/simple/tgui),
+				get_asset_datum(/datum/asset/simple/namespaced/effigy_tgui), // EffigyEdit Add - TGUI
 			))
 	else
 		window.send_message("ping")

@@ -395,7 +395,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	stat_panel.initialize(
 		inline_html = file("html/statbrowser.html"),
 		inline_js = file("html/statbrowser.js"),
-		inline_css = file("html/statbrowser.css"),
+		inline_css = file("local/interface/effigy_stat.css"), // EffigyEdit Change - TGUI - Original: html/statbrowser.css
+		assets = list(get_asset_datum(/datum/asset/simple/namespaced/effigy_stat)) // EffigyEdit Add - TGUI
 	)
 	addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 30 SECONDS)
 

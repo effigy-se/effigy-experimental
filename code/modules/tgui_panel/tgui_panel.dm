@@ -44,8 +44,10 @@
 	// Perform a clean initialization
 	window.initialize(
 		strict_mode = TRUE,
+		inline_css = file("local/interface/effigy_panel.css"), // EffigyEdit Add - TGUI
 		assets = list(
 			get_asset_datum(/datum/asset/simple/tgui_panel),
+			get_asset_datum(/datum/asset/simple/namespaced/effigy_panel), // EffigyEdit Add - TGUI
 		))
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/fontawesome))
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/tgfont))

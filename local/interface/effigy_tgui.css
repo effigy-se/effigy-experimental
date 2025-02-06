@@ -1,0 +1,63 @@
+@font-face {
+	font-family: 'Chakra Petch';
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url("ChakraPetch-SemiBold.ttf");
+}
+
+@font-face {
+	font-family: 'Chakra Petch';
+	font-style: italic;
+	font-weight: 400;
+	font-display: block;
+	src: url("ChakraPetch-SemiBoldItalic.ttf");
+}
+
+@font-face {
+	font-family: 'Chakra Petch';
+	font-style: normal;
+	font-weight: 700;
+	font-display: block;
+	src: url("ChakraPetch-Bold.ttf");
+}
+
+@font-face {
+	font-family: 'Chakra Petch';
+	font-style: italic;
+	font-weight: 700;
+	font-display: block;
+	src: url("ChakraPetch-BoldItalic.ttf");
+}
+
+@font-face {
+	font-family: 'Ubuntu Mono';
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url("UbuntuMono-Regular.ttf");
+}
+
+@font-face {
+	font-family: 'Ubuntu Mono';
+	font-style: italic;
+	font-weight: 400;
+	font-display: block;
+	src: url("UbuntuMono-Italic.ttf");
+}
+
+@font-face {
+	font-family: 'Ubuntu Mono';
+	font-style: normal;
+	font-weight: 700;
+	font-display: block;
+	src: url("UbuntuMono-Bold.ttf");
+}
+
+@font-face {
+	font-family: 'Ubuntu Mono';
+	font-style: italic;
+	font-weight: 700;
+	font-display: block;
+	src: url("UbuntuMono-BoldItalic.ttf");
+}
