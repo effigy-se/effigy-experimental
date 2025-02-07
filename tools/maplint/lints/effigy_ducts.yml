@@ -1,0 +1,9 @@
+/obj/machinery/duct/supply:
+  banned_neighbors:
+    /obj/machinery/duct/supply:
+        identical: true
+
+/obj/machinery/duct/waste:
+  banned_neighbors:
+    /obj/machinery/duct/waste:
+        identical: true
