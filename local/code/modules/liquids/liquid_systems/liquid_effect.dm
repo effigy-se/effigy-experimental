@@ -565,10 +565,7 @@
 
 	var/liquid_state_template = liquid_state_messages["[liquid_state]"]
 
-	examine_list += EXAMINE_SECTION_BREAK
-
 	if(examiner.can_see_reagents())
-		examine_list += EXAMINE_SECTION_BREAK
 
 		if(length(reagent_list) == 1)
 			// Single reagent text.
@@ -587,7 +584,6 @@
 				examine_list += "&bull; [volume] units of [reagent_name]"
 
 		examine_list += span_notice("The solution has a temperature of [temp]K.")
-		examine_list += EXAMINE_SECTION_BREAK
 		return
 
 	// Otherwise, just show the total volume
