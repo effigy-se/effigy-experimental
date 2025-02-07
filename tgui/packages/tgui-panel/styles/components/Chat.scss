@@ -8,7 +8,8 @@
 @use '~tgui/styles/base.scss';
 @use '~tgui/styles/colors.scss';
 
-$text-color: hsl(210, 50%, 80%) !default;
+// EffigyEdit Change - TGUI - Original: hsl(210, 50%, 80%)
+$text-color: hsl(202, 83%, 84%) !default;
 $color-bg-section: base.$color-bg-section !default;
 
 .Chat {
@@ -83,7 +84,8 @@ $color-bg-section: base.$color-bg-section !default;
 
 .ChatMessage--highlighted {
   position: relative;
-  border-left: math.div(1em, 6) solid hsl(50, 100%, 63.5%);
+  // EffigyEdit Change - TGUI - Original: hsl(50, 100%, 63.5%)
+  border-left: math.div(1em, 6) solid hsl(258, 100%, 91%);
   padding-left: 0.5em;
 
   &:after {
@@ -93,7 +95,8 @@ $color-bg-section: base.$color-bg-section !default;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: hsla(50, 100%, 63.5%, 0.1);
+    // EffigyEdit Change - TGUI - Original: hsla(50, 100%, 63.5%, 0.1)
+    background-color: hsla(258, 100%, 91%, 0.1);
     // Make this click-through since this is an overlay
     pointer-events: none;
   }

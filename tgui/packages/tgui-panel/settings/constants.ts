@@ -26,6 +26,7 @@ export const SETTINGS_TABS = [
 
 export const FONTS_DISABLED = 'Default';
 
+/* EffigyEdit Change - TGUI - Original:
 export const FONTS = [
   FONTS_DISABLED,
   'Verdana',
@@ -39,5 +40,19 @@ export const FONTS = [
   'Courier New',
   'Lucida Console',
 ];
+*/
+export const FONTS = [
+  FONTS_DISABLED,
+  'IBM Plex Sans',
+  'Titillium Web',
+  'Arial',
+  'Comic Sans MS',
+  'Impact',
+  'Tahoma',
+  'Ubuntu Mono',
+  'Courier New',
+  'Lucida Console',
+];
+// EffigyEdit Change End
 
 export const WARN_AFTER_HIGHLIGHT_AMT = 10;

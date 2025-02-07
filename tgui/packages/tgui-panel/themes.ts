@@ -8,10 +8,11 @@ export const THEMES = ['light', 'dark'];
 
 const COLORS = {
   DARK: {
-    BG_BASE: '#212020',
-    BG_SECOND: '#161515',
-    BUTTON: '#414040',
-    TEXT: '#A6A6A6',
+    BG_BASE: '#1c1d22', // EffigyEdit Change - TGUI - Original: #212020
+    BG_SECOND: '#121316', // EffigyEdit Change - TGUI - Original: #161515
+    BUTTON: '#2ccaff',
+    TEXT: '#e6f1ff', // EffigyEdit Change - TGUI - Original: #161515
+    TEXT_DARK: '#212121', // EffigyEdit Add - TGUI
   },
   LIGHT: {
     BG_BASE: '#EFEEEE',
@@ -61,19 +62,19 @@ export const setClientTheme = (name) => {
     'split.background-color': themeColor.BG_BASE,
     // Buttons
     'changelog.background-color': themeColor.BUTTON,
-    'changelog.text-color': themeColor.TEXT,
+    'changelog.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'rules.background-color': themeColor.BUTTON,
-    'rules.text-color': themeColor.TEXT,
+    'rules.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'wiki.background-color': themeColor.BUTTON,
-    'wiki.text-color': themeColor.TEXT,
+    'wiki.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'forum.background-color': themeColor.BUTTON,
-    'forum.text-color': themeColor.TEXT,
+    'forum.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'github.background-color': themeColor.BUTTON,
-    'github.text-color': themeColor.TEXT,
+    'github.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'report-issue.background-color': themeColor.BUTTON,
-    'report-issue.text-color': themeColor.TEXT,
+    'report-issue.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'fullscreen-toggle.background-color': themeColor.BUTTON,
-    'fullscreen-toggle.text-color': themeColor.TEXT,
+    'fullscreen-toggle.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     // Status and verb tabs
     'output.background-color': themeColor.BG_BASE,
     'output.text-color': themeColor.TEXT,
