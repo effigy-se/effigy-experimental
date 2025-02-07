@@ -18626,6 +18626,10 @@
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/power_store/cell/high,
 /obj/machinery/light/small/directional/west,
+/obj/item/toy/crayon/spraycan/roboticist{
+	pixel_y = 7;
+	pixel_x = 8
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/station/science/robotics)
 "kad" = (
@@ -23819,6 +23823,7 @@
 	dir = 6
 	},
 /obj/machinery/camera/autoname/directional/west,
+/obj/structure/detectiveboard/directional/west,
 /turf/open/floor/wood,
 /area/station/security/detectives_office)
 "naS" = (

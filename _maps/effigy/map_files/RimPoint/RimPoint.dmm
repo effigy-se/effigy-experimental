@@ -5415,6 +5415,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/structure/detectiveboard/directional/south,
 /turf/open/floor/wood/large,
 /area/station/security/detectives_office)
 "bWg" = (
@@ -39068,6 +39069,10 @@
 "nWt" = (
 /obj/structure/table,
 /obj/machinery/ecto_sniffer,
+/obj/item/toy/crayon/spraycan/roboticist{
+	pixel_y = 6;
+	pixel_x = 9
+	},
 /turf/open/floor/glass/plasma,
 /area/station/science/robotics)
 "nWu" = (
@@ -58696,6 +58701,7 @@
 /obj/item/storage/box/deputy{
 	pixel_y = 6
 	},
+/obj/item/inspector,
 /turf/open/floor/glass/reinforced,
 /area/station/security/office)
 "uOl" = (
