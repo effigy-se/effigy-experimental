@@ -198,6 +198,8 @@
 	else
 		SSair.add_to_active(src)
 
+	liquid_update_turf() // EffigyEdit Add - Liquids
+
 /atom/movable/proc/move_update_air(turf/target_turf)
 	if(isturf(target_turf))
 		target_turf.air_update_turf(TRUE, FALSE) //You're empty now

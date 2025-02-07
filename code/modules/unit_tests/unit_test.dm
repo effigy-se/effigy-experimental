@@ -352,6 +352,15 @@ GLOBAL_VAR_INIT(focused_tests, focused_tests())
 	returnable_list += typesof(/turf/open/space/openspace)
 	returnable_list += typesof(/turf/open/openspace)
 
+	// EffigyEdit Add - Liquids
+	// Not designed to be spawned without a turf.
+	returnable_list += typesof(/obj/effect/abstract/liquid_turf)
+	// Unused - not supposed to be spawned without SSliquids
+	returnable_list += typesof(/turf/open/openspace/ocean)
+	// Baseturf editors can only go up to ten, stop this.
+	returnable_list += typesof(/obj/effect/baseturf_helper)
+	// EffigyEdit Add End
+
 	return returnable_list
 
 /proc/RunUnitTests()

@@ -302,6 +302,11 @@
 /// Nearly red. rgb(226, 78, 118)
 #define LIGHT_COLOR_BUBBLEGUM "#e24e76"
 
+// EffigyEdit Add - Effigy Colors
+/// Bright, slightly green yellow. rgb(225, 255, 97)
+#define LIGHT_COLOR_GLOWSTICK_YELLOW "#E2FF61"
+// EffigyEdit Add End
+
 //The GAGS greyscale_colors for each department's computer/machine circuits
 #define CIRCUIT_COLOR_GENERIC "#1A7A13"
 #define CIRCUIT_COLOR_COMMAND "#1B4594"

@@ -8,6 +8,15 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	//We'll spawn everything here
 	var/turf/spawn_at = run_loc_floor_bottom_left
 
+	// EffigyEdit Add - Liquids
+	// Not designed to be spawned without a turf.
+	uncreatables += typesof(/obj/effect/abstract/liquid_turf)
+	// Unused - not supposed to be spawned without SSliquids
+	uncreatables += typesof(/turf/open/openspace/ocean)
+	// Baseturf editors can only go up to ten, stop this.
+	uncreatables += typesof(/obj/effect/baseturf_helper)
+	// EffigyEdit Add End
+
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/original_turf_type = spawn_at.type
 	var/original_baseturfs = islist(spawn_at.baseturfs) ? spawn_at.baseturfs.Copy() : spawn_at.baseturfs

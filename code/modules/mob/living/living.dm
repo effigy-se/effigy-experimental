@@ -70,6 +70,12 @@
 	if(istype(potential_spine))
 		damage_softening_multiplier *= potential_spine.athletics_boost_multiplier
 
+	// EffigyEdit Add - Liquids
+	if(impacted_turf.liquids && impacted_turf.liquids.liquid_state >= LIQUID_STATE_WAIST)
+		Knockdown(20)
+		return . | ZIMPACT_NO_MESSAGE
+	// EffigyEdit Add End
+
 	// If you are incapped, you probably can't brace yourself
 	var/can_help_themselves = !INCAPACITATED_IGNORING(src, INCAPABLE_RESTRAINTS)
 	if(levels <= 1 && can_help_themselves)
