@@ -335,5 +335,5 @@ TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/tram)
 
 TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/dark)
 
-#undef TRIMLINE_SUBTYPE_HELPER
-#undef DECAL_ALPHA
+// #undef TRIMLINE_SUBTYPE_HELPER // EffigyEdit Remove - Used in local/code/game/objects/effects/decals/turfdecal/tilecoloring.dm
+// #undef DECAL_ALPHA // EffigyEdit Remove - Used in local/code/game/objects/effects/decals/turfdecal/tilecoloring.dm

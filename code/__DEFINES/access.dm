@@ -283,6 +283,8 @@
 /// Name associated with the wildcard bitflag that covers wildcards that have been forced onto an ID card that could not accept them.
 #define WILDCARD_NAME_FORCED "Hacked"
 
+// EffigyEdit Add - Areas - Yes I have to put the comment here. Yes repeatedly. Yes it sucks.
+// Effigy added to COMMON_ACCESS: ACCESS_STUDIO_CONTROL
 /// Departmental/general/common area accesses. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_COMMON)
 #define COMMON_ACCESS list( \
 	ACCESS_ATMOSPHERICS, \
@@ -332,6 +334,7 @@
 	ACCESS_SECURITY, \
 	ACCESS_SERVICE, \
 	ACCESS_SHIPPING, \
+	ACCESS_STUDIO_CONTROL, \
 	ACCESS_SURGERY, \
 	ACCESS_THEATRE, \
 	ACCESS_VIROLOGY, \
@@ -420,6 +423,8 @@
 #define REGION_ACCESS_ALL_STATION COMMON_ACCESS + COMMAND_ACCESS + PRIVATE_COMMAND_ACCESS + CAPTAIN_ACCESS
 /// Name for the General region.
 #define REGION_GENERAL "General"
+// EffigyEdit Add - Areas - Yes I have to put the comment here. Yes repeatedly. Yes it sucks.
+// Effigy added to REGION_ACCESS_GENERAL: ACCESS_STUDIO_CONTROL
 /// Used to seed the accesses_by_region list in SSid_access. A list of general service accesses that are overseen by the HoP.
 #define REGION_ACCESS_GENERAL list( \
 	ACCESS_BAR, \
@@ -431,6 +436,7 @@
 	ACCESS_LAWYER, \
 	ACCESS_LIBRARY, \
 	ACCESS_SERVICE, \
+	ACCESS_STUDIO_CONTROL, \
 	ACCESS_THEATRE, \
 )
 /// Name for the Security region.
