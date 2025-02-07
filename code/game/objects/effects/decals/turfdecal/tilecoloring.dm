@@ -162,7 +162,7 @@ TILE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/tile/holiday/rainbow)
 
 TILE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/tile/holiday/random)
 
-#undef TILE_DECAL_SUBTYPE_HELPER
+// #undef TILE_DECAL_SUBTYPE_HELPER // EffigyEdit Remove - Used in local/code/game/objects/effects/decals/turfdecal/tilecoloring.dm
 
 /// Trimlines
 /obj/effect/turf_decal/trimline

@@ -16,3 +16,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/showtime/broadcast_team, 24)
 	tv_enders = list( \
 		"We'll be back after the break!", \
 		)
+
+/obj/machinery/computer/security/telescreen/broadcast_team
+	name = "\improper Broadcast Teams' telescreen"
+	desc = "A telescreen used to preview a show's cameras prior to air."
+	network = list("broadcast")
+	frame_type = /obj/item/wallframe/telescreen/broadcast_team
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/broadcast_team, 32)
+
+/obj/item/wallframe/telescreen/broadcast_team
+	name = "\improper Broadcast Teams' telescreen frame"
+	result_path = /obj/machinery/computer/security/telescreen/broadcast_team
