@@ -6,8 +6,8 @@
 
 # MAINTAINERS
 /.github/ @lessthnthree
-/config/ @lessthnthree
-/local/ @lessthnthree
+/config/ @lessthnthree @unit0016
+/local/ @lessthnthree @unit0016
 /tgui/ @lessthnthree
 
 /_maps/ @unit0016
