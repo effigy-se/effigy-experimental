@@ -6564,6 +6564,7 @@
 #include "interface\fonts\vcr_osd_mono.dm"
 #include "local\code\controllers\subsystem\id_access.dm"
 #include "local\code\controllers\subsystem\transport.dm"
+#include "local\code\datums\shuttles.dm"
 #include "local\code\game\area\areas\station\common.dm"
 #include "local\code\game\area\areas\station\science.dm"
 #include "local\code\game\area\areas\station\service.dm"
