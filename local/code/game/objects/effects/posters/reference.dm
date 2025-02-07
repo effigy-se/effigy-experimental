@@ -34,7 +34,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/reference/viscerator, 32)
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/reference/interdyne, 32)
 
-/obj/structure/sign/poster/reference/broadcast
+/obj/structure/sign/poster/reference/broadcast // RIP Broadcast team; died Feb 7th; 2025
 	name = "Ass Time - (Comemorative Print)"
 	desc = "A poster for the quickly cancelled \"Ass Time\", the first of many mediocre attempts at sexualized broadcast television from \
 	the bright minds onboard Nanotrasen's latest facilities. This specific print was made to commemorate the award given to the show by a \
