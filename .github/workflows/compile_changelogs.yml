@@ -2,7 +2,7 @@ name: Compile changelogs
 
 on:
   schedule:
-  - cron: "0 0 * * *"
+  - cron: "2 23 * * *"
   workflow_dispatch:
 
 jobs:
@@ -51,23 +51,11 @@ jobs:
         run: |
           git config --local user.name "tgstation-ci[bot]"
           git config --local user.email "179393467+tgstation-ci[bot]@users.noreply.github.com"
-          git pull origin master
+          git pull origin main
           git add html/changelogs
-          git commit -m "Automatic changelog compile [ci skip]" -a || true
-
-      - name: Generate App Token
-        id: app-token-generation
-        uses: actions/create-github-app-token@v1
-        if: env.APP_PRIVATE_KEY != '' && env.APP_ID != ''
-        with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
-        env:
-          APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
-          APP_ID: ${{ secrets.APP_ID }}
-
+          git commit -m "Effigy automatic changelog compile [ci skip]" -a || true
       - name: "Push"
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ steps.app-token-generation.outputs.token || secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.SKYYNET_PAT || secrets.GITHUB_TOKEN }}

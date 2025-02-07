@@ -10,7 +10,6 @@
 	.=..()
 	. += span_notice("Some cutting equipment would be ideal to cut through this for valuables, though a shovel will work in a pinch.")
 
-/* EffigyEdit TODO - Salvage
 /obj/structure/scrap/attackby(obj/item/tool, mob/user, params)
 	// We check here if we have a shovel, OR a valid welding tool.
 	if(tool.tool_behaviour == TOOL_SHOVEL || tool.tool_behaviour == TOOL_WELDER && tool.tool_start_check(user, amount=0))
@@ -26,7 +25,6 @@
 				var/trash = pick_n_take(trash_types)
 				new trash(get_turf(src))
 			qdel(src)
-*/
 
 /obj/structure/scrap/falls_when_spawned/Initialize(mapload)
 	. = ..()
