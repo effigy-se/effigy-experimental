@@ -153,7 +153,7 @@
 
 /obj/effect/turf_decal/siding/wideplating_new/light
 	color = "#d9d9d9"
-*/ // EFFIGY TODO: Turf icons
+*/ /// EffigyEdit TODO: Turf icons
 
 
 /// DS-3 ///

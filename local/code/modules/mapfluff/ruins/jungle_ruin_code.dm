@@ -30,7 +30,7 @@
 	In contrast; local reaction is much more... muted - most involved with today's deployment already used to it being nearby.", \
 	desc_requirement = EXAMINE_CHECK_DEPARTMENT, \
 	requirements = DEPARTMENT_SECURITY)
-*/ // EFFIGY TODO: Examine++
+*/ // EffigyEdit TODO: Examine++ - remove single letter vars
 /obj/item/claymore/cutlass/luna/examine(mob/living/user)
 	. = ..()
 	. += span_notice("The design looks modular - it's possible you might be able to find additional pieces to attach.")
@@ -209,7 +209,7 @@
 		them, to have an exact 50% mortality rate.", \
 	desc_requirement = EXAMINE_CHECK_DEPARTMENT, \
 	requirements = DEPARTMENT_SECURITY)
-	*/ // Effigy TODO: Examine++
+	*/ // EffigyEdit TODO: Examine++ - remove single letter vars
 
 /obj/item/toy/faustian_doll/attack_self(mob/user as mob)
 	var/turf/T = find_safe_turf(zlevels=SSmapping.levels_by_trait(ZTRAIT_STATION))

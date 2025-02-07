@@ -14,6 +14,6 @@
 	loadout_enabled = TRUE
 	quirks_enabled = TRUE
 	random_appearance = FALSE
-	*/ // EFFIGY EDIT TODO
+	*/ // EffigyEdit TODO
 	show_flavor = FALSE
 	role_ban = ROLE_EVENTVENUE_GUEST
