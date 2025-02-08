@@ -107,7 +107,7 @@ export function GamePreferencesPage(props) {
     <TabbedMenu
       categoryEntries={gamePreferenceEntries}
       contentProps={{
-        fontSize: 1.5,
+        fontSize: 1.2, // EffigyEdit Change - TGUI - Original: fontSize: 1.5
       }}
     />
   );
