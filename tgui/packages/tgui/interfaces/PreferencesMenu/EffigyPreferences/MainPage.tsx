@@ -63,7 +63,7 @@ function CharacterControls(props: CharacterControlsProps) {
         />
       </Stack.Item>
 
-      <Stack.Item>
+      <Stack.Item ml="21px">
         <Button
           onClick={props.handleRotate}
           fontSize="22px"
@@ -73,7 +73,7 @@ function CharacterControls(props: CharacterControlsProps) {
         />
       </Stack.Item>
 
-      <Stack.Item>
+      <Stack.Item ml="21px">
         <Button
           onClick={props.handleOpenSpecies}
           fontSize="22px"
@@ -84,7 +84,7 @@ function CharacterControls(props: CharacterControlsProps) {
       </Stack.Item>
 
       {props.showGender && (
-        <Stack.Item>
+        <Stack.Item ml="21px">
           <GenderButton
             gender={props.gender}
             handleSetGender={props.setGender}
@@ -118,9 +118,8 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
     <Box
       className="ChoicedSelection"
       style={{
-        background: 'hsl(224, 16%, 12%)',
         padding: '5px',
-
+        background: 'hsl(224, 16%, 12%)',
         height: `${
           CLOTHING_SELECTION_CELL_SIZE * CLOTHING_SELECTION_MULTIPLIER
         }px`,
@@ -147,7 +146,7 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
                 style={{
                   fontWeight: 'bold',
                   fontSize: '18px',
-                  color: '#e6e7eb',
+                  color: 'hsl(224, 16%, 92%)',
                   textAlign: 'center',
                 }}
               >
@@ -165,7 +164,7 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
                 color="#424651"
                 onClick={props.onClose}
               >
-                X
+                x
               </Button>
             </Stack.Item>
           </Stack>
@@ -220,7 +219,7 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
                         textAlign="center"
                         fontSize="14"
                         width="86%"
-                        color="#e6e7eb"
+                        color="hsl(224, 16%, 92%)"
                       >
                         {name}
                       </Box>
@@ -365,6 +364,7 @@ function MainFeature(props: MainFeatureProps) {
           height: `${CLOTHING_CELL_SIZE}px`,
           width: `${CLOTHING_CELL_SIZE}px`,
         }}
+        color="blue"
         position="relative"
         tooltip={catalog.name}
         tooltipPosition="right"
@@ -377,8 +377,8 @@ function MainFeature(props: MainFeatureProps) {
           ])}
           style={{
             transform: randomization
-              ? 'translateX(-70%) translateY(-70%) scale(1.1)'
-              : 'translateX(-50%) translateY(-50%) scale(1.3)',
+              ? 'translateX(-70%) translateY(-70%) scale(2)'
+              : 'translateX(-50%) translateY(-50%) scale(2)',
           }}
         />
 
@@ -403,6 +403,20 @@ function MainFeature(props: MainFeatureProps) {
           />
         )}
       </Button>
+      <Box
+        mt="-3px"
+        mb="5px"
+        style={{
+          // Text below feature buttons
+          height: `14px`,
+          width: `${CLOTHING_CELL_SIZE}px`,
+          overflowWrap: 'anywhere',
+        }}
+        textAlign="center"
+        textColor="hsl(224, 16%, 92%)"
+      >
+        {catalog.name}
+      </Box>
     </Popper>
   );
 }
@@ -584,7 +598,8 @@ export function MainPage(props: MainPageProps) {
   // EffigyEdit Add - Character Preferences
   enum PrefPage {
     Character, // Character Preferences
-    Markings, // Markings
+    Markings,
+    Profile, // Markings
   }
 
   const [currentPrefPage, setCurrentPrefPage] = useState(PrefPage.Character);
@@ -609,6 +624,19 @@ export function MainPage(props: MainPageProps) {
       );
       break;
     case PrefPage.Markings:
+      prefPageContents = (
+        <PreferenceList
+          randomizations={getRandomization(
+            contextualPreferences,
+            serverData,
+            randomBodyEnabled,
+          )}
+          preferences={markingPreferences}
+          maxHeight="auto"
+        />
+      );
+      break;
+    case PrefPage.Profile:
       prefPageContents = (
         <PreferenceList
           randomizations={getRandomization(
@@ -652,9 +680,9 @@ export function MainPage(props: MainPageProps) {
         />
       )}
 
-      <Stack height={`${CLOTHING_SIDEBAR_ROWS * CLOTHING_CELL_SIZE}px`}>
+      <Stack height="485px" ml="-3px">
         <Stack.Item>
-          <Stack vertical fill>
+          <Stack vertical height="512px">
             <Stack.Item>
               <CharacterControls
                 gender={data.character_preferences.misc.gender}
@@ -669,14 +697,14 @@ export function MainPage(props: MainPageProps) {
               />
             </Stack.Item>
 
-            <Stack.Item grow>
+            <Stack.Item grow mt="10px">
               <CharacterPreview
                 height="100%"
                 id={data.character_preview_view}
               />
             </Stack.Item>
 
-            <Stack.Item position="relative">
+            <Stack.Item mr="1px">
               <NameInput
                 name={data.character_preferences.names[data.name_to_use]}
                 handleUpdateName={createSetPreference(act, data.name_to_use)}
@@ -688,8 +716,54 @@ export function MainPage(props: MainPageProps) {
           </Stack>
         </Stack.Item>
 
-        <Stack.Item width={`${CLOTHING_CELL_SIZE * 2 + 15}px`}>
-          <Stack height="100%" vertical wrap>
+        <Stack.Item width="490px" ml="9px">
+          <Stack>
+            <Stack.Item grow>
+              <PageButton
+                currentPage={currentPrefPage}
+                page={PrefPage.Character}
+                setPage={setCurrentPrefPage}
+              >
+                Physical
+              </PageButton>
+            </Stack.Item>
+            <Stack.Item grow ml="10px">
+              <PageButton
+                currentPage={currentPrefPage}
+                page={PrefPage.Markings}
+                setPage={setCurrentPrefPage}
+              >
+                Supplemental
+              </PageButton>
+            </Stack.Item>
+            <Stack.Item grow ml="10px">
+              <PageButton
+                currentPage={currentPrefPage}
+                page={PrefPage.Profile}
+                setPage={setCurrentPrefPage}
+              >
+                Contextual
+              </PageButton>
+            </Stack.Item>
+            <Stack.Item grow ml="10px">
+              <PageButton
+                currentPage={currentPrefPage}
+                page={PrefPage.Profile}
+                setPage={setCurrentPrefPage}
+              >
+                Informational
+              </PageButton>
+            </Stack.Item>
+          </Stack>
+
+          <Stack vertical fill>
+            <Stack.Divider />
+            {prefPageContents}
+          </Stack>
+        </Stack.Item>
+
+        <Stack.Item width="235px">
+          <Stack height="512px" width="0px" vertical wrap>
             {mainFeatures.map(([clothingKey, clothing]) => {
               const catalog = serverData?.[
                 clothingKey
@@ -698,7 +772,7 @@ export function MainPage(props: MainPageProps) {
               };
 
               return (
-                <Stack.Item key={clothingKey} mt={0.5} px={0.5}>
+                <Stack.Item key={clothingKey} mt="0" mb="0px" pl="13px">
                   {!catalog ? (
                     // Skeleton button
                     <Button height={4} width={4} disabled />
@@ -726,60 +800,6 @@ export function MainPage(props: MainPageProps) {
             })}
           </Stack>
         </Stack.Item>
-
-        <Stack.Item grow basis={0}>
-          {/* EffigyEdit Change - Character Preferences */}
-          <Stack>
-            <Stack.Item grow>
-              <PageButton
-                currentPage={currentPrefPage}
-                page={PrefPage.Character}
-                setPage={setCurrentPrefPage}
-              >
-                Character
-              </PageButton>
-            </Stack.Item>
-            <Stack.Item grow>
-              <PageButton
-                currentPage={currentPrefPage}
-                page={PrefPage.Markings}
-                setPage={setCurrentPrefPage}
-              >
-                Markings
-              </PageButton>
-            </Stack.Item>
-          </Stack>
-
-          <Stack vertical fill>
-            <Stack.Divider />
-            {prefPageContents}
-
-            <PreferenceList
-              randomizations={getRandomization(
-                nonContextualPreferences,
-                serverData,
-                randomBodyEnabled,
-              )}
-              preferences={nonContextualPreferences}
-              maxHeight="auto"
-            >
-              <Box my={0.5}>
-                <Button
-                  color="red"
-                  disabled={
-                    Object.values(data.character_profiles).filter(
-                      (name) => name,
-                    ).length < 2
-                  } // check if existing chars more than one
-                  onClick={() => setDeleteCharacterPopupOpen(true)}
-                >
-                  Delete Character
-                </Button>
-              </Box>
-            </PreferenceList>
-          </Stack>
-        </Stack.Item>
-        {/* EffigyEdit Change End */}
       </Stack>
     </>
   );
