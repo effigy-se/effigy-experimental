@@ -107,7 +107,7 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
       className="ChoicedSelection"
       style={{
         padding: '5px',
-
+        background: 'hsl(224, 16%, 12%)', // EffigyEdit Add - TGUI
         height: `${
           CLOTHING_SELECTION_CELL_SIZE * CLOTHING_SELECTION_MULTIPLIER
         }px`,
@@ -405,7 +405,7 @@ export function PreferenceList(props: PreferenceListProps) {
       basis="50%"
       grow
       style={{
-        background: 'rgba(0, 0, 0, 0.5)',
+        // background: 'rgba(0, 0, 0, 0.5)', // EffigyEdit Remove - TGUI
         padding: '4px',
       }}
       overflowX="hidden"
