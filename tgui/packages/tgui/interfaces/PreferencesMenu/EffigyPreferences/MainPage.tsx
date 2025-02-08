@@ -118,6 +118,7 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
     <Box
       className="ChoicedSelection"
       style={{
+        background: 'hsl(224, 16%, 12%)',
         padding: '5px',
 
         height: `${
@@ -437,7 +438,6 @@ export function PreferenceList(props: PreferenceListProps) {
       basis="50%"
       grow
       style={{
-        background: 'rgba(0, 0, 0, 0.5)',
         padding: '4px',
       }}
       overflowX="hidden"
