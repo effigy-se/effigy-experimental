@@ -90,8 +90,8 @@ export function CharacterPreferenceWindow(props) {
   return (
     <Stack vertical fill>
       <Stack.Item>
-        <Stack fill>
-          <Stack.Item width="224.5px" fontSize="14px">
+        <Stack fill ml="5px" mr="10px">
+          <Stack.Item width="224px" fontSize="14px">
             <CharacterProfiles
               activeSlot={data.active_slot - 1}
               onClick={(slot) => {
@@ -113,7 +113,7 @@ export function CharacterPreferenceWindow(props) {
             </PageButton>
           </Stack.Item>
 
-          <Stack.Item grow={1}>
+          <Stack.Item grow={1} ml="10px">
             <PageButton
               currentPage={currentPage}
               page={Page.Jobs}
@@ -127,7 +127,7 @@ export function CharacterPreferenceWindow(props) {
             </PageButton>
           </Stack.Item>
 
-          <Stack.Item grow={1}>
+          <Stack.Item grow={1} ml="10px">
             <PageButton
               currentPage={currentPage}
               page={Page.Antags}
@@ -137,7 +137,7 @@ export function CharacterPreferenceWindow(props) {
             </PageButton>
           </Stack.Item>
 
-          <Stack.Item grow={1}>
+          <Stack.Item grow={1} ml="10px">
             <PageButton
               currentPage={currentPage}
               page={Page.Quirks}
@@ -149,7 +149,9 @@ export function CharacterPreferenceWindow(props) {
         </Stack>
       </Stack.Item>
 
-      <Stack.Item mt={1}>{pageContents}</Stack.Item>
+      <Stack.Item mt="10px" ml="8px">
+        {pageContents}
+      </Stack.Item>
     </Stack>
   );
 }
