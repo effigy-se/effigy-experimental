@@ -1,2 +1,2 @@
 /turf/open/floor/catwalk_floor
-	icon = 'local/icons/turf/floor/catwalk_plating.dmi'
+	icon = 'local/icons/turf/floors/catwalk_plating.dmi'
