@@ -1,2 +1,2 @@
 /turf/open/floor/catwalk_floor
-	icon = EFFIGY_TURFS_ICON_FILE
+	icon = 'local/icons/turf/floor/catwalk_plating.dmi'
