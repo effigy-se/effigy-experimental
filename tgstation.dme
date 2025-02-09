@@ -6642,6 +6642,7 @@
 #include "local\code\game\turfs\open\rough_stone.dm"
 #include "local\code\game\turfs\open\sand.dm"
 #include "local\code\game\turfs\open\water.dm"
+#include "local\code\game\turfs\open\floor\catwalk_plating.dm"
 #include "local\code\game\turfs\open\floor\fancy_floor.dm"
 #include "local\code\game\turfs\open\floor\hull.dm"
 #include "local\code\game\turfs\open\floor\misc_floor.dm"
