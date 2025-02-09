@@ -138,7 +138,7 @@
 	if(istype(I, /obj/item/salvaging_hammer))
 		var/obj/item/salvaging_hammer/salv_hammer = I
 		to_chat(user, span_notice("You begin carefully using your hammer to pry off parts of the metal..."))
-		var/our_dig_speed = (salv_hammer.dig_speed * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1))
+		var/our_dig_speed = (salv_hammer.dig_speed * (10 * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1)))
 		if(!do_after(user, our_dig_speed, target = src))
 			to_chat(user, span_warning("You interrupt your careful planning, damaging the chunk in the process!"))
 			user.mind?.adjust_experience(/datum/skill/salvaging, round(SALVAGE_SKILL_DOAFTER_PENALTY))
@@ -159,7 +159,7 @@
 	if(istype(I, /obj/item/salvaging_brush))
 		var/obj/item/salvaging_brush/salv_brush = I
 		to_chat(user, span_notice("You begin carefully using your brush."))
-		var/our_brush_speed = (salv_brush.dig_speed * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1))
+		var/our_brush_speed = (salv_brush.dig_speed * (10 * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1)))
 		if(!do_after(user, our_brush_speed, target = src))
 			to_chat(user, span_warning("You interrupt your careful planning, damaging the chunk in the process!"))
 			user.mind?.adjust_experience(/datum/skill/salvaging, round(SALVAGE_SKILL_DOAFTER_PENALTY))
@@ -177,7 +177,7 @@
 
 	if(istype(I, /obj/item/salvaging_tape_measure))
 		to_chat(user, span_notice("You begin carefully using your measuring tape."))
-		var/our_tape_speed = (4 SECONDS * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1))
+		var/our_tape_speed = (4 SECONDS * (10 * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1)))
 		if(!do_after(user, our_tape_speed, target = src))
 			to_chat(user, span_warning("You interrupt your careful planning, damaging the chunk in the process!"))
 			user.mind?.adjust_experience(/datum/skill/salvaging, round(SALVAGE_SKILL_DOAFTER_PENALTY))
@@ -191,7 +191,7 @@
 	if(istype(I, /obj/item/salvage_handheld_scanner))
 		var/obj/item/salvage_handheld_scanner/item_scanner = I
 		to_chat(user, span_notice("You begin to scan [src] using [item_scanner]."))
-		var/our_scan_speed = (item_scanner.scanning_speed * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1))
+		var/our_scan_speed = (item_scanner.scanning_speed * (10 * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1)))
 		if(!do_after(user, our_scan_speed, target = src))
 			to_chat(user, span_warning("You interrupt your scanning, damaging the chunk in the process!"))
 			user.mind?.adjust_experience(/datum/skill/salvaging, round(SALVAGE_SKILL_DOAFTER_PENALTY))
