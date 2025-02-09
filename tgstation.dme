@@ -6608,6 +6608,8 @@
 #include "local\code\game\machinery\doors\airlock.dm"
 #include "local\code\game\machinery\doors\airlock_override.dm"
 #include "local\code\game\machinery\doors\firedoor.dm"
+#include "local\code\game\machinery\doors\poddoor.dm"
+#include "local\code\game\machinery\doors\shutters.dm"
 #include "local\code\game\machinery\doors\windowdoor.dm"
 #include "local\code\game\objects\effects\landmarks.dm"
 #include "local\code\game\objects\effects\decals\turfdecal\markings.dm"
