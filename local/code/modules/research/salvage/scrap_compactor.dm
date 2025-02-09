@@ -39,7 +39,7 @@
 
 /obj/machinery/scrap_compactor/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
-	var/choice = tgui_input_list(user, "Pick Your Reward:", "Scrap Compaction", list("BEPIS Tech (100)", "Tier 5 Part (250)",))
+	var/choice = tgui_input_list(user, "Current Points: [banked_value]/[maximum_value] | Pick Your Reward:", "Scrap Compaction", list("BEPIS Tech (100)", "Tier 5 Part (250)",))
 	if(!choice)
 		return
 

@@ -8935,6 +8935,7 @@
 /obj/machinery/door/airlock/research,
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
 /obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/landmark/navigate_destination,
 /turf/open/floor/iron/smooth_large,
 /area/station/science/salvage)
 "dhq" = (
