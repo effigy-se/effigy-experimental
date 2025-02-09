@@ -113,6 +113,16 @@ export function CharacterPreferenceWindow(props) {
             </PageButton>
           </Stack.Item>
 
+          <Stack.Item grow ml="10px">
+            <PageButton
+              currentPage={currentPage}
+              page={Page.Loadout}
+              setPage={setCurrentPage}
+            >
+              Loadout
+            </PageButton>
+          </Stack.Item>
+
           <Stack.Item grow={1} ml="10px">
             <PageButton
               currentPage={currentPage}
