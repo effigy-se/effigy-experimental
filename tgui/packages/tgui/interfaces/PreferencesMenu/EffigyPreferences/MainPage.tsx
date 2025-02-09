@@ -605,7 +605,7 @@ export function MainPage(props: MainPageProps) {
   const [currentPrefPage, setCurrentPrefPage] = useState(PrefPage.Character);
 
   const markingPreferences = {
-    ...data.character_preferences.markings,
+    ...data.character_preferences.non_contextual,
   };
 
   let prefPageContents;
