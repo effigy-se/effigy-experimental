@@ -11,10 +11,12 @@ import {
   Popper,
   Stack,
 } from 'tgui-core/components';
+import { exhaustiveCheck } from 'tgui-core/exhaustive'; // EffigyEdit Add - Character Preferences
 import { classes } from 'tgui-core/react';
 import { createSearch } from 'tgui-core/string';
 
 import { CharacterPreview } from '../../common/CharacterPreview';
+import { PageButton } from '../components/PageButton'; // EffigyEdit Add - Character Preferences
 import { RandomizationButton } from '../components/RandomizationButton';
 import { features } from '../preferences/features';
 import {
@@ -33,12 +35,12 @@ import { useServerPrefs } from '../useServerPrefs';
 import { DeleteCharacterPopup } from './DeleteCharacterPopup';
 import { MultiNameInput, NameInput } from './names';
 
-const CLOTHING_CELL_SIZE = 48;
-const CLOTHING_SIDEBAR_ROWS = 9;
+const CLOTHING_CELL_SIZE = 72;
+const CLOTHING_SIDEBAR_ROWS = 8.05;
 
-const CLOTHING_SELECTION_CELL_SIZE = 48;
-const CLOTHING_SELECTION_WIDTH = 5.4;
-const CLOTHING_SELECTION_MULTIPLIER = 5.2;
+const CLOTHING_SELECTION_CELL_SIZE = 72;
+const CLOTHING_SELECTION_WIDTH = 8.3;
+const CLOTHING_SELECTION_MULTIPLIER = 4.3;
 
 type CharacterControlsProps = {
   handleRotate: () => void;
@@ -61,7 +63,17 @@ function CharacterControls(props: CharacterControlsProps) {
         />
       </Stack.Item>
 
-      <Stack.Item>
+      <Stack.Item ml="21px">
+        <Button
+          onClick={props.handleRotate}
+          fontSize="22px"
+          icon="redo"
+          tooltip="Rotate"
+          tooltipPosition="top"
+        />
+      </Stack.Item>
+
+      <Stack.Item ml="21px">
         <Button
           onClick={props.handleOpenSpecies}
           fontSize="22px"
@@ -72,7 +84,7 @@ function CharacterControls(props: CharacterControlsProps) {
       </Stack.Item>
 
       {props.showGender && (
-        <Stack.Item>
+        <Stack.Item ml="21px">
           <GenderButton
             gender={props.gender}
             handleSetGender={props.setGender}
@@ -96,7 +108,7 @@ type ChoicedSelectionProps = {
 function ChoicedSelection(props: ChoicedSelectionProps) {
   const { catalog, supplementalFeature, supplementalValue } = props;
   const [getSearchText, searchTextSet] = useState('');
-  const { act } = useBackend<PreferencesMenuData>(); // EffigyEdit Add - TGUI Color Picker
+  const { act } = useBackend<PreferencesMenuData>();
 
   if (!catalog.icons) {
     return <Box color="red">Provided catalog had no icons!</Box>;
@@ -107,7 +119,7 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
       className="ChoicedSelection"
       style={{
         padding: '5px',
-        background: 'hsl(224, 16%, 12%)', // EffigyEdit Add - TGUI
+        background: 'hsl(224, 16%, 12%)',
         height: `${
           CLOTHING_SELECTION_CELL_SIZE * CLOTHING_SELECTION_MULTIPLIER
         }px`,
@@ -118,9 +130,9 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
         <Stack.Item>
           <Stack fill>
             {supplementalFeature && (
-              <Stack.Item>
+              <Stack.Item ml={0.2} mt={0.5}>
                 <FeatureValueInput
-                  act={act} // EffigyEdit Add - TGUI Color Picker
+                  act={act}
                   feature={features[supplementalFeature]}
                   featureId={supplementalFeature}
                   shrink
@@ -129,22 +141,30 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
               </Stack.Item>
             )}
 
-            <Stack.Item grow>
+            <Stack.Item grow mr={6}>
               <Box
                 style={{
-                  borderBottom: '1px solid #888',
                   fontWeight: 'bold',
-                  fontSize: '14px',
+                  fontSize: '18px',
+                  color: 'hsl(224, 16%, 92%)',
                   textAlign: 'center',
                 }}
               >
-                Select {props.name.toLowerCase()}
+                {props.name}
               </Box>
             </Stack.Item>
 
             <Stack.Item>
-              <Button color="red" onClick={props.onClose}>
-                X
+              <Button
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '14px',
+                  textAlign: 'center',
+                }}
+                color="#424651"
+                onClick={props.onClose}
+              >
+                x
               </Button>
             </Stack.Item>
           </Stack>
@@ -153,10 +173,10 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
         <Stack.Item overflowX="hidden" overflowY="scroll">
           <Autofocus>
             <Input
-              placeholder="Search..."
+              placeholder=""
               style={{
                 margin: '0px 5px',
-                width: '95%',
+                width: '83.5%',
               }}
               onInput={(_, value) => searchTextSet(value)}
             />
@@ -189,8 +209,20 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
                             image,
                             'centered-image',
                           ])}
+                          style={{
+                            transform:
+                              'translateX(-50%) translateY(-50%) scale(2)',
+                          }}
                         />
                       </Button>
+                      <Box
+                        textAlign="center"
+                        fontSize="14"
+                        width="86%"
+                        color="hsl(224, 16%, 92%)"
+                      >
+                        {name}
+                      </Box>
                     </Flex.Item>
                   );
                 },
@@ -332,6 +364,7 @@ function MainFeature(props: MainFeatureProps) {
           height: `${CLOTHING_CELL_SIZE}px`,
           width: `${CLOTHING_CELL_SIZE}px`,
         }}
+        color="blue"
         position="relative"
         tooltip={catalog.name}
         tooltipPosition="right"
@@ -344,8 +377,8 @@ function MainFeature(props: MainFeatureProps) {
           ])}
           style={{
             transform: randomization
-              ? 'translateX(-70%) translateY(-70%) scale(1.1)'
-              : 'translateX(-50%) translateY(-50%) scale(1.3)',
+              ? 'translateX(-70%) translateY(-70%) scale(2)'
+              : 'translateX(-50%) translateY(-50%) scale(2)',
           }}
         />
 
@@ -370,6 +403,20 @@ function MainFeature(props: MainFeatureProps) {
           />
         )}
       </Button>
+      <Box
+        mt="-3px"
+        mb="5px"
+        style={{
+          // Text below feature buttons
+          height: `14px`,
+          width: `${CLOTHING_CELL_SIZE}px`,
+          overflowWrap: 'anywhere',
+        }}
+        textAlign="center"
+        textColor="hsl(224, 16%, 92%)"
+      >
+        {catalog.name}
+      </Box>
     </Popper>
   );
 }
@@ -405,7 +452,6 @@ export function PreferenceList(props: PreferenceListProps) {
       basis="50%"
       grow
       style={{
-        // background: 'rgba(0, 0, 0, 0.5)', // EffigyEdit Remove - TGUI
         padding: '4px',
       }}
       overflowX="hidden"
@@ -445,7 +491,7 @@ export function PreferenceList(props: PreferenceListProps) {
 
                   <Stack.Item grow>
                     <FeatureValueInput
-                      act={act} // EffigyEdit Add - TGUI Color Picker
+                      act={act}
                       feature={feature}
                       featureId={featureId}
                       value={value}
@@ -549,6 +595,65 @@ export function MainPage(props: MainPageProps) {
     delete nonContextualPreferences['random_name'];
   }
 
+  // EffigyEdit Add - Character Preferences
+  enum PrefPage {
+    Character, // Character Preferences
+    Markings,
+    Profile, // Markings
+  }
+
+  const [currentPrefPage, setCurrentPrefPage] = useState(PrefPage.Character);
+
+  const markingPreferences = {
+    ...data.character_preferences.non_contextual,
+  };
+
+  let prefPageContents;
+  switch (currentPrefPage) {
+    case PrefPage.Character:
+      prefPageContents = (
+        <PreferenceList
+          randomizations={getRandomization(
+            contextualPreferences,
+            serverData,
+            randomBodyEnabled,
+          )}
+          preferences={contextualPreferences}
+          maxHeight="auto"
+        />
+      );
+      break;
+    case PrefPage.Markings:
+      prefPageContents = (
+        <PreferenceList
+          randomizations={getRandomization(
+            contextualPreferences,
+            serverData,
+            randomBodyEnabled,
+          )}
+          preferences={markingPreferences}
+          maxHeight="auto"
+        />
+      );
+      break;
+    case PrefPage.Profile:
+      prefPageContents = (
+        <PreferenceList
+          randomizations={getRandomization(
+            contextualPreferences,
+            serverData,
+            randomBodyEnabled,
+          )}
+          preferences={markingPreferences}
+          maxHeight="auto"
+        />
+      );
+      break;
+    default:
+      exhaustiveCheck(currentPrefPage);
+  }
+  // EffigyEdit Add End
+
   return (
     <>
       {multiNameInputOpen && (
@@ -575,9 +680,9 @@ export function MainPage(props: MainPageProps) {
         />
       )}
 
-      <Stack height={`${CLOTHING_SIDEBAR_ROWS * CLOTHING_CELL_SIZE}px`}>
+      <Stack height="485px" ml="-3px">
         <Stack.Item>
-          <Stack vertical fill>
+          <Stack vertical height="512px">
             <Stack.Item>
               <CharacterControls
                 gender={data.character_preferences.misc.gender}
@@ -592,14 +697,14 @@ export function MainPage(props: MainPageProps) {
               />
             </Stack.Item>
 
-            <Stack.Item grow>
+            <Stack.Item grow mt="10px">
               <CharacterPreview
                 height="100%"
                 id={data.character_preview_view}
               />
             </Stack.Item>
 
-            <Stack.Item position="relative">
+            <Stack.Item mr="1px">
               <NameInput
                 name={data.character_preferences.names[data.name_to_use]}
                 handleUpdateName={createSetPreference(act, data.name_to_use)}
@@ -611,8 +716,54 @@ export function MainPage(props: MainPageProps) {
           </Stack>
         </Stack.Item>
 
-        <Stack.Item width={`${CLOTHING_CELL_SIZE * 2 + 15}px`}>
-          <Stack height="100%" vertical wrap>
+        <Stack.Item width="490px" ml="9px">
+          <Stack>
+            <Stack.Item grow>
+              <PageButton
+                currentPage={currentPrefPage}
+                page={PrefPage.Character}
+                setPage={setCurrentPrefPage}
+              >
+                Physical
+              </PageButton>
+            </Stack.Item>
+            <Stack.Item grow ml="10px">
+              <PageButton
+                currentPage={currentPrefPage}
+                page={PrefPage.Markings}
+                setPage={setCurrentPrefPage}
+              >
+                Supplemental
+              </PageButton>
+            </Stack.Item>
+            <Stack.Item grow ml="10px">
+              <PageButton
+                currentPage={currentPrefPage}
+                page={PrefPage.Profile}
+                setPage={setCurrentPrefPage}
+              >
+                Contextual
+              </PageButton>
+            </Stack.Item>
+            <Stack.Item grow ml="10px">
+              <PageButton
+                currentPage={currentPrefPage}
+                page={PrefPage.Profile}
+                setPage={setCurrentPrefPage}
+              >
+                Informational
+              </PageButton>
+            </Stack.Item>
+          </Stack>
+
+          <Stack vertical fill>
+            <Stack.Divider />
+            {prefPageContents}
+          </Stack>
+        </Stack.Item>
+
+        <Stack.Item width="235px">
+          <Stack height="512px" width="0px" vertical wrap>
             {mainFeatures.map(([clothingKey, clothing]) => {
               const catalog = serverData?.[
                 clothingKey
@@ -621,7 +772,7 @@ export function MainPage(props: MainPageProps) {
               };
 
               return (
-                <Stack.Item key={clothingKey} mt={0.5} px={0.5}>
+                <Stack.Item key={clothingKey} mt="0" mb="0px" pl="13px">
                   {!catalog ? (
                     // Skeleton button
                     <Button height={4} width={4} disabled />
@@ -647,44 +798,6 @@ export function MainPage(props: MainPageProps) {
                 </Stack.Item>
               );
             })}
-          </Stack>
-        </Stack.Item>
-
-        <Stack.Item grow basis={0}>
-          <Stack vertical fill>
-            <PreferenceList
-              randomizations={getRandomization(
-                contextualPreferences,
-                serverData,
-                randomBodyEnabled,
-              )}
-              preferences={contextualPreferences}
-              maxHeight="auto"
-            />
-
-            <PreferenceList
-              randomizations={getRandomization(
-                nonContextualPreferences,
-                serverData,
-                randomBodyEnabled,
-              )}
-              preferences={nonContextualPreferences}
-              maxHeight="auto"
-            >
-              <Box my={0.5}>
-                <Button
-                  color="red"
-                  disabled={
-                    Object.values(data.character_profiles).filter(
-                      (name) => name,
-                    ).length < 2
-                  } // check if existing chars more than one
-                  onClick={() => setDeleteCharacterPopupOpen(true)}
-                >
-                  Delete Character
-                </Button>
-              </Box>
-            </PreferenceList>
           </Stack>
         </Stack.Item>
       </Stack>

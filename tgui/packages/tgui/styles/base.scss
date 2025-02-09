@@ -6,9 +6,9 @@
 @use 'sass:color';
 @use 'sass:math';
 
-$color-fg: hsl(228, 11%, 91%) !default; // EffigyEdit Change - TGUI
-$color-bg: hsl(225, 11%, 15%) !default; // EffigyEdit Change - TGUI
-$color-bg-section: rgba(0, 0, 0, 0.17) !default; // EffigyEdit Change - TGUI
+$color-fg: hsl(224, 16%, 92%) !default; // EffigyEdit Change - TGUI
+$color-bg: hsl(224, 16%, 16%) !default; // EffigyEdit Change - TGUI
+$color-bg-section: hsl(224, 16%, 12%) !default; // EffigyEdit Change - TGUI
 $color-bg-grad-spread: 0% !default; // EffigyEdit Change - TGUI
 $color-bg-start: color.adjust(
   $color-bg,
@@ -18,7 +18,7 @@ $color-bg-end: color.adjust(
   $color-bg,
   $lightness: -$color-bg-grad-spread
 ) !default;
-$color-bg-alt: hsl(225, 11%, 38%) !default; // EffigyEdit Add - TGUI
+$color-bg-alt: hsl(224, 16%, 18%) !default; // EffigyEdit Add - TGUI
 
 $unit: 14px; // EffigyEdit Change - TGUI
 $font-size: 1 * $unit !default;

@@ -7,7 +7,7 @@ import { useBackend } from '../../backend';
 import { Window } from '../../layouts';
 import { logger } from '../../logging';
 import { LoadingScreen } from '../common/LoadingScreen';
-import { CharacterPreferenceWindow } from './CharacterPreferences';
+import { CharacterPreferenceWindow } from './EffigyPreferences'; // EffigyEdit Change - Character Preferences - Original: './CharacterPreferences';
 import { GamePreferenceWindow } from './GamePreferences';
 import {
   GamePreferencesSelectedPage,
@@ -20,7 +20,8 @@ import { ServerPrefs } from './useServerPrefs';
 
 export function PreferencesMenu(props) {
   return (
-    <Window width={920} height={770}>
+    /* EffigyEdit Change - Character Preferences - Original 920x770 */
+    <Window width={1150} height={680}>
       <Window.Content>
         <Suspense fallback={<LoadingScreen />}>
           <PrefsWindowInner />

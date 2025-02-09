@@ -31,8 +31,8 @@ import { clamp } from 'tgui-core/math';
 import { classes } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
-import { Autofocus } from '../effigy/autofocus';
-import { Pointer } from '../effigy/pointer';
+import { Autofocus } from '../effigy/Autofocus';
+import { Pointer } from '../effigy/Pointer';
 import { Window } from '../layouts';
 import { InputButtons } from './common/InputButtons';
 import { Interaction, Interactive } from './common/Interactive';
