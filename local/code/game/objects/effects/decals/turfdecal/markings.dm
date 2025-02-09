@@ -117,7 +117,7 @@
 /obj/effect/turf_decal/box/blue/corners
 	icon = 'local/icons/turf/decals.dmi'
 	icon_state = "box_corners_blue"
-/*
+
 /obj/effect/turf_decal/siding/thinplating
 	color = "#4b494d"
 
@@ -153,7 +153,6 @@
 
 /obj/effect/turf_decal/siding/wideplating_new/light
 	color = "#d9d9d9"
-*/ /// EffigyEdit TODO: Turf icons
 
 
 /// DS-3 ///
