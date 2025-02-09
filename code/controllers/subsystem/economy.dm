@@ -70,7 +70,7 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/Initialize()
 	//removes cargo from the split
 	var/budget_to_hand_out = round(budget_pool / department_accounts.len -1)
-	if(time2text(world.timeofday, "DDD") == SUNDAY)
+	if(time2text(world.timeofday, "DDD") == SUNDAY || time2text(world.timeofday, "DDD") == SATURDAY) // EffigyEdit Change - No mail on weekends
 		mail_blocked = TRUE
 	for(var/dep_id in department_accounts)
 		if(dep_id == ACCOUNT_CAR) //cargo starts with NOTHING

@@ -211,12 +211,14 @@
 	update()
 
 // update the icon_state and luminosity of the light depending on its state
-/obj/machinery/light/proc/update(trigger = TRUE)
+/obj/machinery/light/proc/update(trigger = TRUE, instant = FALSE, play_sound = TRUE) // EffigyEdit Change - Customized Lighting - Original: trigger = TRUE)
 	switch(status)
 		if(LIGHT_BROKEN,LIGHT_BURNED,LIGHT_EMPTY)
 			on = FALSE
 	low_power_mode = FALSE
 	if(on)
+	// EffigyEdit Change - Customized Lighting
+	/*
 		var/brightness_set = brightness
 		var/power_set = bulb_power
 		var/color_set = bulb_colour
@@ -252,6 +254,26 @@
 					l_power = power_set,
 					l_color = color_set
 					)
+	*/
+		if(instant)
+			turn_on(trigger)
+		else if(maploaded)
+			turn_on(trigger)
+			maploaded = FALSE
+		else if(!turning_on)
+			turning_on = TRUE
+			var/my_delay = 0
+			switch(dir)
+				if(NORTH)
+					my_delay = 1.25 SECONDS
+				if(SOUTH)
+					my_delay = 0.75 SECONDS
+				if(EAST)
+					my_delay = 1 SECONDS
+				if(WEST)
+					my_delay = 0.50 SECONDS
+			addtimer(CALLBACK(src, PROC_REF(switch_mode), trigger, play_sound), my_delay)
+		// EffigyEdit Change End
 	else if(has_emergency_power(LIGHT_EMERGENCY_POWER_USE) && !turned_off())
 		use_power = IDLE_POWER_USE
 		low_power_mode = TRUE

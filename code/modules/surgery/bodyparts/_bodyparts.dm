@@ -1393,8 +1393,8 @@
 	var/burn_damage = AUGGED_LIMB_EMP_BURN_DAMAGE
 	if(severity == EMP_HEAVY)
 		time_needed *= 2
-		brute_damage *= 2
-		burn_damage *= 2
+		brute_damage *= 1.3 // EffigyEdit Change - Original: 2
+		burn_damage *= 1.3 // EffigyEdit Change - Original: 2
 
 	receive_damage(brute_damage, burn_damage)
 	do_sparks(number = 1, cardinal_only = FALSE, source = owner || src)

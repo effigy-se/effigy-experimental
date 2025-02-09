@@ -139,6 +139,15 @@ ADMIN_VERB(shuttle_panel, R_ADMIN, "Shuttle Manipulator", "Opens the shuttle man
 		var/obj/docking_port/stationary/S = port
 		if (canDock(S) == SHUTTLE_CAN_DOCK)
 			options[S.name || S.shuttle_id] = S
+	// EffigyEdit Add - Shuttles
+	options += ">>> INVALID DOCKS:" //I WILL CRASH THIS SHIP WITH NO SURVIVORS!
+	for(var/port in SSshuttle.stationary_docking_ports)
+		if (istype(port, /obj/docking_port/stationary/transit))
+			continue  // please don't do this
+		var/obj/docking_port/stationary/S = port
+		if(!(canDock(S) == SHUTTLE_CAN_DOCK))
+			options[S.name || S.shuttle_id] = S
+	// EffigyEdit Add End
 
 	options += "--------"
 	options += "Infinite Transit"

@@ -20,9 +20,11 @@ export function PageMain(props) {
     canSendToSectors,
     canSetAlertLevel,
     canToggleEmergencyAccess,
+    canToggleEngineeringOverride, // EffigyEdit Add - Customized Airlocks
     emagged,
     syndicate,
     emergencyAccess,
+    engineeringOverride, // EffigyEdit Add - Customized Airlocks
     importantActionReady,
     sectors,
     shuttleCalled,
@@ -106,6 +108,22 @@ export function PageMain(props) {
                 alertLevel="blue"
                 onClick={() => setNewAlertLevel('blue')}
               />
+              {/* EffigyEdit Add - Security Levels */}
+              <AlertButton
+                alertLevel="violet"
+                onClick={() => setNewAlertLevel('violet')}
+              />
+
+              <AlertButton
+                alertLevel="orange"
+                onClick={() => setNewAlertLevel('orange')}
+              />
+
+              <AlertButton
+                alertLevel="amber"
+                onClick={() => setNewAlertLevel('amber')}
+              />
+              {/* EffigyEdit Add End */}
             </Flex.Item>
           </Flex>
         </Section>

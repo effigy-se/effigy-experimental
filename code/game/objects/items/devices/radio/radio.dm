@@ -538,10 +538,12 @@
 	. = ..()
 	if(unscrewed)
 		return
-	if(broadcasting && overlay_mic_idle)
-		. += overlay_mic_idle
+	//if(broadcasting && overlay_mic_idle) // EffigyEdit Change - Move below listening
+	//	. += overlay_mic_idle
 	if(listening && overlay_speaker_idle)
 		. += overlay_speaker_idle
+	if(broadcasting && overlay_mic_idle)
+		. += overlay_mic_idle
 
 /obj/item/radio/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(user.combat_mode && tool.tool_behaviour == TOOL_SCREWDRIVER)

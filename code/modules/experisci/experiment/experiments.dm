@@ -142,10 +142,11 @@
 	experiment_proper = TRUE
 	required_gas = /datum/gas/hypernoblium
 
-/datum/experiment/scanning/random/material/meat
-	name = "Biological Material Scanning Experiment"
-	description = "They told us we couldn't make chairs out of every material in the world. You're here to prove those naysayers wrong."
-	possible_material_types = list(/datum/material/meat)
+///datum/experiment/scanning/random/material/meat // EffigyEdit Change
+/datum/experiment/scanning/random/material/plastic
+	name = "Medical Material Scanning Experiment" // EffigyEdit Change
+	description = "Did you know, your brain may have a plastic spoon's worth of microplastics inside it?"
+	possible_material_types = list(/datum/material/plastic) // EffigyEdit Change
 
 /datum/experiment/scanning/random/material/easy
 	name = "Low Grade Material Scanning Experiment"

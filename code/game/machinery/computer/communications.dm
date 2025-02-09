@@ -201,7 +201,8 @@
 					return
 
 			var/new_sec_level = SSsecurity_level.text_level_to_number(params["newSecurityLevel"])
-			if (new_sec_level != SEC_LEVEL_GREEN && new_sec_level != SEC_LEVEL_BLUE)
+			//if (new_sec_level != SEC_LEVEL_GREEN && new_sec_level != SEC_LEVEL_BLUE)
+			if (new_sec_level < SEC_LEVEL_GREEN || new_sec_level > SEC_LEVEL_AMBER) // EffigyEdit Change - Security Levels
 				return
 			if (SSsecurity_level.get_current_level_as_number() >= SEC_LEVEL_DELTA)
 				to_chat(user, span_warning("Central Command has placed a lock on the alert level due to a doomsday!"))
@@ -452,6 +453,21 @@
 			SSjob.safe_code_requested = TRUE
 			SSjob.safe_code_timer_id = addtimer(CALLBACK(SSjob, TYPE_PROC_REF(/datum/controller/subsystem/job, send_spare_id_safe_code), pod_location), 120 SECONDS, TIMER_UNIQUE | TIMER_STOPPABLE)
 			minor_announce("Due to staff shortages, your station has been approved for delivery of access codes to secure the Captain's Spare ID. Delivery via drop pod at [get_area(pod_location)]. ETA 120 seconds.")
+		// EffigyEdit Add - Customized Airlocks
+		if("toggleEngOverride")
+			if(emergency_access_cooldown(user)) //if we're in cooldown, don't allow the following code
+				return
+			if (!authenticated_as_silicon_or_captain(user))
+				return
+			if (GLOB.force_eng_override)
+				toggle_eng_override()
+				user.log_message("disabled airlock engineering override.", LOG_GAME)
+				deadchat_broadcast(" disabled airlock engineering override at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
+			else
+				toggle_eng_override()
+				user.log_message("enabled airlock engineering override.", LOG_GAME)
+				deadchat_broadcast(" enabled airlock engineering override at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
+		// EffigyEdit Add End
 
 /obj/machinery/computer/communications/proc/emergency_access_cooldown(mob/user)
 	if(toggle_uses == toggle_max_uses) //you have used up free uses already, do it one more time and start a cooldown
@@ -532,6 +548,7 @@
 				data["canSendToSectors"] = FALSE
 				data["canSetAlertLevel"] = FALSE
 				data["canToggleEmergencyAccess"] = FALSE
+				data["canToggleEngineeringOverride"] = FALSE // EffigyEdit Add - Customized Airlocks
 				data["importantActionReady"] = COOLDOWN_FINISHED(src, important_action_cooldown)
 				data["shuttleCalled"] = FALSE
 				data["shuttleLastCalled"] = FALSE
@@ -563,7 +580,8 @@
 				if (authenticated_as_silicon_or_captain(user))
 					data["canToggleEmergencyAccess"] = TRUE
 					data["emergencyAccess"] = GLOB.emergency_access
-
+					data["canToggleEngineeringOverride"] = TRUE // EffigyEdit Add - Customized Airlocks
+					data["engineeringOverride"] = GLOB.force_eng_override // EffigyEdit Add - Customized Airlocks
 					data["alertLevelTick"] = alert_level_tick
 					data["canMakeAnnouncement"] = TRUE
 					data["canSetAlertLevel"] = HAS_SILICON_ACCESS(user) ? "NO_SWIPE_NEEDED" : "SWIPE_NEEDED"

@@ -1,4 +1,4 @@
-#define DOOR_CLOSE_WAIT 60 ///Default wait until doors autoclose
+// #define DOOR_CLOSE_WAIT 60 ///Default wait until doors autoclose // EffigyEdit Remove - Moved to code/game/machinery/doors/airlock.dm
 /obj/machinery/door
 	name = "door"
 	desc = "It opens and closes."
@@ -489,6 +489,7 @@
 	if(operating)
 		return FALSE
 	operating = TRUE
+	update_appearance() // EffigyEdit Add - Customized Airlocks
 	use_energy(active_power_usage)
 	run_animation(DOOR_OPENING_ANIMATION)
 	set_opacity(0)
@@ -499,9 +500,10 @@
 	var/open_delay = animation_segment_delay(DOOR_OPENING_FINISHED) - passable_delay
 	SLEEP_NOT_DEL(open_delay)
 	layer = initial(layer)
+	operating = FALSE // EffigyEdit Add - Customized Airlocks
 	update_appearance()
 	set_opacity(0)
-	operating = FALSE
+	//operating = FALSE // EffigyEdit Remove - Customized Airlocks
 	air_update_turf(TRUE, FALSE)
 	update_freelook_sight()
 	if(autoclose)
@@ -689,4 +691,4 @@
 		return ..()
 	return ..(0)
 
-#undef DOOR_CLOSE_WAIT
+// #undef DOOR_CLOSE_WAIT // EffigyEdit Remove - Moved to code/game/machinery/doors/airlock.dm

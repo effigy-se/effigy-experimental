@@ -904,6 +904,12 @@ Striking a noncultist, however, will tear their flesh."}
 				set_coefficient = 2
 			if(SEC_LEVEL_BLUE)
 				set_coefficient = 1
+			// EffigyEdit Add - Security Levels
+			if(SEC_LEVEL_VIOLET)
+				set_coefficient = 0.7
+			if(SEC_LEVEL_ORANGE)
+				set_coefficient = 0.7
+			// EffigyEdit Add End
 			else
 				set_coefficient = 0.5
 		var/surplus = timer - (SSshuttle.emergency_call_time * set_coefficient)

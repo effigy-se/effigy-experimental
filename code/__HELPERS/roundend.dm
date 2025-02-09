@@ -219,7 +219,7 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 		roundend_callbacks.InvokeAsync()
 	LAZYCLEARLIST(round_end_events)
 
-	var/speed_round = (STATION_TIME_PASSED() <= 10 MINUTES)
+	var/speed_round = (STATION_TIME_PASSED() <= 45 MINUTES) // EffigyEdit Change - Original: 10 MINUTES
 
 	for(var/client/C in GLOB.clients)
 		if(!C?.credits)
