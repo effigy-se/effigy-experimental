@@ -6569,6 +6569,7 @@
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
 #include "local\code\_onclick\hud\rendering\render_plate.dm"
+#include "local\code\controllers\configuration\entries\game_options.dm"
 #include "local\code\controllers\subsystem\job.dm"
 #include "local\code\controllers\subsystem\mapping.dm"
 #include "local\code\controllers\subsystem\security_level.dm"

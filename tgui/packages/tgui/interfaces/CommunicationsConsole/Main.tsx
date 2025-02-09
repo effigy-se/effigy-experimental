@@ -3,7 +3,14 @@ import { Box, Button, Flex, Modal, Section } from 'tgui-core/components';
 import { capitalize } from 'tgui-core/string';
 
 import { useBackend } from '../../backend';
-import { AlertButton } from './AlertButton';
+// import { AlertButton } from './AlertButton'; // EffigyEdit Change - TGUI
+import {
+  AlertButton,
+  CircleButton,
+  EngiButton,
+  GreenshiftButton,
+  MedicalButton,
+} from './AlertButtonEffigy'; // EffigyEdit Change - TGUI
 import { MessageModal } from './MessageModal';
 import { CommsConsoleData, ShuttleState } from './types';
 
@@ -97,7 +104,8 @@ export function PageMain(props) {
                 Currently on <b>{capitalize(alertLevel)}</b> Alert
               </Box>
             </Flex.Item>
-
+            {/* EffigyEdit Change - Security Levels */}
+            {/*
             <Flex.Item>
               <AlertButton
                 alertLevel="green"
@@ -108,13 +116,25 @@ export function PageMain(props) {
                 alertLevel="blue"
                 onClick={() => setNewAlertLevel('blue')}
               />
-              {/* EffigyEdit Add - Security Levels */}
-              <AlertButton
+            </Flex.Item>
+            */}
+            <Flex.Item>
+              <GreenshiftButton
+                alertLevel="green"
+                onClick={() => setNewAlertLevel('green')}
+              />
+
+              <CircleButton
+                alertLevel="blue"
+                onClick={() => setNewAlertLevel('blue')}
+              />
+
+              <MedicalButton
                 alertLevel="violet"
                 onClick={() => setNewAlertLevel('violet')}
               />
 
-              <AlertButton
+              <EngiButton
                 alertLevel="orange"
                 onClick={() => setNewAlertLevel('orange')}
               />
@@ -123,8 +143,8 @@ export function PageMain(props) {
                 alertLevel="amber"
                 onClick={() => setNewAlertLevel('amber')}
               />
-              {/* EffigyEdit Add End */}
             </Flex.Item>
+            {/* EffigyEdit Change End */}
           </Flex>
         </Section>
       )}
@@ -151,6 +171,20 @@ export function PageMain(props) {
               Access
             </Button.Confirm>
           )}
+
+          {/* EffigyEdit Add - Airlock Override */}
+          {!!canToggleEngineeringOverride && (
+            <Button.Confirm
+              icon="wrench"
+              confirmIcon="wrench"
+              color={engineeringOverride ? 'bad' : undefined}
+              onClick={() => act('toggleEngOverride')}
+            >
+              {emergencyAccess ? 'Disable' : 'Enable'} Emergency Maintenance
+              Access
+            </Button.Confirm>
+          )}
+          {/* EffigyEdit Add End */}
 
           {!syndicate && (
             <Button
