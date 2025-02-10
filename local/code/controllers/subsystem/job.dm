@@ -19,4 +19,4 @@
 	if(lowpop)
 		log_game("Activating maintenance expanded access due to skeleton crew")
 		make_maint_all_access(silent = TRUE)
-*/ // EFFIGY EDIT TODO - cryo
+*/ // EffigyEdit TODO - cryo

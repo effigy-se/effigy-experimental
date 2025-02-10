@@ -1,3 +1,5 @@
+/// Engineering Override Access manual toggle
+#define COMSIG_GLOB_FORCE_ENG_OVERRIDE "force_engineering_override"
 /// from base of /obj/effect/abstract/liquid_turf/Initialize() (/obj/effect/abstract/liquid_turf/liquids)
 #define COMSIG_TURF_LIQUIDS_CREATION "turf_liquids_creation"
 /// From local/code/modules/liquids/liquid_systems/liquid_effect.dm

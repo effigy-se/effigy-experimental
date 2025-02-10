@@ -84,10 +84,12 @@
  * information plate inside the tram.
  */
 /datum/tram_mfg_info/New(specific_transport_id)
+	// EffigyEdit Change - Tram Customization
 	if(GLOB.round_id)
-		serial_number = "LT306TG[add_leading(GLOB.round_id, 6, "0")]"
+		serial_number = "LT306EF[add_leading(GLOB.round_id, 6, "0")]"
 	else
-		serial_number = "LT306TG[rand(000000, 999999)]"
+		serial_number = "LT306EF[rand(000000, 999999)]"
+	// EffigyEdit Change End
 
 	mfg_date = "[CURRENT_STATION_YEAR]-[time2text(world.timeofday, "MM-DD")]"
 	install_location = specific_transport_id
@@ -343,7 +345,7 @@
  * Tram stops normally, performs post-trip actions and updates the tram registration.
  */
 /datum/transport_controller/linear/tram/proc/normal_stop()
-	cycle_doors(CYCLE_OPEN)
+	//cycle_doors(CYCLE_OPEN) // EffigyEdit Change
 	log_transport("TC: [specific_transport_id] trip completed. Info: nav_pos ([nav_beacon.x], [nav_beacon.y], [nav_beacon.z]) idle_pos ([destination_platform.x], [destination_platform.y], [destination_platform.z]).")
 	addtimer(CALLBACK(src, PROC_REF(unlock_controls)), 2 SECONDS)
 	if((controller_status & SYSTEM_FAULT) && (nav_beacon.loc == destination_platform.loc)) //position matches between controller and tram, we're back on track
@@ -353,6 +355,7 @@
 		log_transport("TC: [specific_transport_id] position data successfully reset.")
 		speed_limiter = initial(speed_limiter)
 	idle_platform = destination_platform
+	cycle_doors(CYCLE_OPEN) // EffigyEdit Change
 	tram_registration.distance_travelled += (travel_trip_length - travel_remaining)
 	travel_trip_length = 0
 	current_speed = 0

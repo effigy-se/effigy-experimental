@@ -1,7 +1,7 @@
 #define CONSTRUCTION_NO_CIRCUIT 1 //Empty frame, can safely weld apart or install circuit
 #define CONSTRUCTION_PANEL_OPEN 2 //Circuit panel exposed for removal or securing
 #define DEFAULT_STEP_TIME 20 /// default time for each step
-#define REACTIVATION_DELAY (3 SECONDS) // Delay on reactivation, used to prevent dumb crowbar things. Just trust me
+#define REACTIVATION_DELAY (7 SECONDS) // Delay on reactivation, used to prevent dumb crowbar things. Just trust me // EffigyEdit Change - Customized Airlocks - Original: (3 SECONDS)
 
 /obj/machinery/door/firedoor
 	name = "firelock"
@@ -293,9 +293,11 @@
 		stack_trace("We tried to check a gas_mixture that doesn't exist for its firetype, what are you DOING")
 		return
 
+	var/pressure = environment.return_pressure() // EffigyEdit Add - Customized Airlocks
 	if(environment.temperature >= FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
 		return FIRELOCK_ALARM_TYPE_HOT
-	if(environment.temperature <= BODYTEMP_COLD_DAMAGE_LIMIT)
+	//if(environment.temperature <= BODYTEMP_COLD_DAMAGE_LIMIT) // EffigyEdit Change - Customized Airlocks
+	if(environment.temperature <= BODYTEMP_COLD_WARNING_2 || pressure > HAZARD_HIGH_PRESSURE || pressure < HAZARD_LOW_PRESSURE)
 		return FIRELOCK_ALARM_TYPE_COLD
 	return
 
@@ -583,7 +585,7 @@
 	if(density)
 		open()
 		if(active)
-			addtimer(CALLBACK(src, PROC_REF(correct_state)), 2 SECONDS, TIMER_UNIQUE)
+			addtimer(CALLBACK(src, PROC_REF(correct_state)), REACTIVATION_DELAY * 2, TIMER_UNIQUE) // EffigyEdit Change - Customized Airlocks - Original: addtimer(CALLBACK(src, PROC_REF(correct_state)), 2 SECONDS, TIMER_UNIQUE)
 	else
 		close()
 
@@ -663,6 +665,8 @@
 
 /obj/machinery/door/firedoor/update_overlays()
 	. = ..()
+	// EffigyEdit Remove - moved to local/code/game/machinery/doors/firedoor.dm
+	/*
 	if(welded)
 		. += density ? "welded" : "welded_open"
 	if(alarm_type && powered() && !ignore_alarms)
@@ -675,6 +679,8 @@
 		hazards.pixel_x = light_xoffset
 		hazards.pixel_y = light_yoffset
 		. += hazards
+	*/
+	// EffigyEdit Remove End
 
 /**
  * Corrects the current state of the door, based on its activity.

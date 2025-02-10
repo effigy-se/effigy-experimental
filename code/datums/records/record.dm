@@ -88,7 +88,7 @@
 	var/list/obj/item/photo/record_photos
 
 /datum/record/crew/New(
-	age = 18,
+	age = 20, // EffigyEdit Change - Original: 18
 	blood_type = "?",
 	character_appearance,
 	dna_string = "Unknown",

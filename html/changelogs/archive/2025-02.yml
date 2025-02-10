@@ -102,3 +102,60 @@
   - balance: slips now make you eligible for being shove stunned
   SmArtKar:
   - balance: Removed an oversight which allowed you to farm fishing achievements
+2025-02-09:
+  Absolucy:
+  - bugfix: Fixed some mistakes I made while fixing the void cloak.
+  Holoo-1:
+  - bugfix: fixed camera consoles, spyglasses etc. client crush on 516
+  Likteer:
+  - qol: Added the resin mister module to the roundstart atmos MODsuit.
+  MTandi:
+  - qol: Tile context menu tweaks (Loot panel)
+  Melbert:
+  - rscadd: Adds two fantasy affixes
+  SmArtKar:
+  - rscadd: Hydrogen Peroxide and Eldritch Essence now can rust turfs, with latter
+      producing heretic instead of normal rust.
+  - spellcheck: Fixed a misspelled comment and a reference to non-existent Eldritch
+      water (as opposed to Eldritch Essence)
+  - bugfix: Examining walls no longer allows you to see items mounted on its other
+      side
+  - bugfix: Fixed missing HTML encodes in comms console code
+  TealSeer:
+  - bugfix: Fixed the crystallizer missing pipe connectors
+  Thunder12345:
+  - map: Removed a mounted machine gun from the Meta Central bitrunning domain, expect
+      85% less instant wipes.
+  TiviPlus:
+  - server: An issue where more than 16 admin flags could not exist in the DB has
+      been corrected
+  - code_imp: updated hslify to correctly detect all hexcodes
+  Wallem:
+  - qol: Integrated Circuit nodes are now colored depending on their type.
+  grungussuss:
+  - sound: gauze now makes sounds when applied
+  loganuk:
+  - qol: Pyro Slime Objective Text Edit
+  necromanceranne:
+  - refactor: Gun maintenance is now consolidated into a single item, the gun maintenance
+      kit, rather than multiple different item interactions. It is handled on the
+      maintenance kit itself, and not in gun code.
+  - qol: You can order maintenance kits from cargo, and get some out of the security
+      equipment vendor. Helpful if someone spilled acid onto your disabler. You can
+      also make a makeshift one from maintenance trash.
+  - code_imp: Removes a variable in the riddable creature component that shouldn't
+      be doing what it is doing.
+  - bugfix: The traitor guncase properly checks for condition changes before letting
+      a player activate the time bomb.
+  - balance: Hunter boxing now directly heals you instead of injecting you with healing
+      chems on a successful crit.
+  - balance: Your combos no longer cause you to screw up your next combo by changing
+      your attack speed for exactly one punch.
+  - code_imp: Fixes up a bit of odd rounding that occurs in the experience gain totals
+      and uses division instead of multipliers where it makes sense.
+  timothymtorres:
+  - code_imp: Add error message logs to screenshot CI test failure when screenshots
+      do not exist.
+  vinylspiders:
+  - qol: alien eggs (xeno embryos, headslugs, etc) will now show up on the advanced
+      medical scanner

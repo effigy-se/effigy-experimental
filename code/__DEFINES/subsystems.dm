@@ -20,7 +20,7 @@
  *
  * make sure you add an update to the schema_version stable in the db changelog
  */
-#define DB_MINOR_VERSION 28
+#define DB_MINOR_VERSION 29
 
 
 //! ## Timing subsystem
@@ -155,6 +155,7 @@
 #define INIT_ORDER_AI_CONTROLLERS 55 //So the controller can get the ref
 #define INIT_ORDER_TICKER 55
 #define INIT_ORDER_TCG 55
+#define INIT_ORDER_AUTOMAPPER 51 // EffigyEdit Add - Automapper - We need to load just before mapping.
 #define INIT_ORDER_MAPPING 50
 #define INIT_ORDER_AI_IDLE_CONTROLLERS 50
 #define INIT_ORDER_EARLY_ASSETS 48

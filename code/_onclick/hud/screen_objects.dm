@@ -238,7 +238,7 @@
 
 /atom/movable/screen/inventory/hand
 	var/mutable_appearance/handcuff_overlay
-	var/static/mutable_appearance/blocked_overlay = mutable_appearance('icons/hud/screen_gen.dmi', "blocked")
+	var/static/mutable_appearance/blocked_overlay = mutable_appearance(EFFIGY_GENERAL_SCREEN_ICONS, "blocked") // EffigyEdit Change - Customized HUD
 	var/held_index = 0
 	interaction_flags_atom = NONE //so dragging objects into hands icon don't skip adjacency & other checks
 
@@ -247,7 +247,7 @@
 
 	if(!handcuff_overlay)
 		var/state = IS_RIGHT_INDEX(held_index) ? "markus" : "gabrielle"
-		handcuff_overlay = mutable_appearance('icons/hud/screen_gen.dmi', state)
+		handcuff_overlay = mutable_appearance(EFFIGY_GENERAL_SCREEN_ICONS, state) // EffigyEdit Change - Customized HUD
 
 	if(!hud?.mymob)
 		return
@@ -353,8 +353,8 @@
 		return
 
 	if(!flashy)
-		flashy = mutable_appearance('icons/hud/screen_gen.dmi', "togglefull_flash")
-		flashy.color = "#C62727"
+		flashy = mutable_appearance(EFFIGY_GENERAL_SCREEN_ICONS, "togglefull_flash") // EffigyEdit Change - Customized HUD
+		flashy.color = "#F0197D" // EffigyEdit Change - Customized HUD
 	. += flashy
 
 /atom/movable/screen/combattoggle/robot
@@ -553,7 +553,7 @@
 	icon_state = "zone_sel"
 	screen_loc = ui_zonesel
 	mouse_over_pointer = MOUSE_HAND_POINTER
-	var/overlay_icon = 'icons/hud/screen_gen.dmi'
+	var/overlay_icon = EFFIGY_GENERAL_SCREEN_ICONS // EffigyEdit Change - Customized HUD
 	var/static/list/hover_overlays_cache = list()
 	var/hovering
 

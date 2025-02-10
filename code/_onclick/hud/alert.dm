@@ -882,7 +882,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 /atom/movable/screen/alert/poll_alert/Initialize(mapload)
 	. = ..()
-	signed_up_overlay = mutable_appearance('icons/hud/screen_gen.dmi', icon_state = "selector")
+	signed_up_overlay = mutable_appearance(EFFIGY_GENERAL_SCREEN_ICONS, icon_state = "selector") // EffigyEdit Change - Customized HUD
 	register_context()
 
 /atom/movable/screen/alert/poll_alert/proc/set_role_overlay()

@@ -50,8 +50,10 @@ export type CommsConsoleData = {
   canSendToSectors: BooleanLike;
   canSetAlertLevel: string;
   canToggleEmergencyAccess: BooleanLike;
+  canToggleEngineeringOverride: BooleanLike; // EffigyEdit Add - Customized Airlocks
   emagged: BooleanLike;
   emergencyAccess: BooleanLike;
+  engineeringOverride: BooleanLike; // EffigyEdit Add - Customized Airlocks
   hasConnection: BooleanLike;
   importantActionReady: BooleanLike;
   messages: Message[];

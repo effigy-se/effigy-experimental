@@ -1,5 +1,5 @@
 /// Number of paychecks jobs start with at the creation of a new bank account for a player (So at shift-start or game join, but not a blank new account.)
-#define STARTING_PAYCHECKS 5
+#define STARTING_PAYCHECKS 4 // EffigyEdit Change - Pay Equalization - Original: 5
 /// How much mail the Economy SS will create per minute, regardless of firing time.
 #define MAX_MAIL_PER_MINUTE 3
 /// Probability of using letters of envelope sprites on all letters.
@@ -9,11 +9,11 @@
 ///Default paygrade for the Unassigned Job/Unpaid job assignments.
 #define PAYCHECK_ZERO 0
 ///Paygrade for Prisoners and Assistants.
-#define PAYCHECK_LOWER 25
+#define PAYCHECK_LOWER 30 // EffigyEdit Change - Pay Equalization - Original: 25
 ///Paygrade for all regular crew not belonging to PAYGRADE_LOWER or PAYGRADE_COMMAND.
-#define PAYCHECK_CREW 50
+#define PAYCHECK_CREW 40 // EffigyEdit Change - Pay Equalization - Original: 50
 ///Paygrade for Heads of Staff.
-#define PAYCHECK_COMMAND 100
+#define PAYCHECK_COMMAND 60 // EffigyEdit Change - Pay Equalization - Original: 100
 
 
 
@@ -25,7 +25,7 @@
 #define MAX_GRANT_DPT 500
 
 //What should vending machines charge when you buy something in-department.
-#define DEPARTMENT_DISCOUNT 0.2
+#define DEPARTMENT_DISCOUNT 0.3 // EffigyEdit Change - Original: 0.2
 
 //the amount of credits collected by the vending machines that can be redeemed when restocking it.
 #define VENDING_CREDITS_COLLECTION_AMOUNT 0.2

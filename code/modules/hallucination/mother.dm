@@ -34,7 +34,7 @@
 	if(!tile)
 		return
 
-	var/obj/visual = image('icons/hud/screen_gen.dmi', mother.loc, "arrow", FLY_LAYER)
+	var/obj/visual = image(EFFIGY_GENERAL_SCREEN_ICONS, mother.loc, "arrow", FLY_LAYER) // EffigyEdit Change - Customized HUD
 
 	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), visual, list(hallucinator.client), 2.5 SECONDS)
 	animate(visual, pixel_x = (tile.x - mother.x) * ICON_SIZE_X, pixel_y = (tile.y - mother.y) * ICON_SIZE_Y, time = 1.7, easing = EASE_OUT)

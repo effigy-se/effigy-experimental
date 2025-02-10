@@ -411,14 +411,22 @@ Used by the AI doomsday and the self-destruct nuke.
 		add_new_zlevel("[name][i ? " [i + 1]" : ""]", level, contain_turfs = FALSE)
 		++i
 
+	SSautomapper.preload_templates_from_toml(files) // EffigyEdit Add - Automapper - We need to load our templates AFTER the Z level exists, otherwise, there is no z level to preload.
+	var/turf_blacklist = SSautomapper.get_turf_blacklists(files) // EffigyEdit Add - Automapper - We use blacklisted turfs to carve out places for our templates.
+
 	// load the maps
 	for (var/P in parsed_maps)
 		var/datum/parsed_map/pm = P
+		pm.turf_blacklist = turf_blacklist // EffigyEdit Add - Automapper - apply blacklist
 		var/bounds = pm.bounds
 		var/x_offset = bounds ? round(world.maxx / 2 - bounds[MAP_MAXX] / 2) + 1 : 1
 		var/y_offset = bounds ? round(world.maxy / 2 - bounds[MAP_MAXY] / 2) + 1 : 1
 		if (!pm.load(x_offset, y_offset, start_z + parsed_maps[P], no_changeturf = TRUE, new_z = TRUE))
 			errorList |= pm.original_path
+	// EffigyEdit Add - Automapper - We need to load our templates from cache after our space has been carved out.
+	if(!LAZYLEN(errorList))
+		SSautomapper.load_templates_from_cache(files)
+	// EffigyEdit Add End
 	if(!silent)
 		INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!")
 	return parsed_maps
@@ -645,10 +653,11 @@ ADMIN_VERB(load_away_mission, R_FUN, "Load Away Mission", "Load a specific away 
 	if(!level_trait(z,ZTRAIT_RESERVED))
 		clearing_reserved_turfs = FALSE
 		CRASH("Invalid z level prepared for reservations.")
-	var/turf/A = get_turf(locate(SHUTTLE_TRANSIT_BORDER,SHUTTLE_TRANSIT_BORDER,z))
-	var/turf/B = get_turf(locate(world.maxx - SHUTTLE_TRANSIT_BORDER,world.maxy - SHUTTLE_TRANSIT_BORDER,z))
-	var/block = block(A, B)
-	for(var/turf/T as anything in block)
+	var/list/reserved_block = block(
+		SHUTTLE_TRANSIT_BORDER, SHUTTLE_TRANSIT_BORDER, z,
+		world.maxx - SHUTTLE_TRANSIT_BORDER, world.maxy - SHUTTLE_TRANSIT_BORDER, z
+	)
+	for(var/turf/T as anything in reserved_block)
 		// No need to empty() these, because they just got created and are already /turf/open/space/basic.
 		T.turf_flags = UNUSED_RESERVATION_TURF
 		T.blocks_air = TRUE
@@ -658,7 +667,7 @@ ADMIN_VERB(load_away_mission, R_FUN, "Load Away Mission", "Load a specific away 
 	if(SSatoms.initialized)
 		SSatoms.InitializeAtoms(Z_TURFS(z))
 
-	unused_turfs["[z]"] = block
+	unused_turfs["[z]"] = reserved_block
 	reservation_ready["[z]"] = TRUE
 	clearing_reserved_turfs = FALSE
 

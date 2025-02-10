@@ -219,7 +219,7 @@ ADMIN_VERB(create_mapping_job_icons, R_DEBUG, "Generate job landmarks icons", "G
 	qdel(D)
 	//Also add the x
 	for(var/x_number in 1 to 4)
-		final.Insert(icon('icons/hud/screen_gen.dmi', "x[x_number == 1 ? "" : x_number]"), "x[x_number == 1 ? "" : x_number]")
+		final.Insert(icon(EFFIGY_GENERAL_SCREEN_ICONS, "x[x_number == 1 ? "" : x_number]"), "x[x_number == 1 ? "" : x_number]") // EffigyEdit Change - Customized HUD
 	fcopy(final, "icons/mob/landmarks.dmi")
 
 ADMIN_VERB_VISIBILITY(debug_z_levels, ADMIN_VERB_VISIBLITY_FLAG_MAPPING_DEBUG)

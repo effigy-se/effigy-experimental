@@ -469,15 +469,15 @@ GLOBAL_VAR(round_default_lawset)
 	var/list/data = list()
 
 	if (include_zeroth && zeroth)
-		data += "[show_numbers ? "0:" : ""] [render_html ? "<font color='#ff0000'><b>[zeroth]</b></font>" : zeroth]"
+		data += "[show_numbers ? "0:" : ""] [render_html ? "<font color='#F0197D'><b>[zeroth]</b></font>" : zeroth]" // EffigyEdit Change - TGUI (Font Color)
 
 	for(var/law in hacked)
 		if (length(law) > 0)
-			data += "[show_numbers ? "[ion_num()]:" : ""] [render_html ? "<font color='#c00000'>[law]</font>" : law]"
+			data += "[show_numbers ? "[ion_num()]:" : ""] [render_html ? "<font color='#F0197D'>[law]</font>" : law]" // EffigyEdit Change - TGUI (Font Color)
 
 	for(var/law in ion)
 		if (length(law) > 0)
-			data += "[show_numbers ? "[ion_num()]:" : ""] [render_html ? "<font color='#547DFE'>[law]</font>" : law]"
+			data += "[show_numbers ? "[ion_num()]:" : ""] [render_html ? "<font color='#2CCAFF'>[law]</font>" : law]" // EffigyEdit Change - TGUI (Font Color)
 
 	var/number = 1
 	for(var/law in inherent)
@@ -487,7 +487,7 @@ GLOBAL_VAR(round_default_lawset)
 
 	for(var/law in supplied)
 		if (length(law) > 0)
-			data += "[show_numbers ? "[number]:" : ""] [render_html ? "<font color='#990099'>[law]</font>" : law]"
+			data += "[show_numbers ? "[number]:" : ""] [render_html ? "<font color='#B81FFF'>[law]</font>" : law]" // EffigyEdit Change - TGUI (Font Color)
 			number++
 	return data
 

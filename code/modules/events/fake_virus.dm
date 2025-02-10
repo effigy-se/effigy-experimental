@@ -1,3 +1,5 @@
+// EffigyEdit Remove - lame, just do a real virus
+/*
 /datum/round_event_control/fake_virus
 	name = "Fake Virus"
 	typepath = /datum/round_event/fake_virus
@@ -12,6 +14,10 @@
 			continue
 		if(!(victim.mind?.assigned_role.job_flags & JOB_CREW_MEMBER))
 			continue
+		// EffigyEdit Add - Event Station Filtering
+		if(engaged_role_play_check(victim, station = TRUE, dorms = TRUE))
+			continue
+		// EffigyEdit Add End
 		fake_virus_victims += victim
 
 	//first we do hard status effect victims
@@ -33,3 +39,4 @@
 			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), onecoughman, span_warning("[pick("Your head hurts.", "Your head pounds.")]")), rand(3 SECONDS, 15 SECONDS))
 		else
 			addtimer(CALLBACK(onecoughman, TYPE_PROC_REF(/mob, emote), pick("cough", "sniff")), rand(3 SECONDS, 15 SECONDS))//deliver the message with a slightly randomized time interval so there arent multiple people coughing at the exact same time
+*/
