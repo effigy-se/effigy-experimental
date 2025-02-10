@@ -317,7 +317,7 @@
 #include "wizard_loadout.dm"
 #include "worn_icons.dm"
 // EffigyEdit Add - Unit Tests
-#include "~effigy\automapper.dm"
+#include "effigy_automapper.dm"
 // EffigyEdit Add End
 // END_INCLUDE
 #ifdef REFERENCE_TRACKING_DEBUG //Don't try and parse this file if ref tracking isn't turned on. IE: don't parse ref tracking please mr linter
