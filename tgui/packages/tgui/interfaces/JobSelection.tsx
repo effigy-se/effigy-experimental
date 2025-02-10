@@ -185,7 +185,7 @@ export function JobSelection(props) {
   const { shuttle_status, round_duration } = data;
 
   return (
-    <Window width={1012} height={shuttle_status ? 690 : 666 /* Hahahahahaha */}>
+    <Window width={1012} height={shuttle_status ? 750 : 750 /* Hahahahahaha */}>
       <Window.Content>
         <Section
           buttons={

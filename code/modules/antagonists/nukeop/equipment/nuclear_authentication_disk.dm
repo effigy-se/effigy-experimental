@@ -38,7 +38,7 @@
 
 /obj/item/disk/nuclear/proc/secured_process(last_move)
 	var/turf/new_turf = get_turf(src)
-	var/datum/round_event_control/operative/loneop = locate(/datum/round_event_control/operative) in SSevents.control
+	var/datum/round_event_control/operative/loneop = locate(/datum/round_event_control/operative) in SSgamemode.control // EffigyEdit Change - Storyteller - Original: SSevents.control
 	if(istype(loneop) && loneop.occurrences < loneop.max_occurrences && prob(loneop.weight))
 		loneop.weight = max(loneop.weight - 1, 0)
 		if(loneop.weight % 5 == 0 && SSticker.totalPlayers > 1)
