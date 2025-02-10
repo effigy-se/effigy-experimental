@@ -348,6 +348,9 @@
  * Misc
  */
 
+/obj/machinery/door/airlock/instant
+	has_environment_lights = FALSE
+
 /obj/machinery/door/airlock/hatch
 	icon = 'icons/obj/doors/airlocks/hatch/centcom.dmi'
 	overlays_file = 'local/icons/obj/doors/airlocks/hatch/overlays.dmi'
