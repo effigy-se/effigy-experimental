@@ -6653,6 +6653,7 @@
 #include "local\code\game\objects\items\food\pastries.dm"
 #include "local\code\game\objects\structures\flagpole.dm"
 #include "local\code\game\objects\structures\fluff.dm"
+#include "local\code\game\objects\structures\railing.dm"
 #include "local\code\game\objects\structures\scrap.dm"
 #include "local\code\game\objects\structures\shower.dm"
 #include "local\code\game\objects\structures\standing_sign.dm"
