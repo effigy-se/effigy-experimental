@@ -150,9 +150,7 @@
 #include "dropper.dm"
 #include "dummy_spawn.dm"
 #include "dynamic_ruleset_sanity.dm"
-// EffigyEdit Add - Unit Tests
 #include "effigy_automapper.dm"
-// EffigyEdit Add End
 #include "egg_glands.dm"
 #include "embedding.dm"
 #include "emoting.dm"
