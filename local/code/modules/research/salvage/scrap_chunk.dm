@@ -136,27 +136,33 @@
 /obj/item/scrap_chunk/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
 	if(istype(I, /obj/item/salvaging_hammer))
-		var/obj/item/salvaging_hammer/xeno_hammer = I
+		var/obj/item/salvaging_hammer/salv_hammer = I
 		to_chat(user, span_notice("You begin carefully using your hammer to pry off parts of the metal..."))
-		if(!do_after(user, xeno_hammer.dig_speed, target = src))
+		var/our_dig_speed = (salv_hammer.dig_speed * (10 * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1)))
+		if(!do_after(user, our_dig_speed, target = src))
 			to_chat(user, span_warning("You interrupt your careful planning, damaging the chunk in the process!"))
+			user.mind?.adjust_experience(/datum/skill/salvaging, round(SALVAGE_SKILL_DOAFTER_PENALTY))
 			dug_depth += rand(1,5)
 			return
-		switch(try_dig(xeno_hammer.dig_amount))
+		switch(try_dig(salv_hammer.dig_amount))
 			if(DIG_UNDEFINED)
 				message_admins("[ADMIN_LOOKUPFLW(user)]'s hammer has somehow pried in a way that shouldn't happen! Tell a coder!")
 				return
 			if(DIG_DELETE)
 				to_chat(user, span_warning("The chunk crumbles away, leaving nothing behind."))
+				user.mind?.adjust_experience(/datum/skill/salvaging, round(-salv_hammer.dig_amount)) // Overshot your reward; lose proportional XP
 				return
 			if(DIG_ROCK)
 				to_chat(user, span_notice("You successfully pry further around the relatively interesting part of the chunk."))
+				user.mind?.adjust_experience(/datum/skill/salvaging, round(salv_hammer.dig_amount)) // We're giving out XP rewards proportional to dug depth; so that riskier hammer usage is rewarded earlygame.
 
 	if(istype(I, /obj/item/salvaging_brush))
-		var/obj/item/salvaging_brush/xeno_brush = I
+		var/obj/item/salvaging_brush/salv_brush = I
 		to_chat(user, span_notice("You begin carefully using your brush."))
-		if(!do_after(user, xeno_brush.dig_speed, target = src))
+		var/our_brush_speed = (salv_brush.dig_speed * (10 * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1)))
+		if(!do_after(user, our_brush_speed, target = src))
 			to_chat(user, span_warning("You interrupt your careful planning, damaging the chunk in the process!"))
+			user.mind?.adjust_experience(/datum/skill/salvaging, round(SALVAGE_SKILL_DOAFTER_PENALTY))
 			dug_depth += rand(1,5)
 			return
 		switch(try_uncover())
@@ -171,8 +177,10 @@
 
 	if(istype(I, /obj/item/salvaging_tape_measure))
 		to_chat(user, span_notice("You begin carefully using your measuring tape."))
-		if(!do_after(user, 4 SECONDS, target = src))
+		var/our_tape_speed = (4 SECONDS * (10 * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1)))
+		if(!do_after(user, our_tape_speed, target = src))
 			to_chat(user, span_warning("You interrupt your careful planning, damaging the chunk in the process!"))
+			user.mind?.adjust_experience(/datum/skill/salvaging, round(SALVAGE_SKILL_DOAFTER_PENALTY))
 			dug_depth += rand(1,5)
 			return
 		if(get_measured())
@@ -183,8 +191,10 @@
 	if(istype(I, /obj/item/salvage_handheld_scanner))
 		var/obj/item/salvage_handheld_scanner/item_scanner = I
 		to_chat(user, span_notice("You begin to scan [src] using [item_scanner]."))
-		if(!do_after(user, item_scanner.scanning_speed, target = src))
+		var/our_scan_speed = (item_scanner.scanning_speed * (10 * min(user.mind.get_skill_modifier(/datum/skill/salvaging, SKILL_SPEED_MODIFIER), 0.1)))
+		if(!do_after(user, our_scan_speed, target = src))
 			to_chat(user, span_warning("You interrupt your scanning, damaging the chunk in the process!"))
+			user.mind?.adjust_experience(/datum/skill/salvaging, round(SALVAGE_SKILL_DOAFTER_PENALTY))
 			dug_depth += rand(1,5)
 			return
 		if(get_scanned(item_scanner.scan_advanced))

@@ -69,7 +69,8 @@
 	else if(href_list["gamemode_panel"])
 		if(!check_rights(R_ADMIN))
 			return
-		SSdynamic.admin_panel()
+		//SSdynamic.admin_panel() // EffigyEdit Remove - Storyteller
+		SSgamemode.ui_interact(usr) // EffigyEdit Add - Storyteller
 
 	else if(href_list["call_shuttle"])
 		if(!check_rights(R_ADMIN))

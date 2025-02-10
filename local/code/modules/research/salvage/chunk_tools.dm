@@ -5,7 +5,9 @@
 	desc = "A hammer that can be used to pry off less-usable parts of scrap chunks."
 	icon = 'local/icons/obj/salvage.dmi'
 	icon_state = "hammer1"
+	/// How deep do we dig into any one scrap chunk?
 	var/dig_amount = 1
+	/// The base speed we operate at.
 	var/dig_speed = 0.5 SECONDS
 
 /obj/item/salvaging_hammer/examine(mob/user)
