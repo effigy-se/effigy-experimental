@@ -6712,6 +6712,7 @@
 #include "local\code\modules\atmospherics\machinery\_air_alarm.dm"
 #include "local\code\modules\awaymissions\away_props.dm"
 #include "local\code\modules\bitrunning\turfs.dm"
+#include "local\code\modules\client\preferences\_admin.dm"
 #include "local\code\modules\client\preferences\latejoin_location.dm"
 #include "local\code\modules\client\preferences\looc.dm"
 #include "local\code\modules\clothing\suits\cloaks.dm"
