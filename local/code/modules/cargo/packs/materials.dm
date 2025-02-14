@@ -4,6 +4,7 @@
 	cost = CARGO_CRATE_VALUE * 3.5
 	contains = list(/obj/item/grown/log)
 	crate_name = "lumber crate"
+	crate_type = /obj/structure/closet/crate/cargo
 
 /datum/supply_pack/materials/rawlumber/generate()
 	. = ..()

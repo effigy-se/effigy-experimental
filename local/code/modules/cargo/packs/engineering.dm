@@ -27,7 +27,7 @@
 	contains = list(/obj/item/mod/control/pre_equipped/atmospheric)
 	cost = CARGO_CRATE_VALUE * 14
 	crate_name = "atmospherics MODsuit crate"
-	crate_type = /obj/structure/closet/crate/secure/engineering
+	crate_type = /obj/structure/closet/crate/secure/engineering/atmos
 
 /datum/supply_pack/engineering/doublecap_tanks
 	name = "Double Extended Emergency Tank Crate"
@@ -41,6 +41,7 @@
 	)
 	cost = CARGO_CRATE_VALUE * 6
 	crate_name = "double extended emergency tank crate"
+	crate_type = /obj/structure/closet/crate/nakamura
 
 /datum/supply_pack/engineering/gas_miner
 	name = "Gas Miner Delivery Beacon Crate"
@@ -48,16 +49,5 @@
 	access = ACCESS_ATMOSPHERICS
 	contains = list(/obj/item/summon_beacon/gas_miner)
 	cost = CARGO_CRATE_VALUE * 35
-	crate_name = "gas miner delivery beacon crate"
-	crate_type = /obj/structure/closet/crate/secure/engineering
-
-/datum/supply_pack/engineering/engi_inducers
-	name = "NT-150 Industrial Power Inducers Crate"
-	desc = "An improved model over the NT-75 EPI, the NT-150 charges at double the rate and contains an improved powercell. Contains two engineering-spec Inducers."
-	cost = CARGO_CRATE_VALUE * 6
-	contains = list(
-		/obj/item/inducer,
-		/obj/item/inducer,
-	)
-	crate_name = "engineering inducer crate"
-	crate_type = /obj/structure/closet/crate/engineering/electrical
+	crate_name = "gas miner beacon crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering/atmos

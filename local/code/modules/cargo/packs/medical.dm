@@ -7,6 +7,8 @@
 	contains = list(
 		/obj/item/storage/backpack/duffelbag/deforest_paramedic/stocked,
 	)
+	crate_name = "medical technician crate"
+	crate_type = /obj/structure/closet/crate/deforest
 
 /datum/supply_pack/medical/firstaidmixed
 	name = "Mixed Medical Kits"
@@ -20,6 +22,7 @@
 		/obj/item/storage/medkit/regular,
 	)
 	crate_name = "medical kit crate"
+	crate_type = /obj/structure/closet/crate/deforest
 
 /datum/supply_pack/medical/modsuit_medical
 	name = "Medical MODsuit Crate"
@@ -37,3 +40,4 @@
 	access = ACCESS_MEDICAL
 	contains = list(/obj/item/defibrillator/compact)
 	crate_name = "compact defibrillator crate"
+	crate_type = /obj/structure/closet/crate/deforest

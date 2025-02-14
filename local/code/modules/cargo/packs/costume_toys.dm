@@ -17,12 +17,15 @@
 		/obj/item/stack/sheet/cloth/ten,
 	)
 	crate_name = "advanced art supplies"
+	crate_type = /obj/structure/closet/crate/cardboard
 
 /datum/supply_pack/misc/paintcan
 	name = "Adaptive Paintcan"
 	desc = "Give things a splash of color with this experimental color-changing can of paint! Sellers note: We are not responsible for lynchings carried out by angry janitors, security officers, or any other crewmembers as a result of you using this."
 	cost = CARGO_CRATE_VALUE * 3.5
 	contains = list(/obj/item/paint/anycolor)
+	crate_name = "paint box"
+	crate_type = /obj/structure/closet/crate/cardboard
 
 /datum/supply_pack/misc/coloredsheets
 	name = "Bedsheet Crate"
@@ -39,4 +42,5 @@
 		/obj/item/bedsheet/black,
 		/obj/item/bedsheet/rainbow,
 	)
-	crate_name = "bedsheet crate"
+	crate_name = "bedsheets box"
+	crate_type = /obj/structure/closet/crate/cardboard

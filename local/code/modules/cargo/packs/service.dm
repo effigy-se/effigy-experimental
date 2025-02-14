@@ -18,6 +18,7 @@
 		/obj/item/circuitboard/machine/dish_drive,
 	)
 	crate_name = "build a bar crate"
+	crate_type = /obj/structure/closet/crate/nakamura
 
 /datum/supply_pack/service/janitor/janpimp
 	name = "Custodial Cruiser"
@@ -38,7 +39,7 @@
 	access = ACCESS_JANITOR
 	contains = list(/obj/item/key/janitor)
 	crate_name = "key crate"
-	crate_type = /obj/structure/closet/crate/wooden
+	crate_type = /obj/structure/closet/crate/secure/hydroponics
 
 /datum/supply_pack/service/janitor/janpremium
 	name = "Janitor Supplies"
@@ -56,3 +57,4 @@
 		/obj/item/reagent_containers/cup/bottle/ammonia,
 	)
 	crate_name = "janitorial crate"
+	crate_type = /obj/structure/closet/crate/hydroponics

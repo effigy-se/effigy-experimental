@@ -6679,6 +6679,7 @@
 #include "local\code\game\objects\effects\spawners\random\clothing.dm"
 #include "local\code\game\objects\items\airlock_painter.dm"
 #include "local\code\game\objects\items\control_wand.dm"
+#include "local\code\game\objects\items\inducer.dm"
 #include "local\code\game\objects\items\plushes.dm"
 #include "local\code\game\objects\items\toys.dm"
 #include "local\code\game\objects\items\AI_modules\_AI_modules.dm"
