@@ -22,8 +22,6 @@
 	TEST_ASSERT(!expected_mods.len,
 		"Some message mods were expected, but were not returned by get_message_mods: [json_encode(expected_mods)]. Message: [message]")
 
-// EffigyEdit Remove - Character Preferences - TODO: Verify to re-enable
-/*
 /// Test to ensure native tongue languages properly impact speech
 /datum/unit_test/speech_modifiers
 	var/mob/living/carbon/human/talking_lizard
@@ -62,8 +60,6 @@
 	talking_lizard.say(unhissed_quote)
 	TEST_ASSERT(handle_speech_result, "Handle speech signal was not fired")
 	TEST_ASSERT_EQUAL(unhissed_quote, handle_speech_result[SPEECH_MESSAGE], "Speech modifier test failed: [handle_speech_result[SPEECH_LANGUAGE]] did not equal [unhissed_quote] when spoken by a lizard in language [handle_speech_result[SPEECH_LANGUAGE]]")
-*/
-// EffigyEdit Remove End
 
 /// Test to verify COMSIG_MOB_SAY is sent the exact same list as the message args, as they're operated on
 /datum/unit_test/say_signal

@@ -11,7 +11,7 @@
 /datum/config_entry/string/fluff_status_file
 
 /// Use the Effigy API
-/datum/config_entry/flag/use_effigy_api
+/datum/config_entry/flag/effigy_api_enabled
 	default = FALSE
 
 /// API configuration

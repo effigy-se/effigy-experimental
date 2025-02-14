@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(effigy)
 
 /datum/controller/subsystem/effigy/Initialize()
 	// Check for enable
-	if(!CONFIG_GET(flag/use_effigy_api))
+	if(!CONFIG_GET(flag/effigy_api_enabled))
 		return SS_INIT_NO_NEED
 
 	// Check for API config
@@ -94,7 +94,7 @@ SUBSYSTEM_DEF(effigy)
 /datum/controller/subsystem/effigy/proc/find_effigy_link_by_ckey(ckey)
 	var/query = "SELECT CAST(effigy_id AS CHAR(25)), ckey FROM [format_table_name("player")] WHERE ckey = :ckey GROUP BY ckey, effigy_id LIMIT 1"
 	if(!SSdbcore.Connect())
-		to_chat(usr, span_warning("Database connectivity failed!"))
+		to_chat(usr, span_warning("Effigy API database connectivity failed!"))
 		return
 	var/datum/db_query/query_get_effigy_link_record = SSdbcore.NewQuery(
 		query,
@@ -112,7 +112,7 @@ SUBSYSTEM_DEF(effigy)
 /datum/controller/subsystem/effigy/proc/create_effigy_link_by_ckey(ckey, effigyid)
 	var/query = "UPDATE [format_table_name("player")] SET effigy_id = :effigyid WHERE ckey = :ckey"
 	if(!SSdbcore.Connect())
-		to_chat(usr, span_warning("Database connectivity failed!"))
+		to_chat(usr, span_warning("Effigy API database connectivity failed!"))
 		return FALSE
 	var/datum/db_query/query_set_effigy_link_record = SSdbcore.NewQuery(
 		query,
