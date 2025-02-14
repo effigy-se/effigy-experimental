@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(condos)
 		/obj/item/clothing/shoes/magboots/advance, \
 		/obj/item/blueprints, \
 		/obj/item/clothing/accessory/medal/gold/captain, \
-		/obj/item/reagent_containers/hypospray/cmo, \
+		/obj/item/hypospray/mkii/deluxe/cmo, \
 		/obj/item/fireaxe, \
 		/obj/item/crowbar/mechremoval, \
 		/obj/item/storage/belt/utility/chief, \

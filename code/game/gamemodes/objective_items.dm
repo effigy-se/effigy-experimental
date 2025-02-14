@@ -400,8 +400,10 @@
 	steal_hint = "The Chief Medical Officer's personal medical injector. \
 		Usually found amongst their medical supplies on their person, in their belt, or otherwise in their locker."
 
+/* EffigyEdit Remove - moved to local/code/game/gamemodes/objective_items.dm
 /obj/item/reagent_containers/hypospray/cmo/add_stealing_item_objective()
 	return add_item_to_steal(src, /obj/item/reagent_containers/hypospray/cmo)
+*/// EffigyEdit Remove End
 
 /datum/objective_item/steal/nukedisc
 	name = "the nuclear authentication disk"
