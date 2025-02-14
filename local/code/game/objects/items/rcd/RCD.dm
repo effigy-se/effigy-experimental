@@ -10,6 +10,16 @@
 	delay_mod = 1.4
 	upgrade = RCD_UPGRADE_FRAMES | RCD_UPGRADE_SIMPLE_CIRCUITS | RCD_UPGRADE_NO_FREQUENT_USE_COOLDOWN
 
+/obj/item/construction/rcd/industrial
+	name = "RCD Mk III"
+	desc = "A device used to rapidly build and deconstruct. Upgraded from the standard model with improved speed and capacity. Reload with iron, plasteel, glass or compressed matter cartridges."
+	icon_state = "ircd"
+	inhand_icon_state = "ircd"
+	max_matter = 480
+	matter = 480
+	delay_mod = 0.9
+	upgrade = RCD_ALL_UPGRADES
+
 /obj/item/rcd_ammo/mkii
 	name = "RCD Mk II matter cartridge"
 	desc = "A cartridge with one complete refill for an RCD Mk II."

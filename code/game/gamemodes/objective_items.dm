@@ -655,8 +655,10 @@
 	difficulty = 1
 	steal_hint = "A tool often used by Engineers, Atmospherics Technicians, and Ordnance Technicians."
 
+/* // EffigyEdit Remove - Bluespace RPD
 /obj/item/pipe_dispenser/add_stealing_item_objective()
 	return add_item_to_steal(src, /obj/item/pipe_dispenser)
+*/
 
 /datum/objective_item/steal/traitor/donut_box
 	name = "a box of prized donuts"

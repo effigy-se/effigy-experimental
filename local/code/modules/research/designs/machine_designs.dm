@@ -17,3 +17,11 @@
 		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_ENGINEERING
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE | DEPARTMENT_BITFLAG_CARGO | DEPARTMENT_BITFLAG_ENGINEERING
+
+/datum/design/board/dna_fixer
+	name = "Machine Design (DNA Fixer)"
+	desc = "The circuit board for a DNA Fixer."
+	id = "dna_fixer"
+	build_path = /obj/item/circuitboard/machine/dna_fixer
+	category = list(RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_MEDICAL)
+	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL

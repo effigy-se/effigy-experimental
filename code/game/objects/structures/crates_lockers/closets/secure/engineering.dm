@@ -26,7 +26,7 @@
 
 	// Traitor steal objective
 	new /obj/item/blueprints(src)
-	new /obj/item/pipe_dispenser(src)
+	new /obj/item/pipe_dispenser/bluespace(src) // EffigyEdit Change - Bluespace RPD - Original: /obj/item/pipe_dispenser
 
 /obj/structure/closet/secure_closet/engineering_electrical
 	name = "electrical supplies locker"

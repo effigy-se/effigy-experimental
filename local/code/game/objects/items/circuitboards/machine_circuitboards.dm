@@ -24,4 +24,9 @@
 		/datum/stock_part/micro_laser = 2,
 		/datum/stock_part/servo = 2,
 	)
-	needs_anchored = TRUE
+
+/obj/item/circuitboard/machine/dna_fixer
+	name = "DNA Fixer (Machine Board)"
+	greyscale_colors = CIRCUIT_COLOR_MEDICAL
+	build_path = /obj/machinery/dna_fixer
+	req_components = list(/datum/stock_part/micro_laser = 1)

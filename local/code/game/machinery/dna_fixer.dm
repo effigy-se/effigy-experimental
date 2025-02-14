@@ -7,20 +7,6 @@
 /// The interval that advertisements are said by the machine's speaker.
 #define ADVERT_TIME 18 SECONDS
 
-/datum/design/board/dna_fixer
-	name = "Machine Design (DNA Fixer)"
-	desc = "The circuit board for a DNA Fixer."
-	id = "dna_fixer"
-	build_path = /obj/item/circuitboard/machine/dna_fixer
-	category = list(RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_MEDICAL)
-	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL
-
-/obj/item/circuitboard/machine/dna_fixer
-	name = "DNA Fixer (Machine Board)"
-	greyscale_colors = CIRCUIT_COLOR_MEDICAL
-	build_path = /obj/machinery/dna_fixer
-	req_components = list(/datum/stock_part/micro_laser = 1)
-
 /obj/machinery/dna_fixer
 	name = "DNA Fixer"
 	desc = "With the power of modern neurological scanning and synthflesh cosmetic surgery, the Veymed Corporation \
