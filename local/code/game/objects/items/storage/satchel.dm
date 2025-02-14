@@ -19,10 +19,6 @@
 
 /obj/item/storage/backpack/duffelbag/deforest_paramedic/stocked
 
-	// EffigyEdit TODO - TEMPORARY ONLY, Replace with mini saw
-/obj/item/circular_saw
-	w_class = WEIGHT_CLASS_SMALL
-
 /obj/item/storage/backpack/duffelbag/deforest_paramedic/stocked/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/scalpel = 1,

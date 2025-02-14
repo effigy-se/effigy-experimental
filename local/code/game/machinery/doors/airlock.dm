@@ -197,6 +197,9 @@
 	greyscale_config = /datum/greyscale_config/airlock_effigy
 	greyscale_colors = "#757278#757278"
 
+/obj/structure/door_assembly
+	overlays_file = 'local/icons/obj/doors/airlocks/station/overlays.dmi'
+
 /obj/machinery/door/airlock/atmos
 	icon = 'local/icons/obj/doors/airlocks/effigy/effigy.dmi'
 	overlays_file = 'local/icons/obj/doors/airlocks/effigy/overlays.dmi'

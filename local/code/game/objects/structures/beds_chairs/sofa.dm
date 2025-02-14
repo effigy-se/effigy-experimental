@@ -1,3 +1,6 @@
+/obj/structure/chair/sofa/bench
+	greyscale_colors = COLOR_TRAM_BLUE
+
 /obj/structure/chair/sofa/bench/maroon
 	greyscale_colors = SOFA_MAROON
 
