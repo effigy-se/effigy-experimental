@@ -105,3 +105,28 @@
 	)
 	crate_name = "bulk vinegar pack"
 	crate_type = /obj/structure/closet/crate/freezer
+
+/datum/supply_pack/organic/lavalandsamples
+	name = "Planetary Flora Samples"
+	desc = "A box of samples taken from the surface of Lavaland. Requires Hydroponics access to open."
+	cost = CARGO_CRATE_VALUE * 2
+	access_view = ACCESS_HYDROPONICS
+	contains = list(
+		/obj/item/seeds/lavaland/polypore,
+		/obj/item/seeds/lavaland/porcini,
+		/obj/item/seeds/lavaland/inocybe,
+		/obj/item/seeds/lavaland/ember,
+		/obj/item/seeds/lavaland/seraka,
+		/obj/item/seeds/star_cactus,
+		/obj/item/seeds/star_cactus,
+	)
+	crate_name = "planetary seeds crate"
+	crate_type = /obj/structure/closet/crate/hydroponics
+
+/datum/supply_pack/service/MODsuit_cargo
+	name = "Cargo Loader MODsuit Crate"
+	desc = "Contains a single quad-armed MODsuit, built to standard cargo specifications."
+	cost = CARGO_CRATE_VALUE * 13
+	access_view = ACCESS_CARGO
+	contains = list(/obj/item/mod/control/pre_equipped/loader)
+	crate_name = "cargo MODsuit crate"
