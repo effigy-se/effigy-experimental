@@ -1,4 +1,3 @@
-
 /mob/living
 	var/ssd_indicator = FALSE
 	var/lastclienttime = 0
