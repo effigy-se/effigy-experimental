@@ -184,6 +184,19 @@
 	else
 		CRASH("Emote [type] has no valid emote type set!")
 
+	// EffigyEdit Add - AI Holograms
+	var/obj/effect/overlay/holo_pad_hologram/hologram = GLOB.hologram_impersonators[user]
+	if(hologram)
+		if(emote_type & (EMOTE_AUDIBLE | EMOTE_VISIBLE))
+			hologram.audible_message(msg, deaf_message = span_emote("You see how <b>[user]</b> [msg]"), audible_message_flags = EMOTE_MESSAGE)
+		else if(emote_type & EMOTE_VISIBLE)
+			hologram.visible_message(msg, visible_message_flags = EMOTE_MESSAGE)
+		if(emote_type & EMOTE_IMPORTANT)
+			for(var/mob/living/viewer in viewers(world.view, hologram))
+				if(viewer.is_blind() && !viewer.can_hear())
+					to_chat(viewer, msg)
+	// EffigyEdit Add End
+
 	if(!isnull(user.client))
 		var/dchatmsg = "<b>[user]</b> [msg]"
 		for(var/mob/ghost as anything in GLOB.dead_mob_list - viewers(get_turf(user)))
