@@ -29,6 +29,7 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 /mob/dead/canUseStorage()
 	return FALSE
 
+/* EffigyEdit Remove - moved to local/code/modules/mob/dead/dead.dm
 /mob/dead/get_status_tab_items()
 	. = ..()
 	if(SSticker.HasRoundStarted())
@@ -45,6 +46,7 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	if(client.holder)
 		. += "Players Ready: [SSticker.totalPlayersReady]"
 		. += "Admins Ready: [SSticker.total_admins_ready] / [length(GLOB.admins)]"
+*/// EffigyEdit Remove End
 
 #define SERVER_HOPPER_TRAIT "server_hopper"
 

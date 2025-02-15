@@ -1,3 +1,4 @@
+/* EffigyEdit TODO - Pixel Shift
 #define SHIFTING_ITEMS 1
 #define SHIFTING_PARENT 2
 #define TILTING_PARENT 3
@@ -176,3 +177,4 @@
 #undef SHIFTING_ITEMS
 #undef SHIFTING_PARENT
 #undef TILTING_PARENT
+*/

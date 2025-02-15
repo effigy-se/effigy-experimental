@@ -1,3 +1,4 @@
+/* EffigyEdit TODO - Pixel Shift
 /datum/keybinding/mob/item_pixel_shift
 	hotkey_keys = list("V")
 	name = "item_pixel_shift"
@@ -54,3 +55,4 @@
 /datum/keybinding/mob/pixel_tilting/up(client/user)
 	. = ..()
 	SEND_SIGNAL(user.mob, COMSIG_KB_MOB_PIXEL_TILT_UP)
+*/
