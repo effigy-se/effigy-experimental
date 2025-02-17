@@ -33,7 +33,8 @@ export const ChatTabs = (props) => {
   return (
     <Flex align="center">
       <Flex.Item>
-        <Tabs textAlign="center">
+        {/* EffigyEdit Change - TGUI - add mb={1} */}
+        <Tabs textAlign="center" mb={1}>
           {pages.map((page) => (
             <Tabs.Tab
               key={page.id}

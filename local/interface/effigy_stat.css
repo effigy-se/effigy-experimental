@@ -232,12 +232,12 @@ img {
  * MARK: Dark theme colors
  */
 .dark:root {
-	--scrollbar-base: #1a1d24;
+	--scrollbar-base: #1a1c23;
 	--scrollbar-thumb: #333947;
 }
 
 body.dark {
-	background-color: #1a1d24;
+	background-color: #1a1c23;
 	color: #acb2c3;
 	scrollbar-base-color: #1c1c1c;
 	scrollbar-face-color: #3b3b3b;
@@ -259,12 +259,12 @@ body.dark {
 }
 
 .dark #menu {
-	background-color: #1a1d24;
+	background-color: #1a1c23;
 }
 
 .dark #menu.tabs-classic .button.active {
 	background-color: #2ccaff;
-	color: #1a1d24;
+	color: #1a1c23;
 }
 
 .dark .button {
@@ -277,14 +277,14 @@ body.dark {
 }
 
 .dark .button.active  {
-	background-color: #1a1d24;
+	background-color: #1a1c23;
 	color: #dcdee5;
-	border-bottom-color: #1a1d24;
+	border-bottom-color: #1a1c23;
 }
 
 .dark #under-menu,
 .dark #under-content {
-	background-color: #1a1d24;
+	background-color: #1a1c23;
 }
 
 .dark .grid-item{
