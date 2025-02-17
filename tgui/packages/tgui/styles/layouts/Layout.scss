@@ -66,10 +66,7 @@ body {
     base.$color-bg,
     $lightness: -25% * $scrollbar-color-multiplier
   );
-  scrollbar-face-color: color.scale(
-    base.$color-bg-alt,
-    $lightness: -10% * $scrollbar-color-multiplier
-  );
+  scrollbar-face-color: hsl(224, 16%, 32%);
   scrollbar-3dlight-color: color.scale(
     base.$color-bg-alt,
     $lightness: 0% * $scrollbar-color-multiplier
