@@ -12,10 +12,10 @@ $color-default: color.scale(
   colors.fg(colors.$primary),
   $lightness: 75%
 ) !default;
-$text-color: #e6e7eb !default;
+$text-color: hsl(224, 16%, 92%) !default;
 $text-color-selected: color.scale($color-default, $lightness: 25%) !default;
-$tab-color: #424651 !default;
-$tab-color-hovered: rgba(255, 255, 255, 0.075) !default;
+$tab-color: #454c5f !default;
+$tab-color-hovered: #67718e !default;
 $tab-color-selected: #2ccaff !default;
 $border-radius: base.$border-radius !default;
 $fg-map: colors.$fg-map !default;
@@ -46,7 +46,8 @@ $fg-map: colors.$fg-map !default;
 
 .Tabs--vertical {
   flex-direction: column;
-  padding: 0.25em 0 0.25em 0.25em;
+  padding: 0.25em 0 0.25em 0;
+  margin-left: -0.25em;
 }
 
 .Tabs--horizontal {
@@ -74,7 +75,7 @@ $fg-map: colors.$fg-map !default;
   color: $text-color;
   min-height: 1.75em;
   min-width: 5.5em;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 
 .Tab:not(.Tab--selected):hover {
@@ -104,17 +105,27 @@ $fg-map: colors.$fg-map !default;
 }
 
 .Tabs--horizontal {
+  .Tab {
+    border: 0;
+    border-radius: 0;
+  }
+
   .Tab--selected {
     color: #202020;
+    border: 0;
   }
 }
 
 .Tabs--vertical {
   .Tab {
     min-height: 2em;
+    border: 0;
+    border-radius: 0;
+    margin: 0.55em;
   }
 
   .Tab--selected {
     color: #202020;
+    border: 0;
   }
 }

@@ -32,14 +32,17 @@ export const Panel = (props) => {
       <Stack fill vertical>
         <Stack.Item>
           <Section fitted>
-            <Stack mr={1} align="center">
+            {/* EffigyEdit Change - TGUI - change align to top */}
+            <Stack mr={1} align="top">
               <Stack.Item grow overflowX="auto">
                 <ChatTabs />
               </Stack.Item>
-              <Stack.Item>
+              {/* EffigyEdit Change - TGUI - add mt=0.7 */}
+              <Stack.Item mt={0.7}>
                 <PingIndicator />
               </Stack.Item>
-              <Stack.Item>
+              {/* EffigyEdit Change - TGUI - add mt=0.7 */}
+              <Stack.Item mt={0.7}>
                 <Button
                   color="grey"
                   selected={audio.visible}
@@ -49,7 +52,8 @@ export const Panel = (props) => {
                   onClick={() => audio.toggle()}
                 />
               </Stack.Item>
-              <Stack.Item>
+              {/* EffigyEdit Change - TGUI - add mt=0.7 */}
+              <Stack.Item mt={0.7}>
                 <Button
                   icon={settings.visible ? 'times' : 'cog'}
                   selected={settings.visible}

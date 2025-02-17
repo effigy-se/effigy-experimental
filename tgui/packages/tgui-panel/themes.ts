@@ -8,11 +8,11 @@ export const THEMES = ['light', 'dark'];
 
 const COLORS = {
   DARK: {
-    BG_BASE: '#1c1d22', // EffigyEdit Change - TGUI - Original: #212020
-    BG_SECOND: '#121316', // EffigyEdit Change - TGUI - Original: #161515
+    BG_BASE: '#1a1d24', // EffigyEdit Change - TGUI - Original: #212020
+    BG_SECOND: '#111317', // EffigyEdit Change - TGUI - Original: #161515
     BUTTON: '#2ccaff',
-    TEXT: '#e6f1ff', // EffigyEdit Change - TGUI - Original: #161515
-    TEXT_DARK: '#212121', // EffigyEdit Add - TGUI
+    TEXT: '#f3f4f6', // EffigyEdit Change - TGUI - Original: #161515
+    TEXT_DARK: '#22262f', // EffigyEdit Add - TGUI
   },
   LIGHT: {
     BG_BASE: '#EFEEEE',
