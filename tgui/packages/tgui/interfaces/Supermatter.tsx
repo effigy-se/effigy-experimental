@@ -67,9 +67,8 @@ const SupermatterEntry = (props: SupermatterEntryProps) => {
     return (
       <Stack.Item>
         <Stack align="center">
-          <Stack.Item color="grey" width="125px">
-            {title + ':'}
-          </Stack.Item>
+          {/* EffigyEdit Change - TGUI - remove color="grey" */}
+          <Stack.Item width="125px">{title + ':'}</Stack.Item>
           <Stack.Item grow>{content}</Stack.Item>
         </Stack>
       </Stack.Item>
@@ -81,9 +80,8 @@ const SupermatterEntry = (props: SupermatterEntryProps) => {
     <>
       <Stack.Item>
         <Stack align="center">
-          <Stack.Item color="grey" width="125px">
-            {title + ':'}
-          </Stack.Item>
+          {/* EffigyEdit Change - TGUI - remove color="grey" */}
+          <Stack.Item width="125px">{title + ':'}</Stack.Item>
           <Stack.Item grow>{content}</Stack.Item>
           <Stack.Item>
             <Button
@@ -423,7 +421,8 @@ export const Supermatter = (props) => {
   const { act, data } = useBackend<SupermatterData>();
   const { sm_data, gas_metadata } = data;
   return (
-    <Window width={700} height={400} theme="ntos">
+    <Window width={700} height={340}>
+      {/* EffigyEdit Change - TGUI - Original: height={400} */}
       <Window.Content>
         <SupermatterContent {...sm_data[0]} gas_metadata={gas_metadata} />
       </Window.Content>
