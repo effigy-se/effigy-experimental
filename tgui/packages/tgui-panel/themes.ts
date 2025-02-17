@@ -10,7 +10,7 @@ const COLORS = {
   DARK: {
     BG_BASE: '#1a1c23', // EffigyEdit Change - TGUI - Original: #212020
     BG_SECOND: '#22252f', // EffigyEdit Change - TGUI - Original: #161515
-    BUTTON: '#2ccaff',
+    BUTTON: '#2ccaff', // EffigyEdit Change - TGUI - Original: #414040
     TEXT: '#f3f4f6', // EffigyEdit Change - TGUI - Original: #161515
     TEXT_DARK: '#22262f', // EffigyEdit Add - TGUI
   },
