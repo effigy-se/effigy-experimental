@@ -119,7 +119,6 @@ img {
 	background-color: transparent;
 	color: rgba(0, 0, 0, 0.5);
 	border: 0;
-	border-bottom: 0.1667em solid transparent;
 	border-radius: 0;
 }
 
@@ -135,7 +134,7 @@ img {
 }
 
 #under-menu {
-	height: 0.5em;
+	height: 0.2em;
 	background-color: #eeeeee;
 }
 
@@ -146,7 +145,7 @@ img {
 
 #statcontent {
 	flex: 1;
-	padding: 0.75em 0.5em;
+	padding: 0 0.4em;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -180,7 +179,7 @@ img {
 	white-space: nowrap;
 	pointer-events: none;
 	width: 100%;
-	padding: 0.33em 0.5em;
+	padding: 0.33em 0.5em 0.4em;
 	border-radius: 0.25em;
 }
 
@@ -278,7 +277,7 @@ body.dark {
 
 .dark .button.active  {
 	background-color: #1a1c23;
-	color: #dcdee5;
+	color: #f3f4f6;
 	border-bottom-color: #1a1c23;
 }
 
@@ -288,11 +287,11 @@ body.dark {
 }
 
 .dark .grid-item{
-	color: #b2c4dd;
+	color: #acb2c3;
 }
 
 .dark .grid-item:hover .grid-item-text {
-	background-color: #24262b;
+	background-color: #2b2f3b;
 }
 
 .dark .grid-item:active .grid-item-text {

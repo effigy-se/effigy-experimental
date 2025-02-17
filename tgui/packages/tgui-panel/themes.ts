@@ -79,12 +79,12 @@ export const setClientTheme = (name) => {
     'output.background-color': themeColor.BG_BASE,
     'output.text-color': themeColor.TEXT,
     // Say, OOC, me Buttons etc.
-    'saybutton.background-color': themeColor.BG_BASE,
-    'saybutton.text-color': themeColor.TEXT,
-    'oocbutton.background-color': themeColor.BG_BASE,
-    'oocbutton.text-color': themeColor.TEXT,
-    'mebutton.background-color': themeColor.BG_BASE,
-    'mebutton.text-color': themeColor.TEXT,
+    'saybutton.background-color': '#a4bad6', // EffigyEdit Change - TGUI - Original: BG_BASE
+    'saybutton.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
+    'oocbutton.background-color': '#cca300', // EffigyEdit Change - TGUI - Original: BG_BASE
+    'oocbutton.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
+    'mebutton.background-color': '#5975da', // EffigyEdit Change - TGUI - Original: BG_BASE
+    'mebutton.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'asset_cache_browser.background-color': themeColor.BG_BASE,
     'asset_cache_browser.text-color': themeColor.TEXT,
     'tooltip.background-color': themeColor.BG_BASE,

@@ -86,15 +86,29 @@ export const Panel = (props) => {
             </Pane.Content>
             <Notifications>
               {game.connectionLostAt && (
+                /* EffigyEdit Change - TGUI
                 <Notifications.Item rightSlot={<ReconnectButton />}>
                   You are either AFK, experiencing lag or the connection has
                   closed.
                 </Notifications.Item>
+                */
+                <Notifications.Item rightSlot={<ReconnectButton />}>
+                  Connectivity issues:
+                  <br />
+                  Server lagging / connection closed.
+                </Notifications.Item>
               )}
               {game.roundRestartedAt && (
+                /* // EffigyEdit Change - TGUI
                 <Notifications.Item>
                   The connection has been closed because the server is
                   restarting. Please wait while you automatically reconnect.
+                </Notifications.Item>
+                */
+                <Notifications.Item>
+                  Server restarting:
+                  <br />
+                  Please wait...
                 </Notifications.Item>
               )}
             </Notifications>

@@ -58,7 +58,8 @@ export const ChatTabs = (props) => {
           ))}
         </Tabs>
       </Flex.Item>
-      <Flex.Item ml={1}>
+      {/* EffigyEdit Change - TGUI - Original: ml={1} */}
+      <Flex.Item ml={-1}>
         <Button
           color="transparent"
           icon="plus"
