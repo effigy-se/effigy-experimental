@@ -10,7 +10,7 @@ const COLORS = {
   DARK: {
     BG_BASE: '#1a1c23', // EffigyEdit Change - TGUI - Original: #212020
     BG_SECOND: '#22252f', // EffigyEdit Change - TGUI - Original: #161515
-    BUTTON: '#2ccaff', // EffigyEdit Change - TGUI - Original: #414040
+    BUTTON: '#dcdee5', // EffigyEdit Change - TGUI - Original: #414040
     TEXT: '#f3f4f6', // EffigyEdit Change - TGUI - Original: #161515
     TEXT_DARK: '#22262f', // EffigyEdit Add - TGUI
   },
@@ -67,11 +67,11 @@ export const setClientTheme = (name) => {
     'rules.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'wiki.background-color': themeColor.BUTTON,
     'wiki.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
-    'forum.background-color': themeColor.BUTTON,
+    'forum.background-color': '#2ccaff', // EffigyEdit Change - TGUI - Original: BUTTON
     'forum.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
-    'github.background-color': themeColor.BUTTON,
+    'github.background-color': '#2ccaff', // EffigyEdit Change - TGUI - Original: BUTTON
     'github.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
-    'report-issue.background-color': themeColor.BUTTON,
+    'report-issue.background-color': '#f0197d', // EffigyEdit Change - TGUI - Original: BUTTON
     'report-issue.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'fullscreen-toggle.background-color': themeColor.BUTTON,
     'fullscreen-toggle.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
