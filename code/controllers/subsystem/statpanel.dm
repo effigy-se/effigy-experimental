@@ -45,11 +45,11 @@ SUBSYSTEM_DEF(statpanels)
 			"Map: [SSmapping.current_map?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
 			"Connected: [GLOB.clients.len] | Active: [GLOB.active_players] | Observing: [GLOB.observing_players]",
-			" ",
 		)
 
 		if(SSticker.HasRoundStarted())
 			global_data += list(
+				" ",
 				"Round Time: [time2text(round_utc_time, "hh:mm:ss", 0)]",
 				"Station Time: [station_time_timestamp()]",
 			)
