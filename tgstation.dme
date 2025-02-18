@@ -6928,7 +6928,6 @@
 #include "local\code\modules\mob\living\basic\ruin_defender\living_floor.dm"
 #include "local\code\modules\mob\living\basic\ruin_defender\mimic\mimic.dm"
 #include "local\code\modules\mob\living\basic\vermin\eggbug.dm"
-#include "local\code\modules\mob\living\carbon\human\_species.dm"
 #include "local\code\modules\mob\living\carbon\human\cryo_console_return.dm"
 #include "local\code\modules\mob\living\dead\dead.dm"
 #include "local\code\modules\mob\living\dead\new_player\latejoin_menu.dm"
