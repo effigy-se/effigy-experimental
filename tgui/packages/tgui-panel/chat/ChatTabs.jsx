@@ -33,7 +33,8 @@ export const ChatTabs = (props) => {
   return (
     <Flex align="center">
       <Flex.Item>
-        <Tabs textAlign="center">
+        {/* EffigyEdit Change - TGUI - add mb={1} */}
+        <Tabs textAlign="center" mb={1}>
           {pages.map((page) => (
             <Tabs.Tab
               key={page.id}
@@ -57,7 +58,8 @@ export const ChatTabs = (props) => {
           ))}
         </Tabs>
       </Flex.Item>
-      <Flex.Item ml={1}>
+      {/* EffigyEdit Change - TGUI - Original: ml={1} */}
+      <Flex.Item ml={-1}>
         <Button
           color="transparent"
           icon="plus"

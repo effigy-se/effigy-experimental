@@ -10,7 +10,8 @@
 /datum/tgui_say/proc/alter_entry(payload)
 	var/entry = payload["entry"]
 	/// No OOC leaks
-	if(!entry || payload["channel"] == OOC_CHANNEL || payload["channel"] == ME_CHANNEL)
+	//if(!entry || payload["channel"] == OOC_CHANNEL || payload["channel"] == ME_CHANNEL) // EffigyEdit Change - LOOC
+	if(!entry || payload["channel"] == OOC_CHANNEL || payload["channel"] == ME_CHANNEL || payload["channel"] == LOOC_CHANNEL)
 		return pick(hurt_phrases)
 	/// Random trimming for larger sentences
 	if(length(entry) > 50)
@@ -47,6 +48,14 @@
 		if(ADMIN_CHANNEL)
 			SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_admin_say, entry)
 			return TRUE
+		// EffigyEdit Add - LOOC
+		if(LOOC_CHANNEL)
+			client.looc(entry)
+			return TRUE
+		if(WHIS_CHANNEL)
+			client.mob.whisper_verb(entry)
+			return TRUE
+		// EffigyEdit Add End
 	return FALSE
 
 /**

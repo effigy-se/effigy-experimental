@@ -264,6 +264,10 @@
 		/obj/item/tank/internals/emergency_oxygen,
 		/obj/item/wrench/medical,
 		/obj/item/knife/ritual,
+		/obj/item/flesh_shears,
+		/obj/item/hypospray/mkii, // EffigyEdit Add - Hyposprays
+		/obj/item/storage/hypospraykit, // EffigyEdit Add - Hyposprays
+		/obj/item/reagent_containers/cup/hypovial, // EffigyEdit Add - Hyposprays
 	))
 
 /obj/item/storage/belt/medical/paramedic

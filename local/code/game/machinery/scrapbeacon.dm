@@ -12,14 +12,16 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	circuit = /obj/item/circuitboard/machine/scrap_beacon
 	active_power_usage = BASE_MACHINE_ACTIVE_CONSUMPTION * 10 // 10kw
-	// Are we currently pulling scrap in?
+	/// Are we currently pulling scrap in?
 	var/active = FALSE
-	// How likely is any given turf going to get scrap? In percentage
+	/// How likely is any given turf going to get scrap? In percentage
 	var/impact_probability = SCRAPBEACON_IMPACT_PROBABILITY
-	// Our range - not player-malleable.
+	/// Our range - not player-malleable.
 	var/impact_range = 2
-	// What are we pulling in from space?
+	/// What are we pulling in from space?
 	var/scrap_path = /obj/structure/scrap/falls_when_spawned
+	/// Our internal radio.
+	var/obj/item/radio/radio
 
 	COOLDOWN_DECLARE(scrap_sent_cd)
 
@@ -31,7 +33,15 @@
 
 /obj/machinery/scrap_beacon/Initialize(mapload) // To prevent deconstruction being used as a workaround for the cooldown. Mappers: Take this into account roundstart!
 	. = ..()
+	radio = new /obj/item/radio(src)
+	radio.set_listening(FALSE)
 	COOLDOWN_START(src, scrap_sent_cd, SCRAPBEACON_COOLDOWN)
+	addtimer(CALLBACK(src, PROC_REF(announce_ready)), SCRAPBEACON_COOLDOWN)
+
+/obj/machinery/scrap_beacon/Destroy(force)
+	QDEL_NULL(radio)
+	return ..()
+
 
 /obj/machinery/scrap_beacon/RefreshParts()
 	. = ..()
@@ -61,6 +71,11 @@
 	log_game("[key_name(user)] has activated the [src].")
 	COOLDOWN_START(src, scrap_sent_cd, SCRAPBEACON_COOLDOWN)
 	start_scrap_summon()
+
+
+/obj/machinery/scrap_beacon/proc/announce_ready()
+	radio.set_frequency(FREQ_SCIENCE)
+	radio.talk_into(src, "Thermal systems within operational parameters. Awaiting next activation.", FREQ_SCIENCE)
 
 /obj/machinery/scrap_beacon/proc/start_scrap_summon()
 	active = TRUE

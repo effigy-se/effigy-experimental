@@ -51,8 +51,8 @@ $shadow-color: base.$color-bg !default;
   top: 0;
   // left: 46px; // EffigyEdit Change - TGUI
   // left: base.rem(46px); // EffigyEdit Change - TGUI
-  left: 42px;
-  left: base.rem(42px);
+  left: 36px;
+  left: base.rem(36px);
   color: $text-color;
   // font-size: 14px; // EffigyEdit Change - TGUI
   // font-size: base.rem(14px); // EffigyEdit Change - TGUI
@@ -85,8 +85,8 @@ $shadow-color: base.$color-bg !default;
 .TitleBar__statusIcon {
   position: absolute;
   top: 0;
-  left: 12px;
-  left: base.rem(12px);
+  left: 8px;
+  left: base.rem(8px);
   transition: color 0.5s;
   // font-size: 20px; // EffigyEdit Change - TGUI
   // font-size: base.rem(20px); // EffigyEdit Change - TGUI

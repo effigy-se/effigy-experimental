@@ -393,7 +393,7 @@
 		return
 
 	var/turf/our_tile = get_turf(src)
-	var/obj/visual = image('icons/hud/screen_gen.dmi', our_tile, "arrow", FLY_LAYER)
+	var/obj/visual = image(EFFIGY_GENERAL_SCREEN_ICONS, our_tile, "arrow", FLY_LAYER) // EffigyEdit Change - Customized HUD
 
 	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), visual, group_clients(), 2.5 SECONDS)
 	animate(visual, pixel_x = (tile.x - our_tile.x) * ICON_SIZE_X + pointed_atom.pixel_x, pixel_y = (tile.y - our_tile.y) * ICON_SIZE_Y + pointed_atom.pixel_y, time = 1.7, easing = EASE_OUT)

@@ -313,6 +313,9 @@ SUBSYSTEM_DEF(dynamic)
 		SSticker.news_report = SSshuttle.emergency?.is_hijacked() ? SHUTTLE_HIJACK : STATION_EVACUATED
 
 /datum/controller/subsystem/dynamic/proc/send_intercept()
+	return . // EffigyEdit Add - Storyteller
+	// EffigyEdit Remove - Storyteller
+	/*
 	if(GLOB.communications_controller.block_command_report) //If we don't want the report to be printed just yet, we put it off until it's ready
 		addtimer(CALLBACK(src, PROC_REF(send_intercept)), 10 SECONDS)
 		return
@@ -366,6 +369,8 @@ SUBSYSTEM_DEF(dynamic)
 #endif
 
 	return .
+	*/
+	// EffigyEdit Remove End
 
 /// Generate the advisory level depending on the shown threat level.
 /datum/controller/subsystem/dynamic/proc/generate_advisory_level()

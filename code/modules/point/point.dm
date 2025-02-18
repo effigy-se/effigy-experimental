@@ -58,7 +58,7 @@
 	thought_bubble.alpha = 200
 
 	var/mutable_appearance/point_visual = mutable_appearance(
-		'icons/hud/screen_gen.dmi',
+		EFFIGY_GENERAL_SCREEN_ICONS, // EffigyEdit Change - Customized HUD
 		"arrow"
 	)
 

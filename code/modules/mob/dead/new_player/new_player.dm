@@ -179,7 +179,7 @@
 		return FALSE
 
 	mind.late_joiner = TRUE
-	var/atom/destination = mind.assigned_role.get_latejoin_spawn_point()
+	var/atom/destination = mind.assigned_role.get_latejoin_spawn_point(src) // EffigyEdit Change - Added "src"; Spawnprefs
 	if(!destination)
 		CRASH("Failed to find a latejoin spawn point.")
 	var/mob/living/character = create_character(destination)
@@ -216,7 +216,7 @@
 		humanc = character //Let's retypecast the var to be human,
 
 	if(humanc) //These procs all expect humans
-		if(SSshuttle.arrivals)
+		if(SSshuttle.arrivals && humanc.client.prefs.read_preference(/datum/preference/choiced/latejoin_location) == JOB_LATEJOINPREF_ARRIVALS) // EffigyEdit Change - Latejoin Spawnpref - Original: if(SSshuttle.arrivals)
 			SSshuttle.arrivals.QueueAnnounce(humanc, rank)
 		else
 			announce_arrival(humanc, rank)

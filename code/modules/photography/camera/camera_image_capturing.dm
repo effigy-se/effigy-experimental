@@ -18,7 +18,7 @@
 	var/skip_normal = FALSE
 	var/wipe_atoms = FALSE
 
-	var/mutable_appearance/backdrop = mutable_appearance('icons/hud/screen_gen.dmi', "flash")
+	var/mutable_appearance/backdrop = mutable_appearance(EFFIGY_GENERAL_SCREEN_ICONS, "flash") // EffigyEdit Change - Customized HUD
 	backdrop.blend_mode = BLEND_OVERLAY
 	backdrop.color = "#292319"
 

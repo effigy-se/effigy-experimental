@@ -4,11 +4,12 @@
  */
 
 @use '../base.scss';
+@use './Input.scss';
 @use '../colors.scss';
 @use '../functions.scss' as *;
 
 $color-default-fill: colors.bg(colors.$primary) !default;
-$background-color: rgba(0, 0, 0, 0) !default;
+$background-color: Input.$background-color !default;
 $border-radius: base.$border-radius !default;
 $bg-map: colors.$bg-map !default;
 
@@ -49,6 +50,14 @@ $bg-map: colors.$bg-map !default;
 
   .ProgressBar__fill {
     background-color: $color-default-fill;
+  }
+}
+
+.ProgressBar--color--good {
+  border: base.em(5px) solid #ff0000;
+
+  .ProgressBar__fill {
+    background-color: #ff0000;
   }
 }
 

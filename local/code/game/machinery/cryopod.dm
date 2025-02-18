@@ -1,14 +1,4 @@
-/* EffigyEdit TODO - Cryo
 #define AHELP_FIRST_MESSAGE "Please adminhelp before leaving the round, even if there are no administrators online!"
-
-/// list of weakrefs to highpriest successor candidates. Every chaplain who joins after the initial chaplain is added to this list. The next high priest is chosen from them by seniority.
-GLOBAL_LIST(holy_successors)
-/// A weakref to the current high priest mob
-GLOBAL_VAR(current_highpriest)
-/// The previous sect's favor value
-GLOBAL_VAR(prev_favor)
-/// The previous sect's typepath
-GLOBAL_VAR(prev_sect_type)
 
 /*
  * Cryogenic refrigeration unit. Basically a despawner.
@@ -17,17 +7,8 @@ GLOBAL_VAR(prev_sect_type)
  * since time_entered, which is world.time when the occupant moves in.
  * ~ Zuhayr
  */
-GLOBAL_LIST_EMPTY(cryopod_computers)
 
-GLOBAL_LIST_EMPTY(ghost_records)
-
-/// A list of all cryopods that aren't quiet, to be used by the "Send to Cryogenic Storage" VV action.
-GLOBAL_LIST_EMPTY(valid_cryopods)
-
-*/
-
-//Main cryopod console.
-
+/// Main cryopod console
 /obj/machinery/computer/cryopod
 	name = "cryogenic oversight console"
 	desc = "An interface between crew and the cryogenic storage oversight systems."
@@ -35,7 +16,6 @@ GLOBAL_LIST_EMPTY(valid_cryopods)
 	icon_state = "cryocomp"
 	icon_screen = "cryo"
 	icon_keyboard = null
-	use_power = FALSE
 	density = FALSE
 	interaction_flags_machine = INTERACT_MACHINE_OFFLINE
 	req_one_access = list(ACCESS_COMMAND, ACCESS_ARMORY) // Heads of staff or the warden can go here to claim recover items from their department that people went were cryodormed with.
@@ -54,8 +34,6 @@ GLOBAL_LIST_EMPTY(valid_cryopods)
 	var/announcement_channel = null // RADIO_CHANNEL_COMMON doesn't work here.
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
-
-/*
 
 /obj/machinery/computer/cryopod/Initialize(mapload)
 	. = ..()
@@ -146,9 +124,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] has woken up from cryo storage.", announcement_channel)
 		if("CRYO_LEAVE")
 			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] has been moved to cryo storage.", announcement_channel)
-*/
 
-// Cryopods themselves.
+/// Cryopods
 /obj/machinery/cryopod
 	name = "cryogenic freezer"
 	desc = "Suited for Cyborgs and Humanoids, the pod is a safe place for personnel affected by the Space Sleep Disorder to get some rest."
@@ -196,8 +173,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 /obj/machinery/cryopod/ruin
 	quiet = TRUE
 	latejoin_possible = FALSE
-
-/*
 
 /obj/machinery/cryopod/Initialize(mapload)
 	..()
@@ -360,7 +335,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 /obj/machinery/cryopod/proc/despawn_occupant()
 	var/mob/living/mob_occupant = occupant
 
-	SSjob.FreeRole(stored_rank)
+	SSjob.free_role(stored_rank)
 
 	// Handle holy successor removal
 	var/list/holy_successors = list_holy_successors()
@@ -534,7 +509,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 
 // Allows players to cryo others. Checks if they have been AFK for 15 minutes.
 	if(target.key && user != target)
-		if (target.get_organ_by_type(/obj/item/organ/internal/brain) ) //Target the Brain
+		if (target.get_organ_by_type(/obj/item/organ/brain) ) //Target the Brain
 			if(!target.mind || target.ssd_indicator ) // Is the character empty / AI Controlled
 				if(target.lastclienttime + ssd_time >= world.time)
 					to_chat(user, span_notice("You can't put [target] into [src] for another [round(((ssd_time - (world.time - target.lastclienttime)) / (1 MINUTES)), 1)] minutes."))
@@ -612,7 +587,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			return
 		to_chat(user, span_notice("You tuck [occupant.name] into their pod!"))
 		qdel(weapon)
-		user.add_mood_event("tucked", /datum/mood_event/tucked_in, occupant)
+		// EffigyEdit TODO
+		//user.add_mood_event("tucked", /datum/mood_event/tucked_in, occupant)
 		tucked = TRUE
 
 /obj/machinery/cryopod/update_icon_state()
@@ -620,5 +596,3 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	return ..()
 
 #undef AHELP_FIRST_MESSAGE
-
-*/

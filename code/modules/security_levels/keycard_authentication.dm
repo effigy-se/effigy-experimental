@@ -48,6 +48,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 	data["red_alert"] = (SSsecurity_level.get_current_level_as_number() >= SEC_LEVEL_RED) ? 1 : 0
 	data["emergency_maint"] = GLOB.emergency_access
 	data["bsa_unlock"] = GLOB.bsa_unlock
+	data["eng_override"] = GLOB.force_eng_override // EffigyEdit Add - Customized Airlocks
 	return data
 
 /obj/machinery/keycard_auth/ui_status(mob/user, datum/ui_state/state)
@@ -167,27 +168,27 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/keycard_auth/wall_mounted, 26)
 	find_and_hang_on_wall()
 
 GLOBAL_VAR_INIT(emergency_access, FALSE)
-/proc/make_maint_all_access()
+/proc/make_maint_all_access(silent = FALSE) // EffigyEdit Change - Add silent var
 	for(var/area/station/maintenance/area in GLOB.areas)
 		for (var/list/zlevel_turfs as anything in area.get_zlevel_turf_lists())
 			for(var/turf/area_turf as anything in zlevel_turfs)
 				for(var/obj/machinery/door/airlock/airlock in area_turf)
 					airlock.emergency = TRUE
 					airlock.update_icon(ALL, 0)
-
-	minor_announce("Access restrictions on maintenance and external airlocks have been lifted.", "Attention! Station-wide emergency declared!",1)
+	if(!silent) // EffigyEdit Change - Add silent var
+		minor_announce("Access restrictions on maintenance and external airlocks have been lifted.", "Access Announcement",1)
 	GLOB.emergency_access = TRUE
 	SSblackbox.record_feedback("nested tally", "keycard_auths", 1, list("emergency maintenance access", "enabled"))
 
-/proc/revoke_maint_all_access()
+/proc/revoke_maint_all_access(silent = FALSE) // EffigyEdit Change - Add silent var
 	for(var/area/station/maintenance/area in GLOB.areas)
 		for (var/list/zlevel_turfs as anything in area.get_zlevel_turf_lists())
 			for(var/turf/area_turf as anything in zlevel_turfs)
 				for(var/obj/machinery/door/airlock/airlock in area_turf)
 					airlock.emergency = FALSE
 					airlock.update_icon(ALL, 0)
-
-	minor_announce("Access restrictions in maintenance areas have been restored.", "Attention! Station-wide emergency rescinded:")
+	if(!silent) // EffigyEdit Change - Add silent var
+		minor_announce("Access restrictions on maintenance and external airlocks have been restored.", "Access Announcement")
 	GLOB.emergency_access = FALSE
 	SSblackbox.record_feedback("nested tally", "keycard_auths", 1, list("emergency maintenance access", "disabled"))
 

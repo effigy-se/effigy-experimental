@@ -8,11 +8,11 @@ export const THEMES = ['light', 'dark'];
 
 const COLORS = {
   DARK: {
-    BG_BASE: '#1c1d22', // EffigyEdit Change - TGUI - Original: #212020
-    BG_SECOND: '#121316', // EffigyEdit Change - TGUI - Original: #161515
-    BUTTON: '#2ccaff',
-    TEXT: '#e6f1ff', // EffigyEdit Change - TGUI - Original: #161515
-    TEXT_DARK: '#212121', // EffigyEdit Add - TGUI
+    BG_BASE: '#1a1c23', // EffigyEdit Change - TGUI - Original: #212020
+    BG_SECOND: '#22252f', // EffigyEdit Change - TGUI - Original: #161515
+    BUTTON: '#dcdee5', // EffigyEdit Change - TGUI - Original: #414040
+    TEXT: '#f3f4f6', // EffigyEdit Change - TGUI - Original: #161515
+    TEXT_DARK: '#22262f', // EffigyEdit Add - TGUI
   },
   LIGHT: {
     BG_BASE: '#EFEEEE',
@@ -67,11 +67,11 @@ export const setClientTheme = (name) => {
     'rules.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'wiki.background-color': themeColor.BUTTON,
     'wiki.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
-    'forum.background-color': themeColor.BUTTON,
+    'forum.background-color': '#2ccaff', // EffigyEdit Change - TGUI - Original: BUTTON
     'forum.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
-    'github.background-color': themeColor.BUTTON,
+    'github.background-color': '#2ccaff', // EffigyEdit Change - TGUI - Original: BUTTON
     'github.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
-    'report-issue.background-color': themeColor.BUTTON,
+    'report-issue.background-color': '#f0197d', // EffigyEdit Change - TGUI - Original: BUTTON
     'report-issue.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'fullscreen-toggle.background-color': themeColor.BUTTON,
     'fullscreen-toggle.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
@@ -79,12 +79,12 @@ export const setClientTheme = (name) => {
     'output.background-color': themeColor.BG_BASE,
     'output.text-color': themeColor.TEXT,
     // Say, OOC, me Buttons etc.
-    'saybutton.background-color': themeColor.BG_BASE,
-    'saybutton.text-color': themeColor.TEXT,
-    'oocbutton.background-color': themeColor.BG_BASE,
-    'oocbutton.text-color': themeColor.TEXT,
-    'mebutton.background-color': themeColor.BG_BASE,
-    'mebutton.text-color': themeColor.TEXT,
+    'saybutton.background-color': '#a4bad6', // EffigyEdit Change - TGUI - Original: BG_BASE
+    'saybutton.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
+    'oocbutton.background-color': '#cca300', // EffigyEdit Change - TGUI - Original: BG_BASE
+    'oocbutton.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
+    'mebutton.background-color': '#5975da', // EffigyEdit Change - TGUI - Original: BG_BASE
+    'mebutton.text-color': themeColor.TEXT_DARK, // EffigyEdit Change - TGUI - Original: TEXT
     'asset_cache_browser.background-color': themeColor.BG_BASE,
     'asset_cache_browser.text-color': themeColor.TEXT,
     'tooltip.background-color': themeColor.BG_BASE,

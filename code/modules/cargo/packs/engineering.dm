@@ -78,6 +78,14 @@
 	crate_name = "inducer crate"
 	crate_type = /obj/structure/closet/crate/nakamura
 
+// EffigyEdit Add - Cargo Packs (It's here to show up in the list next to the other inducer crate)
+/datum/supply_pack/engineering/inducers/upgraded
+	name = "NT-210 Industrial Power Inducers Crate"
+	desc = "An improved model over the NT-75 EPI, the NT-210 charges faster and contains an improved powercell. Contains two engineering-spec Inducers."
+	cost = CARGO_CRATE_VALUE * 6
+	contains = list(/obj/item/inducer/mkii = 2)
+// EffigyEdit Add End
+
 /datum/supply_pack/engineering/pacman
 	name = "P.A.C.M.A.N Generator Crate"
 	desc = "Engineers can't set up the engine? Not an issue for you, once you get your hands \

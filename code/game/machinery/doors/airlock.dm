@@ -66,7 +66,7 @@
 #define AIRLOCK_DAMAGE_DEFLECTION_N  21  // Normal airlock damage deflection
 #define AIRLOCK_DAMAGE_DEFLECTION_R  30  // Reinforced airlock damage deflection
 
-#define AIRLOCK_DENY_ANIMATION_TIME (0.6 SECONDS) /// The amount of time for the airlock deny animation to show
+#define AIRLOCK_DENY_ANIMATION_TIME (0.8 SECONDS) /// The amount of time for the airlock deny animation to show // EffigyEdit Change - Customized Airlocks - Original: (0.6 SECONDS)
 
 #define DOOR_CLOSE_WAIT 60 /// Time before a door closes, if not overridden
 
@@ -515,6 +515,8 @@
 		if(AIRLOCK_DENY, AIRLOCK_OPENING, AIRLOCK_CLOSING, AIRLOCK_EMAG)
 			icon_state = "nonexistenticonstate" //MADNESS
 
+// EffigyEdit Remove - Moved to local/code/game/machinery/doors/airlock.dm
+/*
 /obj/machinery/door/airlock/update_overlays()
 	. = ..()
 
@@ -593,6 +595,8 @@
 					floorlight.pixel_x = -32
 					floorlight.pixel_y = 0
 			. += floorlight
+*/
+// EffigyEdit Remove End
 
 /obj/machinery/door/airlock/run_animation(animation)
 	switch(animation)
@@ -1305,14 +1309,14 @@
 			if(!hasPower() || wires.is_cut(WIRE_OPEN) || (obj_flags & EMAGGED))
 				return FALSE
 			use_energy(50 JOULES)
-			playsound(src, doorOpen, 30, TRUE)
+			playsound(src, doorOpen, 30, vary = FALSE) // EffigyEdit Change - Customized Airlocks - Original: vary = TRUE
 			return TRUE
 
 		if(FORCING_DOOR_CHECKS) // Only one check.
 			if(obj_flags & EMAGGED)
 				return FALSE
 			use_energy(50 JOULES)
-			playsound(src, doorOpen, 30, TRUE)
+			playsound(src, doorOpen, 30, vary = FALSE) // EffigyEdit Change - Customized Airlocks - Original: vary = TRUE
 			return TRUE
 
 		if(BYPASS_DOOR_CHECKS) // No power usage, special sound, get it open.
@@ -1390,7 +1394,7 @@
 			if(obj_flags & EMAGGED)
 				return FALSE
 			use_energy(50 JOULES)
-			playsound(src, doorClose, 30, TRUE)
+			playsound(src, doorClose, 30, vary = FALSE) // EffigyEdit Change - Customized Airlocks - Original: vary = TRUE
 			return TRUE
 
 		if(BYPASS_DOOR_CHECKS)
@@ -2528,6 +2532,8 @@
 	operating = FALSE
 	return TRUE
 
+// EffigyEdit Remove - Customized Airlocks
+/*
 #undef AIRLOCK_SECURITY_NONE
 #undef AIRLOCK_SECURITY_IRON
 #undef AIRLOCK_SECURITY_PLASTEEL_I_S
@@ -2552,3 +2558,5 @@
 #undef AIRLOCK_FRAME_CLOSING
 #undef AIRLOCK_FRAME_OPEN
 #undef AIRLOCK_FRAME_OPENING
+*/
+// EffigyEdit Remove End

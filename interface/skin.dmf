@@ -134,7 +134,7 @@ window "mapwindow"
 		is-visible = true
 		text = ""
 		align = left
-		background-color = #1c1d22
+		background-color = #1a1c23
 		text-color = #e6e7eb
 		border = line
 

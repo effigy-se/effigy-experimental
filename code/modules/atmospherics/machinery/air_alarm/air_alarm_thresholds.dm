@@ -93,10 +93,10 @@
 	hazard_max = HAZARD_HIGH_PRESSURE
 
 /datum/tlv/temperature
-	warning_min = BODYTEMP_COLD_WARNING_1+10
-	hazard_min = BODYTEMP_COLD_WARNING_1
+	warning_min = BODYTEMP_COLD_WARNING_1 + 7 // EffigyEdit Change - Original: BODYTEMP_COLD_WARNING_1+10
+	hazard_min = BODYTEMP_COLD_WARNING_1 + 1 // EffigyEdit Change - Original: BODYTEMP_COLD_WARNING_1
 	warning_max = BODYTEMP_HEAT_WARNING_1-27
-	hazard_max = BODYTEMP_HEAT_WARNING_1
+	hazard_max = BODYTEMP_HEAT_WARNING_1 - 4 // EffigyEdit Change - Original: BODYTEMP_HEAT_WARNING_1
 
 /datum/tlv/cold_room_pressure
 	warning_min = ONE_ATMOSPHERE * 0.9
@@ -115,3 +115,11 @@
 	hazard_min = COLD_ROOM_TEMP - 40
 	warning_max = BODYTEMP_HEAT_WARNING_1-27
 	hazard_max = BODYTEMP_HEAT_WARNING_1
+
+// EffigyEdit Add - Miasma Air Alarm Threshold
+/datum/tlv/miasma
+	warning_min = TLV_VALUE_IGNORE
+	hazard_min = TLV_VALUE_IGNORE
+	warning_max = 7
+	hazard_max = 12 // miasma negative effects start at 15kpa
+// EffigyEdit Add End

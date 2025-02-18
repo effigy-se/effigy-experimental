@@ -219,7 +219,7 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 		roundend_callbacks.InvokeAsync()
 	LAZYCLEARLIST(round_end_events)
 
-	var/speed_round = (STATION_TIME_PASSED() <= 10 MINUTES)
+	var/speed_round = (STATION_TIME_PASSED() <= 45 MINUTES) // EffigyEdit Change - Original: 10 MINUTES
 
 	for(var/client/C in GLOB.clients)
 		if(!C?.credits)
@@ -244,6 +244,8 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 	//Set news report and mode result
 	SSdynamic.set_round_result()
 
+	// EffigyEdit Change - Logging
+	/*
 	to_chat(world, span_infoplain(span_big(span_bold("<BR><BR><BR>The round has ended."))))
 	log_game("The round has ended.")
 	send2chat(new /datum/tgs_message_content("[GLOB.round_id ? "Round [GLOB.round_id]" : "The round has"] just ended."), CONFIG_GET(string/channel_announce_end_game))
@@ -251,6 +253,13 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 
 	if(length(CONFIG_GET(keyed_list/cross_server)))
 		send_news_report()
+	*/
+	to_chat(world, alert_boxed_message(BLUE, "<h2 class='alert'>The round has ended.</h2>"))
+	log_game("The round has ended.")
+	if(was_forced != ADMIN_FORCE_END_ROUND)
+		send_news_report()
+		send2adminchat("Server", "Round [GLOB.round_hex] just ended.")
+	// EffigyEdit Change End
 
 	CHECK_TICK
 
@@ -335,7 +344,8 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 
 	if(GLOB.round_id)
 		var/statspage = CONFIG_GET(string/roundstatsurl)
-		var/info = statspage ? "<a href='byond://?action=openLink&link=[url_encode(statspage)][GLOB.round_id]'>[GLOB.round_id]</a>" : GLOB.round_id
+		//var/info = statspage ? "<a href='byond://?action=openLink&link=[url_encode(statspage)][GLOB.round_id]'>[GLOB.round_id]</a>" : GLOB.round_id // EffigyEdit Change - Logging
+		var/info = statspage ? "<a href='byond://?action=openLink&link=[url_encode(statspage)][GLOB.round_hex]'>[GLOB.round_hex]</a>" : GLOB.round_hex // EffigyEdit Change - Logging
 		parts += "[FOURSPACES]Round ID: <b>[info]</b>"
 	parts += "[FOURSPACES]Shift Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
 	parts += "[FOURSPACES]Station Integrity: <B>[GLOB.station_was_nuked ? span_redtext("Destroyed") : "[popcount["station_integrity"]]%"]</B>"

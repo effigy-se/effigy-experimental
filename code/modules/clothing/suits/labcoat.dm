@@ -28,6 +28,8 @@
 		/obj/item/storage/pill_bottle,
 		/obj/item/tank/internals/emergency_oxygen,
 		/obj/item/tank/internals/plasmaman,
+		/obj/item/hypospray/mkii, // EffigyEdit Add - Hyposprays
+		/obj/item/reagent_containers/cup/hypovial, // EffigyEdit Add - Hyposprays
 		)
 	armor_type = /datum/armor/toggle_labcoat
 	species_exception = list(/datum/species/golem)

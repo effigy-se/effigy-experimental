@@ -219,7 +219,7 @@ GLOBAL_LIST_EMPTY(pillars_by_z)
 		var/mutable_appearance/girder_underlay = mutable_appearance('icons/obj/structures.dmi', "girder", layer = BELOW_CLOSED_TURF_LAYER)
 		girder_underlay.appearance_flags = RESET_ALPHA | RESET_COLOR
 		our_turf.underlays += girder_underlay
-		var/mutable_appearance/plating_underlay = mutable_appearance('icons/turf/floors.dmi', "plating", layer = LOW_FLOOR_LAYER, offset_spokesman = our_turf, plane = FLOOR_PLANE)
+		var/mutable_appearance/plating_underlay = mutable_appearance(EFFIGY_TURFS_ICON_FILE, "plating", layer = LOW_FLOOR_LAYER, offset_spokesman = our_turf, plane = FLOOR_PLANE) // EffigyEdit Change - Floors
 		plating_underlay.appearance_flags = RESET_ALPHA | RESET_COLOR
 		our_turf.underlays += plating_underlay
 	return TRUE
@@ -240,7 +240,7 @@ GLOBAL_LIST_EMPTY(pillars_by_z)
 		var/mutable_appearance/girder_underlay = mutable_appearance('icons/obj/structures.dmi', "girder", layer = BELOW_CLOSED_TURF_LAYER)
 		girder_underlay.appearance_flags = RESET_ALPHA | RESET_COLOR
 		our_turf.underlays -= girder_underlay
-		var/mutable_appearance/plating_underlay = mutable_appearance('icons/turf/floors.dmi', "plating", layer = LOW_FLOOR_LAYER, offset_spokesman = our_turf, plane = FLOOR_PLANE)
+		var/mutable_appearance/plating_underlay = mutable_appearance(EFFIGY_TURFS_ICON_FILE, "plating", layer = LOW_FLOOR_LAYER, offset_spokesman = our_turf, plane = FLOOR_PLANE) // EffigyEdit Change - Floors
 		plating_underlay.appearance_flags = RESET_ALPHA | RESET_COLOR
 		our_turf.underlays -= plating_underlay
 

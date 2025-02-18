@@ -250,9 +250,9 @@
 /obj/machinery/door/poddoor/animation_effects(animation)
 	switch(animation)
 		if(DOOR_OPENING_ANIMATION)
-			playsound(src, animation_sound, 50, TRUE)
+			playsound(src, animation_sound, 50, vary = FALSE) // EffigyEdit Change - Customized Airlocks - Original: vary = TRUE
 		if(DOOR_CLOSING_ANIMATION)
-			playsound(src, animation_sound, 50, TRUE)
+			playsound(src, animation_sound, 50, vary = FALSE)// EffigyEdit Change - Customized Airlocks - Original: vary = TRUE
 
 /obj/machinery/door/poddoor/attack_alien(mob/living/carbon/alien/adult/user, list/modifiers)
 	if(density & !(resistance_flags & INDESTRUCTIBLE))

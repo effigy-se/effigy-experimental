@@ -232,13 +232,14 @@
 
 /// Starlight!
 #define COLOR_STARLIGHT "#8589fa"
+#define COLOR_CYAN_STARLIGHT "#88c4cb" // EffigyEdit Add
 /**
  * Some defines to generalise colours used in lighting.
  *
  * Important note: colors can end up significantly different from the basic html picture, especially when saturated
  */
 /// Bright light used by default in tubes and bulbs
-#define LIGHT_COLOR_DEFAULT "#f3fffa"
+#define LIGHT_COLOR_DEFAULT "#dbdbff" // EffigyEdit Change - Customized Lighting - Original: #f3fffa
 /// Bright but quickly dissipating neon green. rgb(100, 200, 100)
 #define LIGHT_COLOR_GREEN "#64C864"
 /// Bright, pale "nuclear" green. rgb(120, 255, 120)
@@ -468,6 +469,8 @@
 #define COLOR_EFFIGY_SPRING_GREEN "#21FA90"
 #define COLOR_EFFIGY_CHARCOAL "#424651"
 #define COLOR_EFFIGY_PLATINUM "#EAEAEA"
+#define COLOR_LIGHT_FIXTURE_DEFAULT "#dbdbff"
+#define COLOR_LIGHT_FIXTURE_COLD "#c7eeff"
 // EffigyEdit Add End
 
 GLOBAL_LIST_INIT(cable_colors, list(

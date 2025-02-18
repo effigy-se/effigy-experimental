@@ -1748,7 +1748,6 @@
 /turf/open/floor/plating,
 /area/ruin/ocean/bubble)
 "Zc" = (
-/obj/machinery/vending/dorms,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/carpet/purple,

@@ -162,6 +162,13 @@ SUBSYSTEM_DEF(ticker)
 			to_chat(world, span_notice("<b>Welcome to [station_name()]!</b>"))
 			send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.current_map.map_name]!"), CONFIG_GET(string/channel_announce_new_game))
 			current_state = GAME_STATE_PREGAME
+			// EffigyEdit Add - Storyteller
+			var/storyteller = CONFIG_GET(string/default_storyteller)
+			if(storyteller)
+				SSgamemode.set_storyteller(text2path(storyteller), forced = FALSE)
+			else
+				SSvote.initiate_vote(/datum/vote/storyteller, "Game Mode Vote", forced = TRUE)
+			// EffigyEdit Add End
 			SEND_SIGNAL(src, COMSIG_TICKER_ENTER_PREGAME)
 
 			fire()
@@ -235,7 +242,11 @@ SUBSYSTEM_DEF(ticker)
 	CHECK_TICK
 	//Configure mode and assign player to antagonists
 	var/can_continue = FALSE
-	can_continue = SSdynamic.pre_setup() //Choose antagonists
+	// EffigyEdit Change - Storyteller
+	// can_continue = SSdynamic.pre_setup() //Choose antagonists
+	SSgamemode.init_storyteller()
+	can_continue = SSgamemode.pre_setup()
+	// EffigyEdit Change End
 	CHECK_TICK
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_PRE_JOBS_ASSIGNED, src)
 	can_continue = can_continue && SSjob.divide_occupations() //Distribute jobs
@@ -278,6 +289,7 @@ SUBSYSTEM_DEF(ticker)
 	LAZYCLEARLIST(round_start_events)
 
 	round_start_time = world.time //otherwise round_start_time would be 0 for the signals
+	round_utc_start_time = REALTIMEOFDAY // EffigyEdit Add - Stat Panel
 	SEND_SIGNAL(src, COMSIG_TICKER_ROUND_STARTING, world.time)
 
 	log_world("Game start took [(world.timeofday - init_start)/10]s")
@@ -302,12 +314,15 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/PostSetup()
 	set waitfor = FALSE
 	SSdynamic.post_setup()
+	SSgamemode.post_setup() // EffigyEdit Add - Storyteller
 	GLOB.start_state = new /datum/station_state()
 	GLOB.start_state.count()
 
 	var/list/adm = get_admin_counts()
 	var/list/allmins = adm["present"]
-	send2adminchat("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]" : ""] has started[allmins.len ? ".":" with no active admins online!"]")
+	//send2adminchat("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]" : ""] has started[allmins.len ? ".":" with no active admins online!"]") // EffigyEdit Change - Logging
+	send2adminchat("Server", "Round [GLOB.round_hex ? "#[GLOB.round_hex]" : ""] has started[allmins.len ? ".":" with no active admins online!"]") // EffigyEdit Change - Logging
+	SSautotransfer.new_shift(round_utc_start_time) // EffigyEdit Add - Autotransfer
 	setup_done = TRUE
 
 	for(var/i in GLOB.start_landmarks_list)

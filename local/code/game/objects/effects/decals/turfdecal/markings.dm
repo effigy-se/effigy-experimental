@@ -155,7 +155,6 @@
 	color = "#d9d9d9"
 
 
-
 /// DS-3 ///
 /obj/effect/turf_decal/deep_space_three
 	icon = 'local/icons/turf/decals.dmi'

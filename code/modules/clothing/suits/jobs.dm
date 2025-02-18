@@ -352,6 +352,8 @@
 		/obj/item/surgical_drapes,
 		/obj/item/storage/pill_bottle,
 		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/hypospray/mkii, // EffigyEdit Add - Hyposprays
+		/obj/item/reagent_containers/cup/hypovial, // EffigyEdit Add - Hyposprays
 	)
 
 /obj/item/clothing/suit/apron/surgical/Initialize(mapload)

@@ -44,7 +44,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/defibrillator_mount, 28)
 	. = ..()
 	if(defib)
 		. += span_notice("There is a defib unit hooked up. Alt-click to remove it.")
-		if(SSsecurity_level.get_current_level_as_number() >= SEC_LEVEL_RED)
+		//if(SSsecurity_level.get_current_level_as_number() >= SEC_LEVEL_RED) // EffigyEdit Change - Security Levels
+		if(SSsecurity_level.get_current_level_as_number() >= SEC_LEVEL_RED || SSsecurity_level.get_current_level_as_number() == SEC_LEVEL_VIOLET)
 			. += span_notice("Due to a security situation, its locking clamps can be toggled by swiping any ID.")
 		else
 			. += span_notice("Its locking clamps can be [clamps_locked ? "dis" : ""]engaged by swiping an ID with access.")

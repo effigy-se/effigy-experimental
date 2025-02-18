@@ -56,7 +56,7 @@ export const ChemDispenser = (props) => {
     }));
 
   return (
-    <Window width={565} height={620}>
+    <Window width={655} height={750}>
       <Window.Content scrollable>
         <Section
           title="Status"
@@ -165,6 +165,12 @@ export const ChemDispenser = (props) => {
             {recipes.length === 0 && <Box color="light-gray">No recipes.</Box>}
           </Box>
         </Section>
+        <Box align="right" mb={1}>
+          {/* EffigyEdit Add - Custom Transfer Amount */}
+          <Button icon="pen" onClick={() => act('custom_amount')}>
+            Custom
+          </Button>
+        </Box>
         <Section
           title="Dispense"
           buttons={beakerTransferAmounts.map((amount) => (

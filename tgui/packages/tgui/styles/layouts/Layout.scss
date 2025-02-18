@@ -62,31 +62,13 @@ body {
 .Layout,
 .Layout * {
   // Fancy scrollbar
-  scrollbar-base-color: color.scale(
-    base.$color-bg,
-    $lightness: -25% * $scrollbar-color-multiplier
-  );
-  scrollbar-face-color: color.scale(
-    base.$color-bg-alt,
-    $lightness: -10% * $scrollbar-color-multiplier
-  );
-  scrollbar-3dlight-color: color.scale(
-    base.$color-bg-alt,
-    $lightness: 0% * $scrollbar-color-multiplier
-  );
-  scrollbar-highlight-color: color.scale(
-    base.$color-bg-alt,
-    $lightness: 0% * $scrollbar-color-multiplier
-  );
-  scrollbar-track-color: color.scale(base.$color-bg);
-  scrollbar-arrow-color: color.scale(
-    base.$color-bg-alt,
-    $lightness: -10% * $scrollbar-color-multiplier
-  );
-  scrollbar-shadow-color: color.scale(
-    base.$color-bg-alt,
-    $lightness: -10% * $scrollbar-color-multiplier
-  );
+  scrollbar-base-color: hsl(224, 16%, 16%);
+  scrollbar-face-color: hsl(224, 16%, 32%);
+  scrollbar-3dlight-color: hsl(224, 16%, 32%);
+  scrollbar-highlight-color: hsl(224, 16%, 32%);
+  scrollbar-track-color: hsl(224, 16%, 16%);
+  scrollbar-arrow-color: hsl(224, 16%, 32%);
+  scrollbar-shadow-color: hsl(224, 16%, 32%);
 }
 // EffigyEdit Change End
 

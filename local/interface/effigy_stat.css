@@ -92,7 +92,7 @@ img {
 }
 
 #menu.tabs-classic {
-	padding: 0.15em;
+	padding: 0;
 }
 
 #menu.tabs-classic .button {
@@ -115,11 +115,10 @@ img {
 	text-align: center;
 	font-size: 1em;
 	min-width: 2.9em;
-	padding: 0.5em 0.5em 0.4em;
+	padding: 0.2em 0.5em 0.4em;
 	background-color: transparent;
 	color: rgba(0, 0, 0, 0.5);
 	border: 0;
-	border-bottom: 0.1667em solid transparent;
 	border-radius: 0;
 }
 
@@ -135,7 +134,7 @@ img {
 }
 
 #under-menu {
-	height: 0.5em;
+	height: 0.2em;
 	background-color: #eeeeee;
 }
 
@@ -146,7 +145,7 @@ img {
 
 #statcontent {
 	flex: 1;
-	padding: 0.75em 0.5em;
+	padding: 0 0.4em;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -180,7 +179,7 @@ img {
 	white-space: nowrap;
 	pointer-events: none;
 	width: 100%;
-	padding: 0.33em 0.5em;
+	padding: 0.33em 0.5em 0.4em;
 	border-radius: 0.25em;
 }
 
@@ -232,13 +231,13 @@ img {
  * MARK: Dark theme colors
  */
 .dark:root {
-	--scrollbar-base: #151515;
-	--scrollbar-thumb: #363636;
+	--scrollbar-base: #1a1c23;
+	--scrollbar-thumb: #333947;
 }
 
 body.dark {
-	background-color: #151515;
-	color: #b2c4dd;
+	background-color: #1a1c23;
+	color: #acb2c3;
 	scrollbar-base-color: #1c1c1c;
 	scrollbar-face-color: #3b3b3b;
 	scrollbar-3dlight-color: #252525;
@@ -255,44 +254,46 @@ body.dark {
 .dark a:hover,
 .dark .grid-item:hover,
 .dark .grid-item:active {
-	color: #7df9ff;
+	color: #f3f4f6;
 }
 
 .dark #menu {
-	background-color: #151515;
+	background-color: #1a1c23;
 }
 
 .dark #menu.tabs-classic .button.active {
-	background-color: #20b142;
+	background-color: #2ccaff;
+	color: #1a1c23;
 }
 
 .dark .button {
-	color: rgba(255, 255, 255, 0.5);
+	color: #959cb2;
 }
 
 .dark .button:hover {
-	background-color: #252525;
+	background-color: #2b2f3b;
+	color: #f3f4f6;
 }
 
 .dark .button.active  {
-	background-color: #313131;
-	color: #d4dfec;
-	border-bottom-color: #d4dfec;
+	background-color: #1a1c23;
+	color: #f3f4f6;
+	border-bottom-color: #1a1c23;
 }
 
 .dark #under-menu,
 .dark #under-content {
-	background-color: #202020;
+	background-color: #1a1c23;
 }
 
 .dark .grid-item{
-	color: #b2c4dd;
+	color: #acb2c3;
 }
 
 .dark .grid-item:hover .grid-item-text {
-	background-color: #252525;
+	background-color: #2b2f3b;
 }
 
 .dark .grid-item:active .grid-item-text {
-	background-color: #313131;
+	background-color: #333947;
 }

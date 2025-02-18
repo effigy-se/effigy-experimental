@@ -8,7 +8,7 @@
 	. = ..()
 	var/static/list/the_chief_engineer = list(/datum/job/chief_engineer)
 
-	/* EffigyEdit TODO - this probably changed upstream
+	/* EffigyEdit TODO - Examine++ this probably changed upstream
 	AddElement(/datum/element/unique_examine, \
 		desc = "...Aren't they going to update the name?", \
 		desc_requirement = EXAMINE_CHECK_JOB, \

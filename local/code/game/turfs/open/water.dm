@@ -1,3 +1,6 @@
+/turf/open/water
+	icon = EFFIGY_TURFS_ICON_FILE
+
 // Unlike drains which slowly delete liquids; water turfs INSTANTLY kill any liquids that come in contact with them
 // This creates some weird edgecases on /tg/ maps but I vastly prefer it behave like this
 /turf/open/water/Initialize(mapload)

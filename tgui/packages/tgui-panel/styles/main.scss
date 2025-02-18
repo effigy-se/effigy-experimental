@@ -10,8 +10,10 @@
 
 @use '~tgui/styles/colors.scss';
 @use '~tgui/styles/base.scss' with (
-  $color-bg: hsl(0, 0%, 12.5%),
-  $color-bg-section: color.adjust(hsl(0, 0%, 12.5%), $lightness: -5%),
+  $color-bg: hsl(224, 16%, 12%),
+  // EffigyEdit Change - TGUI - Original: $color-bg: hsl(0, 0%, 12.5%)
+  // $color-bg-section: color.adjust(hsl(0, 0%, 12.5%), $lightness: -5%),
+  $color-bg-section: hsl(224, 16%, 12%),
   $color-bg-grad-spread: 0%
 );
 
@@ -37,3 +39,27 @@
 
 // tgchat styles
 @include meta.load-css('./tgchat/chat-dark.scss');
+
+// EffigyEdit Add - TGUI
+@include meta.load-css('~tgui/styles/effigy/BlockQuote.scss');
+@include meta.load-css('~tgui/styles/effigy/Button.scss');
+@include meta.load-css('~tgui/styles/effigy/ColorBox.scss');
+@include meta.load-css('~tgui/styles/effigy/Dimmer.scss');
+@include meta.load-css('~tgui/styles/effigy/Divider.scss');
+@include meta.load-css('~tgui/styles/effigy/Dropdown.scss');
+@include meta.load-css('~tgui/styles/effigy/Flex.scss');
+@include meta.load-css('~tgui/styles/effigy/Input.scss');
+@include meta.load-css('~tgui/styles/effigy/Knob.scss');
+@include meta.load-css('~tgui/styles/effigy/LabeledList.scss');
+@include meta.load-css('~tgui/styles/effigy/Modal.scss');
+@include meta.load-css('~tgui/styles/effigy/NoticeBox.scss');
+@include meta.load-css('~tgui/styles/effigy/NumberInput.scss');
+@include meta.load-css('~tgui/styles/effigy/ProgressBar.scss');
+@include meta.load-css('~tgui/styles/effigy/Section.scss');
+@include meta.load-css('~tgui/styles/effigy/Slider.scss');
+@include meta.load-css('~tgui/styles/effigy/Stack.scss');
+@include meta.load-css('~tgui/styles/effigy/Table.scss');
+@include meta.load-css('~tgui/styles/effigy/Tabs.scss');
+@include meta.load-css('~tgui/styles/effigy/TextArea.scss');
+@include meta.load-css('~tgui/styles/effigy/Tooltip.scss');
+// EffigyEdit Add End

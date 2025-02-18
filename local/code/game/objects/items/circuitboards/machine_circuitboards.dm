@@ -11,3 +11,22 @@
 	req_components = list(
 		/datum/stock_part/matter_bin = 1,
 		)
+
+/obj/item/circuitboard/machine/bluespace_miner
+	name = "Bluespace Miner"
+	desc = "The bluespace miner is a machine that, when provided the correct temperature and pressure, will produce materials."
+	greyscale_colors = CIRCUIT_COLOR_ENGINEERING
+	build_path = /obj/machinery/bluespace_miner
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stack/ore/bluespace_crystal/refined = 1,
+		/datum/stock_part/matter_bin = 2,
+		/datum/stock_part/micro_laser = 2,
+		/datum/stock_part/servo = 2,
+	)
+
+/obj/item/circuitboard/machine/dna_fixer
+	name = "DNA Fixer (Machine Board)"
+	greyscale_colors = CIRCUIT_COLOR_MEDICAL
+	build_path = /obj/machinery/dna_fixer
+	req_components = list(/datum/stock_part/micro_laser = 1)

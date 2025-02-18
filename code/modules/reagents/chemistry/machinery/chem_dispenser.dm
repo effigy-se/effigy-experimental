@@ -73,6 +73,8 @@
 		/datum/reagent/water,
 		/datum/reagent/fuel
 	)
+	// EffigyEdit Remove - Moved to local/code/modules/reagents/chemistry/machinery/chem_dispenser.dm
+	/*
 	/// The default list of reagents upgrade_reagents
 	var/static/list/default_upgrade_reagents = list(
 		/datum/reagent/acetone,
@@ -90,17 +92,35 @@
 		/datum/reagent/drug/space_drugs,
 		/datum/reagent/toxin
 	)
+	*/
+	// EffigyEdit Remove End
 /obj/machinery/chem_dispenser/Initialize(mapload)
 	if(dispensable_reagents != null && !dispensable_reagents.len)
 		dispensable_reagents = default_dispensable_reagents
 	if(dispensable_reagents)
 		dispensable_reagents = sort_list(dispensable_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
-
+	// EffigyEdit Change - Chem Dispenser Upgrades
+	/*
 	if(upgrade_reagents != null && !upgrade_reagents.len)
 		upgrade_reagents = default_upgrade_reagents
 	if(upgrade_reagents)
 		upgrade_reagents = sort_list(upgrade_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
+	*/
+	if(upgrade_reagents_t2 != null && !upgrade_reagents_t2.len)
+		upgrade_reagents_t2 = default_upgrade_reagents_t2
+	if(upgrade_reagents_t2)
+		upgrade_reagents_t2 = sort_list(upgrade_reagents_t2, GLOBAL_PROC_REF(cmp_reagents_asc))
 
+	if(upgrade_reagents_t3 != null && !upgrade_reagents_t3.len)
+		upgrade_reagents_t3 = default_upgrade_reagents_t3
+	if(upgrade_reagents_t3)
+		upgrade_reagents_t3 = sort_list(upgrade_reagents_t3, GLOBAL_PROC_REF(cmp_reagents_asc))
+
+	if(upgrade_reagents_t4 != null && !upgrade_reagents_t4.len)
+		upgrade_reagents_t4 = default_upgrade_reagents_t4
+	if(upgrade_reagents_t4)
+		upgrade_reagents_t4 = sort_list(upgrade_reagents_t4, GLOBAL_PROC_REF(cmp_reagents_asc))
+	// EffigyEdit Change End
 	if(emagged_reagents != null && !emagged_reagents.len)
 		emagged_reagents = default_emagged_reagents
 	if(emagged_reagents)
@@ -365,6 +385,17 @@
 				recording_recipe = null
 				return TRUE
 
+		// EffigyEdit Add - Custom transfer amount
+		if("custom_amount")
+			if(!beaker)
+				to_chat(usr, span_warning("Insert a container first!"))
+				return
+			if(custom_transfer_amount)
+				transfer_amounts -= custom_transfer_amount
+			custom_transfer_amount = clamp(input(usr, "Enter transfer amount.", "Transfer amount", 0) as num|null, 0, beaker.volume)
+			transfer_amounts += custom_transfer_amount
+		// EffigyEdit Add End
+
 		if("cancel_recording")
 			if(is_operational)
 				recording_recipe = null
@@ -401,6 +432,12 @@
 
 /obj/machinery/chem_dispenser/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(is_reagent_container(tool) && !(tool.item_flags & ABSTRACT) && tool.is_open_container())
+		// EffigyEdit Add - Custom transfer amount
+		var/obj/item/reagent_containers/container = tool
+		if(custom_transfer_amount)
+			transfer_amounts -= custom_transfer_amount
+		transfer_amounts = container.possible_transfer_amounts
+		// EffigyEdit Add End
 		if(!user.transferItemToLoc(tool, src))
 			return ITEM_INTERACT_BLOCKING
 		replace_beaker(user, tool)
@@ -446,10 +483,28 @@
 		recharge_amount *= capacitor.tier
 		parts_rating += capacitor.tier
 	for(var/datum/stock_part/servo/servo in component_parts)
+		// EffigyEdit Change -  Chem Dispenser Upgrades
+		/*
 		if (servo.tier > 3)
 			dispensable_reagents |= upgrade_reagents
 		else
 			dispensable_reagents -= upgrade_reagents
+		*/
+		if (servo.tier > 1)
+			dispensable_reagents |= upgrade_reagents_t2
+		else
+			dispensable_reagents -= upgrade_reagents_t2
+
+		if (servo.tier > 2)
+			dispensable_reagents |= upgrade_reagents_t3
+		else
+			dispensable_reagents -= upgrade_reagents_t3
+
+		if (servo.tier > 3)
+			dispensable_reagents |= upgrade_reagents_t4
+		else
+			dispensable_reagents -= upgrade_reagents_t4
+		// EffigyEdit Change End
 		parts_rating += servo.tier
 	power_cost = max(new_power_cost, 0.1 KILO WATTS)
 
@@ -608,6 +663,7 @@
 		/datum/reagent/consumable/ethanol/rice_beer,
 		/datum/reagent/consumable/ethanol/rum,
 		/datum/reagent/consumable/ethanol/sake,
+		/datum/reagent/consumable/ethanol/synthanol, // EffigyEdit Add
 		/datum/reagent/consumable/ethanol/tequila,
 		/datum/reagent/consumable/ethanol/triple_sec,
 		/datum/reagent/consumable/ethanol/vermouth,

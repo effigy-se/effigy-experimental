@@ -32,6 +32,14 @@ map multiz_debug
 endmap
 
 ## Effigy Maps ##
+map foxholestation
+	votable
+endmap
+
+map rimpoint
+	votable
+endmap
+
 map sigma_octantis
 	votable
 endmap
