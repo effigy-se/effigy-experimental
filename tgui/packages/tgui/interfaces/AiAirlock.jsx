@@ -25,7 +25,7 @@ export const AiAirlock = (props) => {
   const statusElectrify = dangerMap[data.shock] || dangerMap[0];
   return (
     // EffigyEdit Change - TGUI - Original: width={500} height={390}
-    <Window width={500} height={450}>
+    <Window width={500} height={468}>
       <Window.Content>
         <Section title="Power Status">
           <LabeledList>

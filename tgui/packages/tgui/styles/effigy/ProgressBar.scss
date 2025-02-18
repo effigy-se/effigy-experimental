@@ -13,57 +13,19 @@ $background-color: Input.$background-color !default;
 $border-radius: base.$border-radius !default;
 $bg-map: colors.$bg-map !default;
 
-.ProgressBar {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  padding: 0 0.5em;
-  border-width: base.em(1px) !important;
-  border-style: solid !important;
-  border-radius: $border-radius;
-  background-color: $background-color;
-  transition: border-color 900ms ease-out;
-}
-
-.ProgressBar__fill {
-  position: absolute;
-  top: -0.5px;
-  left: 0px;
-  bottom: -0.5px;
-}
-
-.ProgressBar__fill--animated {
-  transition:
-    background-color 900ms ease-out,
-    width 900ms ease-out;
-}
-
-.ProgressBar__content {
-  position: relative;
-  line-height: base.em(17px);
-  width: 100%;
-  text-align: right;
-}
-
 .ProgressBar--color--default {
   border: base.em(1px) solid $color-default-fill;
+  border-radius: 0;
 
   .ProgressBar__fill {
     background-color: $color-default-fill;
   }
 }
 
-.ProgressBar--color--good {
-  border: base.em(5px) solid #ff0000;
-
-  .ProgressBar__fill {
-    background-color: #ff0000;
-  }
-}
-
 @each $color-name, $color-value in $bg-map {
   .ProgressBar--color--#{$color-name} {
     border-color: $color-value !important;
+    border-radius: 0;
 
     .ProgressBar__fill {
       background-color: $color-value;

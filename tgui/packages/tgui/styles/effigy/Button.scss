@@ -40,77 +40,7 @@ $bg-map: colors.$bg-map !default;
 }
 
 .Button {
-  position: relative;
-  display: inline-block;
-  line-height: 1.667em;
-  padding: 0 0.5em;
-  margin-right: base.em(2px);
-  white-space: nowrap;
-  outline: 0;
   border-radius: $border-radius;
-  margin-bottom: 0;
-  // Disable selection in buttons
-  user-select: none;
-  -ms-user-select: none;
-
-  &:last-child {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-
-  .fa,
-  .fas,
-  .far {
-    margin-left: -0.25em;
-    margin-right: -0.25em;
-    min-width: 1.333em;
-    text-align: center;
-  }
-}
-
-.Button--dropdown {
-  line-height: base.em(16px);
-  height: base.em(24px);
-  padding: 0.2rem 0.5rem;
-}
-
-.Button--hasContent {
-  // Add a margin to the icon to keep it separate from the text
-  .fa,
-  .fas,
-  .far {
-    margin-right: 0.25em;
-  }
-}
-
-.Button--hasContent.Button--iconPosition--right {
-  .fa,
-  .fas,
-  .far {
-    margin-right: 0px;
-    margin-left: 3px;
-  }
-}
-
-.Button--ellipsis {
-  display: block;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.Button--fluid {
-  display: block;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.Button--circular {
-  border-radius: 50%;
-}
-
-.Button--compact {
-  padding: 0 0.25em;
-  line-height: 1.333em;
 }
 
 @each $color-name, $color-value in $bg-map {
@@ -143,34 +73,4 @@ $bg-map: colors.$bg-map !default;
 
 .Button--selected {
   @include button-color($color-selected);
-}
-
-.Button--flex {
-  display: inline-flex; //Inline even for fluid
-  flex-direction: column;
-}
-
-.Button--flex--fluid {
-  width: 100%;
-}
-
-.Button--verticalAlignContent--top {
-  justify-content: flex-start;
-}
-
-.Button--verticalAlignContent--middle {
-  justify-content: center;
-}
-
-.Button--verticalAlignContent--bottom {
-  justify-content: flex-end;
-}
-
-.Button__content {
-  display: block;
-  align-self: stretch;
-}
-
-.Button__textMargin {
-  margin-left: 0.4rem;
 }
