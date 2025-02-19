@@ -12,7 +12,7 @@ const COLORS = {
     BG_SECOND: '#22252f', // EffigyEdit Change - TGUI - Original: #161515
     BUTTON: '#dcdee5', // EffigyEdit Change - TGUI - Original: #414040
     TEXT: '#f3f4f6', // EffigyEdit Change - TGUI - Original: #161515
-    TEXT_DARK: '#22262f', // EffigyEdit Add - TGUI
+    TEXT_DARK: '#22252f', // EffigyEdit Add - TGUI
   },
   LIGHT: {
     BG_BASE: '#EFEEEE',
