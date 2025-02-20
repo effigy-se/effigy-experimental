@@ -563,7 +563,6 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_VORACIOUS" = TRAIT_VORACIOUS,
 		"TRAIT_WAS_EVOLVED" = TRAIT_WAS_EVOLVED,
 		"TRAIT_WATER_ADAPTATION" = TRAIT_WATER_ADAPTATION,
-		"TRAIT_WATER_BREATHING" = TRAIT_WATER_BREATHING, // EffigyEdit Add - Liquids
 		"TRAIT_WATER_HATER" = TRAIT_WATER_HATER,
 		"TRAIT_WEAK_SOUL" = TRAIT_WEAK_SOUL,
 		"TRAIT_WEB_SURFER" = TRAIT_WEB_SURFER,
@@ -744,6 +743,12 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_TURF_IGNORE_SLIPPERY" = TRAIT_TURF_IGNORE_SLIPPERY,
 		"TRAIT_TURF_IGNORE_SLOWDOWN" = TRAIT_TURF_IGNORE_SLOWDOWN,
 	),
+	// Effigy Edit Add - Traits
+	/obj/item/card/id/advanced = list(
+		"TRAIT_SYNTH_CHARGING" = TRAIT_SYNTH_CHARGING,
+		"TRAIT_WATER_BREATHING" = TRAIT_WATER_BREATHING,
+	),
+	// EffigyEdit Add End
 ))
 
 /// value -> trait name, list of ALL traits that exist in the game, used for any type of accessing.
