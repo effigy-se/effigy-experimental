@@ -17,7 +17,8 @@
 		var/datum/species/species_type = GLOB.species_list[species_id]
 
 		var/mob/living/carbon/human/dummy/consistent/dummy = new
-		dummy.equipOutfit(dummy.dna.species.preview_outfit, visuals_only = TRUE) // EffigyEdit Change - Character Preferences - Original: dummy.set_species(species_type)
+		dummy.set_species(species_type)
+		// dummy.equipOutfit(dummy.dna.species.preview_outfit, visuals_only = TRUE) // EffigyEdit Change - Character Preferences
 		dummy.equipOutfit(/datum/outfit/job/assistant/consistent, visuals_only = TRUE)
 		dummy.dna.species.prepare_human_for_preview(dummy)
 

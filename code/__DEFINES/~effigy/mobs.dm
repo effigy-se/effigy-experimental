@@ -17,15 +17,6 @@
 /// Head_flags of android heads that don't feature eyes (monitor heads (IPCs))
 #define HEAD_MONITOR_FACE (HEAD_HAIR|HEAD_LIPS|HEAD_DEBRAIN)
 
-// Defines for processing reagents
-/// Only processes reagents with "ORGANIC" or "ORGANIC | SYNTHETIC"
-#define PROCESS_ORGANIC 1
-/// Only processes reagents with "SYNTHETIC" or "ORGANIC | SYNTHETIC"
-#define PROCESS_SYNTHETIC 2
-
-#define REAGENT_ORGANIC 1
-#define REAGENT_SYNTHETIC 2
-
 GLOBAL_LIST_INIT(monitor_displays, list(
 	"Disabled" = "none",
 	"Blank" = "blank",

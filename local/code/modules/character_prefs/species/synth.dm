@@ -1,7 +1,6 @@
 /datum/species/android
 	name = "Synth"
 	id = SPECIES_ANDROID
-	preview_outfit = /datum/outfit/android_preview
 	examine_limb_id = SPECIES_HUMAN
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
@@ -43,10 +42,6 @@
 	var/atom/movable/screen/synth/energy/energy_tracker
 	/// How much energy we start with
 	var/internal_charge = SYNTH_CHARGE_MAX
-
-/datum/outfit/android_preview
-	name = "Synth (Species Preview)"
-	// nude
 
 /datum/species/android/on_species_gain(mob/living/carbon/target, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
@@ -106,7 +101,7 @@
 
 /datum/species/android/prepare_human_for_preview(mob/living/carbon/human/robot_for_preview)
 	robot_for_preview.dna.ear_type = CYBERNETIC_TYPE
-	robot_for_preview.dna.features["ears"] = "TV Antennae"
+	robot_for_preview.dna.features["ears"] = "No Ears"
 	robot_for_preview.dna.features["ears_color_1"] = "#333333"
 	robot_for_preview.dna.features["frame_list"] = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/android/sgm,
@@ -122,16 +117,15 @@
 	multiplicative_slowdown = CRAWLING_ADD_SLOWDOWN
 	flags = IGNORE_NOSLOW
 
-#define SYNTH_HUD_TEXT(valuecolor, value) MAPTEXT("<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='[valuecolor]'>[round((value/1000000), 0.1)]MJ</font></div>")
+#define SYNTH_HUD_TEXT(valuecolor, value) MAPTEXT("<div align='center' valign='middle'><font color='[valuecolor]'>[round((value/14000), 1)]%</font></div>")
 
 /atom/movable/screen/synth
 	icon = 'local/icons/hud/synth_hud.dmi'
 
 /atom/movable/screen/synth/energy
-	name = "Energy Tracker"
+	name = "internal charge"
 	icon_state = "energy_display"
-	screen_loc = "WEST:0,CENTER-1:0"
-	maptext_width = 48
+	screen_loc = "EAST-1:28,CENTER+1:21"
 
 /atom/movable/screen/synth/energy/proc/update_energy_hud(internal_charge)
 	maptext = SYNTH_HUD_TEXT(hud_text_color(internal_charge), internal_charge)
