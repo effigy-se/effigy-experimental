@@ -8,9 +8,7 @@
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
 	)
-	body_markings = list(/datum/bodypart_overlay/simple/body_marking/lizard = "Anthromorph Pattern")
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	payday_modifier = 1
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	bodypart_overrides = list(
@@ -25,10 +23,6 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/digitigrade/anthro,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade/anthro,
 	)
-
-/datum/outfit/anthro_preview
-	name = "Anthromorph (Species Preview)"
-	uniform = /obj/item/clothing/under/rank/security/officer/skirt
 
 /datum/species/anthro/prepare_human_for_preview(mob/living/carbon/human/human_for_preview)
 	human_for_preview.dna.features["mcolor"] = "#776155"
@@ -69,8 +63,6 @@
 			As a result, outer Human space has a high Animalid population.",
 	)
 
-// Felinids are subtypes of humans.
-// This shouldn't call parent or we'll get a buncha human related perks (though it doesn't have a reason to).
 /datum/species/anthro/create_pref_unique_perks()
 	var/list/to_add = list()
 

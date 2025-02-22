@@ -7,3 +7,6 @@
 
 // tgui category
 #define PREFERENCE_CATEGORY_MARKINGS "markings"
+#define PREFERENCE_CATEGORY_INFORMATIONAL "informational"
+
+#define MAX_FLAVOR_TEXT_LENGTH 4096

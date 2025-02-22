@@ -4,8 +4,8 @@ import {
   FeatureChoicedServerData,
   FeatureColorInput,
   FeatureValueProps,
-} from '../base';
-import { FeatureDropdownInput } from '../dropdowns';
+} from '../../base';
+import { FeatureDropdownInput } from '../../dropdowns';
 
 export const markings_head: FeatureChoiced = {
   name: 'a. Head Markings',

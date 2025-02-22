@@ -2,8 +2,8 @@ import {
   FeatureChoiced,
   FeatureChoicedServerData,
   FeatureValueProps,
-} from '../base';
-import { FeatureDropdownInput } from '../dropdowns';
+} from '../../base';
+import { FeatureDropdownInput } from '../../dropdowns';
 
 export const head_type: FeatureChoiced = {
   name: 'Variation: Head',

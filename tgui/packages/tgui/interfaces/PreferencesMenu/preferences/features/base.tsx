@@ -15,6 +15,7 @@ import {
   NumberInput,
   Slider,
   Stack,
+  TextArea,
 } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
 
@@ -145,6 +146,7 @@ export const FeatureTriColorInput = (props: FeatureValueProps<string[]>) => {
     </Stack>
   );
 };
+
 /* EffigyEdit Add End */
 
 export type FeatureToggle = Feature<BooleanLike, boolean>;
@@ -309,6 +311,22 @@ export function FeatureShortTextInput(
       value={value}
       maxLength={serverData?.maximum_length}
       updateOnPropsChange
+      onChange={(_, value) => handleSetValue(value)}
+    />
+  );
+}
+
+export function FeatureTextAreaInput(
+  props: FeatureValueProps<string, string, FeatureShortTextData>,
+) {
+  const { serverData, value, handleSetValue } = props;
+
+  return (
+    <TextArea
+      height="100px"
+      value={value}
+      maxLength={serverData?.maximum_length}
+      scrollbar
       onChange={(_, value) => handleSetValue(value)}
     />
   );

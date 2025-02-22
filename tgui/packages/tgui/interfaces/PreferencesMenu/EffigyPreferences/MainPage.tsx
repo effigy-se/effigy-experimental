@@ -597,15 +597,20 @@ export function MainPage(props: MainPageProps) {
 
   // EffigyEdit Add - Character Preferences
   enum PrefPage {
-    Character, // Character Preferences
+    Character,
     Markings,
-    Profile, // Markings
+    Contextual,
+    Profile,
   }
 
   const [currentPrefPage, setCurrentPrefPage] = useState(PrefPage.Character);
 
   const markingPreferences = {
     ...data.character_preferences.markings,
+  };
+
+  const infoPreferences = {
+    ...data.character_preferences.informational,
   };
 
   let prefPageContents;
@@ -636,6 +641,19 @@ export function MainPage(props: MainPageProps) {
         />
       );
       break;
+    case PrefPage.Contextual:
+      prefPageContents = (
+        <PreferenceList
+          randomizations={getRandomization(
+            contextualPreferences,
+            serverData,
+            randomBodyEnabled,
+          )}
+          preferences={nonContextualPreferences}
+          maxHeight="auto"
+        />
+      );
+      break;
     case PrefPage.Profile:
       prefPageContents = (
         <PreferenceList
@@ -644,7 +662,7 @@ export function MainPage(props: MainPageProps) {
             serverData,
             randomBodyEnabled,
           )}
-          preferences={markingPreferences}
+          preferences={infoPreferences}
           maxHeight="auto"
         />
       );
@@ -739,7 +757,7 @@ export function MainPage(props: MainPageProps) {
             <Stack.Item grow ml="10px">
               <PageButton
                 currentPage={currentPrefPage}
-                page={PrefPage.Profile}
+                page={PrefPage.Contextual}
                 setPage={setCurrentPrefPage}
               >
                 Contextual

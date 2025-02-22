@@ -4,8 +4,8 @@ import {
   FeatureChoiced,
   FeatureToggle,
   FeatureTriColorInput,
-} from '../base';
-import { FeatureDropdownInput } from '../dropdowns';
+} from '../../base';
+import { FeatureDropdownInput } from '../../dropdowns';
 
 export const snout_toggle: FeatureToggle = {
   name: '+ Snout',
