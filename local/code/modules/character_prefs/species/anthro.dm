@@ -29,8 +29,8 @@
 	human_for_preview.dna.features["snout"] = "Round"
 	human_for_preview.dna.features["snout_color_2"] = "#ffffff"
 	human_for_preview.dna.features["snout_color_3"] = "#776155"
-	human_for_preview.dna.ear_type = FOX_TYPE
-	human_for_preview.dna.features["ears"] = "Fox"
+	human_for_preview.dna.ear_type = CAT_TYPE
+	human_for_preview.dna.features["ears"] = "Big"
 	human_for_preview.dna.features["ears_color_1"] = "#776155"
 	human_for_preview.dna.features["ears_color_2"] = "#ffffff"
 	human_for_preview.set_haircolor("#574036", update = FALSE)

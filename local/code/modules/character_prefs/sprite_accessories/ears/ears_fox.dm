@@ -16,6 +16,10 @@
 	name = "Eevee Alt"
 	icon_state = "eevee_alt"
 
+/datum/sprite_accessory/ears_anthro/fox/default
+	name = "Fox Default"
+	icon_state = "fox"
+
 /datum/sprite_accessory/ears_anthro/fox/fennec
 	name = "Fennec"
 	icon_state = "fennec"

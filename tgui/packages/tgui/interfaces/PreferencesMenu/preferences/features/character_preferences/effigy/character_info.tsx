@@ -64,6 +64,12 @@ export const exploitable_info: Feature<string> = {
   component: FeatureTextAreaInput,
 };
 
+export const background_info: Feature<string> = {
+  name: 'Records - Background',
+  description: 'nobody uses this lmao',
+  component: FeatureTextAreaInput,
+};
+
 export const pda_ringer: Feature<string> = {
   name: 'PDA Ringer Message',
   description:
