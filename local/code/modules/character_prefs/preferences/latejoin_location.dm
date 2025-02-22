@@ -3,10 +3,6 @@
 	savefile_key = "latejoin_location"
 	savefile_identifier = PREFERENCE_CHARACTER
 
-/datum/preference/choiced/latejoin_location/is_accessible(datum/preferences/preferences)
-	. = ..()
-	return FALSE // EFFIGY TODO: nuke this when the tgui selector is in, we need to figure out the standard
-
 /datum/preference/choiced/latejoin_location/init_possible_values()
 	return list(JOB_LATEJOINPREF_ARRIVALS, JOB_LATEJOINPREF_CRYO, JOB_LATEJOINPREF_INTERLINK)
 
