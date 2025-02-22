@@ -71,6 +71,24 @@
 /datum/preference/text/security/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	return FALSE
 
+/datum/preference/text/background
+	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "background_info"
+	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
+
+/datum/preference/text/background/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return FALSE
+
+/datum/preference/text/pda_writing
+	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "pda_writing"
+	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
+
+/datum/preference/text/pda_writing/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return FALSE
+
 /* EffigyEdit TODO: ARGH I AM NOT PORTING THIS WHILE IT PLACES THE HEADSHOT RIGHT ON THE GOD DAMN /preference datum
 // Hey listen! Imgur doesn't actually work, it's been tested.
 

@@ -1,5 +1,5 @@
 /datum/preference/choiced/erp_status
-	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
+	category = PREFERENCE_CATEGORY_INFORMATIONAL
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "erp_status_pref"
 
@@ -35,7 +35,7 @@
 //The advertisement that you show to people looking through the directory
 /datum/preference/text/character_ad
 	savefile_key = "character_ad"
-	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
+	category = PREFERENCE_CATEGORY_INFORMATIONAL
 	savefile_identifier = PREFERENCE_CHARACTER
 	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
 
@@ -49,7 +49,7 @@
 
 /datum/preference/choiced/attraction
 	savefile_key = "attraction"
-	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
+	category = PREFERENCE_CATEGORY_INFORMATIONAL
 	savefile_identifier = PREFERENCE_CHARACTER
 
 /datum/preference/choiced/attraction/init_possible_values()
@@ -63,7 +63,7 @@
 
 /datum/preference/choiced/display_gender
 	savefile_key = "display_gender"
-	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
+	category = PREFERENCE_CATEGORY_INFORMATIONAL
 	savefile_identifier = PREFERENCE_CHARACTER
 
 /datum/preference/choiced/display_gender/init_possible_values()
@@ -77,7 +77,7 @@
 
 /datum/preference/choiced/emote_length
 	savefile_key = "emote_length"
-	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
+	category = PREFERENCE_CATEGORY_INFORMATIONAL
 	savefile_identifier = PREFERENCE_PLAYER
 
 /datum/preference/choiced/emote_length/init_possible_values()
@@ -91,7 +91,7 @@
 
 /datum/preference/choiced/approach_pref
 	savefile_key = "approach_pref"
-	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
+	category = PREFERENCE_CATEGORY_INFORMATIONAL
 	savefile_identifier = PREFERENCE_PLAYER
 
 /datum/preference/choiced/approach_pref/init_possible_values()
