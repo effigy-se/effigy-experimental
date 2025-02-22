@@ -21,3 +21,8 @@ export const display_gender: FeatureChoiced = {
     'What classifies as the gender for your character. This is displayed in the Directory.',
   component: FeatureDropdownInput,
 };
+
+export const erp_status_pref: FeatureChoiced = {
+  name: 'ERP Status',
+  component: FeatureDropdownInput,
+};

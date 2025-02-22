@@ -6856,6 +6856,8 @@
 #include "local\code\modules\client\effigy_registration.dm"
 #include "local\code\modules\client\preferences\_admin.dm"
 #include "local\code\modules\client\preferences\age.dm"
+#include "local\code\modules\client\preferences\character_directory.dm"
+#include "local\code\modules\client\preferences\chat_color.dm"
 #include "local\code\modules\client\preferences\latejoin_location.dm"
 #include "local\code\modules\client\preferences\looc.dm"
 #include "local\code\modules\client\preferences\manifest_preview.dm"
