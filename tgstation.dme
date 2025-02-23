@@ -6814,6 +6814,7 @@
 #include "local\code\modules\character_prefs\preferences\species_features\cap.dm"
 #include "local\code\modules\character_prefs\preferences\species_features\chest.dm"
 #include "local\code\modules\character_prefs\preferences\species_features\cyber_limbs.dm"
+#include "local\code\modules\character_prefs\preferences\species_features\cyber_organs.dm"
 #include "local\code\modules\character_prefs\preferences\species_features\ears.dm"
 #include "local\code\modules\character_prefs\preferences\species_features\fluff.dm"
 #include "local\code\modules\character_prefs\preferences\species_features\frills.dm"
