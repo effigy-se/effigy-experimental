@@ -34,8 +34,8 @@ import { classes } from 'tgui-core/react';
 import { useBackend } from '../backend';
 import { Pointer } from '../effigy/Pointer';
 import { Window } from '../layouts';
+import { Interaction, Interactive } from './common/effigy/Interactive';
 import { InputButtons } from './common/InputButtons';
-import { Interaction, Interactive } from './common/Interactive';
 import { Loader } from './common/Loader';
 
 interface ColorPickerData {
