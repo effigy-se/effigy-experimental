@@ -18755,7 +18755,6 @@
 "gFA" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/hooded/ablative,
-/obj/item/gun/energy/temperature/security,
 /obj/effect/turf_decal/tile/neutral/full,
 /obj/effect/turf_decal/bot_red,
 /obj/effect/turf_decal/stripes/line{
@@ -18765,6 +18764,10 @@
 	dir = 5
 	},
 /obj/structure/window/reinforced/spawner/directional/west,
+/obj/item/gun/ballistic/automatic/battle_rifle{
+	pixel_y = 3
+	},
+/obj/item/gun/energy/temperature/security,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/ai_monitored/security/armory)
 "gFE" = (
@@ -34918,6 +34921,9 @@
 	},
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
+	},
+/obj/item/gun/grenadelauncher{
+	pixel_y = -6
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/ai_monitored/security/armory)
