@@ -17039,6 +17039,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/machinery/greenscreen_camera{
+	dir = 1;
+	pixel_x = 4;
+	pixel_y = 16
+	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "fZN" = (
@@ -46378,6 +46383,7 @@
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/station/tcommsat/server)
 "qCY" = (
+/obj/structure/sign/poster/greenscreen/directional/north,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "qDf" = (

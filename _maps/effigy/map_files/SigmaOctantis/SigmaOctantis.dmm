@@ -20978,16 +20978,13 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/hallway/floor1/fore)
 "eOs" = (
-/obj/item/kirbyplants/random,
-/obj/structure/sign/painting/dorm_private{
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
+/obj/structure/sign/poster/greenscreen/directional/south,
 /turf/open/floor/iron/checker,
 /area/station/command/heads_quarters/captain)
 "eOt" = (
@@ -35035,6 +35032,9 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
+/obj/machinery/greenscreen_camera{
+	pixel_y = -5
+	},
 /turf/open/floor/iron/checker,
 /area/station/command/heads_quarters/captain)
 "iaZ" = (
@@ -38542,6 +38542,9 @@
 	},
 /obj/effect/turf_decal/trimline/yellow/warning,
 /obj/effect/turf_decal/trimline/yellow/mid_joiner,
+/obj/structure/sign/painting/dorm_private{
+	pixel_y = -32
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/command/heads_quarters/captain)
 "iRc" = (
