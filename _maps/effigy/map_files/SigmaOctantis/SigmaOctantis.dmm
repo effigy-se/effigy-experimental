@@ -12050,6 +12050,9 @@
 /obj/effect/turf_decal/siding/wideplating_new/dark/corner{
 	dir = 8
 	},
+/obj/item/gun/grenadelauncher{
+	pixel_y = -8
+	},
 /turf/open/floor/iron/large,
 /area/station/ai_monitored/security/armory)
 "cNg" = (
@@ -84257,11 +84260,14 @@
 /obj/structure/rack,
 /obj/item/gun/energy/ionrifle,
 /obj/item/clothing/suit/hooded/ablative,
-/obj/item/gun/energy/temperature/security,
 /obj/structure/window/reinforced/spawner/directional/south,
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 6
 	},
+/obj/item/gun/ballistic/automatic/battle_rifle{
+	pixel_y = 3
+	},
+/obj/item/gun/energy/temperature/security,
 /turf/open/floor/iron/large,
 /area/station/ai_monitored/security/armory)
 "tzu" = (
