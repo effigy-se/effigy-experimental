@@ -197,7 +197,7 @@
 
 /obj/item/organ/tail/fish/on_mob_insert(mob/living/carbon/owner)
 	. = ..()
-	owner.AddElementTrait(TRAIT_WADDLING, type, /datum/element/waddling)
+	// owner.AddElementTrait(TRAIT_WADDLING, type, /datum/element/waddling) // EFFIGYEDIT REMOVE - Aquatic Species
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(check_location))
 	RegisterSignal(owner, COMSIG_LIVING_GIBBER_ACT, PROC_REF(on_gibber_processed))
 	check_location(owner, null)
