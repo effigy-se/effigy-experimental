@@ -23,3 +23,6 @@
 	desc = "A cryostasis beaker that allows for chemical storage without reactions. Can hold up to 60 units."
 	volume = 60
 	possible_transfer_amounts = list(5,10,15,20,30,60)
+
+/obj/item/reagent_containers/cup/beaker/oldstation
+	amount_per_transfer_from_this = 60
