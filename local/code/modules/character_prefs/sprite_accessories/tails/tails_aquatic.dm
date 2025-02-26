@@ -19,6 +19,10 @@
 	center = TRUE
 	dimension_x = 36
 
+/datum/sprite_accessory/tails/fish/chonky_finned
+	name = "Chonky (Finned)"
+	icon_state = "chonky_finned"
+
 /datum/sprite_accessory/tails/fish/crescent
 	name = "Crescent"
 	icon_state = "crescent"
@@ -28,10 +32,6 @@
 	icon_state = "long"
 	center = TRUE
 	dimension_x = 38
-
-/datum/sprite_accessory/tails/fish/orca
-	name = "Orca"
-	icon_state = "orca"
 
 /datum/sprite_accessory/tails/fish/shark
 	name = "Shark"
