@@ -28210,6 +28210,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/structure/sign/poster/greenscreen/directional/south,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/command/heads_quarters/captain/private)
 "pzv" = (
@@ -38676,6 +38677,15 @@
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/wood/large,
 /area/station/service/chapel)
+"uTF" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/greenscreen_camera{
+	pixel_y = -5
+	},
+/turf/open/floor/wood/tile,
+/area/station/command/heads_quarters/captain/private)
 "uTU" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -76831,7 +76841,7 @@ sYf
 uUL
 vmf
 rgh
-jbb
+uTF
 pzg
 kVm
 hPM
