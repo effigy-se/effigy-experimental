@@ -12,3 +12,6 @@
 	desc = /obj/machinery/door/poddoor::desc
 	icon = /obj/machinery/door/poddoor::icon
 	icon_state = /obj/machinery/door/poddoor::icon_state
+
+/turf/closed/indestructible/opsglass
+	icon = 'local/icons/obj/smooth_structures/plastitanium_window.dmi'
