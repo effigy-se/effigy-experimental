@@ -181,6 +181,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			return FALSE
 
 	var/needs_update = save_data_needs_update(savefile.get_entry())
+	// EffigyEdit Add - Character Preferences
+	var/effigy_save_status = effigy_savefile_needs_update(savefile.get_entry())
+	if(effigy_save_status != -1)
+		debug_effigy(PREF, "Preferences for [parent] have a missing or incorrect Effigy version.")
+	// EffigyEdit Add End
 	if(load_and_save && (needs_update == -2)) //fatal, can't load any data
 		var/bacpath = "[path].updatebac" //todo: if the savefile version is higher then the server, check the backup, and give the player a prompt to load the backup
 		if (fexists(bacpath))
@@ -258,6 +263,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!savefile)
 		CRASH("Attempted to save the preferences of [parent] without a savefile. This should have been handled by load_preferences()")
 	savefile.set_entry("version", SAVEFILE_VERSION_MAX) //updates (or failing that the sanity checks) will ensure data is not invalid at load. Assume up-to-date
+	savefile.set_entry("effigy_ext_version", EFFIGY_SAVEFILE_VERSION_CURRENT) // EffigyEdit Add - Character Preferences
 
 	for (var/preference_type in GLOB.preference_entries)
 		var/datum/preference/preference = GLOB.preference_entries[preference_type]
