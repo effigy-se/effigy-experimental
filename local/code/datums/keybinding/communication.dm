@@ -23,3 +23,15 @@
 		return
 	winset(user, null, "command=[user.tgui_say_create_open_command(WHIS_CHANNEL)]")
 	return TRUE
+
+/datum/keybinding/client/communication/subtle
+	hotkey_keys = list("I")
+	name = "Subtle"
+	full_name = "Subtle"
+	keybind_signal = COMSIG_KB_CLIENT_SUBTLE_DOWN
+
+/datum/keybinding/client/communication/subtle/down(client/user)
+	. = ..()
+	if(.)
+		return
+	return user.mob.emote("subtle", intentional = TRUE)

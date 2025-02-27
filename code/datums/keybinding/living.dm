@@ -31,7 +31,7 @@
 		owner.hud_used.resist_icon.icon_state = owner.hud_used.resist_icon.base_icon_state
 
 /datum/keybinding/living/look_up
-	hotkey_keys = list("P") // EffigyEdit Change - LOOC - Original: L
+	hotkey_keys = list("\[") // EffigyEdit Change - LOOC - Original: L
 	name = "look up"
 	full_name = "Look Up"
 	description = "Look up at the next z-level.  Only works if directly below open space."
@@ -52,7 +52,7 @@
 	return TRUE
 
 /datum/keybinding/living/look_down
-	hotkey_keys = list(";")
+	hotkey_keys = list("'") // EffigyEdit Change - LOOC - Original: ;
 	name = "look down"
 	full_name = "Look Down"
 	description = "Look down at the previous z-level.  Only works if directly above open space."
