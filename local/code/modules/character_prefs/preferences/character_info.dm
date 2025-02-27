@@ -1,5 +1,5 @@
 /datum/preference/text/flavor_text
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "flavor_text"
 	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
@@ -8,7 +8,7 @@
 	target.dna.features["flavor_text"] = value
 
 /datum/preference/text/silicon_flavor_text
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "silicon_flavor_text"
 	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
@@ -18,7 +18,7 @@
 	return FALSE // To prevent the not-implemented runtime
 
 /datum/preference/text/ooc_notes
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "ooc_notes"
 	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
@@ -27,7 +27,7 @@
 	target.dna.features["ooc_notes"] = value
 
 /datum/preference/text/custom_species
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "custom_species"
 	maximum_value_length = 64
@@ -36,7 +36,7 @@
 	target.dna.features["custom_species"] = value
 
 /datum/preference/text/custom_species_lore
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "custom_species_lore"
 	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
@@ -45,7 +45,7 @@
 	target.dna.features["custom_species_lore"] = value
 
 /datum/preference/text/general
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "general_record"
 	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
@@ -54,7 +54,7 @@
 	return FALSE
 
 /datum/preference/text/medical
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "medical_record"
 	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
@@ -63,7 +63,7 @@
 	return FALSE
 
 /datum/preference/text/security
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "security_record"
 	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH
@@ -72,7 +72,7 @@
 	return FALSE
 
 /datum/preference/text/background
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "background_info"
 	maximum_value_length = MAX_FLAVOR_TEXT_LENGTH

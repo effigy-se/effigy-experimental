@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(frame_type_names, list(
 	main_feature_name = "Head"
 	savefile_key = "head_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/head_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(frame_type_names, list(
 	main_feature_name = "Chest"
 	savefile_key = "chest_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/chest_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -111,7 +111,7 @@ GLOBAL_LIST_INIT(frame_type_names, list(
 	main_feature_name = "Right Arm"
 	savefile_key = "arm_r_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/arm_r_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -141,7 +141,7 @@ GLOBAL_LIST_INIT(frame_type_names, list(
 	main_feature_name = "Left Arm"
 	savefile_key = "arm_l_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/arm_l_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -171,7 +171,7 @@ GLOBAL_LIST_INIT(frame_type_names, list(
 	main_feature_name = "Right Leg"
 	savefile_key = "leg_r_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/leg_r_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -201,7 +201,7 @@ GLOBAL_LIST_INIT(frame_type_names, list(
 	main_feature_name = "Left Leg"
 	savefile_key = "leg_l_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/leg_l_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")

@@ -15,7 +15,7 @@ GLOBAL_LIST_INIT(organ_type_names, list(
 	main_feature_name = "Heart"
 	savefile_key = "heart_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/heart_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -44,7 +44,7 @@ GLOBAL_LIST_INIT(organ_type_names, list(
 	main_feature_name = "Lungs"
 	savefile_key = "lungs_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/lungs_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -73,7 +73,7 @@ GLOBAL_LIST_INIT(organ_type_names, list(
 	main_feature_name = "Liver"
 	savefile_key = "liver_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/liver_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -102,7 +102,7 @@ GLOBAL_LIST_INIT(organ_type_names, list(
 	main_feature_name = "Stomach"
 	savefile_key = "stomach_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/stomach_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(organ_type_names, list(
 	main_feature_name = "Eyes"
 	savefile_key = "eyes_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/eyes_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -160,7 +160,7 @@ GLOBAL_LIST_INIT(organ_type_names, list(
 	main_feature_name = "Tongue"
 	savefile_key = "tongue_type"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/tongue_type/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")
@@ -189,7 +189,7 @@ GLOBAL_LIST_INIT(organ_type_names, list(
 	main_feature_name = "Breathing Tube"
 	savefile_key = "breathing_tube"
 	savefile_identifier = PREFERENCE_CHARACTER
-	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	category = PREFERENCE_CATEGORY_AUGMENTS
 
 /datum/preference/choiced/breathing_tube/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "none")

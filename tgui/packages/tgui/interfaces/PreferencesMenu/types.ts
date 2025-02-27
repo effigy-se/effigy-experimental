@@ -152,7 +152,8 @@ export type PreferencesMenuData = {
     secondary_features: Record<string, unknown>;
     supplemental_features: Record<string, unknown>;
     markings: Record<string, unknown> /* EffigyEdit Add */;
-    informational: Record<string, unknown> /* EffigyEdit Add */;
+    profile: Record<string, unknown> /* EffigyEdit Add */;
+    augments: Record<string, unknown> /* EffigyEdit Add */;
     manually_rendered_features: Record<string, string>;
 
     names: Record<string, string>;

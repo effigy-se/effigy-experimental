@@ -6,7 +6,8 @@
 #define READ_PREFS(target, pref) (target.client?.prefs?.read_preference(/datum/preference/pref))
 
 // tgui category
+#define PREFERENCE_CATEGORY_AUGMENTS "augments"
 #define PREFERENCE_CATEGORY_MARKINGS "markings"
-#define PREFERENCE_CATEGORY_INFORMATIONAL "informational"
+#define PREFERENCE_CATEGORY_PROFILE "profile"
 
 #define MAX_FLAVOR_TEXT_LENGTH 4096

@@ -599,7 +599,8 @@ export function MainPage(props: MainPageProps) {
   enum PrefPage {
     Character,
     Markings,
-    Contextual,
+    Augments,
+    NonContextual,
     Profile,
   }
 
@@ -609,8 +610,12 @@ export function MainPage(props: MainPageProps) {
     ...data.character_preferences.markings,
   };
 
-  const infoPreferences = {
-    ...data.character_preferences.informational,
+  const augmentPreferences = {
+    ...data.character_preferences.augments,
+  };
+
+  const profilePreferences = {
+    ...data.character_preferences.profile,
   };
 
   let prefPageContents;
@@ -641,7 +646,20 @@ export function MainPage(props: MainPageProps) {
         />
       );
       break;
-    case PrefPage.Contextual:
+    case PrefPage.Augments:
+      prefPageContents = (
+        <PreferenceList
+          randomizations={getRandomization(
+            contextualPreferences,
+            serverData,
+            randomBodyEnabled,
+          )}
+          preferences={augmentPreferences}
+          maxHeight="auto"
+        />
+      );
+      break;
+    case PrefPage.NonContextual:
       prefPageContents = (
         <PreferenceList
           randomizations={getRandomization(
@@ -662,7 +680,7 @@ export function MainPage(props: MainPageProps) {
             serverData,
             randomBodyEnabled,
           )}
-          preferences={infoPreferences}
+          preferences={profilePreferences}
           maxHeight="auto"
         />
       );
@@ -751,16 +769,25 @@ export function MainPage(props: MainPageProps) {
                 page={PrefPage.Markings}
                 setPage={setCurrentPrefPage}
               >
-                Supplemental
+                Markings
               </PageButton>
             </Stack.Item>
             <Stack.Item grow ml="10px">
               <PageButton
                 currentPage={currentPrefPage}
-                page={PrefPage.Contextual}
+                page={PrefPage.Augments}
                 setPage={setCurrentPrefPage}
               >
-                Contextual
+                Augments
+              </PageButton>
+            </Stack.Item>
+            <Stack.Item grow ml="10px">
+              <PageButton
+                currentPage={currentPrefPage}
+                page={PrefPage.NonContextual}
+                setPage={setCurrentPrefPage}
+              >
+                Misc
               </PageButton>
             </Stack.Item>
             <Stack.Item grow ml="10px">
@@ -769,7 +796,7 @@ export function MainPage(props: MainPageProps) {
                 page={PrefPage.Profile}
                 setPage={setCurrentPrefPage}
               >
-                Informational
+                Profile
               </PageButton>
             </Stack.Item>
           </Stack>

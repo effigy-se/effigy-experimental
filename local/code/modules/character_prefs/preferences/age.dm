@@ -1,2 +1,2 @@
 /datum/preference/numeric/age
-	category = PREFERENCE_CATEGORY_INFORMATIONAL
+	category = PREFERENCE_CATEGORY_PROFILE
