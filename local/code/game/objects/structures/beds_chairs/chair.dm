@@ -1,3 +1,9 @@
+/obj/structure/chair
+	icon = 'local/icons/obj/chairs.dmi'
+
+/obj/item/chair
+	icon = 'local/icons/obj/chairs.dmi'
+
 /* EffigyEdit TODO - Oversized
 /obj/structure/chair/post_buckle_mob(mob/living/M)
 	. = ..()
