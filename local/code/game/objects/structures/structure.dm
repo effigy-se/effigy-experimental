@@ -3,17 +3,14 @@
 
 /obj/structure/window/fulltile
 	icon = 'local/icons/obj/smooth_structures/window.dmi'
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE
 
 /obj/structure/window/reinforced/fulltile
 	icon = 'local/icons/obj/smooth_structures/reinforced_window.dmi'
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE
 
 /obj/structure/window/reinforced/tinted/fulltile
 	icon = 'local/icons/obj/smooth_structures/reinforced_window.dmi'
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE
 
 /turf/closed/indestructible/fakeglass
 	icon = MAP_SWITCH('local/icons/obj/smooth_structures/reinforced_window.dmi', 'local/icons/obj/smooth_structures/structure_variations.dmi')
@@ -23,6 +20,9 @@
 
 /obj/structure/window/reinforced/plasma/fulltile
 	icon = 'local/icons/obj/smooth_structures/rplasma_window.dmi'
+
+/obj/structure/window/reinforced/plasma/plastitanium
+	icon = 'local/icons/obj/smooth_structures/plastitanium_window.dmi'
 
 /obj/structure/window/reinforced/titanium
 	name = "titanium window"

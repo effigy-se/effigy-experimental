@@ -156,6 +156,8 @@ export const IconCutterTarget = new Juke.Target({
     const standard_inputs = [
       `icons/**/*.png.toml`,
       `icons/**/*.dmi.toml`,
+      `local/**/*.png.toml`, // EFFIGY EDIT ADD
+      `local/**/*.dmi.toml`, // EFFIGY EDIT ADD
       `cutter_templates/**/*.toml`,
       cutter_path,
     ]
@@ -164,6 +166,8 @@ export const IconCutterTarget = new Juke.Target({
     const existing_configs = [
       ...Juke.glob(`icons/**/*.png.toml`),
       ...Juke.glob(`icons/**/*.dmi.toml`),
+      ...Juke.glob(`local/**/*.png.toml`), // EFFIGY EDIT ADD
+      ...Juke.glob(`local/**/*.dmi.toml`), // EFFIGY EDIT ADD
     ];
     return [
       ...standard_inputs,
@@ -176,6 +180,8 @@ export const IconCutterTarget = new Juke.Target({
     const folders = [
       ...Juke.glob(`icons/**/*.png.toml`),
       ...Juke.glob(`icons/**/*.dmi.toml`),
+      ...Juke.glob(`local/**/*.png.toml`), // EFFIGY EDIT ADD
+      ...Juke.glob(`local/**/*.dmi.toml`), // EFFIGY EDIT ADD
     ];
     return folders
       .map((file) => file.replace(`.png.toml`, '.dmi'))
@@ -188,6 +194,14 @@ export const IconCutterTarget = new Juke.Target({
       'cutter_templates',
       'icons',
     ]);
+    // EFFIGY EDIT ADD
+    await Juke.exec(cutter_path, [
+      '--dont-wait',
+      '--templates',
+      'cutter_templates',
+      'local',
+    ]);
+    // EFFIGY EDIT END
   },
 });
 
