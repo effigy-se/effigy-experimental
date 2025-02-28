@@ -41,52 +41,25 @@
 	human_for_preview.update_body(is_creating = TRUE)
 
 /datum/species/anthro/get_physical_attributes()
-	return "Felinids are very similar to humans in almost all respects, with their biggest differences being the ability to lick their wounds, \
-		and an increased sensitivity to noise, which is often detrimental. They are also rather fond of eating oranges."
+	return "Anthromorphs; though physically distinguished in numerous minuet details - still ultimately \
+	conform to a generalized \"average\" akin to other forms of sapient life, with no major \
+	outlying traits to distinguish them."
 
 /datum/species/anthro/get_species_description()
-	return "Felinids are one of the many types of bespoke genetic \
-		modifications to come of humanity's mastery of genetic science, and are \
-		also one of the most common. Meow?"
+	return "Anthromorphs hail from many respects depending on genus; nationality, and history. Some may \
+	be former humans, genemodded akin to the more specialized Felinid - some may share no such connection; \
+	from some distant system."
 
 /datum/species/anthro/get_species_lore()
 	return list(
-		"Bio-engineering at its felinest, animalid are the peak example of humanity's mastery of genetic code. \
-			One of many \"Animalid\" variants, animalid are the most popular and common, as well as one of the \
-			biggest points of contention in genetic-modification.",
+		"While there is no unified history that connects the tale of all existant anthromorphs; due to the \
+			vastly varying methods for contact with human space; if not being part of it - it's yet still\
+			easy enough to point fingers to a specific event for their widespread variety and proliferation.",
 
-		"Body modders were eager to splice human and animal DNA in search of the holy trifecta: ears, eyes, and tail. \
-			These traits were in high demand, with the corresponding side effects of vocal and neurochemical changes being seen as a minor inconvenience.",
+		"Humanity's first contact with Bluespace in 2026; following Voyager II's mysterious reappearance on Earth, \
+			led to rapid development for early studies in relativity; and, ultimately - working teleportation technology.",
 
-		"Sadly for the animalid, they were not minor inconveniences. Shunned as subhuman and monstrous by many, animalid (and other Animalids) \
-			sought their greener pastures out in the colonies, cloistering in communities of their own kind. \
-			As a result, outer Human space has a high Animalid population.",
+		"While other starfaring civilizations had already performed their own studies in the field; the relatively centralized \
+			position of the Milky Way galaxy proved a boon for fostering trade, and, ultimately - travel and emigration to \
+			a measure prior unheard, which allowed otherwise formerly fringe species to mingle.",
 	)
-
-/datum/species/anthro/create_pref_unique_perks()
-	var/list/to_add = list()
-
-	to_add += list(
-		list(
-			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
-			SPECIES_PERK_ICON = "grin-tongue",
-			SPECIES_PERK_NAME = "Grooming",
-			SPECIES_PERK_DESC = "Lick wounds to reduce bleeding.",
-		),
-		list(
-			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
-			SPECIES_PERK_ICON = FA_ICON_PERSON_FALLING,
-			SPECIES_PERK_NAME = "Catlike Grace",
-			SPECIES_PERK_DESC = "Catlike instincts allowing them to land upright on their feet.  \
-				Instead of being knocked down from falling, you only receive a short slowdown. \
-				However, they do not have catlike legs, and the fall will deal additional damage.",
-		),
-		list(
-			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
-			SPECIES_PERK_ICON = "assistive-listening-systems",
-			SPECIES_PERK_NAME = "Sensitive Hearing",
-			SPECIES_PERK_DESC = "More sensitive to loud sounds, such as flashbangs.",
-		),
-	)
-
-	return to_add

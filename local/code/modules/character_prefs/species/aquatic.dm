@@ -7,6 +7,7 @@
 	id = SPECIES_AQUATIC
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
+		TRAIT_WATER_BREATHING,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
@@ -45,10 +46,41 @@
 	regenerate_organs(human_for_preview)
 	human_for_preview.update_body(is_creating = TRUE)
 
+/datum/species/aquatic/get_physical_attributes()
+	return "Aquatics, while coming in all shapes and sizes akin to anthromorphs - are more typically, \
+	if nebulously from pop-culture influence, seen as athletic swimmers with some fishlike heritage. To \
+	that end, they have the innate ability to breathe trace amounts of oxygen in any pool of liquid."
+
 /datum/species/aquatic/get_species_description()
-	return "Your description here!"
+	return "Just like the anthromorph, aquatic history is frayed, split down from multiple origins and, now, mingling \
+	only relatively recently. Some may have been human gene-modders getting in on the \"animalid\" craze - others can \
+	trace history to their own relatively fringe systems."
 
 /datum/species/aquatic/get_species_lore()
 	return list(
-		"Your lore here!",
+		"While there is no unified history that connects the tale of all existant aquatics; due to the \
+			vastly varying methods for contact with human space; if not being part of it - it's yet still\
+			easy enough to point fingers to a specific event for their widespread variety and proliferation.",
+
+		"Humanity's first contact with Bluespace in 2026; following Voyager II's mysterious reappearance on Earth, \
+			led to rapid development for early studies in relativity; and, ultimately - working teleportation technology.",
+
+		"While other starfaring civilizations had already performed their own studies in the field; the relatively centralized \
+			position of the Milky Way galaxy proved a boon for fostering trade, and, ultimately - travel and emigration to \
+			a measure prior unheard, which allowed otherwise formerly fringe species to mingle.",
 	)
+
+/datum/species/aquatic/create_pref_unique_perks()
+	var/list/to_add = list()
+
+	to_add += list(
+		list(
+			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+			SPECIES_PERK_ICON = FA_ICON_WATER,
+			SPECIES_PERK_NAME = "Water Breathing",
+			SPECIES_PERK_DESC = "Gills or not - you have the innate ability to \
+				breathe while submerged in water - or any other liquid!",
+		)
+	)
+
+	return to_add
