@@ -5,7 +5,12 @@
 */
 
 // The default UI style is the first one in the list
+// EffigyEdit Change - Custom UI Styles
 GLOBAL_LIST_INIT(available_ui_styles, list(
+	"Effigy Cyan" = 'local/icons/hud/screen_efcyan.dmi',
+	"Effigy Magenta" = 'local/icons/hud/screen_efmagenta.dmi',
+	"Effigy Yellow" = 'local/icons/hud/screen_efyellow.dmi',
+	"Effigy Green" = 'local/icons/hud/screen_efgreen.dmi',
 	"Midnight" = 'icons/hud/screen_midnight.dmi',
 	"Retro" = 'icons/hud/screen_retro.dmi',
 	"Plasmafire" = 'icons/hud/screen_plasmafire.dmi',
@@ -16,6 +21,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	"Trasen-Knox" = 'icons/hud/screen_trasenknox.dmi',
 	"Detective" = 'icons/hud/screen_detective.dmi',
 ))
+// EffigyEdit Change End
 
 /proc/ui_style2icon(ui_style)
 	return GLOB.available_ui_styles[ui_style] || GLOB.available_ui_styles[GLOB.available_ui_styles[1]]

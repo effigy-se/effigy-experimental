@@ -21127,10 +21127,10 @@
 /area/station/hallway/secondary/entry)
 "lAI" = (
 /obj/machinery/light_switch/directional/north,
-/obj/effect/turf_decal/tile/dark{
+/obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/dark/line{
+/obj/effect/turf_decal/trimline/neutral/line{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood,
@@ -37404,10 +37404,10 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "umy" = (
-/obj/effect/turf_decal/tile/dark{
+/obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/dark/line{
+/obj/effect/turf_decal/trimline/neutral/line{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood,
