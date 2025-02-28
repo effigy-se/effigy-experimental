@@ -493,7 +493,7 @@
 	use_legacy_animations = TRUE
 
 /obj/machinery/door/airlock/wood
-	icon = 'icons/obj/doors/airlocks/station/wood.dmi'
+	icon = 'local/icons/obj/doors/airlocks/station/wood.dmi'
 	overlays_file = 'local/icons/obj/doors/airlocks/station/overlays.dmi'
 	greyscale_config = null
 	greyscale_colors = null
